@@ -14,7 +14,7 @@ public class NoticeController {
 	
 	@RequestMapping(value="/notice_content.do",method=RequestMethod.GET)
 	public String noticeContent() {
-		return "/notice/notice_list";
+		return "/notice/notice_content";
 	}
 	
 	@RequestMapping(value="/notice_write.do",method=RequestMethod.GET)
