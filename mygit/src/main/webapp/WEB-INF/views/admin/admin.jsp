@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>관리자 페이지</h2>
+<h1>관리자 페이지</h1>
 <hr>
 <table>
 	<tr>
