@@ -17,8 +17,28 @@ public class LoginController {
 		return "/login/id";
 	}
 	
+	@RequestMapping(value="/id_fail.do", method=RequestMethod.GET)
+	public String idFail() {
+		return "/login/id_fail";
+	}
+	
+	@RequestMapping(value="/id_succ.do", method=RequestMethod.GET)
+	public String idSucc() {
+		return "/login/id_succ";
+	}
+	
 	@RequestMapping(value="/pass.do", method=RequestMethod.GET)
 	public String pass() {
 		return "/login/pass";
+	}
+	
+	@RequestMapping(value="/pass_fail.do", method=RequestMethod.GET)
+	public String passFail() {
+		return "/login/pass_Fail";
+	}
+	
+	@RequestMapping(value="/pass_succ.do", method=RequestMethod.GET)
+	public String passSucc() {
+		return "/login/pass_succ";
 	}
 }
