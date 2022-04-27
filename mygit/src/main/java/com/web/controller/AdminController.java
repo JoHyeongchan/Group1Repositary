@@ -17,7 +17,7 @@ public class AdminController {
 		return "/admin/member/member_list";
 	}
 	
-	@RequestMapping(value="/admin/reservation_list.do",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/reservation.do",method=RequestMethod.GET)
 	public String adminReservationList() {
 		return "/admin/reservation/reservation_list";
 	}
