@@ -9,6 +9,6 @@ public class JoinController {
 
 	@RequestMapping(value="/join.do",method=RequestMethod.GET)
 	public String join() {
-		return "/join/join.do";
+		return "/join/join";
 	}
 }

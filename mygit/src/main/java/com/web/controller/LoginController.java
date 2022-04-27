@@ -34,7 +34,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/pass_fail.do", method=RequestMethod.GET)
 	public String passFail() {
-		return "/login/pass_Fail";
+		return "/login/pass_fail";
 	}
 	
 	@RequestMapping(value="/pass_succ.do", method=RequestMethod.GET)
