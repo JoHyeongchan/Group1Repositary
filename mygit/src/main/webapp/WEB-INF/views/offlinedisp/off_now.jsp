@@ -36,6 +36,7 @@
 			<div> <!-- 페이지 번호 -->
 				<span>1</span>
 				<span>2</span>
+				<span>3</span>
 			</div>
 		</div>
 		<div><!-- 맨 위로 버튼 -->

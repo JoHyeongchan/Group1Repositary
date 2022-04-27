@@ -22,7 +22,7 @@
 			</div>
 			<div> <!-- 오른쪽 -->
 				<button>예약하기</button>
-				<span>조회수</span><span>47002</span>|<span>스크랩<a><img alt="" src=""></a></span>|<span><a><img></a></span>
+				<span>조회수</span><span>47003</span>|<span>스크랩<a><img alt="" src=""></a></span>|<span><a><img></a></span>
 			</div>
 		</div>
 		<article> <!-- 글 -->
