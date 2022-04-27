@@ -47,7 +47,7 @@
 <hr>
 <div>이전글<span>장미꽃</span></div>
 <hr>
-<div>이전글<span>장미꽃</span></div>
+<div>다음글<span>복숭아</span></div>
 <hr>
 <button type="button" onclick="location.href='../on_content.do'">목록</button>
 </body>
