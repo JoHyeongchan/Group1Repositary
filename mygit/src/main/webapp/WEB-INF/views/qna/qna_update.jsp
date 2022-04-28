@@ -9,30 +9,30 @@
 <script type="text/javascript"></script>
 </head>
 <body>
-	<section>
+<section>
 	<h2>Q &amp; A</h2>
 	<br><hr><br>
 	<form>
 	 	<table border="1">
-		 	<tr>
-			 	<th>제목</th>
-			 	<td colspan="3"><input type="text" name="title" placeholder="제목을 입력하세요."></td>
-		 	</tr>
-		 	<tr>
-		 		<td colspan="4"><textarea name="content"></textarea></td>
-		 	</tr>
-		 	<tr>
-			 	<th>첨부파일</th>
-			 	<td colspan="3"><input type="file" name="file1"></td>
-		 	</tr>
+	 	<tr>
+		 	<th>제목</th>
+		 	<td><input type="text" name="title" placeholder="제목을 입력하세요."></td>
+	 	</tr>
+	 	<tr>
+		 	<td colspan="2"><textarea name="content"></textarea></td>
+	 	</tr>
+	 	<tr>
+		 	<th>첨부파일</th>
+		 	<td colspan="3"><input type="file" name="file1"></td>
+	 	</tr>
 	 	</table>
 	 	<br><br>
-	 	<!-- 버튼 -->
-	 	<div>
+		 <!-- 버튼 -->
+		 <div>
 		 	<button type="button" onclick="location.href='qna_list.do'">등록</button>
-		 	<button type="button" onclick="location.href='qna_list.do'">취소</button>
+		 	<button type="button" onclick="location.href='qna_write.do'">취소</button>
 	 	</div>
 	 </form>
-	</section>
+</section>
 </body>
 </html>

@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AdminController {
 
 	@RequestMapping(value="/admin.do",method=RequestMethod.GET)
-	public String Admin() {
+	public String admin() {
 		return "/admin/admin";
 	}
 	
 	@RequestMapping(value="/admin/member_list.do",method=RequestMethod.GET)
-	public String AdminMemberList() {
+	public String adminMemberList() {
 		return "/admin/member/member_list";
 	}
 	
-	@RequestMapping(value="/admin/reservation_list.do",method=RequestMethod.GET)
-	public String AdminReservationList() {
+	@RequestMapping(value="/admin/reservation.do",method=RequestMethod.GET)
+	public String adminReservationList() {
 		return "/admin/reservation/reservation_list";
 	}
 	
 	@RequestMapping(value="/admin/onwrite.do",method=RequestMethod.GET)
-	public String AdminOnWrite() {
+	public String adminOnWrite() {
 		return "/admin/onlinedisp/admin_on_write";
 	}
 }
