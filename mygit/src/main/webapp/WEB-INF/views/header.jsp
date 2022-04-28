@@ -22,21 +22,21 @@
 <body>
 	<div id = "nav">
 		<div id="nav_left">
-			<a href="#" id="logo"><img src="resources/images/logo.png" width="80%" height="80%"></a>
+			<a href="http://localhost:9000/mygit/index.do" id="logo"><img src="resources/images/logo.png" width="80%" height="80%"></a>
 		</div>
 		<nav>
 			<div id="nav_center">
 			<ul>
-				<li><a href="#" class="nav_item1">관람·참여</a></li>
-				<li><a href="#" class="nav_item1">전시</a></li>
-				<li><a href="#" class="nav_item1">디지털미술관</a></li>
-				<li><a href="#" class="nav_item1">예약</a></li>
+				<li><a href="http://localhost:9000/mygit/comment_list.do" class="nav_item1">관람·참여</a></li>
+				<li><a href="http://localhost:9000/mygit/off_now.do" class="nav_item1">전시</a></li>
+				<li><a href="http://localhost:9000/mygit/on_show.do" class="nav_item1">디지털미술관</a></li>
+				<li><a href="http://localhost:9000/mygit/reservation.do" class="nav_item1">예약</a></li>
 			</ul>
 			</div>
 			<div id="nav_right">
 			<ul>
-				<li><a href="#" class="nav_item2">로그인</a></li>
-				<li><a href="#" class="nav_item2">회원가입</a></li>
+				<li><a href="http://localhost:9000/mygit/login.do" class="nav_item2">로그인</a></li>
+				<li><a href="http://localhost:9000/mygit/join.do" class="nav_item2">회원가입</a></li>
 				<li><a href="#" class="nav_item2">사이트맵</a></li>
 			</ul>
 			</div>

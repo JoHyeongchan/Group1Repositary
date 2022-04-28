@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/tp/resources/css/qna/qna_content.css">
+<link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/qna/qna_content.css">
 <script type="text/javascript"></script>
 </head>
 <body>
