@@ -5,32 +5,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="http://localhost:9000/tp/resources/css/qna/qna_write_update.css">
 <script type="text/javascript"></script>
 </head>
 <body>
-<header>
-</header>
-	<h2>Q&A</h2>
+	<section>
+	<h2>Q &amp; A</h2>
+	<br><hr><br>
 	<form>
 	 	<table border="1">
-	 	<tr>
-	 	<td><span>제목</span></td>
-	 	<td colspan="3"><input type="text" name="title" value="제목을 입력하세요."></td>
-	 	</tr>
-	 	<tr>
-	 	<td><span>첨부파일</span></td>
-	 	<td colspan="3"><input type="file" name="file1"></td>
-	 	</tr>
-	 	<tr>
-	 	<td colspan="4"><textarea rows="20" cols="70"></textarea>
-	 	</td>
-	 	</tr>
+		 	<tr>
+			 	<th>제목</th>
+			 	<td colspan="3"><input type="text" name="title" placeholder="제목을 입력하세요."></td>
+		 	</tr>
+		 	<tr>
+		 		<td colspan="4"><textarea name="content"></textarea></td>
+		 	</tr>
+		 	<tr>
+			 	<th>첨부파일</th>
+			 	<td colspan="3"><input type="file" name="file1"></td>
+		 	</tr>
 	 	</table>
+	 	<br><br>
 	 	<!-- 버튼 -->
-	 	<button type="button" onclick="location.href='qna_list.do'">등록</button>
-	 	<button type="button" onclick="location.href='qna_list.do'">취소</button>
+	 	<div>
+		 	<button type="button" onclick="location.href='qna_list.do'">등록</button>
+		 	<button type="button" onclick="location.href='qna_list.do'">취소</button>
+	 	</div>
 	 </form>
-<footer>
-</footer>	
+	</section>
 </body>
 </html>
