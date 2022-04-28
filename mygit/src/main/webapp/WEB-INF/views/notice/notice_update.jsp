@@ -5,14 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript"></script>
 </head>
 <body>
-<header>
-</header>
-	<h2>Q&A</h2>
-	<form>
-	 	<table border="1">
+<table border="1">
 	 	<tr>
 	 	<td><span>제목</span></td>
 	 	<td colspan="3"><input type="text" name="title" value="제목을 입력하세요."></td>
@@ -27,10 +22,8 @@
 	 	</tr>
 	 	</table>
 	 	<!-- 버튼 -->
-	 	<button type="button" onclick="location.href='qna_list.do'">등록</button>
-	 	<button type="button" onclick="location.href='qna_list.do'">취소</button>
+	 	<button type="button" onclick="location.href='notice_list.do'">등록</button>
+	 	<button type="button" onclick="location.href='notice_content.do'">취소</button>
 	 </form>
-<footer>
-</footer>	
 </body>
 </html>
