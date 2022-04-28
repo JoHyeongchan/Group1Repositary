@@ -6,11 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript"></script>
-
 </head>
 <body>
-<form>
-	
+	<h2>Q&A</h2>
+	<form>
 	 	<table border="1">
 	 	<tr>
 	 	<td><span>제목</span></td>
@@ -34,9 +33,9 @@
 	 	</tr>
 	 	</table>
 	 	<!-- 버튼 -->
-	 	<button type="button" onclick="location.href='notice_list.do'">등록</button>
-	 	<button type="button" onclick="location.href='notice_list.do'">취소</button>
+	 	<button type="button" onclick="location.href='qna_list.do'">등록</button>
+	 	<button type="button" onclick="location.href='qna_write.do'">취소</button>
 	 </form>
-
+	
 </body>
 </html>
