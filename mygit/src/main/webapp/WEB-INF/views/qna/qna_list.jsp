@@ -18,14 +18,14 @@
 <h2>Q & A</h2>
 <hr>
 <!-- 테이블 -->
-<table>
+<table border="1">
 	<!--  테이블 1번째줄 -->
 	<tr>
 		<th>No.</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회수</th>
 	</tr>
 	<!--  Dummy Content -->
 	<tr>
-		<td>25</td><td>test1</td><td><a href="qna_content.do">dummy</td><td>2022-05-01</td><td>10</td>
+		<td>25</td><td><a href="qna_content.do">test1</a></td><td>dummy</td><td>2022-05-01</td><td>10</td>
 	</tr>
 	<tr>
 		<td>24</td><td>test2</td><td>dummy</td><td>2022-05-01</td><td>10</td>
