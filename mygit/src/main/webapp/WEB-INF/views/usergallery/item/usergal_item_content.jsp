@@ -10,7 +10,7 @@
 <body>
 <h1>이동훈 | 백목련 | 연도미상</h1>
 <hr>
-<div height="400px"><img src="#"></div>
+<div><img src="#" height="400px"></div>
 <hr>
 <table>
 	<tr>
@@ -45,9 +45,9 @@
 	불투명 색채로 매끈하게 처리된 화병과 배경이 주제를 돋보이게 하고 있다.</p>
 </div>	 
 <hr>
-<div>이전글<span>장미꽃</span></div>
+<div onclick="location.href='../on_content.do'">이전글<span>장미꽃</span></div>
 <hr>
-<div>다음글<span>복숭아</span></div>
+<div onclick="location.href='../on_content.do'">다음글<span>복숭아</span></div>
 <hr>
 <button type="button" onclick="location.href='../on_content.do'">목록</button>
 </body>
