@@ -13,7 +13,7 @@
 	<aside>
 		<h1>봄이 오는 소리</h1>
 		<p>봄이 느껴지는 작품을 모았습니다.</p>
-		<br>
+		<br> 
 		<button type="button">codms95**@gmail.com 갤러리</button>
 		<small>조회수 78<br>|스크랩 * <br>|좋아요 ♡</small>
 	</aside>

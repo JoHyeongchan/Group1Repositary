@@ -13,7 +13,7 @@
 	<section>
 		<h1>[오늘 이 작품] 봄 과천| 야외조각장</h1>
 		<small>조회수 1945 | 스크랩 <img alt="" src=""> | 마이갤러리 + | 좋아요 <img alt="" src=""> | <img alt="" src=""></small>
-		<hr>
+		<hr> 
 		<div>
 			<iframe width="740" height="388"
 				src="https://www.youtube.com/embed/LcmRFg3-a8U"

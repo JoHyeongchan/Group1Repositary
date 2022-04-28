@@ -22,7 +22,7 @@
 			<span>전시</span>
 			<span>필름앤비디오</span>
 			<span>다원예술</span>
-			<span>해외전시</span><br>
+			<span>해외전시</span><br> 
 			<table><!-- 컨텐츠목록 -->
 			<tr>
 				<td onclick="location.href='off_content_no.do'"

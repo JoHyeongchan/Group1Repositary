@@ -9,7 +9,7 @@
 </head>
 <body>
 	<nav></nav>
-	<hr>
+	<hr> 
 	<section>
 		<h1>이용자갤러리</h1>
 		<form>

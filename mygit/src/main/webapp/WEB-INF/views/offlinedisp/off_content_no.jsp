@@ -102,7 +102,7 @@
 						<td>MMCA 국제미술 소장품 기획전<미술로,세계로></td>
 					</tr>
 				</table>
-				<div> <!-- 목록버튼 -->
+				<div> <!-- 목록버튼 --> 
 					<button>목록</button>
 				</div>
 			</div>
