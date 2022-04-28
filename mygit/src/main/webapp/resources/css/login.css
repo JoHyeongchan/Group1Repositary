@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+* {margin: 0; padding: 0}
+
+#loginForm {
+	border: 1px solid black;
+	border-radius: 20px;
+	width: 350px;
+	padding: 40px 40px 10px;
+	margin: 0 auto;
+}
+#logo {
+	display: block;
+	margin: 0 auto;
+}
+#loginForm>h4 {
+	text-align: center;
+}
+#loginForm>form {
+	position: relative;
+}
+#loginForm>form>div>input {
+	margin: 3px 0 10px 0; display: block;
+	line-height: 25px; padding-left: 5px;
+	border-radius: 5px;
+}
+#loginForm>form>button {
+	height: 90px; width: 90px;
+	position: absolute;
+	right: 0; top: 25px;
+	background-color: black;
+	color: white; font-weight: bolder; font-size: 18px;
+	border-radius: 10px;
+	
+}
+#loginForm>a {
+	text-decoration: none;
+	color: black;
+}
+#aux {
+	width: 350px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 20px 0;
+	box-sizing: border-box;
+}
+#aux>a {
+	margin: 0 10px;
+	text-decoration: none;
+	color: darkgrey;
+}
+#aux>a:hover {
+	color: black;
+}
