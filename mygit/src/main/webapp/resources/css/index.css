@@ -4,13 +4,14 @@
 	}
 	
 	#museum{
-	width: 100%; height: 800px;
+	width: 100%; height: 780px;
 	}
 	
 	#mmca{
-	width: 690px; height: 200px; background: #007843;
+	width: 690px; height: 150px; background: #007843;
 	left: 40px; top: -100px; position: relative;
 	text-align: center; font-size: 65pt; 
+	padding-top: 20px;
 	}
 	
 	#info_detail{
