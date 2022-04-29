@@ -1,0 +1,57 @@
+<style type="text/css">
+	*{
+	margin: 0; padding: 0;
+	}
+	
+	#show{
+	background-color: #939597; width: 100%; height: 840px;
+	}
+	
+	#show_theme{
+	font-size: 50pt; font-weight: bolder;
+	}
+	
+	#show_image{
+	width: 60%; height: 60%; left: 100px; top: 15%;
+	position: absolute; 
+	}
+	
+	#show_left{
+	width: 68%; height: 840px; float: left;
+	}
+	
+	#show_right{
+	width: 27%; height: 840px; float: left; top:17%; position: relative;
+	}
+	
+	#show_title{
+	font-size: 25pt; font-weight: bold;
+	}
+	
+	#show_info{
+	font-size: 12pt;
+	}
+	
+	#sub{
+	width: 100%; height: 350px; 
+	background-image: url("../images/recommend_theme.png"); 
+	background-size: 100% 350px;
+	}
+	
+	#sub_info{
+	color: white; text-align: center; text-shadow: 1px 1px 1px black;
+	top: 25%; position: relative;
+	}
+	
+	#icon_left{
+	position: absolute;
+	left: 20px;
+	top: 400px;
+	}
+	
+	#icon_right{
+	position: absolute;
+	right: 20px;
+	top: 400px;
+	}
+</style>
