@@ -11,7 +11,7 @@
 <body>
 
 <header>
-<!-- 추후 헤더.jsp  include 적용 -->
+<jsp:include page="../header.jsp"></jsp:include>
 </header>
 
 <section>
