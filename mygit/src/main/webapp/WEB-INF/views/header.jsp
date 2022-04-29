@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 	*{margin: 0; padding: 0;}
-	#nav{height:100px; border: 4px solid black;}
+	#nav{height:100px; border: 4px solid black; overflow: hidden;}
 	li a{text-decoration: none; color: black;}
 	li{float: left; list-style-type: none;}
 	#nav_left{float: left; width: 350px;margin-top: -10px;}
@@ -17,7 +17,9 @@
 	#nav_right a{font-weight: bold; font-size: 15pt;}
 	.nav_item1{padding: 62px; cursor: pointer;}
 	.nav_item2{padding: 10px; cursor: pointer;}
-	
+	#nav:after {
+	clear: both;
+}
 </style>
 </head>
 <body>
