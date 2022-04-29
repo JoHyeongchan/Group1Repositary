@@ -17,6 +17,7 @@
 	#nav_right a{font-weight: bold; font-size: 15pt;}
 	.nav_item1{padding: 62px; cursor: pointer;}
 	.nav_item2{padding: 10px; cursor: pointer;}
+	
 </style>
 </head>
 <body>
