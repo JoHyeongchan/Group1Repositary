@@ -1,0 +1,64 @@
+<style type="text/css">
+	*{
+	margin: 0px; padding: 0px;
+	}
+	
+	#museum{
+	width: 1900px; height: 800px;
+	}
+	
+	#mmca{
+	width: 690px; height: 200px; background: #007843;
+	left: 40px; top: -100px; position: relative;
+	text-align: center; font-size: 65pt; 
+	}
+	
+	#info_detail{
+	text-decoration: underline;
+	}
+	
+	#info{
+	width: 700px; float: right;
+	}
+	
+	.info1{
+	font-size: 30pt;
+	}
+	
+	.info2{
+	font-size: 15pt;
+	}
+	
+	th{
+	font-size: 25pt; font-weight: bold;
+	}
+	
+	tr{
+	text-align: center;
+	}
+	
+	.up1{
+	height: 500px;
+	}
+	
+	.up2{
+	width: 1300px; margin: 0 auto;
+	}
+	
+	table td{
+	width: 400px;
+	}
+	
+	.td1{
+	vertical-align: middle;
+	}
+	
+	.td2{
+	text-align: center; font-size: 15pt; font-weight: bold; height: 50px;
+	}
+	
+	.line{
+	width: 270px; margin: 0 auto;
+	}
+	
+</style>
