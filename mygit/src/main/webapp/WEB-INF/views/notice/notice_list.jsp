@@ -155,8 +155,9 @@
 	</select>
 	<input type="text" value="내용을 입력해주세요" name="searchText" onclick="this.value=''"></input>
 	<button type="submit" class="btn_search">검색</button>
-	</div>
 	<button type="button" onclick="location.href='notice_write.do'" class="btn_normal">등록</button>
+	</div>
+	
 	</form>
 </div>
 <div class="pageBtn"><<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>
