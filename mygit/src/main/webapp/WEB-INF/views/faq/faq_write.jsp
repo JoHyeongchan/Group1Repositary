@@ -39,7 +39,7 @@
 	 	<td colspan="5"><hr></td>
 	 	</tr>
 	 	<tr>
-	 	<td colspan="5"><textarea rows="20" cols="80" name="content"></textarea>
+	 	<td colspan="5" align="center"><textarea rows="20" cols="80" name="content"></textarea>
 	 	</td>
 	 	</tr>
 	 	<tr>
