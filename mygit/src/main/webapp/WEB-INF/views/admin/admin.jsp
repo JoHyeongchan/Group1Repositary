@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<header>
+<jsp:include page="../header.jsp"></jsp:include>
+</header>
 <h1>관리자 페이지</h1>
 <hr>
 <table>

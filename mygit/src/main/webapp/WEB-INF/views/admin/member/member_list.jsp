@@ -11,6 +11,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="http://localhost:9000/mygit/resources/js/member_list.js"></script>
 </head>
+<header>
+<jsp:include page="../../header.jsp"></jsp:include>
+</header>
 <body>
 	<br><br>
 	<section>
