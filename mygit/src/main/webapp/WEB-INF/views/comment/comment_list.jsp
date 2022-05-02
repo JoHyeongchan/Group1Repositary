@@ -5,13 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/comment/comment_list.css">
 </head>
 <body>
-
+<header>
+<jsp:include page="../header.jsp"></jsp:include>
+</header>
 <section>
 <h2>관람후기</h2>
 <h4>관람후기를 올려주세요</h4>
 <hr>
+<br>
 <!-- 테이블 -->
 <table border="1">
 	<!--  테이블 1번째줄 -->
@@ -20,38 +24,39 @@
 	</tr>
 	<!--  Dummy Content -->
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>	
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>	
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>	
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>	
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>	
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>	
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>	
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>	
 	<tr>
-		<td>1</td><td><a href="notice_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
 	</tr>
 </table>
 
 <!-- 검색 입력폼 -->
+<div class="bottom">
 <form>
 <select>
 	<option value="title">제목</option>
@@ -62,10 +67,11 @@
 <button type="submit">검색</button>
 
 <!-- 글 작성 화면 이동 -->
-<button type="button" onclick="location.href='comment_write.do'">등록</button>
+<button type="button" onclick="location.href='comment_write.do'" class="btn_normal">등록</button>
 </form>
+</div>
 <!-- 페이지 표시 부분 -->
-<div> <<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>
+<div class="pageBtn"> <<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>
 </section>
 
 </body>

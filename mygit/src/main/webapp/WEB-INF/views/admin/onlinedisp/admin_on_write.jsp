@@ -39,6 +39,9 @@
 	}
 </style>
 </head>
+<header>
+<jsp:include page="../../header.jsp"></jsp:include>
+</header>
 <body>
 	<div id="admin_screen">
 		<div id="tool">글자 도구</div>
