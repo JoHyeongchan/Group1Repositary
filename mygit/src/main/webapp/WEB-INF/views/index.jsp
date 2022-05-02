@@ -9,6 +9,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+	<section>
 	<a><img src="resources/images/index.png" id="museum"></a>
 	<div class=up1>
 		<div id = mmca>국립현대미술관</div>
@@ -91,5 +92,7 @@
 			</tr>
 		</table>
 	</div>
+	</section>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

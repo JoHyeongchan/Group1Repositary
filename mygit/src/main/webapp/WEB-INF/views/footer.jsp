@@ -10,6 +10,7 @@
 		margin: 0; padding: 0;
 	}
 	footer {
+		clear:both;
 		margin: 40px;
 		border-top: 1px solid black;
 		padding-top: 50px;
