@@ -50,9 +50,9 @@ a:active, a:visited, a:link{
 
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <h2>Site Map</h2>
 <br>

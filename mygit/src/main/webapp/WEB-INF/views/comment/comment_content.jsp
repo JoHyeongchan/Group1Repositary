@@ -8,9 +8,9 @@
 </head>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/comment/comment_content.css">
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 	<h2>관람후기</h2>
 	<table>
@@ -48,6 +48,7 @@
 	 
 </section>
 
+<jsp:include page="../footer.jsp"></jsp:include>
 
 </body>
 </html>

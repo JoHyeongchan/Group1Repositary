@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/comment/comment_list.css">
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <h2>관람후기</h2>
 <h4>관람후기를 올려주세요</h4>
@@ -73,6 +73,6 @@
 <!-- 페이지 표시 부분 -->
 <div class="pageBtn"> <<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>
 </section>
-
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

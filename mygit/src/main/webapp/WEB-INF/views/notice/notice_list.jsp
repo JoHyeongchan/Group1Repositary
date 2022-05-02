@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/notice/notice_list.css">
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <h2>공지사항</h2>
 <hr>
@@ -75,6 +75,6 @@
 	
 
 </section>
-
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

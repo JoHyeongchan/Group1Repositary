@@ -8,7 +8,9 @@
 <script type="text/javascript"></script>
 </head>
 <body>
-	<nav></nav>
+	
+	<jsp:include page="../../header.jsp"></jsp:include>
+	
 	<hr>
 	<section>
 		<h1>[오늘 이 작품] 봄 과천| 야외조각장</h1>
@@ -21,7 +23,7 @@
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen></iframe>
 		</div>
-		<article>
+		<div>
 			<p>
 				▶과천관 야외조각장<br> <br> <b>김창곤, ‹합 86-7›, 1986</b> 홍익대학교 조소과를
 				졸업하고 이탈리아에서 유학한 김창곤(1955-)은 돌의 물성에 매료되어 거석(巨石)을 깎는 조각 작업을 오랫동안 지속해왔다
@@ -48,7 +50,6 @@
 		<button type="button" onclick="location.href='../on_content.do'">목록</button>
 	</section>
 	<hr>
-	<footer>
-	</footer>
+<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

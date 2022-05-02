@@ -10,9 +10,7 @@
 </head>
 <body>
 
-<header>
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
 
 <section>
 <h2>Q &amp; A</h2>
@@ -75,7 +73,7 @@
 </section>
 
 <footer>
-<!-- 추후 footer.jsp include -->
+<jsp:include page="../footer.jsp"></jsp:include>
 </footer>
 
 </body>

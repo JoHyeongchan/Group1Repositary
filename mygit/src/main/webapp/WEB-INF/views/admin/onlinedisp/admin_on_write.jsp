@@ -39,10 +39,10 @@
 	}
 </style>
 </head>
-<header>
-<jsp:include page="../../header.jsp"></jsp:include>
-</header>
 <body>
+<jsp:include page="../../header.jsp"></jsp:include>
+
+<section>
 	<div id="admin_screen">
 		<div id="tool">글자 도구</div>
 		<div id="left">
@@ -57,5 +57,7 @@
 		<input type="button" value="미리보기">
 		<input type="button" value="저장">
 	</div>
+</section>
+<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

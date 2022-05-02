@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<nav> <!-- 상단내비 -->
-	</nav>
+	<header>
+	<jsp:include page="../header.jsp"></jsp:include>
+	</header>
 	<hr>
 	<section> <!-- 본문 -->
 		<div> <!-- 제목부분 -->
@@ -108,7 +109,6 @@
 			</div>
 		</div>
 	</section>
-	<footer>
-	</footer>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -8,7 +8,9 @@
 <script type="text/javascript"></script>
 </head>
 <body>
-	<nav></nav>
+	
+	<jsp:include page="../header.jsp"></jsp:include>
+	
 	<hr> 
 	<section>
 		<h1>이용자갤러리</h1>
@@ -100,5 +102,6 @@
 		<footer>
 		</footer>
 	</section>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -8,9 +8,9 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/faq/faq_write_update.css"></link> 
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <form>
 		<h2>FAQ</h2>
@@ -51,5 +51,6 @@
 	 	<button type="button" onclick="location.href='faq_list.do'" class="btn_normal">등록</button>
 	 </form>
 </section>	 
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/notice/notice_write_update.css">
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <form>
 		<h2>공지사항</h2>
@@ -53,5 +53,7 @@
 	 	<button type="button" onclick="location.href='notice_list.do'" class="btn_normal">등록</button>
 	 </form>
 </section>
+
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -23,6 +23,7 @@
 </style>
 </head>
 <body>
+<header>
 	<div id = "nav">
 		<div id="nav_left">
 			<a href="http://localhost:9000/mygit/index.do" id="logo"><img src="resources/images/logo.png" width="80%" height="80%"></a>
@@ -45,5 +46,6 @@
 			</div>
 		</nav>
 	</div>
+</header>
 </body>
 </html>

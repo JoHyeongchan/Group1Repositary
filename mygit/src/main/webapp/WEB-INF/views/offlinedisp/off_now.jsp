@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<nav>
-	</nav>
+
+	<jsp:include page="../header.jsp"></jsp:include>
+
 	<hr>
 	<section>
 			<h1>현재전시</h1>
@@ -129,8 +130,8 @@
 		<div><!-- 맨 위로 버튼 -->
 			<img alt="" src="">
 		</div>
-		<footer>
-		</footer>
+		
 	</section>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <form>
 		<h2>FAQ</h2>
@@ -50,6 +50,7 @@
 	 	<button type="button" onclick="location.href='faq_list.do'" class="btn_normal">취소</button>
 	 	<button type="button" onclick="location.href='faq_list.do'" class="btn_normal">등록</button>
 	 </form>
-</section>	 
+</section>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

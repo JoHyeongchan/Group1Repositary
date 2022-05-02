@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/comment/comment_write_update.css">
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <form>
 		<h2>관람후기</h2>

@@ -63,5 +63,6 @@
 	 	<button type="button" onclick="location.href='comment_list.do'" class="btn_normal">수정</button>
 	 </form>
 </section>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
