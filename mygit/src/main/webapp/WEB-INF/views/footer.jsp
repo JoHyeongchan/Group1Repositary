@@ -38,8 +38,8 @@
 			<p>© 2021 National Museum of Modern and Contemporary Art, Korea</p>
 		</div>
 		<div>
-			<img src="http://localhost:9000/tp/resources/img/logo.png">
-			<img src="http://localhost:9000/tp/resources/img/wa.jpg">
+			<img src="http://localhost:9000/mygit/resources/img/logo.png">
+			<img src="http://localhost:9000/mygit/resources/img/wa.jpg">
 		</div>
 	</footer>
 </body>
