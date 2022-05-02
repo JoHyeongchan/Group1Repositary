@@ -23,6 +23,7 @@
 </style>
 </head>
 <body>
+<header>
 	<div id = "nav">
 		<div id="nav_left">
 			<a href="http://localhost:9000/mygit/index.do" id="logo"><img src="resources/images/logo.png" width="80%" height="80%"></a>
@@ -40,10 +41,11 @@
 			<ul>
 				<li><a href="http://localhost:9000/mygit/login.do" class="nav_item2">로그인</a></li>
 				<li><a href="http://localhost:9000/mygit/join.do" class="nav_item2">회원가입</a></li>
-				<li><a href="#" class="nav_item2">사이트맵</a></li>
+				<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
 			</ul>
 			</div>
 		</nav>
 	</div>
+</header>
 </body>
 </html>

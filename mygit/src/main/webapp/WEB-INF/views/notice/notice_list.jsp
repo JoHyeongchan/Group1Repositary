@@ -5,104 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-* {
-		margin: 0; padding: 0;
-	}
-	
-	body{
-		width:100%;
-		height: 100%;
-	}
-	h2{
-		display: block;
-		font-size: 40px;
-		text-indent: 20px;
-		margin: 20px;
-	}
-	
-	section {
-		width: 900px;
-		margin: 0 auto;
-		padding: 50px 100px;
-		box-sizing: border-box;
-		text-align: center;
-		/*border: 1px black solid;*/
-	}
-	
-	tr{
-		height : 35px;
-	}
-	
-	th{
-		background-color: #ddd;
-	}
-	
-	.btn_search{
-		width: 60px;
-		height: 30px;
-	}
-	
-	.btn_normal{
-	
-		float:right;
-	    background-color: #111;
-		color:#eee;
-		margin:0;
-		width:100px;
-		height:40px;
-		font-size: 20px;
-	}
-	
-	.btn_normal:after{
-		clear:right;
-	}
-	
-	table{
-		width: 700px;
-		border-collapse: collapse;
-	}
-	
-	tr{	
-		height: 40px;
-	}
-	
-	.ntype{
-		text-align:center;
-		width: 100px;
-	}
-	
-	.ntitle{
-		text-indent: 20px;
-		width: 500px;
-	}
-	
-	.ndate{
-		text-align:center;		
-	}
-	
-	.bottom{
-
-		width: 700px;
-		height: 50px;
-		text-align: center;
-		/*border:1px black solid;*/
-		padding: 10px;
-		
-	}
-	.searchBar{
-		padding-top:5px;
-	}
-	.pageBtn{
-		clear:both;
-		width: 700px;
-	}
-</style>
+<link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/notice/notice_list.css">
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <h2>공지사항</h2>
 <hr>
@@ -167,6 +75,6 @@
 	
 
 </section>
-
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

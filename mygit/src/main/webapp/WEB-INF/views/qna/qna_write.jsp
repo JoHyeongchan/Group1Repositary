@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/qna/qna_write_update.css">
 <script type="text/javascript"></script>
 </head>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <body>
 	<section>
 	<h2>Q &amp; A</h2>
@@ -37,5 +37,6 @@
 	 	</div>
 	 </form>
 	</section>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

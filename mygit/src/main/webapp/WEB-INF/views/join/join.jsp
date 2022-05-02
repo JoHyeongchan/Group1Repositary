@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/join.css">
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
 	<br><br>
 	<div id="joinForm">
 		<form name="join_form" action="join.do" method="get">
@@ -77,5 +78,6 @@
 		</form>
 	</div>
 	<br><br>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

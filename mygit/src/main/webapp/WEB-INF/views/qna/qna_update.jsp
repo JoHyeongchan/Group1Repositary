@@ -9,9 +9,9 @@
 <script type="text/javascript"></script>
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 	<h2>Q &amp; A</h2>
 	<br><hr><br>
@@ -37,5 +37,6 @@
 	 	</div>
 	 </form>
 </section>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

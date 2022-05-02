@@ -8,6 +8,9 @@
 <script type="text/javascript"></script>
 </head>
 <body>
+
+	<jsp:include page="../../header.jsp"></jsp:include>
+
 <aside>
 <h2>봄이 오는 소리</h2>
 <p>봄이 느껴지는 작품을 모았습니다.</p><br>
@@ -34,5 +37,6 @@
 	</tr>
 </table>
 </section>
+<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>
