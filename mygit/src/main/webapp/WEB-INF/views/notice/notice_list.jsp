@@ -105,7 +105,7 @@
 <hr>
 <br>
 <!-- 테이블 -->
-<table border="1">
+<table>
 	<!--  테이블 1번째줄 -->
 	<tr>
 		<th class="ntype" >유형</th><th class="ntitle" align="center">제목</th><th class="ndate">등록일</th>
