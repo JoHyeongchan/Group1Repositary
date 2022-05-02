@@ -27,7 +27,7 @@
 		padding: 50px 100px;
 		box-sizing: border-box;
 		text-align: center;
-		border: 1px black solid;
+		/*border: 1px black solid;*/
 	}
 	
 	tr{
@@ -86,7 +86,7 @@
 		width: 700px;
 		height: 50px;
 		text-align: center;
-		border:1px black solid;
+		/*border:1px black solid;*/
 		padding: 10px;
 		
 	}
@@ -105,7 +105,7 @@
 <hr>
 <br>
 <!-- 테이블 -->
-<table>
+<table border="1">
 	<!--  테이블 1번째줄 -->
 	<tr>
 		<th class="ntype" >유형</th><th class="ntitle" align="center">제목</th><th class="ndate">등록일</th>
