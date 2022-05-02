@@ -100,6 +100,9 @@
 </style>
 </head>
 <body>
+<header>
+<jsp:include page="../header.jsp"></jsp:include>
+</header>
 <section>
 <h2>공지사항</h2>
 <hr>
