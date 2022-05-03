@@ -8,15 +8,11 @@
 <link rel="stylesheet" type="text/css" href="resources/css/offline/offline.css">
 </head>
 <body>
-<<<<<<< HEAD
+   <!-- header -->
 	<div id="nav">
 	<jsp:include page="../header.jsp"></jsp:include>
 	</div>
-=======
 
-	<jsp:include page="../header.jsp"></jsp:include>
-
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
 	<hr>
 	<section>
 			<div id="search">
