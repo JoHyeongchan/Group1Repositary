@@ -19,7 +19,7 @@
 <section>
 	<br><br><br>
 	<div id="loginForm">
-		<img src="http://localhost:9000/tp/resources/img/logo.png" id="logo">
+		<img src="http://localhost:9000/mygit/resources/images/logo.png" id="logo">
 		<br>
 		<form name="login_form" action="login.do" method="post">
 			<div>

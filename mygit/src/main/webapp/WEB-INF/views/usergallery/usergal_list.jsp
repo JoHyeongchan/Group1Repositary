@@ -5,6 +5,51 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+h1{
+	margin: 25px;
+	text-indent: 20px;
+	font-size: 35px;
+}
+
+form{
+	margin: 10px;
+}
+
+#searchBar{
+	margin: 5px;
+	margin-left: 20px;
+}
+
+.pageNum{
+	
+	clear:both;
+	text-align: center;
+	height:50px;
+}
+
+section{
+
+	width: 90%;
+	margin: 5%;
+}
+
+table{
+	margin: 0 auto;
+	margin-top: 30px;
+	overflow: hidden;
+}
+
+td{
+	display: inline-block;
+	width: 30%;
+	min-width: 300px;
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 400px;
+}
+
+</style>
 <script type="text/javascript"></script>
 </head>
 <body>
@@ -15,7 +60,7 @@
 	<section>
 		<h1>이용자갤러리</h1>
 		<form>
-			<input type="text" placeholder="컬렉션명을 입력해주세요.">
+			<input type="text" placeholder="컬렉션명을 입력해주세요." id=searchBar>
 			<button type="button">
 				<img src="#">
 			</button>
@@ -57,8 +102,7 @@
 						</small>
 					</div>
 				</td>
-			</tr>
-			<tr>
+			
 				<td onclick="location.href='usergal/item_list.do'"
 					style="cursor: pointer">
 					<div align="center">
@@ -94,8 +138,9 @@
 				</td>
 			</tr>
 		</table>
-		<div> <!-- 페이지 번호 -->
+		<div class="pageNum"> <!-- 페이지 번호 -->
 			<span>1</span>
+			&nbsp;&nbsp;&nbsp;
 			<span>2</span>
 		</div>
 		<hr>
