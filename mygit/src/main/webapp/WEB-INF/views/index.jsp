@@ -7,22 +7,9 @@
 <title>Insert title here</title>
 <script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mycgv/resources/js/mycgv.js"></script>
-<!-- <script>
+<script>
 
-	$(document).ready(function() {
-		$(".content_details").css("display","none");
-		
-		$(".imgh").mouseover(function () {
-			$(".content_details").css("display","block").css("position","relative").css("top","-50px")
-								 .css("background-color","#939597");
-		});
-		
-		$(".imgh").mouseout(function () {
-			$(".content_details").css("display","none");
-		});
-	});
-
-</script> -->
+</script>
 <link rel="stylesheet" type="text/css" href="resources/css/index.css">
 </head>
 <body>
