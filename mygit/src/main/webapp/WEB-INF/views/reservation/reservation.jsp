@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/reservation.css"></link>
 </head>
 <body>
+<header>
+<jsp:include page="../header.jsp"></jsp:include>
+</header>
 	<br><br>
 	<section>
 		<div id="list">
@@ -67,5 +70,6 @@
 			</form>
 		</div>
 	</section>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

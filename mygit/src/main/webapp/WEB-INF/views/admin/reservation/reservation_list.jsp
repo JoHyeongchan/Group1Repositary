@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="http://localhost:9000/tp/resources/css/reservation_list.css">
 </head>
 <body>
+
+		<jsp:include page="../../header.jsp"></jsp:include>
+
 	<section>
 		<form>
 			<h3>예약 검색</h3>
@@ -61,5 +64,6 @@
 			</tr>
 		</table>
 	</section>
+	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

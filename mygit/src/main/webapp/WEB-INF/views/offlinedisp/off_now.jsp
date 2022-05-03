@@ -5,30 +5,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="resources/css/offline/offline.css">
 </head>
 <body>
-	<nav>
-	</nav>
+<<<<<<< HEAD
+	<div id="nav">
+	<jsp:include page="../header.jsp"></jsp:include>
+	</div>
+=======
+
+	<jsp:include page="../header.jsp"></jsp:include>
+
+>>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
 	<hr>
 	<section>
-			<h1>현재전시</h1>
-			<form>
-				<input type="text" placeholder="작품명 또는 작가명을 검색해주세요.">
-				<button type="submit">검색</button>
+			<div id="search">
+			<h1 id="p_name">현재전시</h1>
+			<form id="searchForm">
+				<input type="text" placeholder="작품명 또는 작가명을 검색해주세요." id="searchbar">
+				<button type="submit" id="searchbutton">검색</button>
 			</form>
+			</div>
 			<hr>
-			<!-- 카테고리 버튼 -->
-			<span>전체</span>
-			<span>전시</span>
-			<span>필름앤비디오</span>
-			<span>다원예술</span>
-			<span>해외전시</span><br> 
+			<div id="categorybtn"><!-- 카테고리 버튼 -->
+			<button type="button" class="category">전체</button>
+			<button type="button" class="category">전시</button>
+			<button type="button" class="category">필름앤비디오</button>
+			<button type="button" class="category">다원예술</button>
+			<button type="button" class="category">해외전시</button><br> 
+			</div>
 			<table><!-- 컨텐츠목록 -->
 			<tr>
 				<td onclick="location.href='off_content_no.do'"
 					style="cursor: pointer">
 					<div align="center">
-						<img src="#" style="width: 200px; height: 200px;">
+						<img src="resources/images/offline/sea_of_data.png" style="width: 400px; height: 400px;" class="poster">
 					</div> <hr>
 					<div>
 						<span>가면무도회</span><br>
@@ -129,8 +140,8 @@
 		<div><!-- 맨 위로 버튼 -->
 			<img alt="" src="">
 		</div>
-		<footer>
-		</footer>
+		
 	</section>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

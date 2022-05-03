@@ -8,6 +8,9 @@
 <script type="text/javascript"></script>
 </head>
 <body>
+
+	<jsp:include page="../../header.jsp"></jsp:include>
+	
 <h1>이동훈 | 백목련 | 연도미상</h1>
 <hr>
 <div><img src="#" height="400px"></div>
@@ -50,5 +53,6 @@
 <div onclick="location.href='../on_content.do'">다음글<span>복숭아</span></div>
 <hr>
 <button type="button" onclick="location.href='../on_content.do'">목록</button>
+<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

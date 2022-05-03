@@ -42,9 +42,9 @@
 </script>
 </head>
 <body>
-<header>
+
 <jsp:include page="../header.jsp"></jsp:include>
-</header>
+
 <section>
 <table>
 
@@ -116,5 +116,6 @@
 </tr>
 </table>
 </section>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

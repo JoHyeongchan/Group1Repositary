@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<nav>
-	</nav>
+
+	<jsp:include page="../../header.jsp"></jsp:include>
+
 	<hr>
 	<aside>
 		<h1>봄이 오는 소리</h1>
@@ -62,7 +63,6 @@
 		</table>
 	</section>
 	<hr>
-	<footer>
-	</footer>
+<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -11,6 +11,10 @@
 </style>
 </head>
 <body>
+
+<jsp:include page="../header.jsp"></jsp:include>
+
+<section>
 	<div id="show">
 		<div id="show_left">
 			<img src = "resources/images/sojang2.png" id="show_image">
@@ -42,5 +46,7 @@
 			<input type="button" value="테마보기">
 		</div>
 	</div>
+	</section>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
