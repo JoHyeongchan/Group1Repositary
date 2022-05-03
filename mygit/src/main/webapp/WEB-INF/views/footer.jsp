@@ -29,6 +29,16 @@
 	footer div img:last-child {
 		width: 150px; height: 100px;
 	}
+	
+	#logo{
+		width: 240px;
+		height: 100px;
+	}
+	
+	#wa{
+		width: 160px;
+		height: 80px; 
+	}
 </style>
 </head>
 <body>
@@ -39,8 +49,8 @@
 			<p>© 2021 National Museum of Modern and Contemporary Art, Korea</p>
 		</div>
 		<div>
-			<img src="http://localhost:9000/mygit/resources/img/logo.png">
-			<img src="http://localhost:9000/mygit/resources/img/wa.jpg">
+			<img src="http://localhost:9000/mygit/resources/images/logo.png" id="logo">
+			<img src="http://localhost:9000/mygit/resources/images/wa.jpg" id="wa">
 		</div>
 	</footer>
 </body>
