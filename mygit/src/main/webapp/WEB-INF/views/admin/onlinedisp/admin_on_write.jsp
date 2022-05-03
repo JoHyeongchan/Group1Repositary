@@ -35,7 +35,7 @@
 	}
 	
 	.btn{
-	top: 860px; left:84%; position: static;
+	top: 870px; left:84%; width: 200px; position: relative;
 	}
 </style>
 </head>

@@ -5,6 +5,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mycgv/resources/js/mycgv.js"></script>
+<!-- <script>
+
+	$(document).ready(function() {
+		$(".content_details").css("display","none");
+		
+		$(".imgh").mouseover(function () {
+			$(".content_details").css("display","block").css("position","relative").css("top","-50px")
+								 .css("background-color","#939597");
+		});
+		
+		$(".imgh").mouseout(function () {
+			$(".content_details").css("display","none");
+		});
+	});
+
+</script> -->
 <link rel="stylesheet" type="text/css" href="resources/css/index.css">
 </head>
 <body>
@@ -36,28 +54,82 @@
 				<th><br><br>오프라인 전시회</th>
 			</thead>
 			<tr class=td1>
-				<td><a href="#"><img src="resources/images/modern1.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/modern2.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/modern3.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/modern4.PNG" width="250px" height="330px"></a></td>
-			</tr>
-			<tr class=td2>
-				<td><br>가면무도회<br><hr class="line"><br><br></td>
-				<td><br>나너의 기억<br><hr class="line"><br><br></td>
-				<td><br>미술로, 세계로<br><hr class="line"><br><br></td>
-				<td><br>function<br><hr class="line"><br><br></td>
+				<td>
+					<div class="container">
+					  <img src="resources/images/modern1.PNG" alt="image1" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">가면무도회</div>
+				</td>		
+
+				<td>
+					<div class="container">
+					  <img src="resources/images/modern2.PNG" alt="image2" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">나 너의 기억</div>
+				</td>
+				
+				<td>
+					<div class="container">
+					  <img src="resources/images/modern3.PNG" alt="image3" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">미술로, 세계로</div>
+				</td>	
+				<td>
+					<div class="container">
+					  <img src="resources/images/modern4.PNG" alt="image4" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">funtion</div>
+				</td>	
 			</tr>
 			<tr class=td1>
-				<td><a href="#"><img src="resources/images/modern5.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/modern6.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/modern7.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/modern8.PNG" width="250px" height="330px"></a></td>
-			</tr>
-			<tr class=td2>
-				<td><br>달뿌리-느리고 빠른 대화<br><hr class="line"><br><br></td>
-				<td><br>집우지주<br><hr class="line"><br><br></td>
-				<td><br>이건희컬렉션 특별전<br><hr class="line"><br><br></td>
-				<td><br>너랑 나랑<br><hr class="line"><br><br></td>
+				<td>
+					<div class="container">
+					  <img src="resources/images/modern5.PNG" alt="image5" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">달뿌리-느리고 빠른 대화</div>
+				</td>	
+				<td>
+					<div class="container">
+					  <img src="resources/images/modern6.PNG" alt="image6" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">집우지주</div>
+				</td>	
+				<td>
+					<div class="container">
+					  <img src="resources/images/modern7.PNG" alt="image7" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">이건희컬렉션 특별전</div>
+				</td>	
+				<td>
+					<div class="container">
+					  <img src="resources/images/modern8.PNG" alt="image8" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">너랑 나랑</div>
+				</td>	
 			</tr>
 		</table>
 		<br>
@@ -68,10 +140,100 @@
 				<th>온라인 전시회</th>
 			</thead>
 			<tr class=td1>
-				<td><a href="#"><img src="resources/images/sojang1.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/sojang2.png" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/sojang3.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/sojang4.png" width="250px" height="330px"></a></td>
+				<td>
+					<div class="container">
+					  <img src="resources/images/sojang1.PNG" alt="sojang1" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">국립현대미술관 소장품 300<br>(1910년대~1920년대)</div>
+				</td>		
+
+				<td>
+					<div class="container">
+					  <img src="resources/images/sojang2.png" alt="image2" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">국립현대미술관 소장품 300<br>(1930년대~1940년대)</div>
+				</td>
+				
+				<td>
+					<div class="container">
+					  <img src="resources/images/sojang3.PNG" alt="image3" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">국립현대미술관 소장품 300<br>(1950년대~1960년대)</div>
+				</td>	
+				<td>
+					<div class="container">
+					  <img src="resources/images/sojang4.png" alt="image4" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">국립현대미술관 소장품 300<br>(1970년대~1980년대)</div>
+				</td>	
+			</tr>
+			<tr class=td1>
+				<td>
+					<div class="container">
+					  <img src="resources/images/sojang5.PNG" alt="image5" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">국립현대미술관 소장품 300<br>(1990년대)</div>
+				</td>	
+				<td>
+					<div class="container">
+					  <img src="resources/images/sojang6.PNG" alt="image6" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">국립현대미술관 소장품 300<br>(2000년대)</div>
+				</td>	
+				<td>
+					<div class="container">
+					  <img src="resources/images/sojang7.png" alt="image7" class="image" width="250px" height="330px">
+					  <div class="middle">
+					    <div class="text">자세히보기</div>
+					  </div>
+					</div>
+					<div class="test">국립현대미술관 소장품 300<br>(2010년대)</div>
+				</td>	
+			</tr>
+			
+			
+			
+			
+			
+			<!-- <tr class=td1>
+				<td>
+					<div class="imgh">
+						<img src="resources/images/sojang1.PNG" width="250px" height="330px">
+					</div>
+				</td>
+				<td>
+					<div class="imgh">
+						<img src="resources/images/sojang2.png" width="250px" height="330px">
+					</div>
+				</td>
+				<td>
+					<div class="imgh">
+						<img src="resources/images/sojang3.PNG" width="250px" height="330px">
+					</div>
+				</td>
+				<td>
+					<div class="imgh">
+						<img src="resources/images/sojang4.png" width="250px" height="330px">
+					</div>
+				</td>
 			</tr>
 			<tr class=td2>
 				<td><br>국립현대미술관 소장품 300<br>(1910년대~1920년대)<hr class="line"><br><br></td>
@@ -80,15 +242,29 @@
 				<td><br>국립현대미술관 소장품 300<br>(1970년대~1980년대)<br> <hr class="line"><br><br></td>
 			</tr>
 			<tr class=td1>
-				<td><a href="#"><img src="resources/images/sojang5.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/sojang6.PNG" width="250px" height="330px"></a></td>
-				<td><a href="#"><img src="resources/images/sojang7.png" width="250px" height="330px"></a></td>
+				<td>
+					<div class="imgh">
+						<img src="resources/images/sojang5.PNG" width="250px" height="330px">
+					</div>
+				</td>
+				<td>
+					<div class="imgh">
+						<img src="resources/images/sojang6.PNG" width="250px" height="330px">
+					</div>
+				</td>
+				<td>
+					<div class="imgh">
+						<img src="resources/images/sojang7.png" width="250px" height="330px">
+					</div>
+				</td>
 			</tr>
 			<tr class=td2>
 				<td><br>국립현대미술관 소장품 300<br>(1990년대)<br><hr class="line"><br><br></td>
 				<td><br>국립현대미술관 소장품 300<br>(2000년대)<br><hr class="line"><br><br></td>
 				<td><br>국립현대미술관 소장품 300<br>(2010년대)<br><hr class="line"><br><br></td>
-			</tr>
+			</tr> -->
+			
+			
 		</table>
 	</div>
 </body>
