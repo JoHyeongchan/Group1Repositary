@@ -30,6 +30,10 @@ a:active, a:visited, a:link{
 	text-decoration: none;
 }
  
+a:hover{
+	font-weight:bolder;
+	text-decoration: underline;
+} 
  .linkBlock{
  	width: 180px;
  	height: 400px;
