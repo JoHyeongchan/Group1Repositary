@@ -71,11 +71,11 @@
 		<button type="button" class="btnSlide" id="btnSlide">접기&nbsp;&nbsp;&nbsp;&nbsp;△</button>
 		</td></tr>
 		<tr><td colspan="2"><hr></td></tr>
-		<tr onclick="location.href='../on_content.do'" class="bottomTr">
+		<tr onclick="location.href='../usergal/digigal_content.do'" class="bottomTr">
 			<td class="bottomBox">이전글</td><td><b>장미꽃</b></td>
 		</tr>
 		<tr><td colspan="2"><hr></td></tr>
-		<tr onclick="location.href='../on_content.do'" class="bottomTr">
+		<tr onclick="location.href='../usergal/digigal_content.do'" class="bottomTr">
 			<td class="bottomBox">다음글</td><td><b>복숭아</b></td>
 		</tr>
 		<tr><td colspan="2"><hr></td></tr>
