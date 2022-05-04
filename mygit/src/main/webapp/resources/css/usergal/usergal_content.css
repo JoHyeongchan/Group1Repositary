@@ -98,10 +98,17 @@ p{
 	border-radius: 15px;
 	background: white;
 	font-size: 12px;
-	font-family: "gulim";
+	font-family: dodum;
+	font-weight: bold;
+	
+	cursor:pointer;
 }
 small{
 	display:block;
 	float:right;
 	padding-top: 40px;
+}
+
+#descBox{
+	height:auto;
 }

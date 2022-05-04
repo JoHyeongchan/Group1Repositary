@@ -5,9 +5,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/usergal/usergal_content.css">
 <script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		var descBoxHeight=$("#descBox").css("height");
+			
+		$("#btnSlide").click(function(){
+			
+			var text=$("#btnSlide").text();
+			text=text.substring(0,2);
+			
+			if(text == '접기'){
+				$("#btnSlide").text('펼치기'+'\u00a0\u00a0\u00a0'+'▽');
+				$("#descBox").animate({
+					height:"50px"
+				},400);
+				
+			}else{
+				$("#btnSlide").text('접기'+'\u00a0\u00a0\u00a0\u00a0'+'△');
+				$("#descBox").animate({
+					height:descBoxHeight
+				},400);
+				
+			}
+		});
+		
+	});
+</script>
 </head>
 <body>
 	
@@ -27,7 +53,7 @@
 		</div>
 		<div class="contentDesc">
 		<table><tr><td colspan="2">
-			<p id="descBox">
+			<p id="descBox" style="overflow:hidden;">
 				▶과천관 야외조각장<br> <br> <b>김창곤, ‹합 86-7›, 1986</b> 홍익대학교 조소과를
 				졸업하고 이탈리아에서 유학한 김창곤(1955-)은 돌의 물성에 매료되어 거석(巨石)을 깎는 조각 작업을 오랫동안 지속해왔다
 				. 그는 거대한 돌에서 단순함과 무게, 침묵과 영원성이라는 상징성을 발견하였으며, 조각 과정에서 작가의 개입을 최소화하여
@@ -42,7 +68,7 @@
 			</p>
 			
 		
-		<button type="button" class="btnSlide">접기&nbsp;&nbsp;&nbsp;&nbsp;△</button>
+		<button type="button" class="btnSlide" id="btnSlide">접기&nbsp;&nbsp;&nbsp;&nbsp;△</button>
 		</td></tr>
 		<tr><td colspan="2"><hr></td></tr>
 		<tr onclick="location.href='../on_content.do'" class="bottomTr">

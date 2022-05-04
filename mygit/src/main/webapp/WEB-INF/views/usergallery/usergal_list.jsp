@@ -19,7 +19,7 @@
 		<form id="colForm">
 			<input type="text" placeholder="컬렉션명을 입력해주세요." id=searchBar name="searchtext">
 			<button type="button" class=btnCalModal>
-				<img src="#">
+				<img src="http://localhost:9000/mygit/resources/images/usergal/search1.PNG">
 			</button>
 			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>
 		</form>
