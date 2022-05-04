@@ -83,6 +83,7 @@
 		width:100px;
 		height:40px;
 		font-size: 20px;
+		border-radius:20px;
 	}
 	
 	.btn_small{
@@ -90,6 +91,7 @@
 		margin:10px;
 		width:60px;
 		height:26px;
+		border-radius:3px;
 	}
 	
 	section{
