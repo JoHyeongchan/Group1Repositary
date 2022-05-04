@@ -6,84 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript"></script>
-<style>
-
-section{
-	width: 80%;
-	margin: 0 auto;
-	padding-top:50px;
-}
-h1{
-	display:inline-block;
-	font-size: 35px;
-	font-weight: bolder;
-	
-	padding-bottom: 50px;
-}
-
-.imgContentBox{
-	text-align: center;
-	min-height: 500px;
-	padding: 50px;
-}
-
-table{
-	
-	width: 100%;
-	font-size: 15px;
-}
-th{
-	padding: 20px;
-	width: 100px;
-}
-
-td{
-	padding: 10px;
-}
-
-tr{
-
-	height: 20px;
-}
-
-p{
-	width: 60%;
-	display: block;
-	margin-left: 50px;
-}
-
-.bottomBox{
-	padding-left: 50px;
-	
-}
-
-.bottomTr{
-	cursor:pointer;
-}
-
-.dispIcon{
-	width: 60px;
-	height: 25px;
-	color:white;
-	background-color: darkgray;
-	text-align: center;
-	padding-top: 5px;
-	border-radius: 15px;
-}
-
-#dispImg{
-	width: 400px;
-	height: 500px;
-	border: lightgray 1px solid;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/usergal/usergal_content.css">
 </head>
 <body>
 <jsp:include page="../../header.jsp"></jsp:include>
 <section>
 <h1>이동훈 | 백목련 | 연도미상</h1>
 <hr>
-<div class="imgContentBox"><img src="#" height="400px" id="dispImg"></div>
+<div class="imgContentBox"><img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" height="400px" id="dispImg"></div>
 <hr>
 <div class="contentDescTable">
 <table>
@@ -126,9 +56,10 @@ p{
 
 	<tr><td colspan="2"><hr></td></tr>
 </table>
-</div>	 
+</div>
+	<button type="button" onclick="location.href='../on_content.do'" class="btnList">목록</button>	 
 </section>	
-<button type="button" onclick="location.href='../on_content.do'">목록</button>
+
 <jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

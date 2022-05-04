@@ -24,7 +24,7 @@
 <aside>
 <h2 id="usergallTitle">봄이 오는 소리</h2>
 <p id="usergalDesc">봄이 느껴지는 작품을 모았습니다.</p><br>
-<button type="button" class="btnEmail">codms95**@gmail.com 갤러리</button><br>
+<button type="button" class="btnEmail" style="cursor: pointer;">codms95**@gmail.com 갤러리</button><br>
 <small>조회수 78 | 스크랩 * | 좋아요 ♡</small>
 </aside>
 
@@ -33,16 +33,16 @@
 <span onclick="location.href='digigal_list.do'" class="subMenu" id="digigalList">디지털미술관</span></h2>
 <table>
 	<tr align="center">
-	<td onclick="location.href='item_content.do'" class="itemBox">
-	<div align="center" class="itemImg"><img src="#" style="width:250px; height:250px"></div>
+	<td onclick="location.href='item_content.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">봄 풍경<br>오지호</div>
 	</td>
-	<td onclick="location.href='item_content.do'" class="itemBox">
-	<div align="center" class="itemImg"><img src="#" style="width:250px; height:250px"></div>
+	<td onclick="location.href='item_content.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_1.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">효자리 살구꽃<br>이동훈</div>
 	</td>
-	<td onclick="location.href='item_content.do'" class="itemBox">
-	<div align="center" class="itemImg"><img src="#" style="width:250px; height:250px"></div>
+	<td onclick="location.href='item_content.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_2.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">꽃을 든 여인<br>천경자</div>
 	</td>
 	</tr>
