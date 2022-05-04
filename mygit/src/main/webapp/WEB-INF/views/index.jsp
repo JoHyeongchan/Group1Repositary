@@ -5,18 +5,76 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/mycgv/resources/js/mycgv.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
  <script>
-    document.getElementById("text").onclick = function() {
-        document.getElementById("modal").style.display="block";
-    }
-   
-    document.getElementById("modal_close_btn").onclick = function() {
-        document.getElementById("modal").style.display="none";
-    }   
+
+ 	$(document).ready(function(){
+ 		$(".text").click(function(){	
+ 			
+ 			$('.modal').css('display','block');
+ 			$('.modal_content').css('display','block');
+ 			
+ 		});
+ 		
+ 		$('#modal_close_btn').click(function() {
+ 			$('.modal').css('display','none');
+ 			$('.modal_content').css('display','none');
+		})
+ 		
+ 	});
 </script>
-<link rel="stylesheet" type="text/css" href="resources/css/index.css">
+<style type="text/css">
+		.modal_content{
+		background-color: white;
+		width: 1000px;
+		height: 550px;
+		position: fixed;
+		left: 22%;
+		top: 15%;
+		display: none;
+		padding: 40px;
+	}
+		.modal{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		display: none;
+		left : 0;
+		top: 0;
+		background-color: rgba(147,149,151,0.9);
+		}
+
+	.modal_picture{
+		width: 28%;
+		height: 80%;
+		float: left;
+		padding-left: 50px;
+	}
+	.modal_info{
+		width: 60%;
+		height: 80%;
+		float: right;
+	}
+	.modal_content h1{
+		padding-bottom: 20px; 
+	}
+	
+	.modal_content hr{
+		margin-bottom: 40px; 
+	}
+	#modal_close_btn{
+		position : absolute;
+		left: 45%;
+		top: 93%;
+	}
+	#modal_detail_btn{
+		position: absolute;
+		left: 52%;
+		top: 93%;
+	}
+	}
+</style>
+<link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/index.css">
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -90,7 +148,7 @@
 			<tr class=td1>
 				<td>
 					<div class="container">
-					  <img src="resources/images/modern5.PNG" alt="image5" class="image" width="250px" height="330px">
+					  <img src="resources/images/modern5.PNG" alt="image5" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -99,7 +157,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/modern6.PNG" alt="image6" class="image" width="250px" height="330px">
+					  <img src="resources/images/modern6.PNG" alt="image6" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -108,7 +166,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/modern7.PNG" alt="image7" class="image" width="250px" height="330px">
+					  <img src="resources/images/modern7.PNG" alt="image7" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -117,7 +175,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/modern8.PNG" alt="image8" class="image" width="250px" height="330px">
+					  <img src="resources/images/modern8.PNG" alt="image8" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -136,7 +194,7 @@
 			<tr class=td1>
 				<td>
 					<div class="container">
-					  <img src="resources/images/sojang1.PNG" alt="sojang1" class="image" width="250px" height="330px">
+					  <img src="resources/images/sojang1.PNG" alt="sojang1" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -146,7 +204,7 @@
 
 				<td>
 					<div class="container">
-					  <img src="resources/images/sojang2.png" alt="image2" class="image" width="250px" height="330px">
+					  <img src="resources/images/sojang2.png" alt="image2" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -156,7 +214,7 @@
 				
 				<td>
 					<div class="container">
-					  <img src="resources/images/sojang3.PNG" alt="image3" class="image" width="250px" height="330px">
+					  <img src="resources/images/sojang3.PNG" alt="image3" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -165,7 +223,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/sojang4.png" alt="image4" class="image" width="250px" height="330px">
+					  <img src="resources/images/sojang4.png" alt="image4" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -176,7 +234,7 @@
 			<tr class=td1>
 				<td>
 					<div class="container">
-					  <img src="resources/images/sojang5.PNG" alt="image5" class="image" width="250px" height="330px">
+					  <img src="resources/images/sojang5.PNG" alt="image5" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -185,7 +243,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/sojang6.PNG" alt="image6" class="image" width="250px" height="330px">
+					  <img src="resources/images/sojang6.PNG" alt="image6" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -194,7 +252,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/sojang7.png" alt="image7" class="image" width="250px" height="330px">
+					  <img src="resources/images/sojang7.png" alt="image7" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -204,14 +262,38 @@
 			</tr>
 		</table>
 	</div>
-	<div id="modal">
-    <div class="modal_content">
-        <h2>확인</h2>
-        <p>실행 완료되었습니다!</p>
-        <button type="button" id="modal_close_btn">닫기</button>    
+    <div class="modal">
+	    <div class="modal_content">
+	        <h1>가면 무도회</h1>
+	        <hr>
+	        <div class="modal_picture">
+	        	<img src="resources/images/modern1.PNG" alt="image1" class="image" width="220px" height="300px">
+	        </div>
+	        <div class="modal_info">
+				<h3>기간</h3>
+				<a>2022-04-13 ~ 2022-07-31</a>
+				<br><br>
+				<h3>주최/후원</h3>
+				<a>국립현대미술관</a>
+				<br><br>
+				<h3>장소</h3>
+				<a>과천 1원형전시실</a>
+				<br><br>
+				<h3>관람료</h3>
+				<a>0</a>
+				<br><br>
+				<h3>작가</h3>
+				<a>권진규, 남관, 크리스티앙 볼탕스키, 성능경, 김정욱, 자크 블라스 등</a>
+				<br><br>
+				<h3>작품수</h3>
+				<a>국내ㆍ외 주요작가의 작품 40여 점 (현대미술 전 부문)</a>
+			</div>
+	        <div class="modal_btn">
+	        	<button type="button" id="modal_close_btn">닫기</button>   
+	        	<button type="button" id="modal_detail_btn">자세히 보기</button> 
+	        </div>
+	    </div>
     </div>
-    <div class="modal_layer"></div>
-</div>
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
