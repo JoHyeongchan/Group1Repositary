@@ -7,8 +7,14 @@
 <title>Insert title here</title>
 <script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mycgv/resources/js/mycgv.js"></script>
-<script>
-
+ <script>
+    document.getElementById("text").onclick = function() {
+        document.getElementById("modal").style.display="block";
+    }
+   
+    document.getElementById("modal_close_btn").onclick = function() {
+        document.getElementById("modal").style.display="none";
+    }   
 </script>
 <link rel="stylesheet" type="text/css" href="resources/css/index.css">
 </head>
@@ -44,7 +50,7 @@
 			<tr class=td1>
 				<td>
 					<div class="container">
-					  <img src="resources/images/modern1.PNG" alt="image1" class="image" width="250px" height="330px">
+					  <img src="resources/images/modern1.PNG" alt="image1" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -54,7 +60,7 @@
 
 				<td>
 					<div class="container">
-					  <img src="resources/images/modern2.PNG" alt="image2" class="image" width="250px" height="330px">
+					  <img src="resources/images/modern2.PNG" alt="image2" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -64,7 +70,7 @@
 				
 				<td>
 					<div class="container">
-					  <img src="resources/images/modern3.PNG" alt="image3" class="image" width="250px" height="330px">
+					  <img src="resources/images/modern3.PNG" alt="image3" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -73,7 +79,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/modern4.PNG" alt="image4" class="image" width="250px" height="330px">
+					  <img src="resources/images/modern4.PNG" alt="image4" class="image" width="220px" height="300px">
 					  <div class="middle">
 					    <div class="text">자세히보기</div>
 					  </div>
@@ -196,65 +202,16 @@
 					<div class="test">국립현대미술관 소장품 300<br>(2010년대)</div>
 				</td>	
 			</tr>
-			
-			
-			
-			
-			
-			<!-- <tr class=td1>
-				<td>
-					<div class="imgh">
-						<img src="resources/images/sojang1.PNG" width="250px" height="330px">
-					</div>
-				</td>
-				<td>
-					<div class="imgh">
-						<img src="resources/images/sojang2.png" width="250px" height="330px">
-					</div>
-				</td>
-				<td>
-					<div class="imgh">
-						<img src="resources/images/sojang3.PNG" width="250px" height="330px">
-					</div>
-				</td>
-				<td>
-					<div class="imgh">
-						<img src="resources/images/sojang4.png" width="250px" height="330px">
-					</div>
-				</td>
-			</tr>
-			<tr class=td2>
-				<td><br>국립현대미술관 소장품 300<br>(1910년대~1920년대)<hr class="line"><br><br></td>
-				<td><br>국립현대미술관 소장품 300<br>(1930년대~1940년대)<br><hr class="line"><br><br></td>
-				<td><br>국립현대미술관 소장품 300<br>(1950년대~1960년대)<br><hr class="line"><br><br></td>
-				<td><br>국립현대미술관 소장품 300<br>(1970년대~1980년대)<br> <hr class="line"><br><br></td>
-			</tr>
-			<tr class=td1>
-				<td>
-					<div class="imgh">
-						<img src="resources/images/sojang5.PNG" width="250px" height="330px">
-					</div>
-				</td>
-				<td>
-					<div class="imgh">
-						<img src="resources/images/sojang6.PNG" width="250px" height="330px">
-					</div>
-				</td>
-				<td>
-					<div class="imgh">
-						<img src="resources/images/sojang7.png" width="250px" height="330px">
-					</div>
-				</td>
-			</tr>
-			<tr class=td2>
-				<td><br>국립현대미술관 소장품 300<br>(1990년대)<br><hr class="line"><br><br></td>
-				<td><br>국립현대미술관 소장품 300<br>(2000년대)<br><hr class="line"><br><br></td>
-				<td><br>국립현대미술관 소장품 300<br>(2010년대)<br><hr class="line"><br><br></td>
-			</tr> -->
-			
-			
 		</table>
 	</div>
+	<div id="modal">
+    <div class="modal_content">
+        <h2>확인</h2>
+        <p>실행 완료되었습니다!</p>
+        <button type="button" id="modal_close_btn">닫기</button>    
+    </div>
+    <div class="modal_layer"></div>
+</div>
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
