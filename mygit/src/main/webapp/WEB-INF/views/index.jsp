@@ -23,57 +23,6 @@
  		
  	});
 </script>
-<style type="text/css">
-		.modal_content{
-		background-color: white;
-		width: 1000px;
-		height: 550px;
-		position: fixed;
-		left: 22%;
-		top: 15%;
-		display: none;
-		padding: 40px;
-	}
-		.modal{
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		display: none;
-		left : 0;
-		top: 0;
-		background-color: rgba(147,149,151,0.9);
-		}
-
-	.modal_picture{
-		width: 28%;
-		height: 80%;
-		float: left;
-		padding-left: 50px;
-	}
-	.modal_info{
-		width: 60%;
-		height: 80%;
-		float: right;
-	}
-	.modal_content h1{
-		padding-bottom: 20px; 
-	}
-	
-	.modal_content hr{
-		margin-bottom: 40px; 
-	}
-	#modal_close_btn{
-		position : absolute;
-		left: 45%;
-		top: 93%;
-	}
-	#modal_detail_btn{
-		position: absolute;
-		left: 52%;
-		top: 93%;
-	}
-	}
-</style>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/index.css">
 </head>
 <body>

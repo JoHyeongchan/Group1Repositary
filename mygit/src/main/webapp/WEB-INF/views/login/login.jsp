@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/login.css">
 <script type="text/javascript">
 	var login_result = "${login_result}";
@@ -33,6 +34,9 @@
 			<a href="#">아이디 찾기</a>
 			<a href="#">비밀번호 찾기</a>
 		</div>
+	</div>
+	<div>
+	
 	</div>
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>
