@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/usergal/usergal_content.css">
+<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	
@@ -16,15 +18,16 @@
 		<h1>[오늘 이 작품] 봄 과천| 야외조각장</h1>
 		<small>조회수 1945 | 스크랩 <img alt="" src=""> | 마이갤러리 + | 좋아요 <img alt="" src=""> | <img alt="" src=""></small>
 		<hr> 
-		<div>
+		<div class="imgContentBox">
 			<iframe width="740" height="388"
 				src="https://www.youtube.com/embed/LcmRFg3-a8U"
 				title="YouTube video player" frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen></iframe>
 		</div>
-		<div>
-			<p>
+		<div class="contentDesc">
+		<table><tr><td colspan="2">
+			<p id="descBox">
 				▶과천관 야외조각장<br> <br> <b>김창곤, ‹합 86-7›, 1986</b> 홍익대학교 조소과를
 				졸업하고 이탈리아에서 유학한 김창곤(1955-)은 돌의 물성에 매료되어 거석(巨石)을 깎는 조각 작업을 오랫동안 지속해왔다
 				. 그는 거대한 돌에서 단순함과 무게, 침묵과 영원성이라는 상징성을 발견하였으며, 조각 과정에서 작가의 개입을 최소화하여
@@ -37,19 +40,24 @@
 				자연스럽게 연결된다. 화강석을 부드럽게 다듬은 표면은 아기의 고운 피부를 연상시킨다. ‘평화’라는 주제를 표현하기 위해
 				자연과 어린이를 결합시킨 작품으로 시각적으로는 경쾌한 운동감이 돋보인다.
 			</p>
-		</div>
-		<button type="button" onclick="">접기</button>
-		<div onclick="location.href='../on_content.do'">
-			이전글<span>장미꽃</span>
-		</div>
-		<hr>
-		<div onclick="location.href='../on_content.do'">
-			다음글<span>복숭아</span>
-		</div>
-		<hr>
-		<button type="button" onclick="location.href='../on_content.do'">목록</button>
+			
+		
+		<button type="button" class="btnSlide">접기&nbsp;&nbsp;&nbsp;&nbsp;△</button>
+		</td></tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr onclick="location.href='../on_content.do'" class="bottomTr">
+			<td class="bottomBox">이전글</td><td><b>장미꽃</b></td>
+		</tr>
+		<tr><td colspan="2"><hr></td></tr>
+		<tr onclick="location.href='../on_content.do'" class="bottomTr">
+			<td class="bottomBox">다음글</td><td><b>복숭아</b></td>
+		</tr>
+		<tr><td colspan="2"><hr></td></tr>
+	</table>
+	</div>	
+		<button type="button" onclick="location.href='../on_content.do'" class="btnList">목록</button>
 	</section>
-	<hr>
+	
 <jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

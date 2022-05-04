@@ -78,6 +78,9 @@ table{
 	overflow:hidden;
 	border: lightgray 1px solid;
 }
+.itemBox:hover{
+	cursor: pointer;
+}
 
 .itemImg{
 	padding: 0;
@@ -112,6 +115,7 @@ table{
 	color:white;
 	border-radius: 25px;
 	background-color: black;
+	
 }
 
 small{

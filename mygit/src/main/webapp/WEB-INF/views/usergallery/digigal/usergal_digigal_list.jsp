@@ -24,7 +24,7 @@
 	<aside>
 <h2 id="usergallTitle">봄이 오는 소리</h2>
 <p id="usergalDesc">봄이 느껴지는 작품을 모았습니다.</p><br>
-<button type="button" class="btnEmail">codms95**@gmail.com 갤러리</button><br>
+<button type="button" class="btnEmail" style="cursor: pointer;">codms95**@gmail.com 갤러리</button><br>
 <small>조회수 78 | 스크랩 * | 좋아요 ♡</small>
 </aside>
 
@@ -35,16 +35,16 @@
 		</h2>
 		<table>
 	<tr align="center">
-	<td onclick="location.href='item_content.do'" class="itemBox">
-	<div align="center" class="itemImg"><img src="#" style="width:250px; height:250px"></div>
+	<td onclick="location.href='digigal_content.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/userdgal1.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">[오늘, 이 작품]봄,과천|야외조각장</div>
 	</td>
-	<td onclick="location.href='item_content.do'" class="itemBox">
-	<div align="center" class="itemImg"><img src="#" style="width:250px; height:250px"></div>
+	<td onclick="location.href='digigal_content.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/userdgal2.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">[오늘, 이 작품]폴아이즈피리|정물,<br>1955|꽃, 연도미상</div>
 	</td>
-	<td onclick="location.href='item_content.do'" class="itemBox">
-	<div align="center" class="itemImg"><img src="#" style="width:250px; height:250px"></div>
+	<td onclick="location.href='digigal_content.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/userdgal3.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">[오늘, 이 작품]미술관에서 만난 꽃</div>
 	</td>
 	</tr>
