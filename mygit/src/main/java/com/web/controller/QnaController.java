@@ -17,6 +17,11 @@ public class QnaController {
 		return "/qna/qna_write";
 	}
 	
+	@RequestMapping(value="/qna_update.do",method = RequestMethod.GET)
+	public String qnaUpdate() {
+		return "/qna/qna_update";
+	}
+	
 	@RequestMapping(value="/qna_content.do",method = RequestMethod.GET)
 	public String qnaContent() {
 		return "/qna/qna_content";

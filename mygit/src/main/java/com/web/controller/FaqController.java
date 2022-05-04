@@ -16,4 +16,9 @@ public class FaqController {
 	public String faqWrite() {
 		return "/faq/faq_write";
 	}
+	
+	@RequestMapping(value="/faq_update.do",method=RequestMethod.GET)
+	public String faqUpdate() {
+		return "/faq/faq_write";
+	}
 }

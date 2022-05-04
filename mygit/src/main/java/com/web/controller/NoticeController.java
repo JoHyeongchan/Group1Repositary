@@ -21,4 +21,9 @@ public class NoticeController {
 	public String noticeWrite() {
 		return "/notice/notice_write";
 	}
+	
+	@RequestMapping(value="/notice_update.do",method=RequestMethod.GET)
+	public String noticeUpdate() {
+		return "/notice/notice_update";
+	}
 }

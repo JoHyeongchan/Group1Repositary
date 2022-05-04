@@ -19,6 +19,10 @@ public class CommentController {
 	
 	@RequestMapping(value="/comment_write.do",method=RequestMethod.GET)
 	public String commentWrite(){
-		return "/comment/comment_content";
+		return "/comment/comment_write";
+	}
+	@RequestMapping(value="/comment_update.do",method=RequestMethod.GET)
+	public String commentUpdate(){
+		return "/comment/comment_update";
 	}
 }

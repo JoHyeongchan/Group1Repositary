@@ -12,6 +12,7 @@
 <script src="http://localhost:9000/mygit/resources/js/member_list.js"></script>
 </head>
 <body>
+<jsp:include page="../../header.jsp"></jsp:include>
 	<br><br>
 	<section>
 		<h3>상세 검색</h3>
@@ -90,5 +91,6 @@
 			 -->
 		</table>
 	</section>
+<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>

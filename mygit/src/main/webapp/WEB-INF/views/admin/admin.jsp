@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<jsp:include page="../header.jsp"></jsp:include>
+<section>
 <h1>관리자 페이지</h1>
 <hr>
 <table>
@@ -25,5 +28,7 @@
 		<td><button type="button" onclick="location.href='admin/onwrite.do'">전시관리</button>
 	</tr>
 </table>
+</section>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

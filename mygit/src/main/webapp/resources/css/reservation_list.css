@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+	section {
+		width: 90%;
+		margin: 0 auto;
+		border: 1px solid black;
+		padding: 50px;
+		box-sizing: border-box;
+	}
+	table {
+		width: 100%; margin: 0 auto;
+		border-spacing: 0;
+		border-collapse: collapse;
+		padding: 5px;
+	}
+	form>div {
+		text-align: center;
+	}
+	form>div>button {
+		width: 80px; height: 30px;
+		background-color: silver;
+		border: 2px solid darkgray;
+		border-radius: 15px;
+		font-weight: bold;
+		font-size: 15px;
+		margin: 0 20px;
+	}
+	#res_search_result tr td:last-child {
+		width: 100px;
+		text-align: center;
+	}
