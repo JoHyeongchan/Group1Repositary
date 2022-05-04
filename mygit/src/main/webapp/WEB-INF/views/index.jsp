@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
- <script>
+<script>
 
  	$(document).ready(function(){
  		$(".text").click(function(){	

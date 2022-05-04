@@ -12,7 +12,55 @@
 	if(login_result=="fail") {
 		alert("Wrong ID or PW. Try again");
 	}
+
+ 	$(document).ready(function(){
+ 
+ 		$("#id_find").click(function(){	
+ 			$('.find_modal').css('display','block');
+ 			$('.find_content').css('display','block');
+ 			
+ 		});
+ 		
+ 		$('#pass_find').click(function() {
+ 			$('.find_modal').css('display','none');
+ 			$('.find_content').css('display','none');
+		});
+ 		
+ 	});
+	
+	
 </script>
+<style type="text/css">
+	.find_modal{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: none;
+	left : 0;
+	top: 0;
+	background-color: rgba(147,149,151,0.9);
+	}
+	.find_content{
+	background-color: white;
+	width: 350px;
+	height: 600px;
+	position: fixed;
+	left: 39%;
+	top: 15%;
+	display: none;
+	padding: 40px;
+	}
+	#id_find{
+	cursor: pointer;
+	}
+	#pass_find{
+	cursor: pointer;
+	}
+	.find_content hr{
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	}
+</style>
 </head>
 </head>
 <body>
@@ -31,12 +79,23 @@
 		</form>
 		<div id="aux">
 			<a href="join.do">회원가입</a>
-			<a href="#">아이디 찾기</a>
-			<a href="#">비밀번호 찾기</a>
+			<a id="id_find">아이디 찾기</a>
+			<a id="pass_find">비밀번호 찾기</a>
 		</div>
 	</div>
-	<div>
-	
+	<div class="find_modal">
+		<div class="find_content">
+			<h1>아이디 찾기</h1>
+			<hr>
+			<h3>이름과 연락처를 입력해주세요</h3>
+			<br>
+			<h4 style='text-align : center'>이름</h4>
+			<input type="text" alt="이름을 입력하세요">
+			<br>
+			<h4 style='text-align : center'>연락처</h4>
+			<input type="checkbox">-<input type="text">-<input type="text">
+			
+		</div>
 	</div>
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>
