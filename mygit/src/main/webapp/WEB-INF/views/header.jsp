@@ -33,7 +33,7 @@
 			<ul>
 				<li><a href="http://localhost:9000/mygit/comment_list.do" class="nav_item1">관람·참여</a></li>
 				<li><a href="http://localhost:9000/mygit/off_now.do" class="nav_item1">전시</a></li>
-				<li><a href="http://localhost:9000/mygit/on_show.do" class="nav_item1">디지털미술관</a></li>
+				<li><a href="http://localhost:9000/mygit/online/on_show.do" class="nav_item1">디지털미술관</a></li>
 				<li><a href="http://localhost:9000/mygit/reservation.do" class="nav_item1">예약</a></li>
 			</ul>
 			</div>
