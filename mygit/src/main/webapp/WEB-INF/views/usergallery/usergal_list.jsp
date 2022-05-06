@@ -13,7 +13,7 @@
 	
 	<jsp:include page="../header.jsp"></jsp:include>
 	
-	<hr> 
+	
 	<section>
 		<h1>이용자갤러리</h1>
 		<form id="colForm">
@@ -26,7 +26,7 @@
 		<hr>
 		<table>
 			<tr>
-				<td onclick="location.href='usergal/item_list.do'"
+				<td onclick="location.href='collectionList.do'"
 					style="cursor: pointer">
 					<div align="center">
 						<img src="http://localhost:9000/mygit/resources/images/usergal/user1.PNG" style="width: 200px; height: 200px;">
@@ -37,7 +37,7 @@
 						</small>
 					</div>
 				</td>
-				<td onclick="location.href='usergal/item_list.do'"
+				<td onclick="location.href='collectionList.do'"
 					style="cursor: pointer">
 					<div align="center">
 						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
@@ -48,7 +48,7 @@
 						</small>
 					</div>
 				</td>
-				<td onclick="location.href='usergal/item_list.do'"
+				<td onclick="location.href='collectionList.do'"
 					style="cursor: pointer">
 					<div align="center">
 						<img src="http://localhost:9000/mygit/resources/images/usergal/user3.PNG" style="width: 200px; height: 200px;">
@@ -60,7 +60,7 @@
 					</div>
 				</td>
 			
-				<td onclick="location.href='usergal/item_list.do'"
+				<td onclick="location.href='collectionList.do'"
 					style="cursor: pointer">
 					<div align="center">
 						<img src="http://localhost:9000/mygit/resources/images/usergal/user4.PNG" style="width: 200px; height: 200px;">
@@ -71,7 +71,7 @@
 						</small>
 					</div>
 				</td>
-				<td onclick="location.href='usergal/item_list.do'"
+				<td onclick="location.href='collectionList.do'"
 					style="cursor: pointer">
 					<div align="center">
 						<img src="http://localhost:9000/mygit/resources/images/usergal/user5.PNG" style="width: 200px; height: 200px;">
@@ -82,7 +82,7 @@
 						</small>
 					</div>
 				</td>
-				<td onclick="location.href='usergal/item_list.do'"
+				<td onclick="location.href='collectionList.do'"
 					style="cursor: pointer">
 					<div align="center">
 						<img src="http://localhost:9000/mygit/resources/images/usergal/user6.PNG" style="width: 200px; height: 200px;">

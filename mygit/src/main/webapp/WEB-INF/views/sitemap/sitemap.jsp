@@ -43,9 +43,10 @@
 	<h3>디지털미술관</h3>
 	<hr>
 	<table class="list">
-	<tr><td><a href="on_show.do">온라인전시</a></td></tr>
-	<tr><td><a href="on_content.do">온라인소장품</a></td></tr>
-	<tr><td><a href="usergal_list.do">사용자갤러리</a></td></tr>
+	<tr><td><a href="online/on_show.do">온라인전시</a></td></tr>
+	<tr><td><a href="online/collectionList.do">소장품</a></td></tr>
+	<tr><td><a href="online/digitalMovList.do">온라인컨텐츠</a></td></tr>
+	<tr><td><a href="usergal/usergal_list.do">사용자갤러리</a></td></tr>
 	</table>
 </div>
 
