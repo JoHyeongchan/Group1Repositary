@@ -50,6 +50,10 @@ tr{
 	height: 400px;
 }
 
+.digitalMvImg{
+	max-width: 100%;
+	max-height: 200px;	
+}
 .digitalColBox{
 	display: inline-block;
 	width: 15%;

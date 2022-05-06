@@ -23,7 +23,7 @@
 				<td onclick="location.href='digitalMovInfo.do'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user1.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv1.PNG" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo"> 
 						<span class="itemCategory">오늘, 이 작품</span>
@@ -34,7 +34,7 @@
 				<td onclick="location.href='digitalMovInfo.do'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv2.PNG" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemCategory">오늘, 이 작품</span>
@@ -45,7 +45,7 @@
 				<td onclick="location.href='digitalMovInfo.do'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv3.PNG" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemCategory">작품 &amp; 작가</span>
@@ -56,7 +56,7 @@
 				<td onclick="location.href='digitalMovInfo.do'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv4.PNG" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemCategory">큐레이터 전시 해설</span>
@@ -67,10 +67,10 @@
 				<td onclick="location.href='digitalMovInfo.do'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user6.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv5.PNG" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo">
-						<span class="itemCategory">오늘, 이작품</span>
+						<span class="itemCategory">오늘, 이 작품</span>
 						<span class="itemTitle">[오늘, 이 작품]도널드 저드 | 무제 | 1980년(short ver.)</span>
 						<span class="itemDay">2022-05-02|조회수:37</span>
 					</div>
@@ -78,10 +78,10 @@
 				<td onclick="location.href='digitalMovInfo.do'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv6.PNG" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo">
-						<span class="itemCategory">오늘,이 작품</span>
+						<span class="itemCategory">오늘, 이 작품</span>
 						<span class="itemTitle">[오늘, 이 작품]도널드 저드 | 무제 | 1980년</span>
 						<span class="itemDay">2022-05-02|조회수:236</span>
 					</div>
@@ -89,7 +89,7 @@
 				<td onclick="location.href='digitalMovInfo.do'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv7.PNG" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemCategory">청소년</span>
@@ -100,7 +100,7 @@
 				<td onclick="location.href='digitalMovInfo.do'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv8.PNG" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemCategory">청소년</span>
