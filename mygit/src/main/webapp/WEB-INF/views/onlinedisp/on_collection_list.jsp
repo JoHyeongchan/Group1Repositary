@@ -22,7 +22,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer"  class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user1.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col1.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">김익영<br>KIM Yik-yung</span>
@@ -33,7 +33,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col2.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">김익영<br>KIM Yik-yung</span>
@@ -44,7 +44,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col3.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">한홍택<br>HAN Hongtaik</span>
@@ -55,7 +55,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col4.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">한홍택<br>HAN Hongtaik</span>
@@ -66,7 +66,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col5.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">한홍택<br>HAN Hongtaik</span>
@@ -77,7 +77,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user6.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col6.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">한홍택<br>HAN Hongtaik</span>
@@ -88,7 +88,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col7.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">한홍택<br>HAN Hongtaik</span>
@@ -99,7 +99,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col8.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">한홍택<br>HAN Hongtaik</span>
@@ -110,7 +110,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col9.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">한홍택<br>HAN Hongtaik</span>
@@ -121,7 +121,7 @@
 				<td onclick="location.href='collectionInfo.do'"
 					style="cursor: pointer" class="digitalColBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width: 200px; height: 200px;">
+						<img src="http://localhost:9000/mygit/resources/images/onlineCol/col10.PNG" class="digitalColImg">
 					</div> <br>
 					<div class="itemInfo">
 						<span class="itemArtist">한홍택<br>HAN Hongtaik</span>
