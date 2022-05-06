@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/usergal/usergal_content.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_info.css">
 </head>
 <body>
-<jsp:include page="../../header.jsp"></jsp:include>
+<jsp:include page="../header.jsp"></jsp:include>
 <section>
 <h1>이동훈 | 백목련 | 연도미상</h1>
 <hr>
@@ -49,17 +49,17 @@
 	
 	<tr><td colspan="2"><hr></td></tr>
 	
-	<tr onclick="location.href='../usergal/item_content.do'" class="bottomTr"><td class="bottomBox">이전글</td><td><b>장미꽃</b></td></tr>
+	<tr onclick="location.href='collectionInfo.do'" class="bottomTr"><td class="bottomBox">이전글</td><td><b>장미꽃</b></td></tr>
 	<tr><td colspan="2"><hr></td></tr>
 	
-	<tr onclick="location.href='../usergal/item_content.do'" class="bottomTr"><td class="bottomBox">다음글</td><td><b>복숭아</b></td></tr>
+	<tr onclick="location.href='collectionInfo.do'" class="bottomTr"><td class="bottomBox">다음글</td><td><b>복숭아</b></td></tr>
 
 	<tr><td colspan="2"><hr></td></tr>
 </table>
 </div>
-	<button type="button" onclick="location.href='../on_content.do'" class="btnList">목록</button>	 
+	<button type="button" onclick="location.href='collectionList.do'" class="btnList">목록</button>	 
 </section>	
 
-<jsp:include page="../../footer.jsp"></jsp:include>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

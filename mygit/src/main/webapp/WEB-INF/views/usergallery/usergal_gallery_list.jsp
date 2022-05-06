@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<jsp:include page="../../header.jsp"></jsp:include>
+	<jsp:include page="../header.jsp"></jsp:include>
 
 	<div id="middle">
 	<aside>
@@ -30,20 +30,20 @@
 
 	<section>
 		<h2>
-			<span onclick="location.href='item_list.do'" class="subMenu" id="itemList">소장품</span>
-			<span onclick="location.href='digigal_list.do'" class="subMenu" id="digigalList">디지털미술관</span>
+			<span onclick="location.href='collectionList.do'" class="subMenu" id="itemList">소장품</span>
+			<span onclick="location.href='galleryList.do'" class="subMenu" id="digigalList">디지털미술관</span>
 		</h2>
 		<table>
 	<tr align="center">
-	<td onclick="location.href='digigal_content.do'" class="itemBox" style="cursor: pointer;">
+	<td onclick="location.href='../online/digitalMovInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/userdgal1.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">[오늘, 이 작품]봄,과천|야외조각장</div>
 	</td>
-	<td onclick="location.href='digigal_content.do'" class="itemBox" style="cursor: pointer;">
+	<td onclick="location.href='../online/digitalMovInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/userdgal2.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">[오늘, 이 작품]폴아이즈피리|정물,<br>1955|꽃, 연도미상</div>
 	</td>
-	<td onclick="location.href='digigal_content.do'" class="itemBox" style="cursor: pointer;">
+	<td onclick="location.href='../online/digitalMovInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/userdgal3.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">[오늘, 이 작품]미술관에서 만난 꽃</div>
 	</td>
@@ -54,6 +54,6 @@
 	</section>
 	</div>
 	<hr>
-<jsp:include page="../../footer.jsp"></jsp:include>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
