@@ -20,11 +20,23 @@
  			$('.find_content').css('display','block');
  			
  		});
- 		
- 		$('#pass_find').click(function() {
+
+ 		$('#modal_close_btn').click(function() {
  			$('.find_modal').css('display','none');
  			$('.find_content').css('display','none');
 		});
+
+ 		
+ 		$('#pass_find').click(function() {
+ 			$('.find_pass_modal').css('display','block');
+ 			$('.find_pass_content').css('display','block');
+		});
+ 		
+		$('#pass_modal_close_btn').click(function(){	
+ 			$('.find_pass_modal').css('display','none');
+ 			$('.find_pass_content').css('display','none');
+ 			
+ 		});
  		
  	});
 	
@@ -50,6 +62,26 @@
 	display: none;
 	padding: 40px;
 	}
+	.find_pass_modal{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: none;
+	left : 0;
+	top: 0;
+	background-color: rgba(147,149,151,0.9);
+	}
+	.find_pass_content{
+	background-color: white;
+	width: 350px;
+	height: 600px;
+	position: fixed;
+	left: 39%;
+	top: 15%;
+	display: none;
+	padding: 40px;
+	}
+	
 	#id_find{
 	cursor: pointer;
 	}
@@ -59,6 +91,30 @@
 	.find_content hr{
 	margin-top: 20px;
 	margin-bottom: 20px;	
+	}
+	.find_pass_content hr{
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	}
+	#id_area{
+	width: 330px;
+	height: 30px;
+	}
+	#name_area{
+	width: 330px;
+	height: 30px;
+	}
+	.pass_area{
+	height: 30px;
+	width: 97px;
+	}
+	div form h4{
+	padding-bottom: 15px;
+	}
+	.submit{
+	left: 40%;
+	position: relative;
+	background-color: white;
 	}
 </style>
 </head>
@@ -83,19 +139,51 @@
 			<a id="pass_find">비밀번호 찾기</a>
 		</div>
 	</div>
+	
+	<!-- 아이디찾기 모달창 -->
 	<div class="find_modal">
-		<div class="find_content">
+		<form class="find_content">
 			<h1>아이디 찾기</h1>
 			<hr>
 			<h3>이름과 연락처를 입력해주세요</h3>
 			<br>
 			<h4 style='text-align : center'>이름</h4>
-			<input type="text" alt="이름을 입력하세요">
-			<br>
+			<input type="text" placeholder="이름을 입력하세요" id="name_area">
+			<br><br>
 			<h4 style='text-align : center'>연락처</h4>
-			<input type="checkbox">-<input type="text">-<input type="text">
-			
-		</div>
+			<select name="phone" class="pass_area">
+				<option value="010">010</option>
+				<option value="011">011</option>
+				<option value="012">012</option>
+				<option value="019">019</option>
+			</select>
+			<a>- </a><input type="text" maxlength="4" size="4" class="pass_area"> - <input type="text" maxlength="4" size="4" class="pass_area">
+			<br><br>
+			<input type="submit" value="아이디 찾기" id="submit">
+			<div>
+				<button type="button" id="modal_close_btn">닫기</button>
+			</div>
+		</form>
+	</div>
+	
+ 	<!-- 비밀번호 찾기 모달창 -->
+	<div class="find_pass_modal">
+		<form class="find_pass_content">
+			<h1>비밀번호 찾기</h1>
+			<hr>
+			<h3>아이디와 이름을 입력해주세요</h3>
+			<br>
+			<h4 style='text-align : center'>아이디</h4>
+			<input type="text" placeholder="아이디를 입력하세요" id="id_area">
+			<br><br>
+			<h4 style='text-align : center'>이름</h4>
+			<input type="text" placeholder="이름을 입력하세요" id="name_area">
+			<br><br>
+			<input type="submit" value="비밀번호 찾기" id="submit">
+			<div>
+				<button type="button" id="pass_modal_close_btn">닫기</button>
+			</div>
+		</form>
 	</div>
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>
