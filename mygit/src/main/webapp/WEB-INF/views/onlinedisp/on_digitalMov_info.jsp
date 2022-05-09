@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/usergal/usergal_content.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_info.css">
 <script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 	$(document).ready(function(){
@@ -37,7 +37,7 @@
 </head>
 <body>
 	
-	<jsp:include page="../../header.jsp"></jsp:include>
+	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<hr>
 	<section>
@@ -71,19 +71,19 @@
 		<button type="button" class="btnSlide" id="btnSlide">접기&nbsp;&nbsp;&nbsp;&nbsp;△</button>
 		</td></tr>
 		<tr><td colspan="2"><hr></td></tr>
-		<tr onclick="location.href='../usergal/digigal_content.do'" class="bottomTr">
+		<tr onclick="location.href='digitalMovInfo.do'" class="bottomTr">
 			<td class="bottomBox">이전글</td><td><b>장미꽃</b></td>
 		</tr>
 		<tr><td colspan="2"><hr></td></tr>
-		<tr onclick="location.href='../usergal/digigal_content.do'" class="bottomTr">
+		<tr onclick="location.href='digitalMovInfo.do'" class="bottomTr">
 			<td class="bottomBox">다음글</td><td><b>복숭아</b></td>
 		</tr>
 		<tr><td colspan="2"><hr></td></tr>
 	</table>
 	</div>	
-		<button type="button" onclick="location.href='../on_content.do'" class="btnList">목록</button>
+		<button type="button" onclick="location.href='digitalMovList.do'" class="btnList">목록</button>
 	</section>
 	
-<jsp:include page="../../footer.jsp"></jsp:include>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

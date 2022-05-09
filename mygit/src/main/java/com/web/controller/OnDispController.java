@@ -7,12 +7,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class OnDispController {
 
-	@RequestMapping(value="/on_content.do",method=RequestMethod.GET)
-	public String onContent() {
-		return "/onlinedisp/on_content";
+	@RequestMapping(value="/online/digitalMovList.do",method=RequestMethod.GET)
+	public String onDigitalMovList() {
+		return "/onlinedisp/on_digitalMov_list";
 	}
 	
-	@RequestMapping(value="/on_show.do",method=RequestMethod.GET)
+	@RequestMapping(value="/online/collectionList.do",method=RequestMethod.GET)
+	public String onCollection() {
+		return "/onlinedisp/on_collection_list";
+	}
+	
+	@RequestMapping(value="/online/digitalMovInfo.do",method=RequestMethod.GET)
+	public String onDigitalMovInfo() {
+		return "/onlinedisp/on_digitalMov_info";
+	}
+	
+	@RequestMapping(value="/online/collectionInfo.do",method=RequestMethod.GET)
+	public String onCollectionInfo() {
+		return "/onlinedisp/on_collection_info";
+	}
+	
+	@RequestMapping(value="/online/on_show.do",method=RequestMethod.GET)
 	public String onShow() {
 		return "/onlinedisp/on_show";
 	}

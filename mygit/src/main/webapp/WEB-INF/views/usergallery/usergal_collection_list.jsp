@@ -19,7 +19,7 @@
 </head>
 
 <body>
-	<jsp:include page="../../header.jsp"></jsp:include>
+	<jsp:include page="../header.jsp"></jsp:include>
 <div id="middle">
 <aside>
 <h2 id="usergallTitle">봄이 오는 소리</h2>
@@ -29,19 +29,21 @@
 </aside>
 
 <section>
-<h2><span onclick="" class="subMenu" id="itemList">소장품</span>
-<span onclick="location.href='digigal_list.do'" class="subMenu" id="digigalList">디지털미술관</span></h2>
+<h2>
+	<span onclick="location.href='collectionList.do" class="subMenu" id="itemList">소장품</span>
+	<span onclick="location.href='galleryList.do'" class="subMenu" id="digigalList">디지털미술관</span>
+</h2>
 <table>
 	<tr align="center">
-	<td onclick="location.href='item_content.do'" class="itemBox" style="cursor: pointer;">
+	<td onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">봄 풍경<br>오지호</div>
 	</td>
-	<td onclick="location.href='item_content.do'" class="itemBox" style="cursor: pointer;">
+	<td onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_1.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">효자리 살구꽃<br>이동훈</div>
 	</td>
-	<td onclick="location.href='item_content.do'" class="itemBox" style="cursor: pointer;">
+	<td onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_2.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">꽃을 든 여인<br>천경자</div>
 	</td>
@@ -50,6 +52,6 @@
 </table>
 </section>
 </div>
-<jsp:include page="../../footer.jsp"></jsp:include>
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
