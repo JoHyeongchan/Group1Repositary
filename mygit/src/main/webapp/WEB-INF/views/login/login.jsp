@@ -111,10 +111,37 @@
 	div form h4{
 	padding-bottom: 15px;
 	}
-	.submit{
-	left: 40%;
-	position: relative;
-	background-color: white;
+	#id_submit{
+	background-color: #007843;
+	width: 100%;
+	height: 7%;
+	border-radius: 15px;
+	cursor: pointer;
+	color: white;
+	}
+	#modal_close_btn{
+	background-color: light-gray;
+	width: 100%;
+	height: 7%;
+	border-radius: 15px;
+	cursor: pointer;
+	margin-top: 10px;
+	}
+	#pass_submit{
+	background-color: #007843;
+	width: 100%;
+	height: 7%;
+	border-radius: 15px;
+	cursor: pointer;
+	color: white;
+	}
+	#pass_modal_close_btn{
+	background-color: light-gray;
+	width: 100%;
+	height: 7%;
+	border-radius: 15px;
+	cursor: pointer;
+	margin-top: 10px;
 	}
 </style>
 </head>
@@ -159,10 +186,8 @@
 			</select>
 			<a>- </a><input type="text" maxlength="4" size="4" class="pass_area"> - <input type="text" maxlength="4" size="4" class="pass_area">
 			<br><br>
-			<input type="submit" value="아이디 찾기" id="submit">
-			<div>
-				<button type="button" id="modal_close_btn">닫기</button>
-			</div>
+			<input type="submit" value="아이디 찾기" id="id_submit">
+			<input type="submit" id="modal_close_btn" value="닫기">
 		</form>
 	</div>
 	
@@ -179,10 +204,8 @@
 			<h4 style='text-align : center'>이름</h4>
 			<input type="text" placeholder="이름을 입력하세요" id="name_area">
 			<br><br>
-			<input type="submit" value="비밀번호 찾기" id="submit">
-			<div>
-				<button type="button" id="pass_modal_close_btn">닫기</button>
-			</div>
+			<input type="submit" value="비밀번호 찾기" id="pass_submit">
+			<input type="submit" id="pass_modal_close_btn" value="닫기">
 		</form>
 	</div>
 </section>
