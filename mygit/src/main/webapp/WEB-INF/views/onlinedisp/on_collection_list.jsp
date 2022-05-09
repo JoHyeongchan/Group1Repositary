@@ -6,17 +6,47 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_list.css">
+<style>
 
+.btnList{
+	float:right;
+	margin-right: 40px;
+	height: 50px;
+	color:white;
+	background-color: black;
+	border-radius: 25px;
+	width: 150px; font-size: 20px;
+}
+
+#digitalForm{
+	float:left;
+	width: 45%;
+}
+
+#btnArea{
+	float:right;
+	width:45%;
+	padding: 10px;
+}
+
+
+</style>
 </head>
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
 <section>
 		<h1>소장품</h1>
-		<form id="colForm">
+		<div id="digitalForm">
+		<form method="post">
 			<input type="text" placeholder="검색어를 입력해주세요" id=searchBar name="searchtext">
-			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>
+			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>			
 		</form>
-		<hr>
+		</div>
+		<div id="btnArea">
+		<button class="btnList" onclick="location.href='collectionWrite.do'">등록</button>
+		</div>
+		
+		<hr style="clear:both">
 		<table>
 			<tr>
 				<td onclick="location.href='collectionInfo.do'"
@@ -146,7 +176,9 @@
 			&nbsp;&nbsp;&nbsp;
 			<span>>></span>
 		</div>
+		
 		<hr>
+		
 		
 	</section>
 
