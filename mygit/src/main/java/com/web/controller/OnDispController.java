@@ -49,12 +49,12 @@ public class OnDispController {
 	
 	@RequestMapping(value="/online/collectionDelete.do",method=RequestMethod.GET)
 	public String onCollectionDelete() {
-		return "redirect:/collectionList.do";
+		return "redirect:/online/collectionList.do";
 	}
 	
 	@RequestMapping(value="/online/digitalMovDelete.do",method=RequestMethod.GET)
 	public String onDigitalMovDelete() {
-		return "redirect:/digitalMovList.do";
+		return "redirect:/online/digitalMovList.do";
 	}
 	
 	@RequestMapping(value="/online/on_show.do",method=RequestMethod.GET)
