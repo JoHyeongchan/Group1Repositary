@@ -36,7 +36,7 @@
 		<th>규격</th><td><input type="text" name="col_dimention" class="shortInput"></td>
 	</tr>
 	<tr>
-		<th>부문</th><td><select name="col_subject" class="shortInput">
+		<th>부문</th><td><select name="col_category" class="shortInput">
 		<option value="ko">한국화</option>
 		<option value="pa">회화</option>
 		<option value="sc">조각</option>
