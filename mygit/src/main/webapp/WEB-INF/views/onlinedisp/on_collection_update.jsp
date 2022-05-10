@@ -22,19 +22,35 @@
 		<th>이미지</th><td colspan="3"><input type="file" name="col_file" class="longInput"></td>
 	</tr>
 	<tr>
-		<th>작가명</th><td><input type="text" name="col_author" class="shortInput"></td>
-	
+		<th>작가명(한글)</th><td><input type="text" name="col_author_kor" class="shortInput"></td>
+		<th>작가명(영어)</th><td><input type="text" name="col_author_eng" class="shortInput"></td>
+	</tr>
+	<tr>
 		<th>작품명</th><td><input type="text" name="col_name" class="shortInput"></td>
-	</tr>
-	<tr>
+	
 		<th>제작연도</th><td><input type="text" name="col_year" class="shortInput"></td>
-	
-		<th>재료</th><td><input type="text" name="col_material" class="shortInput"></td>
 	</tr>
 	<tr>
-		<th>규격</th><td><input type="text" name="col_dimention" class="shortInput"></td>
+		<th>재료</th><td><input type="text" name="col_material" class="shortInput"></td>
 	
-		<th>부문</th><td><input type="text" name="col_subject" class="shortInput"></td>
+		<th>규격</th><td><select name="col_dimention" class="shortInput"></select></td>
+	</tr>
+	<tr>
+		<th>부문</th><td><select name="col_category" class="shortInput">
+		<option value="ko">한국화</option>
+		<option value="pa">회화</option>
+		<option value="sc">조각</option>
+		<option value="cr">공예</option>
+		<option value="nm">뉴미디어</option>
+		<option value="ar">건축</option>
+		<option value="de">디자인</option>
+		<option value="dp">드로잉/판화</option>
+		<option value="ph">사진</option>
+		<option value="ca">서예</option>
+		</select></td>
+		<th>전시여부</th><td>
+				<input type="radio" name="col_isdisp" value="ondisp">전시중
+				<input type="radio" name="col_isdisp" value="nodisp">비전시</td>
 	</tr>
 	<tr>
 		<th>내용입력</th><td colspan="3"><textarea rows="20" cols="80" name="col_content"></textarea></td>
