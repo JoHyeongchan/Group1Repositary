@@ -80,8 +80,12 @@
 		</tr>
 		<tr><td colspan="2"><hr></td></tr>
 	</table>
-	</div>	
+	</div>
+		
+			
 		<button type="button" onclick="location.href='digitalMovList.do'" class="btnList">목록</button>
+		<button type="button" onclick="location.href='digitalMovDelete.do'" class="btnList">삭제</button>
+		<button type="button" onclick="location.href='digitalMovUpdate.do'" class="btnList">수정</button>
 	</section>
 	
 <jsp:include page="../footer.jsp"></jsp:include>

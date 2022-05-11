@@ -15,24 +15,24 @@
 <section>
 	<h2>Q &amp; A</h2>
 	<br><hr><br>
-	<form>
+	<form name="qna_write" action="qna_update.do" method="post" enctype="multipart/form-data">
 	 	<table border="1">
 	 	<tr>
 		 	<th>제목</th>
-		 	<td><input type="text" name="title" placeholder="제목을 입력하세요."></td>
-	 	</tr>
-	 	<tr>
-		 	<td colspan="2"><textarea name="content"></textarea></td>
-	 	</tr>
-	 	<tr>
-		 	<th>첨부파일</th>
-		 	<td colspan="3"><input type="file" name="file1"></td>
+		 	<td colspan="1"><input type="text" name="qTitle" placeholder="제목을 입력하세요."></td>
+		 	</tr>
+		 	<tr>
+		 		<td colspan="2"><textarea name="qContent"></textarea></td>
+		 	</tr>
+		 	<tr>
+			 	<th>첨부파일</th>
+			 	<td colspan="1"><input type="file" name="formFile"></td>
 	 	</tr>
 	 	</table>
 	 	<br><br>
 		 <!-- 버튼 -->
 		 <div>
-		 	<button type="button" onclick="location.href='qna_list.do'">등록</button>
+		 	<button type="submit" >등록</button>
 		 	<button type="button" onclick="location.href='qna_write.do'">취소</button>
 	 	</div>
 	 </form>
