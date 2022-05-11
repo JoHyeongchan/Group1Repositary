@@ -17,7 +17,9 @@
 <section>
 	<div id="show">
 		<div id="show_left">
-			<img src = "../resources/images/sojang2.png" id="show_image">
+			<div>
+				<img src = "../resources/images/sojang2.png" id="show_image">
+			</div>
 		</div>
 		<div id="show_right">
 			<a id="show_title">김환기 - 론도(1938)</a>
@@ -32,8 +34,8 @@
 			이러한 표식은 주로 작가가 전시 출품을 위해 명제를 써넣는 방식이다. <br><br>
 			바이올린을 배우고 클래식 음악을 즐겨 듣던 김환기는 론도 음악의 선율과 리듬을 추상적인 회화 언어(선, 면, 색)로 환원했다. </a>
 		</div>
-		<a href="#"><img src = "../resources/images/left.png" id="icon_left" width="50px" height="50px"></a>
-		<a href="#"><img src = "../resources/images/right.png" id="icon_right" width="50px" height="50px"></a>
+		<a href="#"><img src = "../resources/images/left.png" class="prev" width="50px" height="50px"></a>
+		<a href="#"><img src = "../resources/images/right.png" class="next" width="50px" height="50px"></a>
 	</div>
 	<a id="show_theme">국립현대미술관 소장품(1930년대~1940년대)</a>
 	<div id="sub">

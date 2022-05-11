@@ -12,16 +12,23 @@
 	}
 	
 	#show_image{
-	width: 60%; height: 60%; left: 100px; top: 15%;
-	position: absolute; 
+	width: 500px; height: 60%;
 	}
 	
 	#show_left{
-	width: 68%; height: 840px; float: left;
+	width: 68%; height: 600px; border: 1px solid blue; float: left;
+	padding-top: 200px;
+	}
+	
+	#show_left>div{
+	border: 1px solid orange; 
+	width: 500px;
+	margin: auto;
 	}
 	
 	#show_right{
-	width: 27%; height: 840px; float: left; top:17%; position: relative;
+	width: 27%; height: 600px; top:17%; border: 1px solid green; float: left;
+	padding-top: 160px;
 	}
 	
 	#show_title{
@@ -43,15 +50,15 @@
 	top: 25%; position: relative;
 	}
 	
-	#icon_left{
+	.prev{
 	position: absolute;
 	left: 20px;
-	top: 400px;
+	top: 460px;
 	}
 	
-	#icon_right{
+	.next{
 	position: absolute;
 	right: 20px;
-	top: 400px;
+	top: 460px;
 	}
 </style>
