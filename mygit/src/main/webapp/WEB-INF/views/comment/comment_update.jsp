@@ -12,7 +12,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 </header>
 <section>
-<form>
+<form name="comment_write_form" action="comment_update.do" method="post" enctype="multipart/form-data">
 		<h2>관람후기</h2>
 		<hr>
 		<table>

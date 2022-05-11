@@ -13,7 +13,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 
 <section>
-<form>
+<form name="faq_write" action="#" method="post" enctype="multipart/form-data">
 		<h2>공지사항</h2>
 		<hr>
 	 	<table>
