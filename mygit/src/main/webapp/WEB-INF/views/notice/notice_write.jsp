@@ -19,7 +19,7 @@
 	 	<table>
 	 	<tr>
 	 		<td><span class="inputLabel">제목</span></td>
-	 		<td colspan="4"><input type="text" name="nTitle" value="제목을 입력하세요." class="titleTextBox"></td>
+	 		<td colspan="4"><input type="text" name="nTitle" placeholder="제목을 입력하세요." class="titleTextBox"></td>
 	 		</tr>
 	 		
 	 	<tr>
@@ -50,7 +50,7 @@
 	 	</table>
 	 	<!-- 버튼 -->
 	 	<button type="button" onclick="location.href='notice_list.do'" class="btn_normal">취소</button>
-	 	<button type="button" onclick="location.href='notice_list.do'" class="btn_normal">등록</button>
+	 	<button type="submit"  class="btn_normal">등록</button>
 	 </form>
 </section>
 
