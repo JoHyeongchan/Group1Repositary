@@ -4,7 +4,7 @@
     
  <mapper namespace="mapper.digitalMv">
  	<insert id="insert" parameterType="com.web.vo.DigitalMovieVO">
- 	insert into digitalMovie values('dm'||dmvSeq.nextVal,#{dmTitle},#{dmUrl},#{dmFile},#{dmSfile},#{dmContent},sysdate,0,#{dmProgram},#{dmCategory})
+ 	insert into digitalMovie values('dm'||LPAD(dmvSeq.nextVal,4,0),#{dmTitle},#{dmUrl},#{dmFile},#{dmSfile},#{dmContent},sysdate,0,#{dmProgram},#{dmCategory})
  	</insert>
  	
  	<select id="count" resultType="int">

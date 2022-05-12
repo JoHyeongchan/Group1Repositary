@@ -4,7 +4,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class CollectionVO {
 
-	private String coId,coTitle,coFile,coSfile,coContent,coDateStr;
+	private String coId,coTitle,coFile,coSfile,coContent,coDate;
 	private String coAuthorKor, coAuthorEng,coName, coYear, coMaterial;
 	private String coDim, coCategory, coManageId, coIsDisp;
 	
@@ -43,11 +43,11 @@ public class CollectionVO {
 	public void setCoContent(String coContent) {
 		this.coContent = coContent;
 	}
-	public String getCoDateStr() {
-		return coDateStr;
+	public String getCoDate() {
+		return coDate;
 	}
-	public void setCoDateStr(String coDateStr) {
-		this.coDateStr = coDateStr;
+	public void setCoDateStr(String coDate) {
+		this.coDate = coDate;
 	}
 	public String getCoAuthorKor() {
 		return coAuthorKor;
