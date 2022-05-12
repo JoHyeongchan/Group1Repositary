@@ -7,15 +7,17 @@
 <title>Insert title here</title>
 <style type="text/css">
 	*{margin: 0; padding: 0;}
-	#nav{height:100px; border: 4px solid black; overflow: hidden;}
-	li a{text-decoration: none; color: black;}
+	#nav{height:100px; border: 4px solid black; overflow: hidden; z-index: 5;}
+	li>a{text-decoration: none; color: black;}
 	li{float: left; list-style-type: none;}
 	#nav_left{float: left; width: 350px;margin-top: -10px;}
-	#nav_center{width: 1080px; height: 80px; float : left; clear: right; padding-top: 20px; padding-left: 38px;}
-	#nav_center a{font-weight: bold; font-size: 30pt;}
+	ul>li>a{font-weight: bold; font-size: 30pt;}
+	ul>li>div{display: none; position: absolute; font-size: 25pt;}
+	.nav_center:hover .nav_content{display: block; width: 200px; height: 700px; border: 1px solid red;}
+	.nav_content>a{display: block;}
+	.nav_center{padding-left: 50px; padding-right: 50px; padding-top: 20px;}
 	#nav_right{width: 300px; height: 70px; float: right; padding-top: 55px;}
 	#nav_right a{font-weight: bold; font-size: 15pt;}
-	.nav_item1{padding: 62px; cursor: pointer;}
 	.nav_item2{padding: 10px; cursor: pointer;}
 	#nav:after {
 	clear: both;
@@ -29,13 +31,25 @@
 			<a href="http://localhost:9000/mygit/index.do" id="logo"><img src="http://localhost:9000/mygit/resources/images/logo.png" width="80%" height="80%"></a>
 		</div>
 		<nav>
-			<div id="nav_center">
-			<ul>
-				<li><a href="http://localhost:9000/mygit/comment_list.do" class="nav_item1">관람·참여</a></li>
-				<li><a href="http://localhost:9000/mygit/off_now.do" class="nav_item1">전시</a></li>
-				<li><a href="http://localhost:9000/mygit/online/on_show.do" class="nav_item1">디지털미술관</a></li>
-				<li><a href="http://localhost:9000/mygit/reservation.do" class="nav_item1">예약</a></li>
-			</ul>
+			<div>
+				<ul>
+					<li class="nav_center">
+						<a>관람·참여</a>
+						<div class="nav_content"><a>관람</a><a>참여</a><a>이벤트</a></div>
+					</li>
+					<li class="nav_center">
+						<a>전시</a>
+						<div class="nav_content"><a>현재전시</a><a>예정전시</a><a>과거전시</a></div>
+					</li>
+					<li class="nav_center">
+						<a>디지털미술관</a>
+						<div class="nav_content"><a>맞춤검색</a><a>이용자갤러리</a></div>
+					</li>
+					<li class="nav_center">
+						<a>예약</a>
+						<div class="nav_content"><a>예약하기</a><a>예약확인</a></div>
+					</li>
+				</ul>
 			</div>
 			<div id="nav_right">
 			<ul>
