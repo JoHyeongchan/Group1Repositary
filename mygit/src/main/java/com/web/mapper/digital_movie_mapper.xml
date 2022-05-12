@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+ <mapper namespace="mapper.digitalMv">
+ 	<insert id="insert" parameterType="com.web.vo.DigitalMovieVO">
+ 	insert into digitalMovie values('dm'||dmvSeq.nextVal,#{dmTitle},#{dmUrl},#{dmFile},#{dmSfile},#{dmContent},sysdate,0,#{dmProgram},#{dmCategory})
+ 	</insert>
+ 	
+ 	<select id="count" resultType="int">
+ 	select count(dmid) from digitalMovie
+ 	</select>
+ 	  
+ 	<select id="selectList" resultType="com.web.vo.DigitalMovieVO">
+ 	select rownum rno,dmid, dmtitle, dmsfile, to_char(dmdate,'yyyy-mm-dd')dmdate,dmhits,dmprogram from
+(select dmid, dmtitle, dmsfile, dmdate,dmhits,dmprogram from digitalMovie order by dmdate) order by rno desc
+ 	</select>
+ </mapper>

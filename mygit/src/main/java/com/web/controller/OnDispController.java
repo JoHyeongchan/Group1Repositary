@@ -1,19 +1,39 @@
 package com.web.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.web.dao.DigitalMovieDAO;
+//import com.web.dao.DigitalMovieDAO;
 import com.web.vo.CollectionVO;
 import com.web.vo.DigitalMovieVO;
 
 @Controller
 public class OnDispController {
+	
+	@Autowired
+	DigitalMovieDAO digitalMovieDao;
 
 	@RequestMapping(value="/online/digitalMovList.do",method=RequestMethod.GET)
-	public String onDigitalMovList() {
-		return "/onlinedisp/on_digitalMov_list";
+	public ModelAndView onDigitalMovList() {
+		ModelAndView mv=new ModelAndView();
+		List<DigitalMovieVO> list=digitalMovieDao.select();
+		int count=digitalMovieDao.getCount();
+		System.out.println("count:"+count);
+		
+		int i=0;
+		for(DigitalMovieVO vo:list) {
+			System.out.println(vo.getDmId());
+		}
+		mv.addObject("list", list);
+		mv.setViewName("/onlinedisp/on_digitalMov_list");
+		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionList.do",method=RequestMethod.GET)
@@ -64,12 +84,7 @@ public class OnDispController {
 	public ModelAndView onDigitalMovWrite(DigitalMovieVO vo) {
 		ModelAndView mv=new ModelAndView();
 		
-		System.out.println(vo.getDmTitle());
-		System.out.println(vo.getFormFile().getOriginalFilename());
-		System.out.println(vo.getDmUrl());
-		System.out.println(vo.getDmTitle());
-		System.out.println(vo.getDmProgram());
-		System.out.println(vo.getDmCategory());
+		int result=digitalMovieDao.insert(vo);
 		
 		mv.setViewName("redirect: /mygit/online/digitalMovList.do");
 		return mv;

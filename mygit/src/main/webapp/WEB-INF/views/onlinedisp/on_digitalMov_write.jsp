@@ -25,14 +25,14 @@
 		<th>동영상링크</th><td colspan="3"><input type="text" name="dmUrl" class="longInput"></input></td>
 	</tr>
 	<tr>
-		<th>프로그램</th><td><select name="dmProgram">
+		<th>프로그램</th><td><select name="formProgram">
 		<option value="p1">관장이 들려주는 소장품 이야기</option>
 		<option value="p2">큐레이터 전시 해설</option>
 		<option value="p3">강의&amp;학술토론</option>
 		<option value="p4">작품&amp;작가</option>
 		<option value="p5">미술관 소식</option>
 		<option value="p6">오늘, 이 작품</option></select></td>
-		<th>영상구분</th><td><select name="dmCategory">
+		<th>영상구분</th><td><select name="formCategory">
 		<option value="c1">전시연계</option>
 		<option value="c2">전시감상</option>
 		<option value="c3">진로탐색</option>
