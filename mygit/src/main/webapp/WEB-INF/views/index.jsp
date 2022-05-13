@@ -19,7 +19,7 @@
  		$('#modal_close_btn').click(function() {
  			$('.modal').css('display','none');
  			$('.modal_content').css('display','none');
-		})
+		});
  		
  	});
 </script>

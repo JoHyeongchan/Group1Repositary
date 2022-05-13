@@ -13,13 +13,13 @@
 <jsp:include page="../header.jsp"></jsp:include>
 
 <section>
-<form>
+<form name="notice_write_form" action="notice_write.do" method="post" enctype="multipart/form-data">
 		<h2>공지사항</h2>
 		<hr>
 	 	<table>
 	 	<tr>
 	 		<td><span class="inputLabel">제목</span></td>
-	 		<td colspan="4"><input type="text" name="title" value="제목을 입력하세요." class="titleTextBox"></td>
+	 		<td colspan="4"><input type="text" name="nTitle" placeholder="제목을 입력하세요." class="titleTextBox"></td>
 	 		</tr>
 	 		
 	 	<tr>
@@ -28,10 +28,10 @@
 	 	
 	 	<tr>
 	 	<td><span class="inputLabel">첨부파일</span></td>
-	 	<td colspan="2"><input type="file" name="file1"></td>
+	 	<td colspan="2"><input type="file" name="formFile"></td>
 	 	<td><span class="inputLabel">유형</span></td>
 	 	<td>
-	 	<select>
+	 	<select name="nCategory">
 	 	<option value="공통">공통</option>
 	 	<option value="서울">서울</option>
 	 	<option value="미술은행">미술은행</option>
@@ -44,13 +44,13 @@
 	 	</tr>
 	 	
 	 	<tr>
-	 	<td colspan="5" align="center"><textarea rows="20" cols="80" name="content"></textarea>
+	 	<td colspan="5" align="center"><textarea rows="20" cols="80" name="nContent"></textarea>
 	 	</td>
 	 	</tr>
 	 	</table>
 	 	<!-- 버튼 -->
 	 	<button type="button" onclick="location.href='notice_list.do'" class="btn_normal">취소</button>
-	 	<button type="button" onclick="location.href='notice_list.do'" class="btn_normal">등록</button>
+	 	<button type="submit"  class="btn_normal">등록</button>
 	 </form>
 </section>
 

@@ -1,15 +1,39 @@
 package com.web.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.web.dao.DigitalMovieDAO;
+//import com.web.dao.DigitalMovieDAO;
+import com.web.vo.CollectionVO;
+import com.web.vo.DigitalMovieVO;
 
 @Controller
 public class OnDispController {
+	
+	@Autowired
+	DigitalMovieDAO digitalMovieDao;
 
 	@RequestMapping(value="/online/digitalMovList.do",method=RequestMethod.GET)
-	public String onDigitalMovList() {
-		return "/onlinedisp/on_digitalMov_list";
+	public ModelAndView onDigitalMovList() {
+		ModelAndView mv=new ModelAndView();
+		List<DigitalMovieVO> list=digitalMovieDao.select();
+		int count=digitalMovieDao.getCount();
+		System.out.println("count:"+count);
+		
+		int i=0;
+		for(DigitalMovieVO vo:list) {
+			System.out.println(vo.getDmId());
+		}
+		mv.addObject("list", list);
+		mv.setViewName("/onlinedisp/on_digitalMov_list");
+		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionList.do",method=RequestMethod.GET)
@@ -32,9 +56,38 @@ public class OnDispController {
 		return "/onlinedisp/on_collection_write";
 	}
 	
+	@RequestMapping(value="/online/collectionWrite.do",method=RequestMethod.POST)
+	public ModelAndView onCollectionWrite(CollectionVO vo) {
+		ModelAndView mv=new ModelAndView();
+		
+		System.out.println(vo.getCoTitle());
+		System.out.println(vo.getFormFile().getOriginalFilename());
+		System.out.println(vo.getCoAuthorKor());
+		System.out.println(vo.getCoAuthorEng());
+		System.out.println(vo.getCoName());
+		System.out.println(vo.getCoYear());
+		System.out.println(vo.getCoDim());
+		System.out.println(vo.getCoCategory());
+		System.out.println(vo.getCoIsDisp());
+		System.out.println(vo.getCoContent());
+		
+		mv.setViewName("redirect: /mygit/online/collectionList.do");
+		return mv;
+	}
+	
 	@RequestMapping(value="/online/digitalMovWrite.do",method=RequestMethod.GET)
 	public String onDigitalMovWrite() {
 		return "/onlinedisp/on_digitalMov_write";
+	}
+	
+	@RequestMapping(value="/online/digitalMovWrite.do",method=RequestMethod.POST)
+	public ModelAndView onDigitalMovWrite(DigitalMovieVO vo) {
+		ModelAndView mv=new ModelAndView();
+		
+		int result=digitalMovieDao.insert(vo);
+		
+		mv.setViewName("redirect: /mygit/online/digitalMovList.do");
+		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionUpdate.do",method=RequestMethod.GET)
@@ -42,9 +95,44 @@ public class OnDispController {
 		return "/onlinedisp/on_collection_update";
 	}
 	
+	@RequestMapping(value="/online/collectionUpdate.do",method=RequestMethod.POST)
+	public ModelAndView onCollectionUpdate(CollectionVO vo) {
+		ModelAndView mv=new ModelAndView();
+		
+		System.out.println(vo.getCoTitle());
+		System.out.println(vo.getFormFile().getOriginalFilename());
+		System.out.println(vo.getCoAuthorKor());
+		System.out.println(vo.getCoAuthorEng());
+		System.out.println(vo.getCoName());
+		System.out.println(vo.getCoYear());
+		System.out.println(vo.getCoDim());
+		System.out.println(vo.getCoCategory());
+		System.out.println(vo.getCoIsDisp());
+		System.out.println(vo.getCoContent());
+		
+		mv.setViewName("redirect: /mygit/online/collectionList.do");
+		return mv;
+	}
+	
+	
 	@RequestMapping(value="/online/digitalMovUpdate.do",method=RequestMethod.GET)
 	public String onDigitalMovUpdate() {
 		return "/onlinedisp/on_digitalMov_update";
+	}
+	
+	@RequestMapping(value="/online/digitalMovUpdate.do",method=RequestMethod.POST)
+	public ModelAndView onDigitalMovUpdate(DigitalMovieVO vo) {
+		ModelAndView mv=new ModelAndView();
+		
+		System.out.println(vo.getDmTitle());
+		System.out.println(vo.getFormFile().getOriginalFilename());
+		System.out.println(vo.getDmUrl());
+		System.out.println(vo.getDmTitle());
+		System.out.println(vo.getDmProgram());
+		System.out.println(vo.getDmCategory());
+		
+		mv.setViewName("redirect: /mygit/online/digitalMovList.do");
+		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionDelete.do",method=RequestMethod.GET)

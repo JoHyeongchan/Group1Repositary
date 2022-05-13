@@ -12,23 +12,21 @@
 <jsp:include page="../header.jsp"></jsp:include>
 
 <section>
-<form>
+<form name="faq_write" action="faq_write.do" method="post" enctype="multipart/form-data">
 		<h2>FAQ</h2>
 		<hr>
 	 	<table>
 	 		<tr>
 	 		<td><span class="inputLabel">제목</span></td>
-	 		<td colspan="4"><input type="text" name="title" value="제목을 입력하세요." class="titleTextBox"></td>
+	 		<td><input type="text" name="faTitle" placeholder="제목을 입력하세요." class="titleTextBox" ></td>
 	 		</tr>
 	 	<tr>
-	 	<td colspan="5"><hr></td>
+	 	<td colspan="2"><hr></td>
 	 	</tr>
 	 	<tr>
-	 	<td><span class="inputLabel">첨부파일</span></td>
-	 	<td colspan="2"><input type="file" name="file1"></td>
-	 	<td><span class="inputLabel">유형</span></td>
+	 	<td><span class="inputLabel" >유형</span></td>
 	 	<td>
-	 	<select>
+	 	<select style="width:80%" name="faCategory" >
 	 	<option value="공통">공통</option>
 	 	<option value="서울">서울</option>
 	 	<option value="미술은행">미술은행</option>
@@ -36,19 +34,19 @@
 	 	</select></td>
 	 	</tr>
 	 	<tr>
-	 	<td colspan="5"><hr></td>
+	 	<td colspan="2"><hr></td>
 	 	</tr>
 	 	<tr>
-	 	<td colspan="5" align="center"><textarea rows="20" cols="80" name="content"></textarea>
+	 	<td colspan="2" align="center"><textarea rows="20" cols="80" name="faContent"></textarea>
 	 	</td>
 	 	</tr>
 	 	<tr>
-	 	<td colspan="5"><hr></td>
+	 	<td colspan="2"><hr></td>
 	 	</tr>
 	 	</table>
 	 	<!-- 버튼 -->
 	 	<button type="button" onclick="location.href='faq_list.do'" class="btn_normal">취소</button>
-	 	<button type="button" onclick="location.href='faq_list.do'" class="btn_normal">등록</button>
+	 	<button type="submit"  class="btn_normal">등록</button>
 	 </form>
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>
