@@ -7,6 +7,8 @@ public class DigitalMovieVO {
 	private String dmId,dmTitle,dmUrl,dmFile,dmSfile,dmDate;
 	private String dmContent,dmProgram,dmCategory;
 	
+	private String prevId,nextId,prevTitle,nextTitle;
+	
 	private String formProgram,formCategory;	
 	CommonsMultipartFile formFile;
 	
@@ -116,6 +118,34 @@ public class DigitalMovieVO {
 		this.rno = rno;
 	}
 	
+	
+	
+	public String getPrevId() {
+		return prevId;
+	}
+	public void setPrevId(String prevId) {
+		this.prevId = prevId;
+	}
+	public String getNextId() {
+		return nextId;
+	}
+	public void setNextId(String nextId) {
+		this.nextId = nextId;
+	}
+	
+	
+	public String getPrevTitle() {
+		return prevTitle;
+	}
+	public void setPrevTitle(String prevTitle) {
+		this.prevTitle = prevTitle;
+	}
+	public String getNextTitle() {
+		return nextTitle;
+	}
+	public void setNextTitle(String nextTitle) {
+		this.nextTitle = nextTitle;
+	}
 	public void setProgram(){
 		String result="";
 		

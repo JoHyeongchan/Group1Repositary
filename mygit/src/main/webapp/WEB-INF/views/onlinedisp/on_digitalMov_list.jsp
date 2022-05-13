@@ -55,7 +55,7 @@
 				<td onclick="location.href='digitalMovInfo.do?dmId=${vo.dmId}'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv1.PNG" class="digitalMvImg">
+						<img src="http://localhost:9000/mygit/resources/upload/${vo.dmSfile }" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo"> 
 						<span class="itemCategory">${vo.dmProgram}</span>
@@ -64,24 +64,36 @@
 					</div>
 				</td>
 				</c:forEach>
-				
+				<script>
+					
+					var divLast=${divLast};
+					var pageCount=${pageCount};
+					var reqPage=${reqPage};
+			
+					if(reqPage == pageCount){
+					if(divLast!=0){
+						var i=0
+						for(i=0;i<divLast;i++){
+							document.write("<td class='digitalMvBox'></td>");
+						}
+					}}
+				</script>
 			</tr>
 		</table>
 		<div class="pageNum"> <!-- 페이지 번호 -->
-			<span><b>1</b></span>
-			&nbsp;&nbsp;&nbsp;
-			<span>2</span>
-			&nbsp;&nbsp;&nbsp;
-			<span>3</span>
-			&nbsp;&nbsp;&nbsp;
-			<span>4</span>
-			&nbsp;&nbsp;&nbsp;
-			<span>5</span>
-			&nbsp;&nbsp;&nbsp;
+			<script>
+				var pageCount=${pageCount};
+				var i=1;
+				for(i=1;i<=pageCount;i++){
+					document.write("<a href='http://localhost:9000/mygit/online/digitalMovList.do?rpage="+i+"'>");
+					document.write("<span>"+i+"</span></a>&nbsp;&nbsp;&nbsp;</a>");
+				}
+			</script>
+			<!-- 
 			<span>></span>
-			&nbsp;&nbsp;&nbsp;
+			&nbsp;
 			<span>>></span>
-			
+			 -->	
 		</div>
 		<hr>
 		

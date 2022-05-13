@@ -11,8 +11,17 @@
  	select count(dmid) from digitalMovie
  	</select>
  	  
- 	<select id="selectList" resultType="com.web.vo.DigitalMovieVO">
- 	select rownum rno,dmid, dmtitle, dmsfile, to_char(dmdate,'yyyy-mm-dd')dmdate,dmhits,dmprogram from
-(select dmid, dmtitle, dmsfile, dmdate,dmhits,dmprogram from digitalMovie order by dmdate) order by rno desc
+ 	<select id="selectList" parameterType="map" resultType="com.web.vo.DigitalMovieVO">
+ 	select rno,dmid, dmtitle, dmsfile,dmdate,dmhits,dmprogram from
+ 	(select rownum rno,dmid, dmtitle, dmsfile, to_char(dmdate,'yyyy-mm-dd')dmdate,dmhits,dmprogram from
+(select dmid, dmtitle, dmsfile, dmdate,dmhits,dmprogram from digitalMovie order by dmdate desc))where rno between #{start} and #{end}
+ 	</select>
+ 	
+ 	<select id="selectContent" parameterType="String" resultType="com.web.vo.DigitalMovieVO">
+ 		select dmid,dmtitle,dmurl,dmcontent,dmhits,previd,prevtitle,nextid,nexttitle from (select dmid,dmtitle,dmurl,dmcontent,dmhits,
+ 		lag(dmid,1,0)over(order by dmdate)as previd,
+ 		lag(dmtitle,1,0)over(order by dmdate)as prevtitle,
+ 		lead(dmid,1,0)over(order by dmdate)as nextid,
+ 		lead(dmtitle,1,0)over(order by dmdate)as nexttitle from digitalMovie) where dmid=#{dmid}
  	</select>
  </mapper>

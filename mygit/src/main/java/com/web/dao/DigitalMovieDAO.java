@@ -1,6 +1,8 @@
 package com.web.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,16 @@ public class DigitalMovieDAO {
 		return sqlSession.selectOne(namespace+".count");
 	}
 	
-	public List<DigitalMovieVO> select(){
-		return sqlSession.selectList(namespace+".selectList");
+	public List<DigitalMovieVO> select(int startCount, int endCount){
+		Map<String, String> param=new HashMap<String, String>();
+		param.put("start", String.valueOf(startCount));
+		param.put("end", String.valueOf(endCount));
+		
+		return sqlSession.selectList(namespace+".selectList",param);
+	}
+
+	public DigitalMovieVO select(String dmId) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".selectContent", dmId);
 	}
 }

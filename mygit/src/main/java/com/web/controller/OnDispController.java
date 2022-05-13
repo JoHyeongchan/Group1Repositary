@@ -1,7 +1,13 @@
 package com.web.controller;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.web.dao.DigitalMovieDAO;
+import com.web.service.FileServiceImpl;
+import com.web.service.PageServiceImpl;
 //import com.web.dao.DigitalMovieDAO;
 import com.web.vo.CollectionVO;
 import com.web.vo.DigitalMovieVO;
@@ -17,20 +25,36 @@ import com.web.vo.DigitalMovieVO;
 @Controller
 public class OnDispController {
 	
+	
+	@Autowired
+	FileServiceImpl fileService;
+	
 	@Autowired
 	DigitalMovieDAO digitalMovieDao;
+	
+	@Autowired
+	PageServiceImpl pageService;
 
 	@RequestMapping(value="/online/digitalMovList.do",method=RequestMethod.GET)
-	public ModelAndView onDigitalMovList() {
+	public ModelAndView onDigitalMovList(String rpage) {
 		ModelAndView mv=new ModelAndView();
-		List<DigitalMovieVO> list=digitalMovieDao.select();
-		int count=digitalMovieDao.getCount();
-		System.out.println("count:"+count);
 		
-		int i=0;
-		for(DigitalMovieVO vo:list) {
-			System.out.println(vo.getDmId());
-		}
+		Map<String, String> param= pageService.getPageResult(rpage);
+		
+		int startCount=Integer.parseInt( param.get("start"));
+		int endCount=Integer.parseInt(param.get("end"));
+		int dbCount=Integer.parseInt(param.get("dbCount"));
+		int reqPage=Integer.parseInt(param.get("reqPage"));
+		int pageSize=Integer.parseInt(param.get("pageSize"));
+		int pageCount=Integer.parseInt(param.get("pageCount"));
+		
+		List<DigitalMovieVO> list=digitalMovieDao.select(startCount,endCount);
+		
+		int divLast=pageSize-dbCount%pageSize;
+		
+		mv.addObject("divLast",divLast);
+		mv.addObject("reqPage", reqPage);
+		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
 		mv.setViewName("/onlinedisp/on_digitalMov_list");
 		return mv;
@@ -42,8 +66,25 @@ public class OnDispController {
 	}
 	
 	@RequestMapping(value="/online/digitalMovInfo.do",method=RequestMethod.GET)
-	public String onDigitalMovInfo() {
-		return "/onlinedisp/on_digitalMov_info";
+	public ModelAndView onDigitalMovInfo(String dmId) {
+		ModelAndView mv=new ModelAndView("/onlinedisp/on_digitalMov_info");
+		DigitalMovieVO vo=digitalMovieDao.select(dmId);
+		
+		System.out.println(vo.getPrevId());
+		System.out.println(vo.getNextId());
+		System.out.println(vo.getPrevTitle());
+		System.out.println(vo.getNextTitle());
+		/*int idNo=Integer.parseInt(idNoStr);
+		
+		String prevId=String.format("dm%04d", idNo-1);
+		String nextId=String.format("dm%04d", idNo+1);
+		System.out.println(prevId);
+		
+		mv.addObject("prevId",prevId);
+		mv.addObject("nextId",nextId);
+		*/
+		mv.addObject("vo", vo);
+		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionInfo.do",method=RequestMethod.GET)
@@ -81,10 +122,16 @@ public class OnDispController {
 	}
 	
 	@RequestMapping(value="/online/digitalMovWrite.do",method=RequestMethod.POST)
-	public ModelAndView onDigitalMovWrite(DigitalMovieVO vo) {
+	public ModelAndView onDigitalMovWrite(DigitalMovieVO vo, HttpServletRequest request) throws Exception{
 		ModelAndView mv=new ModelAndView();
+		//FileServiceImpl fileService=new FileServiceImpl();
+		
+		vo=fileService.fileCheck(vo);
 		
 		int result=digitalMovieDao.insert(vo);
+		if(result==1) {
+			fileService.fileSave(vo, request);
+		}
 		
 		mv.setViewName("redirect: /mygit/online/digitalMovList.do");
 		return mv;
