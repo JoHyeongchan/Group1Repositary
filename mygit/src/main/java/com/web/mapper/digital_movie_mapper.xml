@@ -17,11 +17,34 @@
 (select dmid, dmtitle, dmsfile, dmdate,dmhits,dmprogram from digitalMovie order by dmdate desc))where rno between #{start} and #{end}
  	</select>
  	
- 	<select id="selectContent" parameterType="String" resultType="com.web.vo.DigitalMovieVO">
- 		select dmid,dmtitle,dmurl,dmcontent,dmhits,previd,prevtitle,nextid,nexttitle from (select dmid,dmtitle,dmurl,dmcontent,dmhits,
+ 	<select id="selectContent" parameterType="java.lang.String" resultType="com.web.vo.DigitalMovieVO">
+ 		select dmid,dmtitle,dmsfile,dmfile,dmurl,dmProgram,dmCategory,dmcontent,dmhits,previd,prevtitle,nextid,
+ 		nexttitle from (select dmid,dmtitle,dmurl,dmcontent,dmhits,dmsfile,dmfile,dmProgram,dmCategory,
  		lag(dmid,1,0)over(order by dmdate)as previd,
  		lag(dmtitle,1,0)over(order by dmdate)as prevtitle,
  		lead(dmid,1,0)over(order by dmdate)as nextid,
  		lead(dmtitle,1,0)over(order by dmdate)as nexttitle from digitalMovie) where dmid=#{dmid}
  	</select>
+ 	
+ 	<delete id="deleteContent" parameterType="java.lang.String">
+ 		delete from digitalMovie where dmid=#{dmid}
+ 	</delete>
+ 	
+ 	<select id="getSfile" parameterType="java.lang.String" resultType="java.lang.String">
+ 		select dmsfile from digitalMovie where dmid=#{dmid}
+ 	</select>
+ 	
+ 	<update id="update" parameterType="com.web.vo.DigitalMovieVO">
+	<choose>
+		<when test="dmFile!=null">
+ 		update digitalMovie set dmTitle=#{dmTitle}, dmUrl=#{dmUrl}, dmFile=#{dmFile},dmSfile=#{dmSfile}
+ 		,dmProgram=#{dmProgram},dmCategory=#{dmCategory},dmContent=#{dmContent}
+ 		 where dmid=#{dmId}</when>
+ 		 <otherwise>
+ 		 update digitalMovie set dmTitle=#{dmTitle}, dmUrl=#{dmUrl}
+ 		,dmProgram=#{dmProgram},dmCategory=#{dmCategory},dmContent=#{dmContent}
+ 		 where dmid=#{dmId}
+ 		 </otherwise>
+ 	</choose>
+ 	</update>
  </mapper>

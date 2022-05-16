@@ -1,6 +1,7 @@
 package com.web.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -69,11 +70,7 @@ public class OnDispController {
 	public ModelAndView onDigitalMovInfo(String dmId) {
 		ModelAndView mv=new ModelAndView("/onlinedisp/on_digitalMov_info");
 		DigitalMovieVO vo=digitalMovieDao.select(dmId);
-		
-		System.out.println(vo.getPrevId());
-		System.out.println(vo.getNextId());
-		System.out.println(vo.getPrevTitle());
-		System.out.println(vo.getNextTitle());
+
 		/*int idNo=Integer.parseInt(idNoStr);
 		
 		String prevId=String.format("dm%04d", idNo-1);
@@ -83,6 +80,7 @@ public class OnDispController {
 		mv.addObject("prevId",prevId);
 		mv.addObject("nextId",nextId);
 		*/
+		mv.addObject("dmid",dmId);
 		mv.addObject("vo", vo);
 		return mv;
 	}
@@ -133,7 +131,7 @@ public class OnDispController {
 			fileService.fileSave(vo, request);
 		}
 		
-		mv.setViewName("redirect: /mygit/online/digitalMovList.do");
+		mv.setViewName("redirect: /mygit/online/digitalMovList.do?rpage=1");
 		return mv;
 	}
 	
@@ -163,22 +161,33 @@ public class OnDispController {
 	
 	
 	@RequestMapping(value="/online/digitalMovUpdate.do",method=RequestMethod.GET)
-	public String onDigitalMovUpdate() {
-		return "/onlinedisp/on_digitalMov_update";
+	public ModelAndView onDigitalMovUpdate(String dmId) {
+		ModelAndView mv= new ModelAndView("/onlinedisp/on_digitalMov_update");
+		DigitalMovieVO vo=digitalMovieDao.select(dmId);
+		vo.setCategoryInv();
+		vo.setProgramInv();
+		mv.addObject("vo", vo);
+		return  mv;
 	}
 	
 	@RequestMapping(value="/online/digitalMovUpdate.do",method=RequestMethod.POST)
-	public ModelAndView onDigitalMovUpdate(DigitalMovieVO vo) {
+	public ModelAndView onDigitalMovUpdate(DigitalMovieVO vo,HttpServletRequest request) throws Exception, Exception {
 		ModelAndView mv=new ModelAndView();
+		System.out.println(vo.getDmFile());
+		String sfile=vo.getDmSfile();
+		vo=fileService.fileCheck(vo);	
 		
-		System.out.println(vo.getDmTitle());
-		System.out.println(vo.getFormFile().getOriginalFilename());
-		System.out.println(vo.getDmUrl());
-		System.out.println(vo.getDmTitle());
-		System.out.println(vo.getDmProgram());
-		System.out.println(vo.getDmCategory());
+		int result=digitalMovieDao.update(vo);
+
 		
-		mv.setViewName("redirect: /mygit/online/digitalMovList.do");
+		if(result==1) {
+			if(vo.getDmSfile()!=null) {
+				fileService.fileSave(vo, request);
+				fileService.deleteFile(sfile, request);
+			}
+		}
+	
+		mv.setViewName("redirect: /mygit/online/digitalMovList.do?rpage=1");
 		return mv;
 	}
 	
@@ -188,10 +197,29 @@ public class OnDispController {
 	}
 	
 	@RequestMapping(value="/online/digitalMovDelete.do",method=RequestMethod.GET)
-	public String onDigitalMovDelete() {
-		return "redirect:/online/digitalMovList.do";
-	}
+	public String onDigitalMovDelete(String dmId,HttpServletRequest request) {
+		
+		System.out.println(dmId);
+		DigitalMovieVO vo=digitalMovieDao.select(dmId);
+		String sfile="";
+		if(vo.getDmSfile()!="") {
+			sfile=vo.getDmSfile();
+		}
+		
+		int result=digitalMovieDao.delete(dmId);
+		
+		if(result==1) {
+			fileService.deleteFile(sfile,request);
+		}
+		
+		
+		
+		
+		return "redirect:/online/digitalMovList.do?rpage=1";
+		}
 	
+	
+
 	@RequestMapping(value="/online/on_show.do",method=RequestMethod.GET)
 	public String onShow() {
 		return "/onlinedisp/on_show";

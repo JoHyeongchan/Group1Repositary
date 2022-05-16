@@ -38,4 +38,18 @@ public class DigitalMovieDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".selectContent", dmId);
 	}
+	
+	public int delete(String dmId) {
+		return sqlSession.delete(namespace+".deleteContent", dmId);
+	}
+	
+	public int update(DigitalMovieVO vo) {
+		vo.setCategory();
+		vo.setProgram();
+		return sqlSession.update(namespace+".update", vo);
+	}
+	
+	public String getOldFileName(String dmId){
+		return sqlSession.selectOne(namespace+".getSfile", dmId);
+	}
 }

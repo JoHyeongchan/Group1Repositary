@@ -30,6 +30,12 @@
 	padding: 10px;
 }
 
+.imgArea{
+	display: flex; 
+	justify-content:center;
+	height:200px;
+}
+
 </style>
 <title>Insert title here</title>
 </head>
@@ -54,8 +60,8 @@
 				<c:forEach var="vo" items="${list}">
 				<td onclick="location.href='digitalMovInfo.do?dmId=${vo.dmId}'"
 					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/upload/${vo.dmSfile }" class="digitalMvImg">
+					<div align="center" class="imgArea">
+						<img src="http://localhost:9000/mygit/resources/upload/${vo.dmSfile }" class="digitalMvImg" style="margin:0 auto;">
 					</div> <br>
 					<div class="itemInfo"> 
 						<span class="itemCategory">${vo.dmProgram}</span>
@@ -64,8 +70,7 @@
 					</div>
 				</td>
 				</c:forEach>
-				<script>
-					
+				<script>				
 					var divLast=${divLast};
 					var pageCount=${pageCount};
 					var reqPage=${reqPage};
