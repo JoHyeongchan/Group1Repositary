@@ -43,6 +43,12 @@ public class DigitalMovieDAO {
 		return sqlSession.delete(namespace+".deleteContent", dmId);
 	}
 	
+	public int update(DigitalMovieVO vo) {
+		vo.setCategory();
+		vo.setProgram();
+		return sqlSession.update(namespace+".update", vo);
+	}
+	
 	public String getOldFileName(String dmId){
 		return sqlSession.selectOne(namespace+".getSfile", dmId);
 	}

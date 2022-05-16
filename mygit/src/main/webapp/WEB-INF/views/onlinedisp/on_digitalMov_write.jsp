@@ -45,7 +45,7 @@
 	</tr>	
 	</table>
 	<hr>
-	<button type="button" onclick="location.href='collectionList.do'" class="btnList">취소</button>
+	<button type="button" onclick="location.href='digitalMovList.do?rpage=1'" class="btnList">취소</button>
 	<button type="submit"  class="btnList">등록</button>
 	</form>		 
 </section>		

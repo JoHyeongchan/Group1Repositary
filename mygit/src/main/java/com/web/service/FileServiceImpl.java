@@ -17,10 +17,11 @@ public class FileServiceImpl {
 		if(!vo.getFormFile().getOriginalFilename().equals("")) {
 			UUID uuid=UUID.randomUUID();
 			file=vo.getFormFile().getOriginalFilename();
-			sfile=file+"_"+uuid;
+			sfile=file+"_"+uuid;			
 			vo.setDmFile(file);
 			vo.setDmSfile(sfile);
 		}
+		
 		
 		return vo;
 	}

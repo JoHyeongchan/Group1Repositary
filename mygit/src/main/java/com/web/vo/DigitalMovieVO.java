@@ -36,18 +36,12 @@ public class DigitalMovieVO {
 		this.dmUrl = dmUrl;
 	}
 	public String getDmFile() {
-		if(dmFile==null) {
-			dmFile="tmp";
-		}
 		return dmFile;
 	}
 	public void setDmFile(String dmFile) {
 		this.dmFile = dmFile;
 	}
 	public String getDmSfile() {
-		if(dmSfile==null) {
-			dmSfile="tmp";
-		}
 		return dmSfile;
 	}
 	public void setDmSfile(String dmSfile) {

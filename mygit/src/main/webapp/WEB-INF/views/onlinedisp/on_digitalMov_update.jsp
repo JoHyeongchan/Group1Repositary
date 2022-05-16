@@ -20,19 +20,35 @@
 	});
 	
 </script>
+<style type="text/css">
+
+	.FileName{
+		display: block;
+		position: relative;
+		width:40%;
+		height: 20px;
+		margin-top: -22px;
+		margin-left: 85px;
+		background: white;
+	}
+	
+</style>
 </head>
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
 <section>
 	<h1>디지털컨텐츠 입력</h1>
 	<hr>
-	<form name="collectionInputForm" action="digitalMovUpdate.do" method="post" class="content_layout" enctype="multipart/form-data">	
+	<form name="collectionInputForm" action="digitalMovUpdate.do" method="post" class="content_layout" enctype="multipart/form-data">
+	<input type="hidden" name="dmId" value="${vo.dmId }">
+	<input type="hidden" name="dmSfile" value="${vo.dmSfile }">
 	<table id="inputTable" border="1">
 	<tr>
 		<th>제목</th><td colspan="3"><input type="text" name="dmTitle" class="longInput" value="${vo.dmTitle } "></input></td>
 	</tr>
 	<tr>
-		<th>이미지</th><td colspan="3"><input type="file" name="formFile" class="longInput" value="${vo.dmFile } "></td>
+		<th>이미지</th><td colspan="3"><input type="file" name="formFile" class="longInput" value="${vo.dmFile } ">
+		<div class="FileName">${vo.dmFile } </div></td>
 	</tr>
 	<tr>
 		<th>동영상링크</th><td colspan="3"><input type="text" name="dmUrl" class="longInput" value="${vo.dmUrl }"></input></td>
@@ -58,8 +74,9 @@
 	</tr>	
 	</table>
 	<hr>
-	<button type="button" onclick="location.href='collectionInfo.do?dmId=${dmId}'" class="btnList">취소</button>
+	<button type="button" onclick="location.href='digitalMovInfo.do?dmId=${vo.dmId}'" class="btnList">취소</button>
 	<button type="submit"  class="btnList">등록</button>
+	
 	</form>
 	
 			 
