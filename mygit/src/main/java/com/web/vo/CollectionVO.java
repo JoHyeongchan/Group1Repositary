@@ -4,11 +4,12 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class CollectionVO {
 
-	private String coId,coTitle,coFile,coSfile,coContent,coDateStr;
+	private String coId,coTitle,coFile,coSfile,coContent,coDate;
 	private String coAuthorKor, coAuthorEng,coName, coYear, coMaterial;
 	private String coDim, coCategory, coManageId, coIsDisp;
 	
 	private CommonsMultipartFile formFile;
+	private String formCategory;
 	
 	int coHits;
 	
@@ -42,11 +43,11 @@ public class CollectionVO {
 	public void setCoContent(String coContent) {
 		this.coContent = coContent;
 	}
-	public String getCoDateStr() {
-		return coDateStr;
+	public String getCoDate() {
+		return coDate;
 	}
-	public void setCoDateStr(String coDateStr) {
-		this.coDateStr = coDateStr;
+	public void setCoDateStr(String coDate) {
+		this.coDate = coDate;
 	}
 	public String getCoAuthorKor() {
 		return coAuthorKor;
@@ -85,9 +86,23 @@ public class CollectionVO {
 		this.coDim = coDim;
 	}
 	public String getCoCategory() {
+		if(coCategory==null)
+		{
+			coCategory=setCategory();
+		}else if(coCategory.length()==0){
+			coCategory=setCategory();
+		}
 		return coCategory;
 	}
 	public void setCoCategory(String coCategory) {
+		
+		if(this.coCategory==null)
+		{
+			coCategory=setCategory();
+		}else if(this.coCategory.length()==0){
+			coCategory=setCategory();
+		}
+		
 		this.coCategory = coCategory;
 	}
 	public String getCoManageId() {
@@ -114,7 +129,40 @@ public class CollectionVO {
 	public void setFormFile(CommonsMultipartFile formFile) {
 		this.formFile = formFile;
 	}
+	public String getFormCategory() {
+		return formCategory;
+	}
+	public void setFormCategory(String formCategory) {
+		this.formCategory = formCategory;
+	}
 	
-	
+	private String setCategory() {
+
+		String result="";
+		if(formCategory.equals("ko")) {
+			result="한국화";
+		}else if(formCategory.equals("pa")) {
+			result="회화";
+		}else if(formCategory.equals("sc")) {
+			result="조각";
+		}else if(formCategory.equals("cr")) {
+			result="공예";
+		}else if(formCategory.equals("nm")) {
+			result="뉴미디어";
+		}else if(formCategory.equals("ar")) {
+			result="건축";
+		}else if(formCategory.equals("de")) {
+			result="디자인";
+		}else if(formCategory.equals("dp")) {
+			result="드로잉/판화";
+		}else if(formCategory.equals("ph")) {
+			result="사진";
+		}else if(formCategory.equals("ca")) {
+			result="서예";
+		}
+		
+		return result;
+
+	}
 	
 }

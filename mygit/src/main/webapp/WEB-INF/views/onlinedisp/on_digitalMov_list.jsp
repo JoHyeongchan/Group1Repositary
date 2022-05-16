@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,111 +51,49 @@
 		<hr style="clear:both">
 		<table>
 			<tr>
-				<td onclick="location.href='digitalMovInfo.do'"
+				<c:forEach var="vo" items="${list}">
+				<td onclick="location.href='digitalMovInfo.do?dmId=${vo.dmId}'"
 					style="cursor: pointer" class="digitalMvBox">
 					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv1.PNG" class="digitalMvImg">
+						<img src="http://localhost:9000/mygit/resources/upload/${vo.dmSfile }" class="digitalMvImg">
 					</div> <br>
 					<div class="itemInfo"> 
-						<span class="itemCategory">오늘, 이 작품</span>
-						<span class="itemTitle">[오늘, 이 작품] 빅토르 <br>바사렐리 | 게자 | 1983(short ver.)</span>
-						<span class="itemDay">2022-05-02|조회수:29</span>
+						<span class="itemCategory">${vo.dmProgram}</span>
+						<span class="itemTitle">${vo.dmTitle}</span>
+						<span class="itemDay">${vo.dmDate }|조회수:${vo.dmHits}</span>
 					</div>
 				</td>
-				<td onclick="location.href='digitalMovInfo.do'"
-					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv2.PNG" class="digitalMvImg">
-					</div> <br>
-					<div class="itemInfo">
-						<span class="itemCategory">오늘, 이 작품</span>
-						<span class="itemTitle">[오늘, 이 작품] 빅토르 <br>바사렐리 | 게자 | 1983</span>
-						<span class="itemDay">2022-05-02|조회수:29</span>
-					</div>
-				</td>
-				<td onclick="location.href='digitalMovInfo.do'"
-					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv3.PNG" class="digitalMvImg">
-					</div> <br>
-					<div class="itemInfo">
-						<span class="itemCategory">작품 &amp; 작가</span>
-						<span class="itemTitle">2022 국립현대미술관 미술은행 프로젝트 《공공》</span>
-						<span class="itemDay">2022-04-29|조회수:679</span>
-					</div>
-				</td>
-				<td onclick="location.href='digitalMovInfo.do'"
-					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv4.PNG" class="digitalMvImg">
-					</div> <br>
-					<div class="itemInfo">
-						<span class="itemCategory">큐레이터 전시 해설</span>
-						<span class="itemTitle">국립현대미술관 큐레이터의 설명으로 보는 《미술로,세계로》</span>
-						<span class="itemDay">2022-04-26|조회수:377</span>
-					</div>
-				</td>
-				<td onclick="location.href='digitalMovInfo.do'"
-					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv5.PNG" class="digitalMvImg">
-					</div> <br>
-					<div class="itemInfo">
-						<span class="itemCategory">오늘, 이 작품</span>
-						<span class="itemTitle">[오늘, 이 작품]도널드 저드 | 무제 | 1980년(short ver.)</span>
-						<span class="itemDay">2022-05-02|조회수:37</span>
-					</div>
-				</td>
-				<td onclick="location.href='digitalMovInfo.do'"
-					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv6.PNG" class="digitalMvImg">
-					</div> <br>
-					<div class="itemInfo">
-						<span class="itemCategory">오늘, 이 작품</span>
-						<span class="itemTitle">[오늘, 이 작품]도널드 저드 | 무제 | 1980년</span>
-						<span class="itemDay">2022-05-02|조회수:236</span>
-					</div>
-				</td>
-				<td onclick="location.href='digitalMovInfo.do'"
-					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv7.PNG" class="digitalMvImg">
-					</div> <br>
-					<div class="itemInfo">
-						<span class="itemCategory">청소년</span>
-						<span class="itemTitle">[청소년 온라인 워크숍]에듀케이터의 실험실 #라벨 #김지민</span>
-						<span class="itemDay">2022-04-24|조회수:270</span>
-					</div>
-				</td>
-				<td onclick="location.href='digitalMovInfo.do'"
-					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/images/onlineMv/mv8.PNG" class="digitalMvImg">
-					</div> <br>
-					<div class="itemInfo">
-						<span class="itemCategory">청소년</span>
-						<span class="itemTitle">[청소년 온라인 워크숍]에듀케이터의 실험실 #일회용 컵 #성정원</span>
-						<span class="itemDay">2022-04-24|조회수:11</span>
-					</div>
-				</td>
+				</c:forEach>
+				<script>
+					
+					var divLast=${divLast};
+					var pageCount=${pageCount};
+					var reqPage=${reqPage};
+			
+					if(reqPage == pageCount){
+					if(divLast!=0){
+						var i=0
+						for(i=0;i<divLast;i++){
+							document.write("<td class='digitalMvBox'></td>");
+						}
+					}}
+				</script>
 			</tr>
 		</table>
 		<div class="pageNum"> <!-- 페이지 번호 -->
-			<span><b>1</b></span>
-			&nbsp;&nbsp;&nbsp;
-			<span>2</span>
-			&nbsp;&nbsp;&nbsp;
-			<span>3</span>
-			&nbsp;&nbsp;&nbsp;
-			<span>4</span>
-			&nbsp;&nbsp;&nbsp;
-			<span>5</span>
-			&nbsp;&nbsp;&nbsp;
+			<script>
+				var pageCount=${pageCount};
+				var i=1;
+				for(i=1;i<=pageCount;i++){
+					document.write("<a href='http://localhost:9000/mygit/online/digitalMovList.do?rpage="+i+"'>");
+					document.write("<span>"+i+"</span></a>&nbsp;&nbsp;&nbsp;</a>");
+				}
+			</script>
+			<!-- 
 			<span>></span>
-			&nbsp;&nbsp;&nbsp;
+			&nbsp;
 			<span>>></span>
-			
+			 -->	
 		</div>
 		<hr>
 		

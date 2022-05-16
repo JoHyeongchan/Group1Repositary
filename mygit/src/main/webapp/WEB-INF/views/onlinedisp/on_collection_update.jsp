@@ -49,8 +49,8 @@
 		<option value="ca">서예</option>
 		</select></td>
 		<th>전시여부</th><td>
-				<input type="radio" name="coIsDisp" value="ondisp">전시중
-				<input type="radio" name="coIsDisp" value="nodisp">비전시</td>
+				<input type="radio" name="coIsDisp" value="전시중">전시중
+				<input type="radio" name="coIsDisp" value="비전시">비전시</td>
 	</tr>
 	<tr>
 		<th>내용입력</th><td colspan="3"><textarea rows="20" cols="80" name="coContent"></textarea></td>

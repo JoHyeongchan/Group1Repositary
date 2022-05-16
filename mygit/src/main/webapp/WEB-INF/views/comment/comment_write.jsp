@@ -19,7 +19,7 @@
 	 	<table>
 	 	<tr>
 	 	<td><span class="inputLabel">제목</span></td>
-	 	<td colspan="4"><input type="text" name="title" value="제목을 입력하세요." class="titleTextBox"></td>
+	 	<td colspan="4"><input type="text" name="cmTitle" value="제목을 입력하세요." class="titleTextBox"></td>
 	 	</tr>
 	 	
 	 	<tr>
@@ -28,10 +28,10 @@
 	 	
 	 	<tr>
 	 	<td><span class="inputLabel">첨부파일</span></td>
-	 	<td colspan="2"><input type="file" name="file1"></td>
+	 	<td colspan="2"><input type="file" name="formFile"></td>
 	 	<td><span class="inputLabel">전시선택</span></td>
 	 	<td>
-	 	<select>
+	 	<select name="cmDisp">
 	 	<option value="1910년대~1920년대">온라인) 국립현대미술관 소장품(1910년대~1920년대)</option>
 	 	<option value="1930년대~1940년대">온라인) 국립현대미술관 소장품(1930년대~1940년대)</option>
 	 	<option value="1950년대~1960년대">온라인) 국립현대미술관 소장품(1950년대~1960년대)</option>
@@ -55,7 +55,7 @@
 	 	</tr>
 	 	
 	 	<tr>
-	 	<td colspan="5" align="center"><textarea rows="20" cols="70" name="content"></textarea>
+	 	<td colspan="5" align="center"><textarea rows="20" cols="70" name="cmContent"></textarea>
 	 	</td>
 	 	</tr>
 	 	</table>
