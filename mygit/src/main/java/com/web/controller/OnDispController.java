@@ -181,7 +181,7 @@ public class OnDispController {
 
 		
 		if(result==1) {
-			if(vo.getDmSfile()!=null) {
+			if(vo.getDmFile()!=null) {
 				fileService.fileSave(vo, request);
 				fileService.deleteFile(sfile, request);
 			}
