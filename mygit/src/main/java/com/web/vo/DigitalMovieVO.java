@@ -9,7 +9,7 @@ public class DigitalMovieVO {
 	
 	private String prevId,nextId,prevTitle,nextTitle;
 	
-	private String formProgram,formCategory;	
+	private String formProgram,formCategory,embedUrl;	
 	CommonsMultipartFile formFile;
 	
 	int dmHits;
@@ -28,9 +28,11 @@ public class DigitalMovieVO {
 		this.dmTitle = dmTitle;
 	}
 	public String getDmUrl() {
+
 		return dmUrl;
 	}
 	public void setDmUrl(String dmUrl) {
+		
 		this.dmUrl = dmUrl;
 	}
 	public String getDmFile() {
@@ -134,12 +136,26 @@ public class DigitalMovieVO {
 	}
 	
 	
+	public String getEmbedUrl() {
+		if(embedUrl==null) {
+			setEmbUrl();
+		}
+		return embedUrl;
+	}
+	public void setEmbedUrl(String embedUrl) {
+		if(this.embedUrl==null) {
+			setEmbUrl();
+		}
+		//this.embedUrl = embedUrl;
+	}
+	
 	public String getPrevTitle() {
 		return prevTitle;
 	}
 	public void setPrevTitle(String prevTitle) {
 		this.prevTitle = prevTitle;
 	}
+	
 	public String getNextTitle() {
 		return nextTitle;
 	}
@@ -148,6 +164,7 @@ public class DigitalMovieVO {
 	}
 	public void setProgram(){
 		String result="";
+	
 		
 		if (formProgram.equals("p1")) {
 			result="관장이 들려주는 소장품 이야기";
@@ -166,6 +183,29 @@ public class DigitalMovieVO {
 			result="invalid formProgram";
 		}
 		dmProgram=result;
+	}
+	
+	public void setProgramInv(){
+		String result="";
+	
+		
+		if (dmProgram.equals("관장이 들려주는 소장품 이야기")) {
+			result="p1";
+		}else if (dmProgram.equals("큐레이터 전시 해설")){
+			result="p2";
+		}else if (dmProgram.equals("강의 & 학술토론")){
+			result="p3";
+		}else if (dmProgram.equals("작품 & 작가")){
+			result="p4";
+		}else if (dmProgram.equals("미술관 소식")){
+			result="p5";
+		}else if (dmProgram.equals("오늘, 이 작품")){
+			result="p6";
+		}
+		else {
+			result="invalid formProgram";
+		}
+		formProgram=result;
 	}
 	
 	public void setCategory(){
@@ -188,5 +228,35 @@ public class DigitalMovieVO {
 			result="";
 		}
 		dmCategory=result;
+	}
+	
+	public void setCategoryInv(){
+		String result="";
+		
+		if (dmCategory.equals("전시연계")) {
+			result="c1";
+		}else if (dmCategory.equals("전시감상")){
+			result="c2";
+		}else if (dmCategory.equals("진로탐색")){
+			result="c3";
+		}else if (dmCategory.equals("보존과학")){
+			result="c4";
+		}else if (dmCategory.equals("작가인터뷰")){
+			result="c5";
+		}else if (dmCategory.equals("전시소개")){
+			result="c6";
+		}
+		else {
+			result="";
+		}
+		formCategory=result;
+	}
+	
+	public void setEmbUrl() {
+		StringBuffer urlOrigin=new StringBuffer(dmUrl);
+		if(urlOrigin.length()>=17) {
+			urlOrigin.replace(8, 16, "www.youtube.com/embed");
+		}		
+		embedUrl=urlOrigin.toString();
 	}
 }

@@ -37,4 +37,17 @@ public class FileServiceImpl {
 		}
 	}
 
+	public void deleteFile(String sfile, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		if(sfile!="") {
+			String rootPath= request.getSession().getServletContext().getRealPath("/");
+			rootPath+="resources\\upload\\";
+			
+			File delFile=new File(rootPath+sfile);
+			if(delFile.exists()) {
+				delFile.delete();
+			}
+		}
+	}
+
 }
