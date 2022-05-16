@@ -31,7 +31,7 @@
 			<tr class=td1>
 				<td>
 					<div class="container">
-					  <img src="resources/images/offline/masquerade.png" alt="image1" class="image" width="300px" height="300px">
+					  <img src="resources/images/offline/offnow/masquerade.png" alt="image1" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
 						<p class="title">가면무도회</p>
@@ -41,7 +41,7 @@
 
 				<td>
 					<div class="container">
-					  <img src="resources/images/offline/myyourmemory.png" alt="image2" class="image" width="300px" height="300px">
+					  <img src="resources/images/offline/offnow/myyourmemory.png" alt="image2" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
 						<p class="title">나너의 기억</p>
@@ -51,7 +51,7 @@
 				
 				<td>
 					<div class="container">
-					  <img src="resources/images/offline/to the world through art.png" alt="image3" class="image" width="300px" height="300px">
+					  <img src="resources/images/offline/offnow/to the world through art.png" alt="image3" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
 						<p class="title">MMCA 국제미술 소장품 기획전 ≪미술로,세계로≫</p>
@@ -60,7 +60,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/offline/(function).png" alt="image4" class="image" width="300px" height="300px">
+					  <img src="resources/images/offline/offnow/(function).png" alt="image4" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
 						<p class="title">MMCA 과천프로젝트 2021:예술버스쉼터_쓸모없는 건축과 유용한 조각에 대하여</p>
@@ -71,7 +71,7 @@
 			<tr class=td1>
 				<td>
 					<div class="container">
-					  <img src="resources/images/offline/circular garden project.png" alt="image5" class="image" width="300px" height="300px">
+					  <img src="resources/images/offline/offnow/circular garden project.png" alt="image5" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
 						<p class="title">원형정원 프로젝트: 달뿌리-느리고빠른 대화</p>
@@ -80,7 +80,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/offline/of the perfect city.png" alt="image6" class="image" width="300px" height="300px">
+					  <img src="resources/images/offline/offnow/of the perfect city.png" alt="image6" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
 						<p class="title">MMCA 청주프로젝트 2021≪천대광: 집우집주≫</p>
@@ -89,7 +89,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/offline/lee kun-hee collection.jpg" alt="image7" class="image" width="300px" height="300px">
+					  <img src="resources/images/offline/offnow/lee kun-hee collection.jpg" alt="image7" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
 						<p class="title">MMCA 이건희컬렉션 특별전: 한국미술명작</p>
@@ -98,7 +98,7 @@
 				</td>	
 				<td>
 					<div class="container">
-					  <img src="resources/images/offline/with you n me.png" alt="image8" class="image" width="300px" height="300px">
+					  <img src="resources/images/offline/offnow/with you n me.png" alt="image8" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
 						<p class="title">너랑 나랑__</p>
