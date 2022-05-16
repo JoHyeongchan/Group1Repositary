@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	display: table;
+	margin: 0 auto;
+}
+
+hr {
+	margin-bottom: 50px;
+}
+
+#title{
+	height: 200px;
+	padding: 50px 0;
+}
+h1 {
+	font-size: 50px;
+	font-weight: bolder;
+}
+.clearfix::before, .clearfix::after {
+	content: " ";
+	display: table;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+#title_left {
+	float: left;
+	width: 60%;
+}
+
+#title_right {
+	float: right;
+	width: 30%;
+}
+
+#info_left {
+	float: left;
+	width: 45%;
+}
+
+#info_right {
+	float: left;
+	width: 45%;
+}
+
+.exhibitimg {
+	float: left;
+	width: 23.5%;
+	margin-right: 2%;
+}
+
+#lastimg {
+	float: right;
+	margin-right: 0;
+	width: 23.5%;
+}
