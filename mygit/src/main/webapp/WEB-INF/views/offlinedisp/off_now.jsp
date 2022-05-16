@@ -29,7 +29,7 @@
 			</div>
 			<table><!-- 컨텐츠목록 -->
 			<tr class=td1>
-				<td>
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/masquerade.png" alt="image1" class="image" width="300px" height="300px">
 					</div>
@@ -39,7 +39,7 @@
 					</div>
 				</td>		
 
-				<td>
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/myyourmemory.png" alt="image2" class="image" width="300px" height="300px">
 					</div>
@@ -49,7 +49,7 @@
 					</div>
 				</td>
 				
-				<td>
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/to the world through art.png" alt="image3" class="image" width="300px" height="300px">
 					</div>
@@ -58,7 +58,7 @@
 						<p>2021-05-04~2022-12-11</p>
 					</div>
 				</td>	
-				<td>
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/(function).png" alt="image4" class="image" width="300px" height="300px">
 					</div>
@@ -69,7 +69,7 @@
 				</td>	
 			</tr>
 			<tr class=td1>
-				<td>
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/circular garden project.png" alt="image5" class="image" width="300px" height="300px">
 					</div>
@@ -78,7 +78,7 @@
 						<p>2021-05-04~2022-12-11</p>
 					</div>
 				</td>	
-				<td>
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/of the perfect city.png" alt="image6" class="image" width="300px" height="300px">
 					</div>
@@ -87,7 +87,7 @@
 						<p>2021-05-04~2022-12-11</p>
 					</div>
 				</td>	
-				<td>
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/lee kun-hee collection.jpg" alt="image7" class="image" width="300px" height="300px">
 					</div>
@@ -96,7 +96,7 @@
 						<p>2021-05-04~2022-12-11</p>
 					</div>
 				</td>	
-				<td>
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/with you n me.png" alt="image8" class="image" width="300px" height="300px">
 					</div>
