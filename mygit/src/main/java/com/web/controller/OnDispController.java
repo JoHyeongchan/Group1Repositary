@@ -236,8 +236,9 @@ public class OnDispController {
 	
 	@RequestMapping(value="/online/collectionDelete.do",method=RequestMethod.GET)
 	public String onCollectionDelete(String coId,HttpServletRequest request) {
+		System.out.println(coId);
 		CollectionVO vo=(CollectionVO) collectionService.getContent(coId);
-		/*
+		
 		String sfile="";
 		if(vo.getCoSfile()!="") {
 			sfile=vo.getCoSfile();
@@ -249,7 +250,7 @@ public class OnDispController {
 			fileService.deleteFile(sfile,request);
 		}
 		
-		*/
+		
 		
 		return "redirect:/online/collectionList.do?rpage=1";
 	}

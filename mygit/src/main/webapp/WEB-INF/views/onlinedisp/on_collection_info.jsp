@@ -16,7 +16,7 @@ $(document).ready(function () {
 		var del_confirm=confirm("삭제하시겠습니까");
 		if (del_confirm==true){
 			var id='${vo.coId}';
-			location.href="digitalMovDelete.do?dmId="+id;
+			location.href="collectionDelete.do?coId="+id;
 		}
 	});
 });
