@@ -11,7 +11,7 @@
 	
 	$(document).ready(function(){
 		/* 관람/참여 */
-		$("#notice").mouseenter($.throttle(1500,function() {
+		$("#notice").mouseenter($.throttle(1000,function() {
 			$(this).find('.nav_content').slideDown(500);
 			$('.nava').css("color","#bbb");
 			$('#noticea').css("color","#000");
@@ -21,7 +21,7 @@
 			$(this).find('.nav_content').slideUp(300);
 		});
 		/* 전시 */
-		$("#exhibit").mouseenter($.throttle(1500,function() {
+		$("#exhibit").mouseenter($.throttle(1000,function() {
 			$(this).find('.nav_content').slideDown(500);
 			$('.nava').css("color","#bbb");
 			$('#exhibita').css("color","#000");
@@ -31,7 +31,7 @@
 			$(this).find('.nav_content').slideUp(300);
 		});
 		/* 디지털미술관 */
-		$("#digit").mouseenter($.throttle(1500,function() {
+		$("#digit").mouseenter($.throttle(1000,function() {
 			$(this).find('.nav_content').slideDown(500);
 			$('.nava').css("color","#bbb");
 			$('#digita').css("color","#000");
@@ -41,7 +41,7 @@
 			$(this).find('.nav_content').slideUp(150);
 		});
 		/* 예약 */
-		$("#reserve").mouseenter($.throttle(1500,function() {
+		$("#reserve").mouseenter($.throttle(1000,function() {
 			$(this).find('.nav_content').slideDown(500);
 			$('.nava').css("color","#bbb");
 			$('#reservea').css("color","#000");
