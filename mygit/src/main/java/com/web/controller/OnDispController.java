@@ -39,9 +39,6 @@ public class OnDispController {
 	DigitalMovieServiceImpl digitalMovieService;
 	
 	@Autowired
-	CollectionDAO collectionDao;
-	
-	@Autowired
 	PageServiceImpl pageService;
 	
 	@Autowired
@@ -73,10 +70,6 @@ public class OnDispController {
 		if(dbCount%pageSize!=0) {
 			divLast=pageSize-dbCount%pageSize;
 		}
-		
-		System.out.println(divLast);
-		System.out.println(pageCount);
-		System.out.println(pageSize);
 		
 		mv.addObject("divLast",divLast);
 		mv.addObject("reqPage", reqPage);
@@ -177,26 +170,32 @@ public class OnDispController {
 	}
 	
 	@RequestMapping(value="/online/collectionUpdate.do",method=RequestMethod.GET)
-	public String onCollectionUpdate() {
-		return "/onlinedisp/on_collection_update";
+	public ModelAndView onCollectionUpdate(String coId) {
+		ModelAndView mv=new ModelAndView("/onlinedisp/on_collection_update");
+		CollectionVO vo=(CollectionVO)collectionService.getContent(coId);
+		
+		vo.setCategoryInv();
+		mv.addObject("vo", vo);
+		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionUpdate.do",method=RequestMethod.POST)
-	public ModelAndView onCollectionUpdate(CollectionVO vo) {
+	public ModelAndView onCollectionUpdate(CollectionVO vo,HttpServletRequest request) throws Exception {
 		ModelAndView mv=new ModelAndView();
 		
-		System.out.println(vo.getCoTitle());
-		System.out.println(vo.getFormFile().getOriginalFilename());
-		System.out.println(vo.getCoAuthorKor());
-		System.out.println(vo.getCoAuthorEng());
-		System.out.println(vo.getCoName());
-		System.out.println(vo.getCoYear());
-		System.out.println(vo.getCoDim());
-		System.out.println(vo.getCoCategory());
-		System.out.println(vo.getCoIsDisp());
-		System.out.println(vo.getCoContent());
+		String sfile=vo.getCoSfile();
+		vo=fileService.fileCheck(vo);	
 		
-		mv.setViewName("redirect: /mygit/online/collectionList.do");
+		int result=collectionService.updateContent(vo);
+		
+		if(result==1) {
+			if(vo.getCoFile()!=null) {
+				fileService.fileSave(vo, request);
+				fileService.deleteFile(sfile, request);
+			}
+		}
+	
+		mv.setViewName("redirect: /mygit/online/collectionList.do?rpage=1");
 		return mv;
 	}
 	
@@ -215,7 +214,7 @@ public class OnDispController {
 	@RequestMapping(value="/online/digitalMovUpdate.do",method=RequestMethod.POST)
 	public ModelAndView onDigitalMovUpdate(DigitalMovieVO vo,HttpServletRequest request) throws Exception, Exception {
 		ModelAndView mv=new ModelAndView();
-		System.out.println(vo.getDmFile());
+
 		String sfile=vo.getDmSfile();
 		vo=fileService.fileCheck(vo);	
 		
@@ -236,7 +235,7 @@ public class OnDispController {
 	
 	@RequestMapping(value="/online/collectionDelete.do",method=RequestMethod.GET)
 	public String onCollectionDelete(String coId,HttpServletRequest request) {
-		System.out.println(coId);
+
 		CollectionVO vo=(CollectionVO) collectionService.getContent(coId);
 		
 		String sfile="";

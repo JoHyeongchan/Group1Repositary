@@ -36,7 +36,7 @@
 		<th>규격</th><td><input type="text" name="coDim" class="shortInput"></td>
 	</tr>
 	<tr>
-		<th>부문</th><td><select name="formCategory" class="shortInput">
+		<th>부문</th><td><select name="formCategory" class="shortInput" id="categorySel">
 		<option value="ko">한국화</option>
 		<option value="pa">회화</option>
 		<option value="sc">조각</option>
@@ -49,7 +49,7 @@
 		<option value="ca">서예</option>
 		</select></td>
 		<th>전시여부</th><td>
-				<input type="radio" name="coIsDisp" value="전시중">전시중
+				<input type="radio" name="coIsDisp" value="전시중" checked="checked">전시중
 				<input type="radio" name="coIsDisp" value="비전시">비전시</td>
 	</tr>
 	<tr>
