@@ -33,6 +33,16 @@ public class CollectionDAO {
 		
 		return sqlSession.selectList(namespace+".selectList",param);
 	}
+	
+	public CollectionVO select(String coId) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".selectContent", coId);
+	}
+	
+	public void updateHits(String coId) {
+		// TODO Auto-generated method stub
+		sqlSession.update(namespace+".updateHit", coId);
+	}
 	/*
 	public DigitalMovieVO select(String dmId) {
 		// TODO Auto-generated method stub
@@ -54,8 +64,7 @@ public class CollectionDAO {
 		return sqlSession.selectOne(namespace+".getSfile", dmId);
 	}
 
-	public void updateHits(String dmId) {
-		// TODO Auto-generated method stub
-		sqlSession.update(namespace+".updateHit", dmId);
-	}*/
+	*/
+
+	
 }

@@ -122,14 +122,18 @@ public class OnDispController {
 		digitalMovieService.updateHits(dmId);
 		DigitalMovieVO vo=(DigitalMovieVO)digitalMovieService.getContent(dmId);
 
-		mv.addObject("dmid",dmId);
+		//mv.addObject("dmid",dmId);
 		mv.addObject("vo", vo);
 		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionInfo.do",method=RequestMethod.GET)
-	public String onCollectionInfo() {
-		return "/onlinedisp/on_collection_info";
+	public ModelAndView onCollectionInfo(String coId) {
+		ModelAndView mv= new ModelAndView( "/onlinedisp/on_collection_info");
+		
+		CollectionVO vo=(CollectionVO)collectionService.getContent(coId);
+		mv.addObject("vo", vo);
+		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionWrite.do",method=RequestMethod.GET)
@@ -141,7 +145,8 @@ public class OnDispController {
 	public ModelAndView onCollectionWrite(CollectionVO vo, HttpServletRequest request) throws Exception {
 		ModelAndView mv=new ModelAndView();
 		vo=fileService.fileCheck(vo);
-		int result=collectionDao.insert(vo);
+		int result=collectionService.InsertRecord(vo);
+		//int result=collectionDao.insert(vo);
 		if(result==1) {
 			fileService.fileSave(vo, request);
 		}		
@@ -226,8 +231,9 @@ public class OnDispController {
 	}
 	
 	@RequestMapping(value="/online/collectionDelete.do",method=RequestMethod.GET)
-	public String onCollectionDelete() {
-		return "redirect:/online/collectionList.do";
+	public String onCollectionDelete(String coId) {
+		
+		return "redirect:/online/collectionList.do?rpage=1";
 	}
 	
 	@RequestMapping(value="/online/digitalMovDelete.do",method=RequestMethod.GET)

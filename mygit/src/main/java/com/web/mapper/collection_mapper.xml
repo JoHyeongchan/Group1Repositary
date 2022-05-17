@@ -17,4 +17,20 @@
  	codate from(select rownum rno,coid, cosfile, coAuthorKor, coAuthorEng, 
  	cotitle, coYear,codate from collection ORDER BY codate desc) where rno between #{start} and #{end} 
  	</select>
+ 	
+ 	<select id="selectContent" parameterType="java.lang.String" resultType="com.web.vo.CollectionVO">
+ 	select coid,cotitle,cofile,cosfile,cocontent,cohits,coauthorkor,coauthoreng,
+        coname,coyear,comaterial,cocategory,comanageid,codim,coisdisp,previd,prevtitle,nextid,nexttitle
+        from (select coid,cotitle,cofile,cosfile,cocontent,cohits,coauthorkor,coauthoreng,
+        coname,coyear,comaterial,comanageid,codim,coisdisp,cocategory,
+ 		lag(coid,1,0)over(order by codate)as previd,
+ 		lag(cotitle,1,0)over(order by codate)as prevtitle,
+ 		lead(coid,1,0)over(order by codate)as nextid,
+ 		lead(cotitle,1,0)over(order by codate)as nexttitle from collection) where coid=#{coId}
+ 	</select>
+ 	
+ 		<update id="updateHit" parameterType="java.lang.String">
+ 		update collection set cohits=cohits+1 where dmId=#{coid}
+ 	</update>
+ 	
  </mapper>
