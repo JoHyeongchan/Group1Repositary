@@ -80,12 +80,13 @@
 					var pageCount=${pageCount};
 					var reqPage=${reqPage};
 								
-					if(divLast!=0){
+					if(divLast!=0 && (reqPage==pageCount)){
 						var i=0;
 						for(i=0;i<divLast;i++){
 							document.write("<td class='digitalColBox'></td>");
 						}
 					}
+					
 				</script>
 			</tr>
 		</table>
@@ -94,6 +95,7 @@
 			<script>
 				var pageCount=${pageCount};
 				var i=1;
+			
 				for(i=1;i<=pageCount;i++){
 					document.write("<a href='http://localhost:9000/mygit/online/collectionList.do?rpage="+i+"'>");
 					document.write("<span>"+i+"</span></a>&nbsp;&nbsp;&nbsp;</a>");
