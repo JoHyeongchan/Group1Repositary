@@ -74,14 +74,13 @@
 					var divLast=${divLast};
 					var pageCount=${pageCount};
 					var reqPage=${reqPage};
-			
-					if(reqPage == pageCount){
-					if(divLast!=0){
+				
+					if(divLast!=0 && (reqPage==pageCount)){
 						var i=0;
 						for(i=0;i<divLast;i++){
 							document.write("<td class='digitalMvBox'></td>");
 						}
-					}}
+					}
 				</script>
 			</tr>
 		</table>

@@ -70,9 +70,13 @@ public class OnDispController {
 		}
 		
 		int divLast=0;
-		if(dbCount%pageSize !=0) {
-			divLast=pageCount-dbCount%pageSize;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
 		}
+		
+		System.out.println(divLast);
+		System.out.println(pageCount);
+		System.out.println(pageSize);
 		
 		mv.addObject("divLast",divLast);
 		mv.addObject("reqPage", reqPage);
@@ -105,8 +109,8 @@ public class OnDispController {
 		}
 				
 		int divLast=0;
-		if(dbCount%pageSize !=0) {
-			divLast=pageCount-dbCount%pageSize;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
 		}
 		
 		mv.addObject("divLast",divLast);
