@@ -6,48 +6,46 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js'></script>
 <script type="text/javascript">
 	
 	$(document).ready(function(){
 		/* 관람/참여 */
-		$("#notice").mouseenter(function() {
+		$("#notice").mouseenter($.throttle(1500,function() {
 			$(this).find('.nav_content').slideDown(500);
 			$('.nava').css("color","#bbb");
 			$('#noticea').css("color","#000");
-			/* $('#nav').append("<div id='test' class='clearfix'>111111111111</div>");
-			$('#nav').find('#test').slideDown(500); */
-		});
+		}));
 		$(".nav_center").mouseleave(function() {
-			$('#test').remove();
 			$('.nava').css("color","#000");
-			$(this).find('.nav_content').slideUp(200);
+			$(this).find('.nav_content').slideUp(300);
 		});
 		/* 전시 */
-		$("#exhibit").mouseenter(function() {
+		$("#exhibit").mouseenter($.throttle(1500,function() {
 			$(this).find('.nav_content').slideDown(500);
 			$('.nava').css("color","#bbb");
 			$('#exhibita').css("color","#000");
-		});
+		}));
 		$(".nav_center").mouseleave(function() {
 			$('.nava').css("color","#000");
-			$(this).find('.nav_content').slideUp(200);
+			$(this).find('.nav_content').slideUp(300);
 		});
 		/* 디지털미술관 */
-		$("#digit").mouseenter(function() {
+		$("#digit").mouseenter($.throttle(1500,function() {
 			$(this).find('.nav_content').slideDown(500);
 			$('.nava').css("color","#bbb");
 			$('#digita').css("color","#000");
-		});
+		}));
 		$(".nav_center").mouseleave(function() {
 			$('.nava').css("color","#000");
-			$(this).find('.nav_content').slideUp(200);
+			$(this).find('.nav_content').slideUp(150);
 		});
 		/* 예약 */
-		$("#reserve").mouseenter(function() {
+		$("#reserve").mouseenter($.throttle(1500,function() {
 			$(this).find('.nav_content').slideDown(500);
 			$('.nava').css("color","#bbb");
 			$('#reservea').css("color","#000");
-		});
+		}));
 		$(".nav_center").mouseleave(function() {
 			$('.nava').css("color","#000");
 			$(this).find('.nav_content').slideUp(200);
