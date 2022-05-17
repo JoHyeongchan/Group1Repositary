@@ -27,12 +27,12 @@
 	ul>li>a{font-weight: bold; font-size: 30pt; cursor: pointer;}
 	ul>li>div{display: none; position: absolute; font-size: 25pt;}
 	.nav_content>a{display: block; margin-top: 10px; margin-bottom: 10px; cursor: pointer; color: gray;}
-	.nav_content>a:hover {text-decoration:underline;}
+	.nav_content>a:hover {background-color: #2C2C2C; color: white;}
 	.nav_center{padding-left: 60px; padding-right: 50px; padding-top: 20px;}
 	#nav_right{width: 300px; height: 70px; float: right; padding-top: 55px;}
 	#nav_right a{font-weight: bold; font-size: 15pt;}
 	.nav_item2{padding: 10px; cursor: pointer;}
-	.nav_content{ background-color: white;}
+	.nav_content{ background-color: #3E3E3E; width: 200px;}
 </style>
 </head>
 <body>
