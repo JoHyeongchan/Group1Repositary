@@ -35,5 +35,10 @@ public class CollectionServiceImpl implements CollectionService{
 		// TODO Auto-generated method stub
 		return collectionDao.select(coId);
 	}
+
+	public void updateHits(String coId) {
+		// TODO Auto-generated method stub
+		collectionDao.updateHits(coId);
+	}
 	
 }

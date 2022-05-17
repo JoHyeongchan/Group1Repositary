@@ -64,7 +64,7 @@ $(document).ready(function () {
 	<tr><td colspan="2"><hr></td></tr>
 		<c:choose>
 		<c:when test="${vo.prevId!='0' }">
-		<tr onclick="location.href='digitalMovInfo.do?dmId=${vo.prevId}'" class="bottomTr">
+		<tr onclick="location.href='collectionInfo.do?coId=${vo.prevId}'" class="bottomTr">
 			<td class="bottomBox">이전글</td><td><b>${vo.prevTitle}</b></td>
 		</tr></c:when>
 		<c:otherwise>
@@ -75,7 +75,7 @@ $(document).ready(function () {
 		<tr><td colspan="2"><hr></td></tr>
 		<c:choose>
 		<c:when test="${vo.nextId!='0' }">
-		<tr onclick="location.href='digitalMovInfo.do?dmId=${vo.nextId}'" class="bottomTr">
+		<tr onclick="location.href='collectionInfo.do?coId=${vo.nextId}'" class="bottomTr">
 			<td class="bottomBox">다음글</td><td><b>${vo.nextTitle}</b></td>
 		</tr></c:when>
 		<c:otherwise>

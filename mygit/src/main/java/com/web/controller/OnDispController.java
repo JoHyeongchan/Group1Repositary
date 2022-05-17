@@ -130,7 +130,7 @@ public class OnDispController {
 	@RequestMapping(value="/online/collectionInfo.do",method=RequestMethod.GET)
 	public ModelAndView onCollectionInfo(String coId) {
 		ModelAndView mv= new ModelAndView( "/onlinedisp/on_collection_info");
-		
+		collectionService.updateHits(coId);
 		CollectionVO vo=(CollectionVO)collectionService.getContent(coId);
 		mv.addObject("vo", vo);
 		return mv;

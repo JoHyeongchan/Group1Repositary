@@ -13,9 +13,12 @@
  	</select>
  
  	<select id="selectList" parameterType="map" resultType="com.web.vo.CollectionVO">
- 	select rno,coid, cosfile, coAuthorKor, coAuthorEng, cotitle, coYear,
- 	codate from(select rownum rno,coid, cosfile, coAuthorKor, coAuthorEng, 
- 	cotitle, coYear,codate from collection ORDER BY codate desc) where rno between #{start} and #{end} 
+ 	select rno,coid, cosfile, coAuthorKor, coAuthorEng, 
+ 	cotitle, coYear from(
+select rownum rno,coid, cosfile, coAuthorKor, coAuthorEng, 
+ 	cotitle, coYear from
+(select coid, cosfile, coAuthorKor, coAuthorEng, 
+ 	cotitle, coYear,codate from collection ORDER BY codate desc)) where rno between #{start} and #{end} 
  	</select>
  	
  	<select id="selectContent" parameterType="java.lang.String" resultType="com.web.vo.CollectionVO">
@@ -30,7 +33,7 @@
  	</select>
  	
  		<update id="updateHit" parameterType="java.lang.String">
- 		update collection set cohits=cohits+1 where dmId=#{coid}
+ 		update collection set cohits=cohits+1 where coId=#{coid}
  	</update>
  	
  </mapper>

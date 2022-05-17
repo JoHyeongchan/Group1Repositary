@@ -86,67 +86,35 @@
 			<div>
 				<ul>
 					<li class="nav_center" id="notice">
-<<<<<<< HEAD
 						<a class="nava" id="noticea" href="/mygit/comment_list.do">관람·참여</a>
 						<div class="nav_content">
 						<a href="/mygit/notice_list.do">공지</a>
 						<a href="/mygit/comment_list.do">관람후기</a>
 						<a href="/mygit/faq_list.do">FAQ</a>
 						<a href="/mygit/qna_list.do">Q&A</a>
-=======
-						<a class="nava" id="noticea" href="comment_list.do">관람·참여</a>
-						<div class="nav_content">
-						<a href="notice_list.do">공지</a>
-						<a href="comment_list.do">관람후기</a>
-						<a href="faq_list.do">FAQ</a>
-						<a href="qna_list.do">Q&A</a>
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
 						</div>
 					</li>
 					<li class="nav_center" id="exhibit">
-<<<<<<< HEAD
 						<a class="nava" id="exhibita" href="/mygit/off_now.do">전시</a>
 						<div class="nav_content">
 						<a href="/mygit/off_now.do">현재전시</a>
 						<a href="/mygit/off_future.do">예정전시</a>
 						<a href="/mygit/off_past.do">과거전시</a>
-=======
-						<a class="nava" id="exhibita" href="off_now.do">전시</a>
-						<div class="nav_content">
-						<a href="off_now.do">현재전시</a>
-						<a href="off_future.do">예정전시</a>
-						<a href="off_past.do">과거전시</a>
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
 						</div>
 					</li>
 					<li class="nav_center" id="digit">
-<<<<<<< HEAD
 						<a class="nava" id="digita" href="/mygit/online/on_show.do">디지털미술관</a>
 						<div class="nav_content">
 						<a href="/mygit/online/on_show.do">온라인전시</a>
 						<a href="/mygit/online/collectionList.do?rpage=1">소장품</a>
 						<a href="/mygit/online/digitalMovList.do?rpage=1">온라인컨텐츠</a>
 						<a href="/mygit/usergal/usergal_list.do">이용자갤러리</a>
-=======
-						<a class="nava" id="digita" href="online/on_show.do">디지털미술관</a>
-						<div class="nav_content">
-						<a href="on_show.do">온라인전시</a>
-						<a href="collectionList.do">소장품</a>
-						<a href="digitalMovList.do?rpage=1">온라인컨텐츠</a>
-						<a href="usergal_list.do">이용자갤러리</a>
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
 						</div>
 					</li>
 					<li class="nav_center" id="reserve">
-<<<<<<< HEAD
 						<a class="nava" id="reservea" href="/mygit/reservation.do">예약</a>
 						<div class="nav_content">
 						<a href="/mygit/reservation.do">예약하기</a>
-=======
-						<a class="nava" id="reservea" href="reservation.do">예약</a>
-						<div class="nav_content">
-						<a href="reservation.do">예약하기</a>
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
 						</div>
 					</li>
 				</ul>
