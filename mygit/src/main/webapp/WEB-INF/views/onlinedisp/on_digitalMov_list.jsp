@@ -77,7 +77,7 @@
 			
 					if(reqPage == pageCount){
 					if(divLast!=0){
-						var i=0
+						var i=0;
 						for(i=0;i<divLast;i++){
 							document.write("<td class='digitalMvBox'></td>");
 						}
@@ -93,12 +93,7 @@
 					document.write("<a href='http://localhost:9000/mygit/online/digitalMovList.do?rpage="+i+"'>");
 					document.write("<span>"+i+"</span></a>&nbsp;&nbsp;&nbsp;</a>");
 				}
-			</script>
-			<!-- 
-			<span>></span>
-			&nbsp;
-			<span>>></span>
-			 -->	
+			</script>	
 		</div>
 		<hr>
 		

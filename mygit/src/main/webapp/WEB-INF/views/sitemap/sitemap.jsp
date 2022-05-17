@@ -44,7 +44,7 @@
 	<hr>
 	<table class="list">
 	<tr><td><a href="online/on_show.do">온라인전시</a></td></tr>
-	<tr><td><a href="online/collectionList.do">소장품</a></td></tr>
+	<tr><td><a href="online/collectionList.do?rpage=1">소장품</a></td></tr>
 	<tr><td><a href="online/digitalMovList.do?rpage=1">온라인컨텐츠</a></td></tr>
 	<tr><td><a href="usergal/usergal_list.do">사용자갤러리</a></td></tr>
 	</table>

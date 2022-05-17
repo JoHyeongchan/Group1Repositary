@@ -46,7 +46,7 @@ public class CollectionVO {
 	public String getCoDate() {
 		return coDate;
 	}
-	public void setCoDateStr(String coDate) {
+	public void setCoDate(String coDate) {
 		this.coDate = coDate;
 	}
 	public String getCoAuthorKor() {
@@ -86,22 +86,10 @@ public class CollectionVO {
 		this.coDim = coDim;
 	}
 	public String getCoCategory() {
-		if(coCategory==null)
-		{
-			coCategory=setCategory();
-		}else if(coCategory.length()==0){
-			coCategory=setCategory();
-		}
+
 		return coCategory;
 	}
 	public void setCoCategory(String coCategory) {
-		
-		if(this.coCategory==null)
-		{
-			coCategory=setCategory();
-		}else if(this.coCategory.length()==0){
-			coCategory=setCategory();
-		}
 		
 		this.coCategory = coCategory;
 	}
@@ -136,7 +124,7 @@ public class CollectionVO {
 		this.formCategory = formCategory;
 	}
 	
-	private String setCategory() {
+	public void setCategory() {
 
 		String result="";
 		if(formCategory.equals("ko")) {
@@ -161,7 +149,9 @@ public class CollectionVO {
 			result="서예";
 		}
 		
-		return result;
+		coCategory=result;
+		formCategory=formCategory.toUpperCase();
+
 
 	}
 	

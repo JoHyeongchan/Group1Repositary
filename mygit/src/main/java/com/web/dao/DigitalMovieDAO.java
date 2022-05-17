@@ -26,7 +26,7 @@ public class DigitalMovieDAO {
 		return sqlSession.selectOne(namespace+".count");
 	}
 	
-	public List<DigitalMovieVO> select(int startCount, int endCount){
+	public List<Object> select(int startCount, int endCount){
 		Map<String, String> param=new HashMap<String, String>();
 		param.put("start", String.valueOf(startCount));
 		param.put("end", String.valueOf(endCount));
@@ -43,7 +43,8 @@ public class DigitalMovieDAO {
 		return sqlSession.delete(namespace+".deleteContent", dmId);
 	}
 	
-	public int update(DigitalMovieVO vo) {
+	public int update(Object obj) {
+		DigitalMovieVO vo=(DigitalMovieVO)obj;
 		vo.setCategory();
 		vo.setProgram();
 		return sqlSession.update(namespace+".update", vo);
@@ -51,5 +52,10 @@ public class DigitalMovieDAO {
 	
 	public String getOldFileName(String dmId){
 		return sqlSession.selectOne(namespace+".getSfile", dmId);
+	}
+
+	public void updateHits(String dmId) {
+		// TODO Auto-generated method stub
+		sqlSession.update(namespace+".updateHit", dmId);
 	}
 }

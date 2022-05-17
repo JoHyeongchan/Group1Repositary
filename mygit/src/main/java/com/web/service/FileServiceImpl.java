@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.web.vo.CollectionVO;
 import com.web.vo.DigitalMovieVO;
 
 public class FileServiceImpl {
@@ -26,12 +27,38 @@ public class FileServiceImpl {
 		return vo;
 	}
 	
+	public CollectionVO fileCheck(CollectionVO vo) {
+		
+		String file="";
+		String sfile="";
+		if(!vo.getFormFile().getOriginalFilename().equals("")) {
+			UUID uuid=UUID.randomUUID();
+			file=vo.getFormFile().getOriginalFilename();
+			sfile=file+"_"+uuid;			
+			vo.setCoFile(file);
+			vo.setCoSfile(sfile);
+		}	
+		return vo;
+	}
+	
 	public void fileSave(DigitalMovieVO vo, HttpServletRequest request) throws Exception, IOException {
 		if(!vo.getFormFile().getOriginalFilename().equals("")) {
 			String rootPath= request.getSession().getServletContext().getRealPath("/");
 			rootPath+="resources\\upload\\";
 
 			File newFile=new File(rootPath+vo.getDmSfile());
+			vo.getFormFile().transferTo(newFile);
+			System.out.println(rootPath);
+			
+		}
+	}
+	
+	public void fileSave(CollectionVO vo, HttpServletRequest request) throws Exception, IOException {
+		if(!vo.getFormFile().getOriginalFilename().equals("")) {
+			String rootPath= request.getSession().getServletContext().getRealPath("/");
+			rootPath+="resources\\upload\\";
+
+			File newFile=new File(rootPath+vo.getCoSfile());
 			vo.getFormFile().transferTo(newFile);
 			System.out.println(rootPath);
 			
