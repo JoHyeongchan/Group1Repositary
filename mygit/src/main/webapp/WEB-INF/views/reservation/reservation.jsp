@@ -18,7 +18,7 @@
 	<section>
 		<div id="list">
 			<div class="show_info">
-				<img src="http://localhost:9000/tp/resources/img/poster_1.jpg" class="show_poster">
+				<img src="http://localhost:9000/mygit/resources/images/poster_1.jpg" class="show_poster">
 				<p class="show_title">[서울] 통합전시 (이건희컬렉션 제외)</p><br>
 				<p class="show_desc">
 					월, 화,목,금,일 10:00 ~ 18:00<br>
@@ -29,7 +29,7 @@
 				<span class="open_close">예약중</span>
 			</div>
 			<div class="show_info">
-				<img src="http://localhost:9000/tp/resources/img/poster_2.jpg" class="show_poster">
+				<img src="http://localhost:9000/mygit/resources/images/poster_2.jpg" class="show_poster">
 				<p class="show_title">아티스트 토크: 히토 슈타이얼</p><br>
 				<p class="show_desc">
 					2022. 4. 29. (금) 14:00-16:00(입장 마감 14:00)<br>
@@ -40,7 +40,7 @@
 				<span class="open_close">예약중</span>
 			</div>
 			<div class="show_info">
-				<img src="http://localhost:9000/tp/resources/img/poster_3.jpg" class="show_poster">
+				<img src="http://localhost:9000/mygit/resources/images/poster_3.jpg" class="show_poster">
 				<p class="show_title">Title Sample2</p><br>
 				<p class="show_desc">
 					상시운영(월요일 휴관)<br>
