@@ -73,8 +73,7 @@
 				<script>				
 					var divLast=${divLast};
 					var pageCount=${pageCount};
-					var reqPage=${reqPage};
-				
+					var reqPage=${reqPage};			
 					if(divLast!=0 && (reqPage==pageCount)){
 						var i=0;
 						for(i=0;i<divLast;i++){

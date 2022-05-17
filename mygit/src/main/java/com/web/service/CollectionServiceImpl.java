@@ -40,5 +40,13 @@ public class CollectionServiceImpl implements CollectionService{
 		// TODO Auto-generated method stub
 		collectionDao.updateHits(coId);
 	}
+
+	@Override
+	public int deleteContent(String coId) {
+		// TODO Auto-generated method stub
+		return collectionDao.delete(coId);
+	}
+	
+	
 	
 }

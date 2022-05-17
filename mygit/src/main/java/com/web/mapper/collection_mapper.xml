@@ -36,4 +36,7 @@ select rownum rno,coid, cosfile, coAuthorKor, coAuthorEng,
  		update collection set cohits=cohits+1 where coId=#{coid}
  	</update>
  	
+ 	<delete id="deleteContent" parameterType="java.lang.String">
+ 	delete from collection where coid=#{coid}
+ 	</delete>
  </mapper>

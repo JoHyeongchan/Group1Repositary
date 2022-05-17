@@ -43,6 +43,11 @@ public class CollectionDAO {
 		// TODO Auto-generated method stub
 		sqlSession.update(namespace+".updateHit", coId);
 	}
+	
+	public int delete(String coId) {
+		// TODO Auto-generated method stub
+		return sqlSession.delete(namespace+".deleteContent", coId);
+	}
 	/*
 	public DigitalMovieVO select(String dmId) {
 		// TODO Auto-generated method stub
@@ -65,6 +70,8 @@ public class CollectionDAO {
 	}
 
 	*/
+
+	
 
 	
 }

@@ -14,28 +14,7 @@
 	margin-left:4%;
 	margin-right: 4%;
 }
-/*
-.btnList{
-	float:right;
-	margin-right: 40px;
-	height: 50px;
-	color:white;
-	background-color: black;
-	border-radius: 25px;
-	width: 150px; font-size: 20px;
-}
 
-#digitalForm{
-	float:left;
-	width: 45%;
-}
-
-#btnArea{
-	float:right;
-	width:45%;
-	padding: 10px;
-}
-*/
 .imgArea{
 	display: flex; 
 	justify-content:center;
