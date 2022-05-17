@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.web.dao.CollectionDAO;
 import com.web.dao.DigitalMovieDAO;
 import com.web.vo.DigitalMovieVO;
 
@@ -13,7 +14,13 @@ public class PageServiceImpl {
 	@Autowired
 	DigitalMovieDAO digitalMovieDao;
 	
-	public Map<String, String> getPageResult(String rpage /*,String serviceName,ObjectService service*/ ){
+	@Autowired
+	DigitalMovieServiceImpl digitalMovieService;
+	
+	@Autowired
+	CollectionServiceImpl collectionService;
+	
+	public Map<String, String> getPageResult(String rpage ,String serviceName,ObjectService service){
 		
 		Map<String, String> param=new HashMap<String, String>();
 		
@@ -25,23 +32,13 @@ public class PageServiceImpl {
 		int pageCount = 1;	
 		int dbCount = 0; //전체 페이지 수
 		
-		/*
-		if(serviceName.equals("member")) {
-			memberService=(MemberServiceImpl)service;
-			dbCount=memberService.getListCount();//noticeDao.execTotalCount();	DB에서 가져온 전체 행수
-		}else if(serviceName.equals("board")) {
-			boardService=(BoardServiceImpl)service;
-			dbCount=boardService.getListCount();
-		}else if(serviceName.equals("notice")){
-			noticeService=(NoticeServiceImpl)service;
-			dbCount=noticeService.getListCount();
-		}else {
-			productService=(ProductServiceImpl)service;
-			dbCount=productService.getListCount();
-			System.out.println(dbCount);
-		}*/
-		
-		dbCount=digitalMovieDao.getCount();
+		if(serviceName.equals("digitalMovie")) {
+			digitalMovieService=(DigitalMovieServiceImpl)service;
+			dbCount=digitalMovieService.getRecordCount();
+		}else if(serviceName.equals("collection")) {
+			collectionService=(CollectionServiceImpl)service;
+			dbCount=collectionService.getRecordCount();
+		}
 		
 		//총 페이지 수 계산
 		if(dbCount % pageSize == 0){
@@ -69,4 +66,5 @@ public class PageServiceImpl {
 		
 		return  param;
 	}
+
 }

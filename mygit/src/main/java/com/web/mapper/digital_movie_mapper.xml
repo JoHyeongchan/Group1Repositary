@@ -47,4 +47,8 @@
  		 </otherwise>
  	</choose>
  	</update>
+ 	
+ 	<update id="updateHit" parameterType="java.lang.String">
+ 		update digitalMovie set dmhits=dmhits+1 where dmId=#{dmid}
+ 	</update>
  </mapper>
