@@ -23,7 +23,7 @@ a:active, a:visited, a:link{
 	text-decoration: none;
 }
  
-a:hover{
+td>a:hover{
 	font-weight:bolder;
 	text-decoration: underline;
 } 
