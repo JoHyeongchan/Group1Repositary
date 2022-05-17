@@ -7,18 +7,18 @@ import java.util.Map;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.web.vo.CollectionVO;
 import com.web.vo.DigitalMovieVO;
 
-public class DigitalMovieDAO {
+public class CollectionDAO {
 
 	@Autowired
 	SqlSessionTemplate sqlSession;
 	
-	String namespace="mapper.digitalMv";
+	String namespace="mapper.collection";
 	
-	public int insert(DigitalMovieVO vo) {
+	public int insert(CollectionVO vo) {
 		vo.setCategory();
-		vo.setProgram();
 		return sqlSession.insert(namespace+".insert", vo);
 	}
 	
@@ -33,7 +33,22 @@ public class DigitalMovieDAO {
 		
 		return sqlSession.selectList(namespace+".selectList",param);
 	}
-
+	
+	public CollectionVO select(String coId) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".selectContent", coId);
+	}
+	
+	public void updateHits(String coId) {
+		// TODO Auto-generated method stub
+		sqlSession.update(namespace+".updateHit", coId);
+	}
+	
+	public int delete(String coId) {
+		// TODO Auto-generated method stub
+		return sqlSession.delete(namespace+".deleteContent", coId);
+	}
+	/*
 	public DigitalMovieVO select(String dmId) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".selectContent", dmId);
@@ -54,8 +69,9 @@ public class DigitalMovieDAO {
 		return sqlSession.selectOne(namespace+".getSfile", dmId);
 	}
 
-	public void updateHits(String dmId) {
-		// TODO Auto-generated method stub
-		sqlSession.update(namespace+".updateHit", dmId);
-	}
+	*/
+
+	
+
+	
 }

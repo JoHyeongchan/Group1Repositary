@@ -30,6 +30,12 @@
 	padding: 10px;
 }
 
+.imgArea{
+	display: flex; 
+	justify-content:center;
+	height:200px;
+}
+
 </style>
 <title>Insert title here</title>
 </head>
@@ -54,8 +60,8 @@
 				<c:forEach var="vo" items="${list}">
 				<td onclick="location.href='digitalMovInfo.do?dmId=${vo.dmId}'"
 					style="cursor: pointer" class="digitalMvBox">
-					<div align="center">
-						<img src="http://localhost:9000/mygit/resources/upload/${vo.dmSfile }" class="digitalMvImg">
+					<div align="center" class="imgArea">
+						<img src="http://localhost:9000/mygit/resources/upload/${vo.dmSfile }" class="digitalMvImg" style="margin:0 auto;">
 					</div> <br>
 					<div class="itemInfo"> 
 						<span class="itemCategory">${vo.dmProgram}</span>
@@ -64,19 +70,16 @@
 					</div>
 				</td>
 				</c:forEach>
-				<script>
-					
+				<script>				
 					var divLast=${divLast};
 					var pageCount=${pageCount};
-					var reqPage=${reqPage};
-			
-					if(reqPage == pageCount){
-					if(divLast!=0){
-						var i=0
+					var reqPage=${reqPage};			
+					if(divLast!=0 && (reqPage==pageCount)){
+						var i=0;
 						for(i=0;i<divLast;i++){
 							document.write("<td class='digitalMvBox'></td>");
 						}
-					}}
+					}
 				</script>
 			</tr>
 		</table>
@@ -88,12 +91,7 @@
 					document.write("<a href='http://localhost:9000/mygit/online/digitalMovList.do?rpage="+i+"'>");
 					document.write("<span>"+i+"</span></a>&nbsp;&nbsp;&nbsp;</a>");
 				}
-			</script>
-			<!-- 
-			<span>></span>
-			&nbsp;
-			<span>>></span>
-			 -->	
+			</script>	
 		</div>
 		<hr>
 		

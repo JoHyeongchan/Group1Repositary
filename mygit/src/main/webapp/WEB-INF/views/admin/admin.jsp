@@ -64,10 +64,11 @@
 		<td><img src="http://localhost:9000/mygit/resources/images/admin/admin2.PNG" style="width:100px;height:100px"></td>
 		<td><button type="button" onclick="location.href='admin/reservation.do'">예약관리</button>
 	</tr>
+	<!-- 
 	<tr>
 		<td><img src="http://localhost:9000/mygit/resources/images/admin/admin3.PNG" style="width:100px;height:100px"></td>
 		<td><button type="button" onclick="location.href='admin/onwrite.do'">전시관리</button>
-	</tr>
+	</tr> -->
 </table>
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>
