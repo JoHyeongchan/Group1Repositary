@@ -177,49 +177,6 @@
 				</ul>
 			</div>
 		</nav>
-	</div>
-
-		<ul class="nav_center">	
-			<li id="notice">
-				<a href="/mygit/comment_list.do">관람·참여</a>
-				<div class="nav_content">
-					<a href="/mygit/notice_list.do">공지</a>
-					<a href="/mygit/comment_list.do">관람후기</a>
-					<a href="/mygit/faq_list.do">FAQ</a>
-					<a href="/mygit/qna_list.do">Q&A</a>
-				</div>
-			</li>
-			<li id="exhibit">
-				<a href="/mygit/off_now.do">전시</a>
-				<div class="nav_content">
-					<a href="/mygit/off_now.do">현재전시</a>
-					<a href="/mygit/off_future.do">예정전시</a>
-					<a href="/mygit/off_past.do">과거전시</a>
-				</div>
-			</li>
-			<li id="digit">
-				<a href="/mygit/online/on_show.do">디지털미술관</a>
-				<div class="nav_content">
-					<a href="/mygit/online/on_show.do">온라인전시</a>
-					<a href="/mygit/online/collectionList.do?rpage=1">소장품</a>
-					<a href="/mygit/online/digitalMovList.do?rpage=1">온라인컨텐츠</a>
-					<a href="/mygit/usergal/usergal_list.do">이용자갤러리</a>
-				</div>
-			</li>
-			<li id="reserve">
-				<a class="nava" id="reservea" href="/mygit/reservation.do">예약</a>
-				<div class="nav_content">
-					<a href="/mygit/reservation.do">예약하기</a>
-				</div>
-			</li>
-		</ul>
-		<div id="nav_right">
-			<ul>
-				<li><a href="http://localhost:9000/mygit/login.do" class="nav_item2">로그인</a></li>
-				<li><a href="http://localhost:9000/mygit/join.do" class="nav_item2">회원가입</a></li>
-				<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
-			</ul>
-		</div>
 	</nav>
 
 </header>
