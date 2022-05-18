@@ -52,9 +52,7 @@
 						<span class="itemYear">${vo.coYear }</span>
 					</div>
 				</td>
-				</c:forEach>
-				
-				<script>				
+				</c:forEach><script>				
 					var divLast=${divLast};
 					var pageCount=${pageCount};
 					var reqPage=${reqPage};
@@ -64,9 +62,7 @@
 						for(i=0;i<divLast;i++){
 							document.write("<td class='digitalColBox'></td>");
 						}
-					}
-					
-				</script>
+					}</script>
 			</tr>
 		</table>
 		

@@ -99,7 +99,7 @@
 						<a href="/mygit/notice_list.do">공지</a>
 						<a href="/mygit/comment_list.do">관람후기</a>
 						<a href="/mygit/faq_list.do">FAQ</a>
-						<a href="/mygit/qna_list.do">Q&A</a>
+						<a href="/mygit/qna_list.do?rpage=1">Q&A</a>
 						</div>
 					</li>
 					<li class="nav_center" id="exhibit">

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.web.vo.CollectionVO;
 import com.web.vo.DigitalMovieVO;
+import com.web.vo.QnaVO;
 
 public class FileServiceImpl {
 	
@@ -41,6 +42,21 @@ public class FileServiceImpl {
 		return vo;
 	}
 	
+	public QnaVO fileCheck(QnaVO vo) {
+		// TODO Auto-generated method stub
+		String file="";
+		String sfile="";
+		if(!vo.getFormFile().getOriginalFilename().equals("")) {
+			UUID uuid=UUID.randomUUID();
+			file=vo.getFormFile().getOriginalFilename();
+			sfile=file+"_"+uuid;
+			vo.setqFile(file);
+			vo.setqSfile(sfile);
+		}	
+		
+		return vo;
+	}
+	
 	public void fileSave(DigitalMovieVO vo, HttpServletRequest request) throws Exception, IOException {
 		if(!vo.getFormFile().getOriginalFilename().equals("")) {
 			String rootPath= request.getSession().getServletContext().getRealPath("/");
@@ -64,6 +80,20 @@ public class FileServiceImpl {
 			
 		}
 	}
+	
+	public void fileSave(QnaVO vo, HttpServletRequest request) throws Exception, IOException {
+		if(!vo.getFormFile().getOriginalFilename().equals("")) {
+			String rootPath= request.getSession().getServletContext().getRealPath("/");
+			rootPath+="resources\\upload\\";
+
+			File newFile=new File(rootPath+vo.getqSfile());
+			vo.getFormFile().transferTo(newFile);
+			System.out.println(rootPath);
+			
+		}
+	}
+	
+	
 
 	public void deleteFile(String sfile, HttpServletRequest request) {
 		// TODO Auto-generated method stub
@@ -77,5 +107,7 @@ public class FileServiceImpl {
 			}
 		}
 	}
+
+	
 
 }
