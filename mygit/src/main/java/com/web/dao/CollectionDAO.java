@@ -34,7 +34,7 @@ public class CollectionDAO {
 		return sqlSession.selectList(namespace+".selectList",param);
 	}
 	
-	public CollectionVO select(String coId) {
+	public Object select(String coId) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".selectContent", coId);
 	}
@@ -70,6 +70,13 @@ public class CollectionDAO {
 	}
 
 	*/
+
+	public int update(Object obj) {
+		// TODO Auto-generated method stub
+		CollectionVO vo=(CollectionVO)obj;
+		vo.setCategory();
+		return sqlSession.update(namespace+".update", vo);		
+	}
 
 	
 

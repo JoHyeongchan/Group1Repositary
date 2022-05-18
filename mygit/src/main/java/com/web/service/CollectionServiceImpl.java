@@ -31,7 +31,7 @@ public class CollectionServiceImpl implements CollectionService{
 		return collectionDao.select(startCount, endCount);
 	}
 	@Override
-	public CollectionVO getContent(String coId) {
+	public Object getContent(String coId) {
 		// TODO Auto-generated method stub
 		return collectionDao.select(coId);
 	}
@@ -45,6 +45,11 @@ public class CollectionServiceImpl implements CollectionService{
 	public int deleteContent(String coId) {
 		// TODO Auto-generated method stub
 		return collectionDao.delete(coId);
+	}
+
+	public int updateContent(CollectionVO vo) {
+		// TODO Auto-generated method stub
+		return collectionDao.update(vo);
 	}
 	
 	

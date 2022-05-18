@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +17,13 @@
 		
 		$("#programSel").val(program);
 		$("#categorySel").val(category);	
+		
+		$("#fileSelect").change(function name() {
+			if(window.FileReader){
+				var fname=$(this)[0].files[0].name;
+				$(".FileName").text(fname);
+			}
+		});
 	});
 	
 </script>
@@ -47,7 +54,7 @@
 		<th>제목</th><td colspan="3"><input type="text" name="dmTitle" class="longInput" value="${vo.dmTitle } "></input></td>
 	</tr>
 	<tr>
-		<th>이미지</th><td colspan="3"><input type="file" name="formFile" class="longInput" value="${vo.dmFile } ">
+		<th>이미지</th><td colspan="3"><input type="file" name="formFile" class="longInput" value="${vo.dmFile } " id="fileSelect">
 		<div class="FileName">${vo.dmFile } </div></td>
 	</tr>
 	<tr>

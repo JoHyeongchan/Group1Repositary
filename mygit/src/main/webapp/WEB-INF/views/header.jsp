@@ -61,17 +61,27 @@
 	li{float: left; list-style-type: none;}
 	#nav_left{float: left; width: 350px;margin-top: -10px;}
 	ul>li>a{font-weight: bold; font-size: 30pt; cursor: pointer;}
+<<<<<<< HEAD
+	ul>li>div{display: none; position: absolute; font-size: 25pt;}
+	.nav_content>a{display: block; margin-top: 10px; margin-bottom: 10px; cursor: pointer; color: gray;}
+	.nav_content>a:hover {background-color: #2C2C2C; color: white;}
+=======
 	ul>li>div{display: none; position: absolute; font-size: 25pt;background-color: #fff;}
 /* 	#test{display: none;position: absolute;top:100px;height:100px; font-size: 25pt;background-color: #fff;bolder-bottom:2px solid black;width: 100%;} */
 	.nav_content>a{display: block;padding: 10px 0;/*  margin-top: 10px; margin-bottom: 10px */; cursor: pointer; color: #000/* gray */;}
 	.nav_content>a:hover {text-decoration:underline;}
+>>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
 	.nav_center{padding-left: 60px; padding-right: 50px; padding-top: 20px;}
 	#nav_right{width: 300px; height: 70px; float: right; padding-top: 55px;}
 	#nav_right a{font-weight: bold; font-size: 15pt;}
 	.nav_item2{padding: 10px; cursor: pointer;}
+<<<<<<< HEAD
+	.nav_content{ background-color: #3E3E3E; width: 200px;}
+=======
 	.nav_content{ background-color: white;}
 	.clearfix::before, .clearfix::after {content: " ";display: table;}
 	.clearfix::after {clear: both;}
+>>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
 </style>
 </head>
 <body>
