@@ -21,10 +21,10 @@
 	<h3>관람/참여</h3>
 	<hr>
 	<table class="list">
-	<tr><td><a href="notice_list.do">공지</a></td></tr>
-	<tr><td><a href="comment_list.do">관람후기</a></td></tr>
-	<tr><td><a href="faq_list.do">FAQ</a></td></tr>
-	<tr><td><a href="qna_list.do">Q&A</a></td></tr>
+	<tr><td><a href="/mygit/notice_list.do">공지</a></td></tr>
+	<tr><td><a href="/mygit/comment_list.do">관람후기</a></td></tr>
+	<tr><td><a href="/mygit/faq_list.do">FAQ</a></td></tr>
+	<tr><td><a href="/mygit/qna_list.do">Q&A</a></td></tr>
 	</table>
 </div>
 
@@ -32,9 +32,9 @@
 	<h3>전시</h3>
 	<hr>
 	<table class="list">
-	<tr><td><a href="off_now.do">현재전시</a></td></tr>
-	<tr><td><a href="off_past.do">과거전시</a></td></tr>
-	<tr><td><a href="off_future.do">예정전시</a></td></tr>
+	<tr><td><a href="/mygit/off_now.do">현재전시</a></td></tr>
+	<tr><td><a href="/mygit/off_future.do">예정전시</a></td></tr>
+	<tr><td><a href="/mygit/off_past.do">과거전시</a></td></tr>
 	</table>
 
 </div>
@@ -43,10 +43,10 @@
 	<h3>디지털미술관</h3>
 	<hr>
 	<table class="list">
-	<tr><td><a href="online/on_show.do">온라인전시</a></td></tr>
-	<tr><td><a href="online/collectionList.do">소장품</a></td></tr>
-	<tr><td><a href="online/digitalMovList.do?rpage=1">온라인컨텐츠</a></td></tr>
-	<tr><td><a href="usergal/usergal_list.do">사용자갤러리</a></td></tr>
+	<tr><td><a href="/mygit/online/on_show.do">온라인전시</a></td></tr>
+	<tr><td><a href="/mygit/online/collectionList.do?rpage=1">소장품</a></td></tr>
+	<tr><td><a href="/mygit/online/digitalMovList.do?rpage=1">온라인컨텐츠</a></td></tr>
+	<tr><td><a href="/mygit/usergal/usergal_list.do">이용자갤러리</a></td></tr>
 	</table>
 </div>
 
@@ -54,7 +54,7 @@
 	<h3>예약</h3>
 	<hr>
 	<table class="list">
-	<tr><td><a href="reservation.do">전시예약</a></td></tr>
+	<tr><td><a href="/mygit/reservation.do">전시예약</a></td></tr>
 	</table>
 </div>
 
@@ -62,9 +62,9 @@
 	<h3>서브메뉴</h3>
 	<hr>
 	<table class="list">
-	<tr><td><a href="join.do">회원가입</a></td></tr>
-	<tr><td><a href="login.do">로그인</a></td></tr>
-	<tr><td><a href="admin.do">관리자페이지</a></td></tr>
+	<tr><td><a href="/mygit/join.do">회원가입</a></td></tr>
+	<tr><td><a href="/mygit/login.do">로그인</a></td></tr>
+	<tr><td><a href="/mygit/admin.do">관리자페이지</a></td></tr>
 	</table>
 </div>
 

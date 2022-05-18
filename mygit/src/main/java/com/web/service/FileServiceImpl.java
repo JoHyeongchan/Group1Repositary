@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.web.vo.CollectionVO;
 import com.web.vo.DigitalMovieVO;
 
 public class FileServiceImpl {
@@ -17,11 +18,26 @@ public class FileServiceImpl {
 		if(!vo.getFormFile().getOriginalFilename().equals("")) {
 			UUID uuid=UUID.randomUUID();
 			file=vo.getFormFile().getOriginalFilename();
-			sfile=file+"_"+uuid;
+			sfile=file+"_"+uuid;			
 			vo.setDmFile(file);
 			vo.setDmSfile(sfile);
 		}
 		
+		
+		return vo;
+	}
+	
+	public CollectionVO fileCheck(CollectionVO vo) {
+		
+		String file="";
+		String sfile="";
+		if(!vo.getFormFile().getOriginalFilename().equals("")) {
+			UUID uuid=UUID.randomUUID();
+			file=vo.getFormFile().getOriginalFilename();
+			sfile=file+"_"+uuid;			
+			vo.setCoFile(file);
+			vo.setCoSfile(sfile);
+		}	
 		return vo;
 	}
 	
@@ -34,6 +50,31 @@ public class FileServiceImpl {
 			vo.getFormFile().transferTo(newFile);
 			System.out.println(rootPath);
 			
+		}
+	}
+	
+	public void fileSave(CollectionVO vo, HttpServletRequest request) throws Exception, IOException {
+		if(!vo.getFormFile().getOriginalFilename().equals("")) {
+			String rootPath= request.getSession().getServletContext().getRealPath("/");
+			rootPath+="resources\\upload\\";
+
+			File newFile=new File(rootPath+vo.getCoSfile());
+			vo.getFormFile().transferTo(newFile);
+			System.out.println(rootPath);
+			
+		}
+	}
+
+	public void deleteFile(String sfile, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		if(sfile!="") {
+			String rootPath= request.getSession().getServletContext().getRealPath("/");
+			rootPath+="resources\\upload\\";
+			
+			File delFile=new File(rootPath+sfile);
+			if(delFile.exists()) {
+				delFile.delete();
+			}
 		}
 	}
 

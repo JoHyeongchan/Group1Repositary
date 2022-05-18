@@ -4,7 +4,7 @@
 	}
 	
 	#show{
-	background-color: #939597; width: 100%; height: 840px;
+	background-color: #939597; width: 100%; height: 735px;
 	}
 	
 	#show_theme{
@@ -16,19 +16,18 @@
 	}
 	
 	#show_left{
-	width: 68%; height: 600px; border: 1px solid blue; float: left;
-	padding-top: 200px;
+	width: 68%; height: 500px; float: left;
+	padding-top: 150px;
 	}
 	
 	#show_left>div{
-	border: 1px solid orange; 
 	width: 500px;
 	margin: auto;
 	}
 	
 	#show_right{
-	width: 27%; height: 600px; top:17%; border: 1px solid green; float: left;
-	padding-top: 160px;
+	width: 27%; height: 550px; top:17%; float: left;
+	padding-top: 100px;
 	}
 	
 	#show_title{
@@ -53,12 +52,12 @@
 	.prev{
 	position: absolute;
 	left: 20px;
-	top: 460px;
+	top: 430px;
 	}
 	
 	.next{
 	position: absolute;
 	right: 20px;
-	top: 460px;
+	top: 430px;
 	}
 </style>

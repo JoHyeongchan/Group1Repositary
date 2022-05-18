@@ -9,10 +9,24 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_info.css">
 <script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
 <script>
+	
 	$(document).ready(function(){
 		
 		var descBoxHeight=$("#descBox").css("height");
 			
+		$("#deleteBtn").click(function () {
+			var del_confirm=confirm("삭제하시겠습니까");
+			if (del_confirm==true){
+				var id='${vo.dmId}';
+				//var id=$("#id").text();
+				
+				location.href="digitalMovDelete.do?dmId="+id;
+				//var id=${dmId};
+				//alert('digitalMovDelete.do?dmid=');
+				//location.href='digitalMovDelete.do?dmid='+id;
+			}
+		});
+		
 		$("#btnSlide").click(function(){
 			
 			var text=$("#btnSlide").text();
@@ -46,15 +60,16 @@
 		<small>조회수 ${vo.dmHits } | 스크랩 <img alt="" src=""> | 마이갤러리 + | 좋아요 <img alt="" src=""> | <img alt="" src=""></small>
 		<hr> 
 		<div class="imgContentBox">
-			<iframe width="740" height="388"
-				src="${vo.dmUrl }"
-				title="YouTube video player" frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
+		
+		<iframe width="560" height="315" src="${vo.embedUrl }"
+		 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		  
+		
 		</div>
 		<div class="contentDesc">
 		<table><tr><td colspan="2">
 			<p id="descBox" style="overflow:hidden;">
+			<div id="id" style="display: none;">${vo.dmId }</div>
 			${vo.dmContent }
 			<!-- 
 				▶과천관 야외조각장<br> <br> <b>김창곤, ‹합 86-7›, 1986</b> 홍익대학교 조소과를
@@ -100,9 +115,9 @@
 	</div>
 		
 			
-		<button type="button" onclick="location.href='digitalMovList.do'" class="btnList">목록</button>
-		<button type="button" onclick="location.href='digitalMovDelete.do'" class="btnList">삭제</button>
-		<button type="button" onclick="location.href='digitalMovUpdate.do'" class="btnList">수정</button>
+		<button type="button" onclick="location.href='digitalMovList.do?rpage=1'" class="btnList">목록</button>
+		<button type="button" class="btnList" id="deleteBtn">삭제</button>
+		<button type="button" onclick="location.href='digitalMovUpdate.do?dmId=${vo.dmId}'" class="btnList">수정</button>
 	</section>
 	
 <jsp:include page="../footer.jsp"></jsp:include>

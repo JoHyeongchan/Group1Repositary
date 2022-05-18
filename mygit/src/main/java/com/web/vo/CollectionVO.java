@@ -8,6 +8,8 @@ public class CollectionVO {
 	private String coAuthorKor, coAuthorEng,coName, coYear, coMaterial;
 	private String coDim, coCategory, coManageId, coIsDisp;
 	
+	private String prevId,nextId,prevTitle,nextTitle;
+	
 	private CommonsMultipartFile formFile;
 	private String formCategory;
 	
@@ -46,7 +48,7 @@ public class CollectionVO {
 	public String getCoDate() {
 		return coDate;
 	}
-	public void setCoDateStr(String coDate) {
+	public void setCoDate(String coDate) {
 		this.coDate = coDate;
 	}
 	public String getCoAuthorKor() {
@@ -86,22 +88,10 @@ public class CollectionVO {
 		this.coDim = coDim;
 	}
 	public String getCoCategory() {
-		if(coCategory==null)
-		{
-			coCategory=setCategory();
-		}else if(coCategory.length()==0){
-			coCategory=setCategory();
-		}
+
 		return coCategory;
 	}
 	public void setCoCategory(String coCategory) {
-		
-		if(this.coCategory==null)
-		{
-			coCategory=setCategory();
-		}else if(this.coCategory.length()==0){
-			coCategory=setCategory();
-		}
 		
 		this.coCategory = coCategory;
 	}
@@ -126,6 +116,7 @@ public class CollectionVO {
 	public CommonsMultipartFile getFormFile() {
 		return formFile;
 	}
+
 	public void setFormFile(CommonsMultipartFile formFile) {
 		this.formFile = formFile;
 	}
@@ -136,7 +127,32 @@ public class CollectionVO {
 		this.formCategory = formCategory;
 	}
 	
-	private String setCategory() {
+	public String getPrevId() {
+		return prevId;
+	}
+	public void setPrevId(String prevId) {
+		this.prevId = prevId;
+	}
+	public String getNextId() {
+		return nextId;
+	}
+	public void setNextId(String nextId) {
+		this.nextId = nextId;
+	}
+	public String getPrevTitle() {
+		return prevTitle;
+	}
+	public void setPrevTitle(String prevTitle) {
+		this.prevTitle = prevTitle;
+	}
+	public String getNextTitle() {
+		return nextTitle;
+	}
+	public void setNextTitle(String nextTitle) {
+		this.nextTitle = nextTitle;
+	}
+	
+	public void setCategory() {
 
 		String result="";
 		if(formCategory.equals("ko")) {
@@ -161,8 +177,38 @@ public class CollectionVO {
 			result="서예";
 		}
 		
-		return result;
+		coCategory=result;
+		formCategory=formCategory.toUpperCase();
+	}
+	
+	public void setCategoryInv() {
 
+		String result="";
+		
+		if(coCategory.equals("한국화")) {
+			result="ko";
+		}else if(coCategory.equals("회화")) {
+			result="pa";
+		}else if(coCategory.equals("조각")) {
+			result="sc";
+		}else if(coCategory.equals("공예")) {
+			result="cr";
+		}else if(coCategory.equals("뉴미디어")) {
+			result="nm";
+		}else if(coCategory.equals("건축")) {
+			result="ar";
+		}else if(coCategory.equals("디자인")) {
+			result="de";
+		}else if(coCategory.equals("드로잉/판화")) {
+			result="dp";
+		}else if(coCategory.equals("사진")) {
+			result="ph";
+		}else if(coCategory.equals("서예")) {
+			result="ca";
+		}
+		
+		setFormCategory(result);
+		
 	}
 	
 }
