@@ -33,10 +33,26 @@ select rownum rno,coid, cosfile, coAuthorKor, coAuthorEng,
  	</select>
  	
  		<update id="updateHit" parameterType="java.lang.String">
- 		update collection set cohits=cohits+1 where coId=#{coid}
+ 		update collection set cohits=cohits+1 where coId=#{coId}
  	</update>
  	
  	<delete id="deleteContent" parameterType="java.lang.String">
- 	delete from collection where coid=#{coid}
+ 	delete from collection where coid=#{coId}
  	</delete>
+ 	
+ 	<update id="update" parameterType="com.web.vo.CollectionVO">
+ 	<choose>
+ 	<when test="coFile!=null">
+ 	update collection set cotitle=#{coTitle},cofile=#{coFile},cosfile=#{coSfile},
+ 	coAuthorKor=#{coAuthorKor},coAuthorEng=#{coAuthorEng},coName=#{coName} ,
+ 	coYear=#{coYear},coMaterial=#{coMaterial},coDim=#{coDim},coCategory=#{coCategory},
+ 	coIsDisp=#{coIsDisp},coContent=#{coContent} where coid=#{coId}</when>
+ 	<otherwise>
+ 	update collection set cotitle=#{coTitle},
+ 	coAuthorKor=#{coAuthorKor},coAuthorEng=#{coAuthorEng},coName=#{coName} ,
+ 	coYear=#{coYear},coMaterial=#{coMaterial},coDim=#{coDim},coCategory=#{coCategory},
+ 	coIsDisp=#{coIsDisp},coContent=#{coContent} where coid=#{coId}
+ 	</otherwise>
+ 	</choose>
+ 	</update>
  </mapper>

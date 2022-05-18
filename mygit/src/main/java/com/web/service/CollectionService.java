@@ -12,7 +12,7 @@ public int InsertRecord(Object obj);
 	
 	List<Object> getRecordList(int startCount, int endCount);
 
-	CollectionVO getContent(String coId);
+	Object getContent(String coId);
 	
 	int deleteContent(String dmId) ;
 }

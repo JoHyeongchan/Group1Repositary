@@ -88,7 +88,7 @@ $(document).ready(function () {
 </div>
 	<button type="button" onclick="location.href='collectionList.do?rpage=1'" class="btnList">목록</button>
 	<button type="button" class="btnList" id="deleteBtn">삭제</button>
-	<button type="button" onclick="location.href='collectionUpdate.do'" class="btnList">수정</button>	 
+	<button type="button" onclick="location.href='collectionUpdate.do?coId=${vo.coId}'" class="btnList">수정</button>	 
 </section>	
 
 <jsp:include page="../footer.jsp"></jsp:include>

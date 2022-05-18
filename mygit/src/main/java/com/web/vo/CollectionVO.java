@@ -151,6 +151,7 @@ public class CollectionVO {
 	public void setNextTitle(String nextTitle) {
 		this.nextTitle = nextTitle;
 	}
+	
 	public void setCategory() {
 
 		String result="";
@@ -178,8 +179,36 @@ public class CollectionVO {
 		
 		coCategory=result;
 		formCategory=formCategory.toUpperCase();
+	}
+	
+	public void setCategoryInv() {
 
-
+		String result="";
+		
+		if(coCategory.equals("한국화")) {
+			result="ko";
+		}else if(coCategory.equals("회화")) {
+			result="pa";
+		}else if(coCategory.equals("조각")) {
+			result="sc";
+		}else if(coCategory.equals("공예")) {
+			result="cr";
+		}else if(coCategory.equals("뉴미디어")) {
+			result="nm";
+		}else if(coCategory.equals("건축")) {
+			result="ar";
+		}else if(coCategory.equals("디자인")) {
+			result="de";
+		}else if(coCategory.equals("드로잉/판화")) {
+			result="dp";
+		}else if(coCategory.equals("사진")) {
+			result="ph";
+		}else if(coCategory.equals("서예")) {
+			result="ca";
+		}
+		
+		setFormCategory(result);
+		
 	}
 	
 }
