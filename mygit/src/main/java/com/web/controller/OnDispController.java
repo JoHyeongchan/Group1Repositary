@@ -118,7 +118,8 @@ public class OnDispController {
 		ModelAndView mv=new ModelAndView("/onlinedisp/on_digitalMov_info");
 		digitalMovieService.updateHits(dmId);
 		DigitalMovieVO vo=(DigitalMovieVO)digitalMovieService.getContent(dmId);
-
+		String str=vo.getDmContent().replaceAll(System.getProperty("line.separator"), "<br>");
+		vo.setDmContent(str);
 		//mv.addObject("dmid",dmId);
 		mv.addObject("vo", vo);
 		return mv;
@@ -129,6 +130,8 @@ public class OnDispController {
 		ModelAndView mv= new ModelAndView( "/onlinedisp/on_collection_info");
 		collectionService.updateHits(coId);
 		CollectionVO vo=(CollectionVO)collectionService.getContent(coId);
+		String str=vo.getCoContent().replaceAll(System.getProperty("line.separator"), "<br>");
+		vo.setCoContent(str);
 		mv.addObject("vo", vo);
 		return mv;
 	}

@@ -52,9 +52,26 @@ from(select qid,qtitle,qcontent,qhits,quserid,qfile,qsfile,to_char(qdate,'yyyy-m
  		lead(qtitle,1,0)over(order by qorigin desc, qgroup asc )as nexttitle from qna) where qid=#{qId}
  	</select>
  	
+ 	<update id="update" parameterType="com.web.vo.QnaVO">
+	<choose>
+		<when test="qFile!=null">
+		update qna set qTitle=#{qTitle},qContent=#{qContent},qFile=#{qFile},qSfie=#{qSfile} where qId=#{qId}
+ 		</when>
+ 		 <otherwise>
+ 		 update qna set qTitle=#{qTitle},qContent=#{qContent} where qId=#{qId}
+ 		 </otherwise>
+ 	</choose>
+ 	</update>
+ 	
  	<update id="updateReply" parameterType="map">
  	update qna set qgroup =qgroup+1 where qorigin=#{origin} and qgroup>=#{group}
  	</update>
  
+ 	<update id="updateHits" parameterType="java.lang.String">
+ 	update qna set qHits=qhits+1 where qid=#{qId}
+ 	</update>
+ 	<delete id="delete" parameterType="java.lang.String">
+ 	delete from qna where qid=#{qId}
+ 	</delete>
  	
  </mapper>

@@ -14,6 +14,12 @@ public interface QnaService extends ObjectService{
 
 	int insertReplyProcess(Object obj);
 
+	int deleteContent(String qId);
+
+	int updateContent(Object obj);
+	
+	void updateHits(String qId);
+
 	//int InsertReply(Object obj);
 
 	//void updateReply(int qGroup, int qOrigin);

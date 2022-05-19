@@ -7,7 +7,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/qna/qna_content.css">
-<script type="text/javascript"></script>
+<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+	
+	
+	$("#deleteBtn").click(function () {
+		var del_confirm=confirm("삭제하시겠습니까");
+		if (del_confirm==true){
+			var id='${vo.qId}';
+			location.href="qna_delete.do?qId="+id;
+		}
+	});
+});
+</script>
 </head>
 <body>
 
@@ -66,7 +79,7 @@
 	 <br><br>
 	 <div>
 		 <button type="button" onclick="location.href='qna_update.do?qId=${vo.qId}'">수정</button>
-		 <button type="button" onclick="alert('삭제기능 구현 예정')">삭제</button>
+		 <button type="button" id="deleteBtn">삭제</button>
 		 <button type="button" onclick="location.href='qna_writeReply.do?qId=${vo.qId}'">답글</button>
 		 <button type="button" onclick="location.href='qna_list.do?rpage=1'">목록</button>
 	 </div>

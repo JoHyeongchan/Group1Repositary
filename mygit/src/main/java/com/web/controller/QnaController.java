@@ -82,17 +82,32 @@ public class QnaController {
 	}
 	
 	@RequestMapping(value="/qna_update.do",method = RequestMethod.GET)
-	public String qnaUpdate() {
-		return "/qna/qna_update";
+	public ModelAndView qnaUpdate(String qId) {
+		ModelAndView mv=new ModelAndView("/qna/qna_update");
+		QnaVO vo=(QnaVO)qnaService.getContent(qId);
+		mv.addObject("vo", vo);
+		return mv;
 	}
 	
 	@RequestMapping(value="/qna_update.do",method = RequestMethod.POST)
-	public ModelAndView qnaUpdate(QnaVO vo) {
-		ModelAndView mv=new ModelAndView("redirect: /mygit/qna_list.do");
-		System.out.println(vo.getqTitle());
-		System.out.println(vo.getqContent());
-		System.out.println(vo.getFormFile().getOriginalFilename());
-		return  mv;
+	public ModelAndView qnaUpdate(QnaVO vo,HttpServletRequest request) throws Exception {
+		ModelAndView mv=new ModelAndView("redirect: /mygit/qna_list.do?rpage=1");
+
+		String sfile=vo.getqSfile();
+		vo=fileService.fileCheck(vo);	
+		
+		int result=qnaService.updateContent(vo);
+		//int result=digitalMovieDao.update(vo);
+
+		
+		if(result==1) {
+			if(vo.getqFile()!=null) {
+				fileService.fileSave(vo, request);
+				fileService.deleteFile(sfile, request);
+			}
+		}
+
+		return mv;
 	}
 	
 	@RequestMapping(value="/qna_content.do",method = RequestMethod.GET)
@@ -100,6 +115,9 @@ public class QnaController {
 		ModelAndView mv=new ModelAndView("/qna/qna_content");
 		QnaVO vo=new QnaVO();
 		vo=(QnaVO) qnaService.getContent(qId);
+		String str=vo.getqContent().replaceAll(System.getProperty("line.separator"), "<br>");
+		vo.setqContent(str);
+		qnaService.updateHits(qId);
 		mv.addObject("vo", vo);
 		return mv;
 	}
@@ -126,6 +144,25 @@ public class QnaController {
 		}
 		
 		return mv;
+	}
+	
+	@RequestMapping(value="/qna_delete.do",method=RequestMethod.GET)
+	public String qnaDelete(String qId,HttpServletRequest request) {
+		
+		QnaVO vo=(QnaVO)qnaService.getContent(qId);
+		System.out.println(qId);
+		String sfile="";
+		if(vo.getqSfile()!="") {
+			sfile=vo.getqSfile();
+		}
+		
+		int result=qnaService.deleteContent(qId);
+		
+		if(result==1) {
+			fileService.deleteFile(sfile, request);
+		}
+		
+		return "redirect:qna_list.do?rpage=1";
 	}
 	
 	

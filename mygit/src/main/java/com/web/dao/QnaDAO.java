@@ -17,10 +17,16 @@ public class QnaDAO {
 	String namespace="mapper.qna";
 	
 	public int insert(QnaVO vo) {
+		String str=vo.getqContent();
+		str.replace("\r\n", "<br>");
+		vo.setqContent(str);
 		return sqlSession.insert(namespace+".insert", vo);
 	}
 	
 	public int insertReply(QnaVO vo) {
+		String str=vo.getqContent();
+		str.replace("\r\n", "<br>");
+		vo.setqContent(str);
 		return sqlSession.insert(namespace+".insertReply", vo);
 	}
 
@@ -48,6 +54,22 @@ public class QnaDAO {
 		param.put("group", String.valueOf(qGroup));
 		param.put("origin", String.valueOf(qOrigin));
 		return sqlSession.update(namespace+".updateReply", param);
+	}
+
+	public int delete(String qId) {
+		// TODO Auto-generated method stub
+		return sqlSession.delete(namespace+".delete",qId);
+	}
+
+	public int update(QnaVO vo) {
+		// TODO Auto-generated method stub
+		
+		return sqlSession.update(namespace+".update", vo);
+	}
+
+	public Object updateHits(String qId) {
+		// TODO Auto-generated method stub
+		return sqlSession.update(namespace+".updateHits", qId);
 	}
 
 }
