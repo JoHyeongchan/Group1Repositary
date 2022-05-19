@@ -7,25 +7,28 @@ import java.util.Map;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.web.vo.QnaVO;
+import com.web.vo.NoticeVO;
+//import com.web.vo.QnaVO;
 
-public class QnaDAO {
-	
+public class NoticeDAO {
+
 	@Autowired
 	SqlSessionTemplate sqlSession;
 	
-	String namespace="mapper.qna";
+	String namespace="mapper.notice";
 	
-	public int insert(QnaVO vo) {
+	public int insert(NoticeVO vo) {
 		
 		return sqlSession.insert(namespace+".insert", vo);
 	}
-	
+	/*
 	public int insertReply(QnaVO vo) {
-		
+		String str=vo.getqContent();
+		str.replace("\r\n", "<br>");
+		vo.setqContent(str);
 		return sqlSession.insert(namespace+".insertReply", vo);
 	}
-
+	*/
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".count");
@@ -38,34 +41,31 @@ public class QnaDAO {
 		
 		return sqlSession.selectList(namespace+".selectList", param);
 	}
-
-	public Object select(String qId) {
+	
+	public Object select(String nId) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne(namespace+".content",qId);
+		return sqlSession.selectOne(namespace+".content",nId);
 	}
 
-	public int updateReply(int qGroup, int qOrigin) {
-		// TODO Auto-generated method stub
-		Map<String,String> param=new HashMap<String, String>();
-		param.put("group", String.valueOf(qGroup));
-		param.put("origin", String.valueOf(qOrigin));
-		return sqlSession.update(namespace+".updateReply", param);
-	}
 
-	public int delete(String qId) {
-		// TODO Auto-generated method stub
-		return sqlSession.delete(namespace+".delete",qId);
-	}
-
-	public int update(QnaVO vo) {
+	public int update(NoticeVO vo) {
 		// TODO Auto-generated method stub
 		
 		return sqlSession.update(namespace+".update", vo);
 	}
-
-	public Object updateHits(String qId) {
+	
+	
+	public int delete(String nId) {
 		// TODO Auto-generated method stub
-		return sqlSession.update(namespace+".updateHits", qId);
+		return sqlSession.delete(namespace+".delete",nId);
 	}
+	
+	public Object updateHits(String nId) {
+		// TODO Auto-generated method stub
+		return sqlSession.update(namespace+".updateHits", nId);
+	}
+	
+	
 
+	
 }

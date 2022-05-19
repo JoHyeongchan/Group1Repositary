@@ -113,8 +113,7 @@ public class QnaController {
 	@RequestMapping(value="/qna_content.do",method = RequestMethod.GET)
 	public ModelAndView qnaContent(String qId) {
 		ModelAndView mv=new ModelAndView("/qna/qna_content");
-		QnaVO vo=new QnaVO();
-		vo=(QnaVO) qnaService.getContent(qId);
+		QnaVO vo=(QnaVO) qnaService.getContent(qId);
 		String str=vo.getqContent().replaceAll(System.getProperty("line.separator"), "<br>");
 		vo.setqContent(str);
 		qnaService.updateHits(qId);
@@ -150,7 +149,6 @@ public class QnaController {
 	public String qnaDelete(String qId,HttpServletRequest request) {
 		
 		QnaVO vo=(QnaVO)qnaService.getContent(qId);
-		System.out.println(qId);
 		String sfile="";
 		if(vo.getqSfile()!="") {
 			sfile=vo.getqSfile();

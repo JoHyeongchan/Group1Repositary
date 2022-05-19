@@ -35,6 +35,7 @@
 	
 	.contentBox{
 		min-height: 300px;
+		padding: 10px;
 	}
 	
 	.pageMove{
@@ -54,5 +55,16 @@
 		height:40px;
 		font-size: 20px;
 	}
+	
+	table{
+		width:100%;
+		margin:0 auto;
+	}
+	
+	.bottomBox{
+	padding-left: 50px;
+	width:100px;
+	height:60px;	
+}
 	
 	

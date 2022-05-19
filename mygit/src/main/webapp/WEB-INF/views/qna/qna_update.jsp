@@ -24,9 +24,11 @@
 		position: relative;
 		width:40%;
 		height: 20px;
-		margin-top: -22px;
-		margin-left: 85px;
+		margin-top: -25px;
+		margin-left: 80px;
 		background: white;
+		text-align: left;
+	
 	}
 </style>
 </head>
@@ -50,7 +52,7 @@
 		 	</tr>
 		 	<tr>
 			 	<th>첨부파일</th>
-			 	<td colspan="1"><input type="file" name="formFile">
+			 	<td colspan="1"><input type="file" name="formFile" id="fileSelect">
 			 	<div class="FileName">${vo.qFile } </div></td>
 	 	</tr>
 	 	</table>

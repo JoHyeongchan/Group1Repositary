@@ -6,6 +6,7 @@ public class QnaVO {
 	private String qId,qTitle,qContent,qDate,qUserId,qFile,qSfile;
 	private int qHits,qOrigin,qGroup,qDepth,rno;
 	CommonsMultipartFile formFile;
+	
 	private String prevId,nextId,prevTitle,nextTitle;
 	
 	public String getqId() {

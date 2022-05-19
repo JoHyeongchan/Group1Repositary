@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +24,12 @@
 		<th class="ntype" >유형</th><th class="ntitle" align="center">제목</th><th class="ndate">등록일</th>
 	</tr>
 	<!--  Dummy Content -->
+	<c:forEach var="vo" items="${list}">
 	<tr>
-		<td class="ntype">서울</td><td class="ntitle"><a href="notice_content.do">test1</a></td><td class="ndate">2022-05-01</td>
+		<td class="ntype">${vo.nCategory }</td><td class="ntitle"><a href="notice_content.do?nId=${vo.nId}">${vo.nTitle }</a></td><td class="ndate">${vo.nDate }</td>
 	</tr>
+	</c:forEach>
+	<!-- 
 	<tr>
 		<td class="ntype">서울</td><td class="ntitle">test2</td><td class="ndate">2022-05-01</td>
 	</tr>
@@ -51,7 +56,7 @@
 	</tr>
 	<tr>
 		<td class="ntype">서울</td><td class="ntitle">test10</td><td class="ndate">2022-05-01</td>
-	</tr>
+	</tr> -->
 </table>
 <br>
 

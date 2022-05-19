@@ -4,9 +4,11 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class NoticeVO {
 
-	String nId,nTitle,nContent,nDateStr,nCategory,nFile,nSfile;
-	int nHits;
+	String nId,nTitle,nContent,nDate,nCategory,nFile,nSfile,nWriter;
+	int nHits,rno;
 	CommonsMultipartFile formFile;
+	
+	private String prevId,nextId,prevTitle,nextTitle;
 	
 	public String getnId() {
 		return nId;
@@ -26,11 +28,11 @@ public class NoticeVO {
 	public void setnContent(String nContent) {
 		this.nContent = nContent;
 	}
-	public String getnDateStr() {
-		return nDateStr;
+	public String getnDate() {
+		return nDate;
 	}
-	public void setnDateStr(String nDateStr) {
-		this.nDateStr = nDateStr;
+	public void setnDate(String nDate) {
+		this.nDate = nDate;
 	}
 	public String getnCategory() {
 		return nCategory;
@@ -56,12 +58,51 @@ public class NoticeVO {
 	public void setnHits(int nHits) {
 		this.nHits = nHits;
 	}
+	
+	
+	public String getnWriter() {
+		return nWriter;
+	}
+	public void setnWriter(String nWriter) {
+		this.nWriter = nWriter;
+	}
 	public CommonsMultipartFile getFormFile() {
 		return formFile;
 	}
 	public void setFormFile(CommonsMultipartFile formFile) {
 		this.formFile = formFile;
 	}
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public String getPrevId() {
+		return prevId;
+	}
+	public void setPrevId(String prevId) {
+		this.prevId = prevId;
+	}
+	public String getNextId() {
+		return nextId;
+	}
+	public void setNextId(String nextId) {
+		this.nextId = nextId;
+	}
+	public String getPrevTitle() {
+		return prevTitle;
+	}
+	public void setPrevTitle(String prevTitle) {
+		this.prevTitle = prevTitle;
+	}
+	public String getNextTitle() {
+		return nextTitle;
+	}
+	public void setNextTitle(String nextTitle) {
+		this.nextTitle = nextTitle;
+	}
+	
 	
 	
 }

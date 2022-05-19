@@ -21,7 +21,7 @@
 	<h3>관람/참여</h3>
 	<hr>
 	<table class="list">
-	<tr><td><a href="/mygit/notice_list.do">공지</a></td></tr>
+	<tr><td><a href="/mygit/notice_list.do?rpage=1">공지</a></td></tr>
 	<tr><td><a href="/mygit/comment_list.do">관람후기</a></td></tr>
 	<tr><td><a href="/mygit/faq_list.do">FAQ</a></td></tr>
 	<tr><td><a href="/mygit/qna_list.do?rpage=1">Q&A</a></td></tr>

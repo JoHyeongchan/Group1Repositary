@@ -23,6 +23,9 @@ public class PageServiceImpl {
 	@Autowired
 	QnaServiceImpl qnaService;
 	
+	@Autowired
+	NoticeServiceImpl noticeService;
+	
 	public Map<String, String> getPageResult(String rpage ,String serviceName,ObjectService service){
 		
 		Map<String, String> param=new HashMap<String, String>();
@@ -46,6 +49,10 @@ public class PageServiceImpl {
 		}else if(serviceName.equals("qna")) {
 			qnaService=(QnaServiceImpl)service;
 			dbCount=qnaService.getRecordCount();
+			pageSize=10;
+		}else if(serviceName.equals("notice")) {
+			noticeService=(NoticeServiceImpl)service;
+			dbCount=noticeService.getRecordCount();
 			pageSize=10;
 		}
 		
