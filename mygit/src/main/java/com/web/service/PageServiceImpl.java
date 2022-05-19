@@ -20,6 +20,9 @@ public class PageServiceImpl {
 	@Autowired
 	CollectionServiceImpl collectionService;
 	
+	@Autowired
+	QnaServiceImpl qnaService;
+	
 	public Map<String, String> getPageResult(String rpage ,String serviceName,ObjectService service){
 		
 		Map<String, String> param=new HashMap<String, String>();
@@ -35,9 +38,15 @@ public class PageServiceImpl {
 		if(serviceName.equals("digitalMovie")) {
 			digitalMovieService=(DigitalMovieServiceImpl)service;
 			dbCount=digitalMovieService.getRecordCount();
+			pageSize = 8;
 		}else if(serviceName.equals("collection")) {
 			collectionService=(CollectionServiceImpl)service;
 			dbCount=collectionService.getRecordCount();
+			pageSize = 8;
+		}else if(serviceName.equals("qna")) {
+			qnaService=(QnaServiceImpl)service;
+			dbCount=qnaService.getRecordCount();
+			pageSize=10;
 		}
 		
 		//총 페이지 수 계산

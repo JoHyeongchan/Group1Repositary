@@ -54,42 +54,84 @@
 	
 </script>
 <style type="text/css">
-	*{margin: 0; padding: 0;}
-	#nav{height:100px; border-bottom: 1px solid #000/* border: 4px solid black */; overflow: hidden; z-index: 5;}
-	li>a{text-decoration: none; color: black;}
-	.nav_content>a{text-decoration: none;}
-	li{float: left; list-style-type: none;}
-	#nav_left{float: left; width: 350px;margin-top: -10px;}
-	ul>li>a{font-weight: bold; font-size: 30pt; cursor: pointer;}
-<<<<<<< HEAD
+	*{
+	margin: 0; padding: 0;
+	}
+	
+	#nav{
+	border-bottom: 1px solid #000/* border: 4px solid black */; 
+	display: flex; justify-content: space-between;
+	}
+	
+	li>a{
+	text-decoration: none; color: black;
+	}
+	
+	.nav_content>a{
+	text-decoration: none;
+	}
+	
+	li{
+	float: left; list-style-type: none;
+	}
+	
+	#nav_left{
+	float: left; width: 350px;margin-top: -10px;
+	}
+	
+	ul>li>a{
+	font-weight: bold; font-size: 30pt; cursor: pointer;
+	}
+	
+	.nav_center li{
+	padding: 15px 20px;
+	}
+	
+	
+	@media screen and (max-width: 768px){
+		#nav{
+			flex-direction: column;
+			
+		}
+		
+		.nav_center{
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+	}
+	
+
 	ul>li>div{display: none; position: absolute; font-size: 25pt;}
 	.nav_content>a{display: block; margin-top: 10px; margin-bottom: 10px; cursor: pointer; color: gray;}
 	.nav_content>a:hover {background-color: #2C2C2C; color: white;}
-=======
+
 	ul>li>div{display: none; position: absolute; font-size: 25pt;background-color: #fff;}
 /* 	#test{display: none;position: absolute;top:100px;height:100px; font-size: 25pt;background-color: #fff;bolder-bottom:2px solid black;width: 100%;} */
 	.nav_content>a{display: block;padding: 10px 0;/*  margin-top: 10px; margin-bottom: 10px */; cursor: pointer; color: #000/* gray */;}
 	.nav_content>a:hover {text-decoration:underline;}
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
+
 	.nav_center{padding-left: 60px; padding-right: 50px; padding-top: 20px;}
 	#nav_right{width: 300px; height: 70px; float: right; padding-top: 55px;}
 	#nav_right a{font-weight: bold; font-size: 15pt;}
 	.nav_item2{padding: 10px; cursor: pointer;}
-<<<<<<< HEAD
+
 	.nav_content{ background-color: #3E3E3E; width: 200px;}
-=======
+
 	.nav_content{ background-color: white;}
 	.clearfix::before, .clearfix::after {content: " ";display: table;}
 	.clearfix::after {clear: both;}
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
+
+
 </style>
 </head>
 <body>
 <header>
-	<div id = "nav">
+	<nav id = "nav">
 		<div id="nav_left">
-			<a href="http://localhost:9000/mygit/index.do" id="logo"><img src="http://localhost:9000/mygit/resources/images/logo.png" width="80%" height="80%"></a>
+			<a href="http://localhost:9000/mygit/index.do" id="logo"><img src="http://localhost:9000/mygit/resources/images/logo.png" width="260px" height="120px"></a>
 		</div>
+
 		<nav>
 			<div>
 				<ul>
@@ -99,7 +141,7 @@
 						<a href="/mygit/notice_list.do">공지</a>
 						<a href="/mygit/comment_list.do">관람후기</a>
 						<a href="/mygit/faq_list.do">FAQ</a>
-						<a href="/mygit/qna_list.do">Q&A</a>
+						<a href="/mygit/qna_list.do?rpage=1">Q&A</a>
 						</div>
 					</li>
 					<li class="nav_center" id="exhibit">
@@ -135,7 +177,8 @@
 				</ul>
 			</div>
 		</nav>
-	</div>
+	</nav>
+
 </header>
 </body>
 </html>

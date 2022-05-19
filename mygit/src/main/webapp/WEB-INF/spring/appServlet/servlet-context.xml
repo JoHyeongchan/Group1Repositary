@@ -27,11 +27,13 @@
 	<!-- DAO 등록 -->
 	<beans:bean id="collectionDao" class="com.web.dao.CollectionDAO"></beans:bean>
 	<beans:bean id="digitalMovieDao" class="com.web.dao.DigitalMovieDAO"></beans:bean>
+	<beans:bean id="qnaDao" class="com.web.dao.QnaDAO"></beans:bean>
 	
 	
 	<!-- Service 등록 -->
 	<beans:bean id="digitalMovieService" class="com.web.service.DigitalMovieServiceImpl"></beans:bean>
 	<beans:bean id="collectionService" class="com.web.service.CollectionServiceImpl"></beans:bean>
+	<beans:bean id="qnaService" class="com.web.service.QnaServiceImpl"></beans:bean>
 	<beans:bean id="pageService" class="com.web.service.PageServiceImpl"></beans:bean>
 	<beans:bean id="fileService" class="com.web.service.FileServiceImpl"></beans:bean>
 	
