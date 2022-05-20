@@ -76,7 +76,25 @@
 	
 	</form>
 </div>
-<div class="pageBtn"><<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>
+<div align="center">
+&lt;&lt;&nbsp;&nbsp;&nbsp;
+<script>
+	var pageCount=${pageCount};
+	var reqPage=${reqPage};
+	var i=0;
+	for(i=1;i<=pageCount;i++){
+		document.write("<a href='comment.do?rpage="+i+"'>");
+		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
+	}
+</script>
+<!-- 
+1&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;
+3&nbsp;&nbsp;&nbsp;
+4 -->
+&gt;&gt;</div>
+<!--  
+<div class="pageBtn"><<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>-->
 	
 
 </section>

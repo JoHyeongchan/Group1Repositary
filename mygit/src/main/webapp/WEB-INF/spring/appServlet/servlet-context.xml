@@ -29,6 +29,7 @@
 	<beans:bean id="digitalMovieDao" class="com.web.dao.DigitalMovieDAO"></beans:bean>
 	<beans:bean id="qnaDao" class="com.web.dao.QnaDAO"></beans:bean>
 	<beans:bean id="noitceDao" class="com.web.dao.NoticeDAO"></beans:bean>
+	<beans:bean id="dispCommentDao" class="com.web.dao.DispCommentDAO"></beans:bean>
 	<beans:bean class="com.web.dao.MemberDAO" id="memberDAO"></beans:bean>
 	
 	<!-- Service 등록 -->
@@ -39,10 +40,13 @@
 	<beans:bean id="fileService" class="com.web.service.FileServiceImpl"></beans:bean>
 	<beans:bean id="noticeService" class="com.web.service.NoticeServiceImpl"></beans:bean>
 	<beans:bean class="com.web.service.MemberServiceImpl" id="memberService"></beans:bean>
+	<beans:bean id="dispCommentService" class="com.web.service.DispCommentServiceImpl"></beans:bean>
+	
 	
 	<!-- multipartResolver 등록-->
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	</beans:bean> 
+	
 	
 	<context:component-scan base-package="com.web.controller" />
 	<context:component-scan base-package="com.web.dao" />

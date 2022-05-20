@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,36 +24,12 @@
 		<th>번호</th><th>제목</th><th>전시명</th><th>작성자</th><th>등록일</th><th>조회수</th>
 	</tr>
 	<!--  Dummy Content -->
+	<c:forEach var="vo" items="${list}" >
 	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
+		<td>${vo.cmNo}</td><td><a href="comment_content.do?cmId=${vo.cmId }">${vo.cmTitle }</a><td>${vo.cmDisp }</td><td> ${vo.cmUserId }</td><td>${vo.cmDate }</td><td>${vo.cmHits }</td>
 	</tr>
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>	
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>	
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>	
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>	
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>	
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>	
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>	
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>	
-	<tr>
-		<td>1</td><td><a href="comment_content.do">test1</a><td>전시명</td><td>ID/test</td><td>2022-05-01</td><td>views</td>
-	</tr>
+	</c:forEach>
+	
 </table>
 
 <!-- 검색 입력폼 -->
@@ -70,8 +47,26 @@
 <button type="button" onclick="location.href='comment_write.do'" class="btn_normal">등록</button>
 </form>
 </div>
+<div align="center">
 <!-- 페이지 표시 부분 -->
-<div class="pageBtn"> <<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>
+&lt;&lt;&nbsp;&nbsp;&nbsp;
+<script>
+	var pageCount=${pageCount};
+	var reqPage=${reqPage};
+	var i=0;
+	for(i=1;i<=pageCount;i++){
+		document.write("<a href='comment_list.do?rpage="+i+"'>");
+		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
+	}
+</script>
+<!-- 
+1&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;
+3&nbsp;&nbsp;&nbsp;
+4 -->
+&gt;&gt;</div>
+<!--  
+<div class="pageBtn"><<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>-->
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
