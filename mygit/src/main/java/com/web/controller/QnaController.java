@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -64,16 +65,24 @@ public class QnaController {
 	}
 	
 	@RequestMapping(value="/qna_write.do",method = RequestMethod.GET)
-	public String qnaWrite() {
-		return "/qna/qna_write";
+	public ModelAndView qnaWrite(HttpSession session) {
+		String id=(String)session.getAttribute("id");
+		ModelAndView mv=new ModelAndView("/qna/qna_write");
+		mv.addObject("id", id);
+		return mv;
 	}
 	
+	/*//session 미적용
+	@RequestMapping(value="/qna_write.do",method = RequestMethod.GET)
+	public String qnaWrite(HttpSession session) {
+		return "/qna/qna_write";
+	}*/
 	
 	@RequestMapping(value="/qna_write.do",method = RequestMethod.POST)
 	public ModelAndView qnaWrite(QnaVO vo,HttpServletRequest request) throws Exception {
 		ModelAndView mv=new ModelAndView("redirect: /mygit/qna_list.do?rapge=1");
-		vo.setqUserId("test");
-		vo.setqOrigin(0);
+		//vo.setqUserId("test");
+		//vo.setqOrigin(0);
 		vo=fileService.fileCheck(vo);
 		
 		fileService.fileSave(vo, request);
@@ -111,12 +120,14 @@ public class QnaController {
 	}
 	
 	@RequestMapping(value="/qna_content.do",method = RequestMethod.GET)
-	public ModelAndView qnaContent(String qId) {
+	public ModelAndView qnaContent(String qId,HttpSession session) {
 		ModelAndView mv=new ModelAndView("/qna/qna_content");
 		QnaVO vo=(QnaVO) qnaService.getContent(qId);
 		String str=vo.getqContent().replaceAll(System.getProperty("line.separator"), "<br>");
 		vo.setqContent(str);
 		qnaService.updateHits(qId);
+		String id=(String)session.getAttribute("id");
+		mv.addObject("id",id);
 		mv.addObject("vo", vo);
 		return mv;
 	}

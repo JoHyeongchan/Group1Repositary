@@ -19,12 +19,12 @@ public class LoginController {
 	@Autowired
 	private MemberServiceImpl memberService;
 	
-	@RequestMapping(value="/login.do", method=RequestMethod.GET)
+	@RequestMapping(value="login.do", method=RequestMethod.GET)
 	public String login() {
 		return "login/login";
 	}
 	
-	@RequestMapping(value="/login.do", method=RequestMethod.POST)
+	@RequestMapping(value="login.do", method=RequestMethod.POST)
 	public ModelAndView login(MemberVO vo, HttpSession session, RedirectAttributes re) {
 		ModelAndView mv = new ModelAndView();
 		
@@ -33,10 +33,10 @@ public class LoginController {
 		if(result==1) {
 			session.setAttribute("id", vo.getId());
 			re.addFlashAttribute("login_result", "succ");
-			mv.setViewName("redirect:/index.do");
+			mv.setViewName("redirect:index.do");
 		} else {
 			re.addFlashAttribute("login_result", "fail");
-			mv.setViewName("redirect:/login/login.do");
+			mv.setViewName("redirect:login.do");
 		}
 		
 		return mv;

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,9 +32,11 @@ public class NoticeController {
 	PageServiceImpl pageService;
 	
 	@RequestMapping(value="/notice_list.do",method=RequestMethod.GET)
-	public ModelAndView noticeList(String rpage) {
+	public ModelAndView noticeList(String rpage,HttpSession session) {
 		
 		ModelAndView mv=new ModelAndView("/notice/notice_list");
+		
+		String id=(String)session.getAttribute("id");
 		
 		Map<String, String> param= pageService.getPageResult(rpage, "notice", noticeService);
 		
@@ -62,7 +65,7 @@ public class NoticeController {
 		mv.addObject("reqPage", reqPage);
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
-
+		mv.addObject("id",id);
 		return mv;
 	}
 	

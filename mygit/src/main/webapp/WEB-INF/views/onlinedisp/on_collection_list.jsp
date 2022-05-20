@@ -33,10 +33,11 @@
 			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>			
 		</form>
 		</div>
+		<c:if test="${id =='admin'}">
 		<div id="btnArea">
 		<button class="btnList" onclick="location.href='collectionWrite.do'">등록</button>
 		</div>
-		
+		</c:if>		
 		<hr style="clear:both">
 		<table>
 			<tr>

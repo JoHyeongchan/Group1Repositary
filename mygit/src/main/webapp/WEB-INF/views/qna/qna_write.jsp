@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/qna/qna_write_update.css">
-<script type="text/javascript"></script>
+<script type="text/javascript"></script>	
 </head>
 
 <jsp:include page="../header.jsp"></jsp:include>
@@ -16,6 +16,7 @@
 	<h2>Q &amp; A</h2>
 	<br><hr><br>
 	<form name="qna_write" action="qna_write.do" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="qUserId" value="${id }">
 	 	<table border="1">
 		 	<tr>
 			 	<th>제목</th>

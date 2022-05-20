@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import com.web.service.FileServiceImpl;
 import com.web.service.PageServiceImpl;
 import com.web.vo.DispCommentVO;
 import com.web.vo.NoticeVO;
+import com.web.vo.QnaVO;
 
 @Controller
 public class CommentController {
@@ -66,19 +68,24 @@ public class CommentController {
 	}
 	
 	@RequestMapping(value="/comment_content.do",method=RequestMethod.GET)
-	public ModelAndView commentContent(String cmId){
+	public ModelAndView commentContent(String cmId,HttpSession session){
 		ModelAndView mv=new ModelAndView("/comment/comment_content");
+		String id=(String) session.getAttribute("id");
 		DispCommentVO vo=(DispCommentVO) dispCommentService.getContent(cmId);
 		String str=vo.getCmContent().replaceAll(System.getProperty("line.separator"), "<br>");
 		vo.setCmContent(str);
 		dispCommentService.updateHits(cmId);
+		mv.addObject("id",id);
 		mv.addObject("vo", vo);
 		return mv;
 	}
 	
 	@RequestMapping(value="/comment_write.do",method=RequestMethod.GET)
-	public String commentWrite(){
-		return "/comment/comment_write";
+	public ModelAndView commentWrite(HttpSession session){
+		ModelAndView mv=new ModelAndView("/comment/comment_write");
+		String id=(String) session.getAttribute("id");
+		mv.addObject("id",id);
+		return mv;
 	}
 	
 	@RequestMapping(value="/comment_write.do",method=RequestMethod.POST)
@@ -95,15 +102,54 @@ public class CommentController {
 	}
 	
 	@RequestMapping(value="/comment_update.do",method=RequestMethod.GET)
-	public String commentUpdate(){
-		return "/comment/comment_update";
+	public ModelAndView commentUpdate(String cmId){
+		ModelAndView mv=new ModelAndView("/comment/comment_update");
+		DispCommentVO vo=(DispCommentVO)dispCommentService.getContent(cmId);
+		
+		mv.addObject("vo", vo);
+		return mv;
 	}
 	
 	@RequestMapping(value="/comment_update.do",method=RequestMethod.POST)
-	public ModelAndView commentUpdate(DispCommentVO vo){
+	public ModelAndView commentUpdate(DispCommentVO vo,HttpServletRequest request) throws Exception{
 		ModelAndView mv=new ModelAndView();
 		
-		mv.setViewName("redirect: /mygit/comment/comment_list");		
+		String sfile=vo.getCmSfile();
+		//System.out.println(vo.getCmId());
+		
+		vo=fileService.fileCheck(vo);	
+		
+		int result=dispCommentService.updateContent(vo);
+		//int result=digitalMovieDao.update(vo);
+
+		
+		if(result==1) {
+			if(vo.getCmFile()!=null) {
+				fileService.fileSave(vo, request);
+				fileService.deleteFile(sfile, request);
+			}
+		}
+		
+		mv.setViewName("redirect: comment_list.do?rpage=1");		
 		return  mv;
+	}
+	
+	@RequestMapping(value="/comment_delete.do",method=RequestMethod.GET)
+	public ModelAndView commentDelete(String cmId,HttpServletRequest request){
+		ModelAndView mv=new ModelAndView("redirect: comment_list.do?rpage=1");
+		
+		DispCommentVO vo=(DispCommentVO)dispCommentService.getContent(cmId);
+		String sfile="";
+		if(vo.getCmSfile()!="") {
+			sfile=vo.getCmSfile();
+		}
+		
+		int result=dispCommentService.deleteContent(cmId);
+		
+		if(result==1) {
+			fileService.deleteFile(sfile, request);
+		}
+		
+		return mv;
 	}
 }

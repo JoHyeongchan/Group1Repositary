@@ -33,30 +33,26 @@
  	
  	 
  	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.DispCommentVO">
-select cmid, cmtitle,cmcontent,cmdisp,cmuserid,to_char(cmdate,'yyyy-mm-dd')cmdate,cmhits,
-prevId,prevTitle,nextid,nexttitle
-from (select cmid, cmtitle,cmcontent,cmdisp,cmuserid,cmdate,cmhits,
-lag(cmid,1,0) over(order by cmdate asc) prevId,
-lag(cmTitle,1,0) over(order by cmdate asc) prevTitle,
-lead(cmid,1,0) over(order by cmdate asc) nextId,
-lead(cmTitle,1,0) over(order by cmdate asc) nextTitle from dispComment) where cmid=#{cmId}
- 	</select>
- 	<!-- 
- 	<update id="update" parameterType="com.web.vo.QnaVO">
+		select cmid, cmtitle,cmcontent,cmdisp,cmuserid,to_char(cmdate,'yyyy-mm-dd')cmdate,cmhits,
+		prevId,prevTitle,nextid,nexttitle
+		from (select cmid, cmtitle,cmcontent,cmdisp,cmuserid,cmdate,cmhits,
+		lag(cmid,1,0) over(order by cmdate asc) prevId,
+		lag(cmTitle,1,0) over(order by cmdate asc) prevTitle,
+		lead(cmid,1,0) over(order by cmdate asc) nextId,
+		lead(cmTitle,1,0) over(order by cmdate asc) nextTitle from dispComment) where cmid=#{cmId}
+	</select>
+ 	 
+ 	<update id="update" parameterType="com.web.vo.DispCommentVO">
 	<choose>
-		<when test="qFile!=null">
-		update qna set qTitle=#{qTitle},qContent=#{qContent},qFile=#{qFile},qSfie=#{qSfile} where qId=#{qId}
+		<when test="cmFile!=null">
+		update dispComment set cmTitle=#{cmTitle},cmContent=#{cmContent},cmFile=#{cmFile},cmSfie=#{cmSfile},cmDisp=#{cmDisp} where cmId=#{cmId}
  		</when>
  		 <otherwise>
- 		 update qna set qTitle=#{qTitle},qContent=#{qContent} where qId=#{qId}
+ 		 update dispComment set cmTitle=#{cmTitle},cmContent=#{cmContent},cmDisp=#{cmDisp} where cmId=#{cmId}
  		 </otherwise>
  	</choose>
  	</update>
  	
- 	<update id="updateReply" parameterType="map">
- 	update qna set qgroup =qgroup+1 where qorigin=#{origin} and qgroup>=#{group}
- 	</update>
- -->
  	<update id="updateHits" parameterType="java.lang.String">
  	update dispComment set cmHits=cmhits+1 where cmid=#{cmId}
  	</update>

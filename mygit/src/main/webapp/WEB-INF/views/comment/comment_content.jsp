@@ -134,9 +134,10 @@ $(document).ready(function () {
 	 </table>	 		
 
 	 <div>
+	 <c:if test="${id==vo.cmUserId || id=='admin' }">
 	 <button type="button" onclick="location.href='comment_update.do?cmId=${vo.cmId}'" class="btn_normal" style="float:left;">수정</button>
 	 <button type="button" id="deleteBtn" class="btn_normal" style="float:left;">삭제</button>
-	 
+	 </c:if>
 	 <button type="button" onclick="location.href='comment_list.do?rpage=1'" class="btn_normal">목록</button>
 	 </div>
 	 

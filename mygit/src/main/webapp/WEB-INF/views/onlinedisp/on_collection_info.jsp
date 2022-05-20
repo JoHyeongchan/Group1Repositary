@@ -87,8 +87,10 @@ $(document).ready(function () {
 </table>
 </div>
 	<button type="button" onclick="location.href='collectionList.do?rpage=1'" class="btnList">목록</button>
+	<c:if test="${id =='admin'}">
 	<button type="button" class="btnList" id="deleteBtn">삭제</button>
-	<button type="button" onclick="location.href='collectionUpdate.do?coId=${vo.coId}'" class="btnList">수정</button>	 
+	<button type="button" onclick="location.href='collectionUpdate.do?coId=${vo.coId}'" class="btnList">수정</button>	
+	</c:if> 
 </section>	
 
 <jsp:include page="../footer.jsp"></jsp:include>

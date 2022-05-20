@@ -13,7 +13,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 	<br><br>
 	<div id="joinForm">
-		<form name="join_form" action="join.do" method="get">
+		<form name="join_form" action="join.do" method="post">
 			<h3>회원가입</h3>
 			<br><br><hr><br>
 			<table>

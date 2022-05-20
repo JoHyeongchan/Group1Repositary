@@ -116,8 +116,10 @@
 		
 			
 		<button type="button" onclick="location.href='digitalMovList.do?rpage=1'" class="btnList">목록</button>
+		<c:if test="${id =='admin'}">
 		<button type="button" class="btnList" id="deleteBtn">삭제</button>
 		<button type="button" onclick="location.href='digitalMovUpdate.do?dmId=${vo.dmId}'" class="btnList">수정</button>
+		</c:if>
 	</section>
 	
 <jsp:include page="../footer.jsp"></jsp:include>

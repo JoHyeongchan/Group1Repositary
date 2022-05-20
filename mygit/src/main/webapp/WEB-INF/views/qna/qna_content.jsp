@@ -78,8 +78,10 @@ $(document).ready(function () {
 	 </table>
 	 <br><br>
 	 <div>
+	 	<c:if test="${id==vo.qUserId || id=='admin' }">
 		 <button type="button" onclick="location.href='qna_update.do?qId=${vo.qId}'">수정</button>
 		 <button type="button" id="deleteBtn">삭제</button>
+		</c:if>
 		 <button type="button" onclick="location.href='qna_writeReply.do?qId=${vo.qId}'">답글</button>
 		 <button type="button" onclick="location.href='qna_list.do?rpage=1'">목록</button>
 	 </div>

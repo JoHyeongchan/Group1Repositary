@@ -34,9 +34,9 @@ public class JoinController {
 		int result = memberService.getJoinResult(vo);
 		
 		if(result==1) {
-			mv.setViewName("login");
+			mv.setViewName("login/login");
 		} else {
-			mv.setViewName("join");
+			mv.setViewName("join/join");
 		}
 		return mv;
 	}

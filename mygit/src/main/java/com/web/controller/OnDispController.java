@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,9 +48,9 @@ public class OnDispController {
 	//ObjectService collectionService;
 
 	@RequestMapping(value="/online/digitalMovList.do",method=RequestMethod.GET)
-	public ModelAndView onDigitalMovList(String rpage) {
+	public ModelAndView onDigitalMovList(String rpage,HttpSession session) {
 		ModelAndView mv=new ModelAndView();
-		
+		String id=(String)session.getAttribute("id");
 		Map<String, String> param= pageService.getPageResult(rpage,"digitalMovie",digitalMovieService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -75,14 +76,15 @@ public class OnDispController {
 		mv.addObject("reqPage", reqPage);
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
-		mv.setViewName("/onlinedisp/on_digitalMov_list");
+		mv.addObject("id", id);
+		mv.setViewName("/onlinedisp/on_digitalMov_list");		
 		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionList.do",method=RequestMethod.GET)
-	public ModelAndView onCollection(String rpage) {
+	public ModelAndView onCollection(String rpage,HttpSession session) {
 		ModelAndView mv=new ModelAndView( "/onlinedisp/on_collection_list");
-		
+		String id=(String)session.getAttribute("id");
 		Map<String, String> param= pageService.getPageResult(rpage, "collection", collectionService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -110,29 +112,33 @@ public class OnDispController {
 		mv.addObject("reqPage", reqPage);
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
+		mv.addObject("id", id);
 		return mv;
 	}
 	
 	@RequestMapping(value="/online/digitalMovInfo.do",method=RequestMethod.GET)
-	public ModelAndView onDigitalMovInfo(String dmId) {
+	public ModelAndView onDigitalMovInfo(String dmId,HttpSession session) {
 		ModelAndView mv=new ModelAndView("/onlinedisp/on_digitalMov_info");
+		String id=(String)session.getAttribute("id");
 		digitalMovieService.updateHits(dmId);
 		DigitalMovieVO vo=(DigitalMovieVO)digitalMovieService.getContent(dmId);
 		String str=vo.getDmContent().replaceAll(System.getProperty("line.separator"), "<br>");
 		vo.setDmContent(str);
-		//mv.addObject("dmid",dmId);
+		mv.addObject("id", id);;
 		mv.addObject("vo", vo);
 		return mv;
 	}
 	
 	@RequestMapping(value="/online/collectionInfo.do",method=RequestMethod.GET)
-	public ModelAndView onCollectionInfo(String coId) {
+	public ModelAndView onCollectionInfo(String coId,HttpSession session) {
 		ModelAndView mv= new ModelAndView( "/onlinedisp/on_collection_info");
+		String id=(String)session.getAttribute("id");
 		collectionService.updateHits(coId);
 		CollectionVO vo=(CollectionVO)collectionService.getContent(coId);
 		String str=vo.getCoContent().replaceAll(System.getProperty("line.separator"), "<br>");
 		vo.setCoContent(str);
 		mv.addObject("vo", vo);
+		mv.addObject("id", id);
 		return mv;
 	}
 	

@@ -71,7 +71,9 @@
 	</select>
 	<input type="text" value="내용을 입력해주세요" name="searchText" onclick="this.value=''"></input>
 	<button type="submit" class="btn_search">검색</button>
+	<c:if test="${id=='admin' }">
 	<button type="button" onclick="location.href='notice_write.do'" class="btn_normal">등록</button>
+	</c:if>
 	</div>
 	
 	</form>

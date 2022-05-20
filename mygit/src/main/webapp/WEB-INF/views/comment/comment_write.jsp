@@ -14,7 +14,8 @@
 
 <section>
 <form name="comment_write_form" action="comment_write.do" method="post" enctype="multipart/form-data">
-		<h2>관람후기</h2>
+		<input name="cmUserId" type="hidden" value="${id}" >
+		<h2>관람후기</h2> 
 		<hr>
 	 	<table>
 	 	<tr>
