@@ -59,22 +59,27 @@
 			<if test="email != ''">
 				and email like '%'||#{email}||'%'
 			</if>
-			<if test="gender != ''">
-				and gender = #{gender}
-			</if>
 			<if test="address != 0">
 				and address = #{address}
+			</if>
+			<if test="phone != ''">
+				and phone = #{phone}
 			</if>
 			<if test="startdate != ''">
 				and joindate &gt;= #{startdate}
 			</if>
 			<if test="enddate != ''">
-				and joindate &lt;= #{joindate};
+				and joindate &lt;= #{joindate}
 			</if>
 			<!-- 
 			<if test="startdate != '' and enddate != ''">
+<<<<<<< HEAD
 				and rdate between #{startdate} and #{enddate};
 			</if> -->
+=======
+				and joindate between #{startdate} and #{enddate};
+			</if>
+>>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary
 		</where>
 	</select>
 	
