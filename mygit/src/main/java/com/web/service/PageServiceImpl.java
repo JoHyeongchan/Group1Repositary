@@ -10,9 +10,6 @@ import com.web.dao.DigitalMovieDAO;
 import com.web.vo.DigitalMovieVO;
 
 public class PageServiceImpl {
-
-	@Autowired
-	DigitalMovieDAO digitalMovieDao;
 	
 	@Autowired
 	DigitalMovieServiceImpl digitalMovieService;
@@ -25,6 +22,9 @@ public class PageServiceImpl {
 	
 	@Autowired
 	NoticeServiceImpl noticeService;
+	
+	@Autowired
+	DispCommentServiceImpl dispCommentService;
 	
 	public Map<String, String> getPageResult(String rpage ,String serviceName,ObjectService service){
 		
@@ -53,6 +53,10 @@ public class PageServiceImpl {
 		}else if(serviceName.equals("notice")) {
 			noticeService=(NoticeServiceImpl)service;
 			dbCount=noticeService.getRecordCount();
+			pageSize=10;
+		}else if(serviceName.equals("comment")) {
+			dispCommentService=(DispCommentServiceImpl)service;
+			dbCount=dispCommentService.getRecordCount();
 			pageSize=10;
 		}
 		
