@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.web.service.MemberServiceImpl;
 import com.web.vo.MemberVO;
@@ -28,15 +29,25 @@ public class JoinController {
 	}
 	
 	@RequestMapping(value="/join.do", method=RequestMethod.POST)
-	public ModelAndView join(MemberVO vo) {
+	public ModelAndView join(MemberVO vo, RedirectAttributes re) {
 		ModelAndView mv = new ModelAndView();
 		
 		int result = memberService.getJoinResult(vo);
 		
 		if(result==1) {
+
 			mv.setViewName("login/login");
+
+			re.addFlashAttribute("join_result", "succ");
+			mv.setViewName("redirect:/login/login");
+
 		} else {
+
 			mv.setViewName("join/join");
+
+			re.addFlashAttribute("join_result", "fail");
+			mv.setViewName("redirect:/join/join");
+
 		}
 		return mv;
 	}
