@@ -189,22 +189,22 @@
 				<c:when test="${sessionScope.id != null }">
 				<ul>
 					<li><a href="#" class="nav_item2">${sessionScope.id }</a></li>
-					<li><a href="http://localhost:9000/tp/logout.do" class="nav_item2">로그아웃</a></li>
-					<li><a href="http://localhost:9000/tp/sitemap.do" class="nav_item2">사이트맵</a></li>
+					<li><a href="http://localhost:9000/mygit/logout.do" class="nav_item2">로그아웃</a></li>
+					<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
 				</ul>
 				</c:when>
 				<c:when test="${sessionScope.id == 'admin' }">
 				<ul>
-					<li><a href="http://localhost:9000/tp/logout.do" class="nav_item2">로그아웃</a></li>
-					<li><a href="http://localhost:9000/tp/sitemap.do" class="nav_item2">사이트맵</a></li>
-					<li><a href="http://localhost:9000/tp/admin/admin.do" class="nav_item2">Admin</a></li>
+					<li><a href="http://localhost:9000/mygit/logout.do" class="nav_item2">로그아웃</a></li>
+					<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
+					<li><a href="http://localhost:9000/mygit/admin/admin.do" class="nav_item2">Admin</a></li>
 				</ul>
 				</c:when>
 				<c:otherwise>
 				<ul>
-					<li><a href="http://localhost:9000/tp/login.do" class="nav_item2">로그인</a></li>
-					<li><a href="http://localhost:9000/tp/join.do" class="nav_item2">회원가입</a></li>
-					<li><a href="http://localhost:9000/tp/sitemap.do" class="nav_item2">사이트맵</a></li>
+					<li><a href="http://localhost:9000/mygit/login.do" class="nav_item2">로그인</a></li>
+					<li><a href="http://localhost:9000/mygit/join.do" class="nav_item2">회원가입</a></li>
+					<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
 				</ul>
 				</c:otherwise>
 				</c:choose>
