@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/login.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhosy:9000/mygit/resources/js/login.js"></script>
+<script type="text/javascript">
+	var join_result = "${join_result}";
+	if(join_result=="succ") {
+		alert("회원가입 완료");
+	}
+</script>
 </head>
 <body>
 <jsp:include page="../header.jsp"></jsp:include>

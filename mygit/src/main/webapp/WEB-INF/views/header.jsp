@@ -57,10 +57,6 @@
 		if(login_result=="succ") {
 			alert("로그인 성공");
 		}
-		var join_result = "${join_result}";
-		if(join_result=="succ") {
-			alert("회원가입 완료");
-		}
 		var logout_result = "${logout_result}";
 		if(logout_result=="succ") {
 			alert("로그아웃 성공");

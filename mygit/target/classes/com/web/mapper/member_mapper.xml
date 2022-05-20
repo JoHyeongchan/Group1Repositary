@@ -11,7 +11,7 @@
 
 	<insert id="join" parameterType="com.web.vo.MemberVO">
 		insert into TPmember values (#{id}, #{pw}, #{name}, #{gender}, 
-			#{email}, #{address}, #{phone}, sysdate, 0)
+			#{email}, #{address}, #{phone}, sysdate)
 	</insert>
 	
 	<select id="login" parameterType="com.web.vo.MemberVO" resultType="int">
@@ -72,7 +72,7 @@
 				and joindate &lt;= #{joindate};
 			</if>
 			<if test="startdate != '' and enddate != ''">
-				and rdate between #{startdate} and #{enddate};
+				and joindate between #{startdate} and #{enddate};
 			</if>
 		</where>
 	</select>
