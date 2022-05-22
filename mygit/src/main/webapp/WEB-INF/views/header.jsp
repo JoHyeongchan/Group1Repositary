@@ -11,45 +11,21 @@
 	
 	$(document).ready(function(){
 		/* 관람/참여 */
-		$("#notice").mouseenter($.throttle(1000,function() {
+		$('.nav_content').css("display","none");
+		
+		$(".menuBtn").mouseenter($.throttle(500,function() {
 			$(this).find('.nav_content').slideDown(500);
-			$('.nava').css("color","#bbb");
-			$('#noticea').css("color","#000");
+			$(".menuBtn").not(this).find('.nava').css("color","#bbb");
+			$(this).find('.nava').css("color","#000");
+			//$('#noticea').css("color","#000");
 		}));
-		$(".nav_center").mouseleave(function() {
+		
+		$(".menuBtn").mouseleave(function() {
 			$('.nava').css("color","#000");
 			$(this).find('.nav_content').slideUp(300);
 		});
-		/* 전시 */
-		$("#exhibit").mouseenter($.throttle(1000,function() {
-			$(this).find('.nav_content').slideDown(500);
-			$('.nava').css("color","#bbb");
-			$('#exhibita').css("color","#000");
-		}));
-		$(".nav_center").mouseleave(function() {
-			$('.nava').css("color","#000");
-			$(this).find('.nav_content').slideUp(300);
-		});
-		/* 디지털미술관 */
-		$("#digit").mouseenter($.throttle(1000,function() {
-			$(this).find('.nav_content').slideDown(500);
-			$('.nava').css("color","#bbb");
-			$('#digita').css("color","#000");
-		}));
-		$(".nav_center").mouseleave(function() {
-			$('.nava').css("color","#000");
-			$(this).find('.nav_content').slideUp(150);
-		});
-		/* 예약 */
-		$("#reserve").mouseenter($.throttle(1000,function() {
-			$(this).find('.nav_content').slideDown(500);
-			$('.nava').css("color","#bbb");
-			$('#reservea').css("color","#000");
-		}));
-		$(".nav_center").mouseleave(function() {
-			$('.nava').css("color","#000");
-			$(this).find('.nav_content').slideUp(200);
-		});
+		
+		
 	});
 	
 </script>
@@ -67,6 +43,7 @@
 	text-decoration: none; color: black;
 	}
 	
+
 	.nav_content>a{
 	text-decoration: none;
 	}
@@ -101,27 +78,22 @@
 		}
 	}
 	
-<<<<<<< HEAD
-	ul>li>div{display: none; position: absolute; font-size: 25pt;}
-	.nav_content>a{display: block; margin-top: 10px; margin-bottom: 10px; cursor: pointer; color: gray;}
-	.nav_content>a:hover {background-color: #2C2C2C; color: white;}
-=======
+
 	ul>li>div{display: none; position: absolute; font-size: 25pt;background-color: #fff;}
 /* 	#test{display: none;position: absolute;top:100px;height:100px; font-size: 25pt;background-color: #fff;bolder-bottom:2px solid black;width: 100%;} */
-	.nav_content>a{display: block;padding: 10px 0;/*  margin-top: 10px; margin-bottom: 10px */; cursor: pointer; color: #000/* gray */;}
+	.nav_content>a{display: inline-block;padding: 10px 0;/*  margin-top: 10px; margin-bottom: 10px */; cursor: pointer; color: #000/* gray */;}
 	.nav_content>a:hover {text-decoration:underline;}
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
+
 	.nav_center{padding-left: 60px; padding-right: 50px; padding-top: 20px;}
 	#nav_right{width: 300px; height: 70px; float: right; padding-top: 55px;}
 	#nav_right a{font-weight: bold; font-size: 15pt;}
 	.nav_item2{padding: 10px; cursor: pointer;}
-<<<<<<< HEAD
-	.nav_content{ background-color: #3E3E3E; width: 200px;}
-=======
+
+
 	.nav_content{ background-color: white;}
 	.clearfix::before, .clearfix::after {content: " ";display: table;}
 	.clearfix::after {clear: both;}
->>>>>>> branch 'master' of https://github.com/JoHyeongchan/Group1Repositary.git
+
 
 </style>
 </head>
@@ -132,8 +104,8 @@
 			<a href="http://localhost:9000/mygit/index.do" id="logo"><img src="http://localhost:9000/mygit/resources/images/logo.png" width="260px" height="120px"></a>
 		</div>
 		<ul class="nav_center">	
-			<li id="notice">
-				<a href="/mygit/comment_list.do">관람·참여</a>
+			<li id="notice" class="menuBtn">
+				<a class="nava" href="/mygit/comment_list.do">관람·참여</a>
 				<div class="nav_content">
 					<a href="/mygit/notice_list.do">공지</a>
 					<a href="/mygit/comment_list.do">관람후기</a>
@@ -141,16 +113,16 @@
 					<a href="/mygit/qna_list.do">Q&A</a>
 				</div>
 			</li>
-			<li id="exhibit">
-				<a href="/mygit/off_now.do">전시</a>
+			<li id="exhibit" class="menuBtn">
+				<a class="nava" href="/mygit/off_now.do">전시</a>
 				<div class="nav_content">
 					<a href="/mygit/off_now.do">현재전시</a>
 					<a href="/mygit/off_future.do">예정전시</a>
 					<a href="/mygit/off_past.do">과거전시</a>
 				</div>
 			</li>
-			<li id="digit">
-				<a href="/mygit/online/on_show.do">디지털미술관</a>
+			<li id="digit" class="menuBtn">
+				<a class="nava" href="/mygit/online/on_show.do">디지털미술관</a>
 				<div class="nav_content">
 					<a href="/mygit/online/on_show.do">온라인전시</a>
 					<a href="/mygit/online/collectionList.do?rpage=1">소장품</a>
@@ -158,7 +130,7 @@
 					<a href="/mygit/usergal/usergal_list.do">이용자갤러리</a>
 				</div>
 			</li>
-			<li id="reserve">
+			<li id="reserve"  class="menuBtn">
 				<a class="nava" id="reservea" href="/mygit/reservation.do">예약</a>
 				<div class="nav_content">
 					<a href="/mygit/reservation.do">예약하기</a>
