@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +22,10 @@
 	<h3>관람/참여</h3>
 	<hr>
 	<table class="list">
-	<tr><td><a href="/mygit/notice_list.do">공지</a></td></tr>
+	<tr><td><a href="/mygit/notice_list.do?rpage=1">공지</a></td></tr>
 	<tr><td><a href="/mygit/comment_list.do">관람후기</a></td></tr>
 	<tr><td><a href="/mygit/faq_list.do">FAQ</a></td></tr>
-	<tr><td><a href="/mygit/qna_list.do">Q&A</a></td></tr>
+	<tr><td><a href="/mygit/qna_list.do?rpage=1">Q&A</a></td></tr>
 	</table>
 </div>
 
@@ -64,7 +65,9 @@
 	<table class="list">
 	<tr><td><a href="/mygit/join.do">회원가입</a></td></tr>
 	<tr><td><a href="/mygit/login.do">로그인</a></td></tr>
+	<c:if test="${id=='admin' }">
 	<tr><td><a href="/mygit/admin.do">관리자페이지</a></td></tr>
+	</c:if>
 	</table>
 </div>
 

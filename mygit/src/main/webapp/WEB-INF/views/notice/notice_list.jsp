@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +24,12 @@
 		<th class="ntype" >유형</th><th class="ntitle" align="center">제목</th><th class="ndate">등록일</th>
 	</tr>
 	<!--  Dummy Content -->
+	<c:forEach var="vo" items="${list}">
 	<tr>
-		<td class="ntype">서울</td><td class="ntitle"><a href="notice_content.do">test1</a></td><td class="ndate">2022-05-01</td>
+		<td class="ntype">${vo.nCategory }</td><td class="ntitle"><a href="notice_content.do?nId=${vo.nId}">${vo.nTitle }</a></td><td class="ndate">${vo.nDate }</td>
 	</tr>
+	</c:forEach>
+	<!-- 
 	<tr>
 		<td class="ntype">서울</td><td class="ntitle">test2</td><td class="ndate">2022-05-01</td>
 	</tr>
@@ -51,7 +56,7 @@
 	</tr>
 	<tr>
 		<td class="ntype">서울</td><td class="ntitle">test10</td><td class="ndate">2022-05-01</td>
-	</tr>
+	</tr> -->
 </table>
 <br>
 
@@ -66,12 +71,32 @@
 	</select>
 	<input type="text" value="내용을 입력해주세요" name="searchText" onclick="this.value=''"></input>
 	<button type="submit" class="btn_search">검색</button>
+	<c:if test="${id=='admin' }">
 	<button type="button" onclick="location.href='notice_write.do'" class="btn_normal">등록</button>
+	</c:if>
 	</div>
 	
 	</form>
 </div>
-<div class="pageBtn"><<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>
+<div align="center">
+&lt;&lt;&nbsp;&nbsp;&nbsp;
+<script>
+	var pageCount=${pageCount};
+	var reqPage=${reqPage};
+	var i=0;
+	for(i=1;i<=pageCount;i++){
+		document.write("<a href='comment.do?rpage="+i+"'>");
+		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
+	}
+</script>
+<!-- 
+1&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;
+3&nbsp;&nbsp;&nbsp;
+4 -->
+&gt;&gt;</div>
+<!--  
+<div class="pageBtn"><<&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>-->
 	
 
 </section>

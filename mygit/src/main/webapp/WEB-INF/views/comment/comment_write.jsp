@@ -14,7 +14,8 @@
 
 <section>
 <form name="comment_write_form" action="comment_write.do" method="post" enctype="multipart/form-data">
-		<h2>관람후기</h2>
+		<input name="cmUserId" type="hidden" value="${id}" >
+		<h2>관람후기</h2> 
 		<hr>
 	 	<table>
 	 	<tr>
@@ -60,8 +61,8 @@
 	 	</tr>
 	 	</table>
 	 	<!-- 버튼 -->
-	 	<button type="button" onclick="location.href='notice_list.do'" class="btn_normal">취소</button>
-	 	<button type="button" onclick="location.href='notice_list.do'" class="btn_normal">등록</button>
+	 	<button type="button" onclick="location.href='comment_list.do?rpage=1'" class="btn_normal">취소</button>
+	 	<button type="submit" class="btn_normal">등록</button>
 	 </form>
 </section>
 </body>

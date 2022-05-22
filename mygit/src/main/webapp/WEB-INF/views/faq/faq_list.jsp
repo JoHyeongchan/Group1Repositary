@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,8 +51,9 @@
 
 <tr>
 	<td><h2>FAQ</h2></td>
-	<td><button type="button" onclick="location.href='faq_write.do'" class="btn_normal">등록</button>
-	</td>
+	<c:if test="${id=='admin' }">
+	<td><button type="button" onclick="location.href='faq_write.do'" class="btn_normal">등록</button>	
+	</td></c:if>
 </tr>
 
 <tr>
@@ -69,10 +71,12 @@
 			</span>
 			<div class="faqContent">
 				<div class="contentBox">AAAAA</div>
-				<div class="btnBox">
+				<c:if test="${id=='admin' }">
+				<div class="btnBox">				
 				<button class="btn_small">삭제</button>
-				<button type="button" onclick="location.href='faq_update.do'" class="btn_small">수정</button>							
-				</div>			
+				<button type="button" onclick="location.href='faq_update.do'" class="btn_small">수정</button>											
+				</div>	
+				</c:if>		
 			</div></li>
 			<li class="faqTitle">
 			<span class="titleText">
@@ -80,11 +84,13 @@
 			</span>
 			<div class="faqContent">
 				<div class="contentBox">AAAAA</div>
+				<c:if test="${id=='admin' }">
 				<div class="btnBox">
 				<button class="btn_small">삭제</button>
 				<button type="button" onclick="location.href='faq_update.do'" class="btn_small">수정</button>
-				</div>			
-			</div></li>
+				</div>
+				</c:if>			
+			</div></li><!--  
 			<li class="faqTitle">
 			<span class="titleText">
 			<img src="http://localhost:9000/mygit/resources/images/q_icon2.png" class="qIcon">&nbsp; 제목3</span>
@@ -110,7 +116,7 @@
 				<button class="btn_small">삭제</button>
 				<button type="button" onclick="location.href='faq_update.do'" class="btn_small">수정</button>	
 				</div>
-			</div></li>
+			</div></li>-->
 		</ul>
 	</td>
 </tr>

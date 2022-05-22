@@ -1,5 +1,7 @@
 package com.web.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,8 +13,11 @@ import com.web.vo.FaqVO;
 public class FaqController {
 
 	@RequestMapping(value="/faq_list.do",method=RequestMethod.GET)
-	public String faqList() {
-		return "/faq/faq_list";
+	public ModelAndView faqList(HttpSession session) {
+		ModelAndView mv=new ModelAndView("/faq/faq_list");
+		String id=(String)session.getAttribute("id");
+		mv.addObject("id", id);
+		return mv;
 	}
 	
 	@RequestMapping(value="/faq_write.do",method=RequestMethod.GET)

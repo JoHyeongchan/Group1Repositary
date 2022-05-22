@@ -10,15 +10,21 @@ import com.web.dao.DigitalMovieDAO;
 import com.web.vo.DigitalMovieVO;
 
 public class PageServiceImpl {
-
-	@Autowired
-	DigitalMovieDAO digitalMovieDao;
 	
 	@Autowired
 	DigitalMovieServiceImpl digitalMovieService;
 	
 	@Autowired
 	CollectionServiceImpl collectionService;
+	
+	@Autowired
+	QnaServiceImpl qnaService;
+	
+	@Autowired
+	NoticeServiceImpl noticeService;
+	
+	@Autowired
+	DispCommentServiceImpl dispCommentService;
 	
 	public Map<String, String> getPageResult(String rpage ,String serviceName,ObjectService service){
 		
@@ -35,9 +41,23 @@ public class PageServiceImpl {
 		if(serviceName.equals("digitalMovie")) {
 			digitalMovieService=(DigitalMovieServiceImpl)service;
 			dbCount=digitalMovieService.getRecordCount();
+			pageSize = 8;
 		}else if(serviceName.equals("collection")) {
 			collectionService=(CollectionServiceImpl)service;
 			dbCount=collectionService.getRecordCount();
+			pageSize = 8;
+		}else if(serviceName.equals("qna")) {
+			qnaService=(QnaServiceImpl)service;
+			dbCount=qnaService.getRecordCount();
+			pageSize=10;
+		}else if(serviceName.equals("notice")) {
+			noticeService=(NoticeServiceImpl)service;
+			dbCount=noticeService.getRecordCount();
+			pageSize=10;
+		}else if(serviceName.equals("comment")) {
+			dispCommentService=(DispCommentServiceImpl)service;
+			dbCount=dispCommentService.getRecordCount();
+			pageSize=10;
 		}
 		
 		//총 페이지 수 계산

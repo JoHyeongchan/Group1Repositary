@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,88 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/comment/comment_content.css">
+<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+	
+	
+	$("#deleteBtn").click(function () {
+		var del_confirm=confirm("삭제하시겠습니까");
+		if (del_confirm==true){
+			var id='${vo.cmId}';
+			location.href="comment_delete.do?cmId="+id;
+		}
+	});
+});
+</script>
+<style type="text/css">
+* {
+		margin: 0; padding: 0;
+	}
+	
+	body{
+		width:100%;
+		height: 100%;
+	}
+	h2{
+		display: block;
+		font-size: 40px;
+		text-indent: 20px;
+		margin: 20px;
+	}
+	
+	h3{
+		display: block;
+		font-size: 25px;
+		text-indent: 20px;
+		margin: 10px;
+	}
+	
+	section {
+		width: 900px;
+		margin: 0 auto;
+		padding: 50px 100px;
+		box-sizing: border-box;
+	}
+	.titleSub{
+		text-align: right;
+		padding-top: 20px;
+	}
+	
+	.contentBox{
+		min-height: 300px;
+		padding: 10px;
+	}
+	
+	.pageMove{
+		cursor:pointer;
+		height: 50px;
+	}
+	
+	button{
+		background-color: #111;
+		color:#eee;
+	}
+	
+	.btn_normal{
+		float:right;
+		margin:10px;
+		width:100px;
+		height:40px;
+		font-size: 20px;
+	}
+	
+	table{
+		width:100%;
+		margin:0 auto;
+	}
+	
+	.bottomBox{
+	padding-left: 50px;
+	width:100px;
+	height:40px;	
+}
+</style>
 <body>
 
 <jsp:include page="../header.jsp"></jsp:include>
@@ -16,34 +99,46 @@
 	<table>
 
 	<tr>
-		<td colspan="3"><h2>[RE]: 제목1</h2>	
-	 	<small>담당 : XX과 XXX | 등록일자 : 2022-05-01</small> </td>
-	 	<td colspan="1" class="titleSub"><small>조회수:12</small></td>
+		<td colspan="3"><h2>${vo.cmTitle }</h2>	
+	 	<small>작성자 : ${vo.cmUserId } | 등록일자 : ${vo.cmDate }</small> </td>
+	 	<td colspan="1" class="titleSub"><small>조회수:${vo.cmHits }</small></td>
 	 </tr>
 	<tr><td colspan="4"><hr></td></tr>
 	<tr>
-			<td colspan="4"><p class="contentBox">이것은 청춘의 끓는피다. 청눈의 피가 뜨거운지라 인간의 동산에는 사랑의 풀이 돋고
-			이상의 꽃이 피고 희망의 놀이 뜨고 열락의 새가 운다. 사랑의 풀이 없으면 인간의 사막이다. 
-			오아시스도 없는 사막이다. 보이는 끝까지 찾아다녀도 목숨이 </p></td>
+			<td colspan="4"><p class="contentBox">${vo.cmContent }</p></td>
 	 </tr>
 	 <tr><td colspan="4"><hr></td></tr>
-	 <tr onclick="location.href='comment_content.do'" class="pageMove">
-	 	 		<td  style="width:200px">이전글</td>
-	 	 		<td colspan="4">제목2</td>
-	 </tr>
+	 <c:choose>
+		<c:when test="${vo.prevId!='0' }">
+		<tr onclick="location.href='comment_content.do?cmId=${vo.prevId}'" class="bottomTr">
+			<td class="bottomBox">이전글</td><td style="cursor:pointer;" colspan="2"><b>${vo.prevTitle}</b></td>
+		</tr></c:when>
+		<c:otherwise>
+		<tr onclick="alert('첫 게시물입니다.')" class="bottomTr">
+			<td class="bottomBox">이전글</td><td style="cursor:pointer;" colspan="2"><b>이전글이 없습니다.</b></td>
+		</tr>
+		</c:otherwise></c:choose>
 	 <tr><td colspan="4"><hr></td></tr>
-	 <tr onclick="location.href='comment_content.do'" class="pageMove">
-	 	 		<td>다음글</td>
-	 	 		<td colspan="4">제목3</td>
-	</tr>
+	 
+	  <c:choose>
+		<c:when test="${vo.nextId!='0' }">
+		<tr onclick="location.href='comment_content.do?cmId=${vo.nextId}'" class="bottomTr">
+			<td class="bottomBox">다음글</td><td style="cursor:pointer;" colspan="2"><b>${vo.nextTitle}</b></td>
+		</tr></c:when>
+		<c:otherwise>
+		<tr onclick="alert('마지막 게시물입니다.')" class="bottomTr">
+			<td class="bottomBox">다음글</td><td style="cursor:pointer;" colspan="2"><b>다음글이 없습니다.</b></td>
+		</tr>
+		</c:otherwise></c:choose>
 	<tr><td colspan="4"><hr></td></tr>
 	 </table>	 		
 
 	 <div>
-	 <button type="button" onclick="location.href='comment_update.do'" class="btn_normal" style="float:left;">수정</button>
-	 <button type="button" onclick="alert('삭제기능 구현 예정')" class="btn_normal" style="float:left;">삭제</button>
-	 
-	 <button type="button" onclick="location.href='comment_list.do'" class="btn_normal">목록</button>
+	 <c:if test="${id==vo.cmUserId || id=='admin' }">
+	 <button type="button" onclick="location.href='comment_update.do?cmId=${vo.cmId}'" class="btn_normal" style="float:left;">수정</button>
+	 <button type="button" id="deleteBtn" class="btn_normal" style="float:left;">삭제</button>
+	 </c:if>
+	 <button type="button" onclick="location.href='comment_list.do?rpage=1'" class="btn_normal">목록</button>
 	 </div>
 	 
 </section>

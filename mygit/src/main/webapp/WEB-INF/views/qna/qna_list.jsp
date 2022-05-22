@@ -1,11 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/qna/qna_list.css">
+<style type="text/css">
+.titleCell{
+	text-align: left;
+	text-indent: 10px;
+}
+</style>
 <script type="text/javascript"></script>
 </head>
 <body>
@@ -25,40 +32,38 @@
 			<th>No.</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회수</th>
 		</tr>
 		<!--  Dummy Content -->
+		<c:forEach var="vo" items="${list}">
 		<tr>
-			<td>25</td><td><a href="qna_content.do">test1</a></td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>24</td><td>test2</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>23</td><td>test3</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>22</td><td>test4</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>21</td><td>test5</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>20</td><td>test6</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>19</td><td>test7</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>18</td><td>test8</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>17</td><td>test9</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
-		<tr>
-			<td>16</td><td>test10</td><td>dummy</td><td>2022-05-01</td><td>10</td>
-		</tr>
+			<td><c:if test="${vo.qGroup==0 }">${vo.qOrigin }</c:if></td>
+			<td class="titleCell"><c:if test="${vo.qGroup!=0 }"><script>
+				var depth=${vo.qDepth}; var i=0;
+				for(i=0;i<depth;i++)document.write("&nbsp;&nbsp;");
+				document.write("RE:");
+			</script></c:if>
+			<a href="qna_content.do?qId=${vo.qId }">${vo.qTitle }</a></td>
+			<td>${vo.qUserId }</td><td>${vo.qDate }</td><td>${vo.qHits }</td>
+		</tr>		
+		</c:forEach>
+		
 	</table>
 	<br>
 <!-- 페이지 표시 부분 -->
-<div> &lt;&lt;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;>></div>
+<div> &lt;&lt;&nbsp;&nbsp;&nbsp;
+<script>
+	var pageCount=${pageCount};
+	var reqPage=${reqPage};
+	var i=0;
+	for(i=1;i<=pageCount;i++){
+		document.write("<a href='qna_list.do?rpage="+i+"'>");
+		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
+	}
+</script>
+<!-- 
+1&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;
+3&nbsp;&nbsp;&nbsp;
+4 -->
+&gt;&gt;</div>
 <br>
 <!-- 검색 입력폼 -->
 <form>

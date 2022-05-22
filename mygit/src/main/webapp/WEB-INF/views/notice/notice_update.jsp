@@ -7,6 +7,32 @@
 <title>Insert title here</title>
 <script type="text/javascript"></script>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/notice/notice_write_update.css">
+<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		var category='${vo.nCategory}';
+		$("#categorySel").val(category);
+		
+		$("#fileSelect").change(function name() {
+			if(window.FileReader){
+				var fname=$(this)[0].files[0].name;
+				$(".FileName").text(fname);
+			}
+		});
+	});
+</script>
+<style type="text/css">
+.FileName{
+		display: block;
+		position: relative;
+		width:50%;
+		height: 20px;
+		margin-top: -22px;
+		margin-left: 75px;
+		background: white;
+	}
+</style>
 </head>
 <body>
 
@@ -14,12 +40,14 @@
 
 <section>
 <form name="notice_write_form" action="notice_update.do" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="nId" value="${vo.nId }">
+	<input type="hidden" name="nSfile" value="${vo.nSfile }">
 		<h2>공지사항</h2>
 		<hr>
 	 	<table>
 	 	<tr>
 	 		<td><span class="inputLabel">제목</span></td>
-	 		<td colspan="4"><input type="text" name="nTitle" placeholder="제목을 입력하세요." class="titleTextBox"></td>
+	 		<td colspan="4"><input type="text" name="nTitle" class="titleTextBox" value="${vo.nTitle }"></td>
 	 		</tr>
 	 		
 	 	<tr>
@@ -28,10 +56,12 @@
 	 	
 	 	<tr>
 	 	<td><span class="inputLabel">첨부파일</span></td>
-	 	<td colspan="2"><input type="file" name="formFile"></td>
+	 	<td colspan="2"><input type="file" name="formFile" id="fileSelect">
+	 	<div class="FileName">${vo.nFile } </div></td>
+	 	
 	 	<td><span class="inputLabel">유형</span></td>
 	 	<td>
-	 	<select name="nCategory">
+	 	<select name="nCategory" id="categorySel">
 	 	<option value="공통">공통</option>
 	 	<option value="서울">서울</option>
 	 	<option value="미술은행">미술은행</option>
@@ -44,12 +74,12 @@
 	 	</tr>
 	 	
 	 	<tr>
-	 	<td colspan="5" align="center"><textarea rows="20" cols="80" name="nContent"></textarea>
+	 	<td colspan="5" align="center"><textarea rows="20" cols="80" name="nContent">${vo.nContent }</textarea>
 	 	</td>
 	 	</tr>
 	 	</table>
 	 	<!-- 버튼 -->
-	 	<button type="button" onclick="location.href='notice_list.do'" class="btn_normal">취소</button>
+	 	<button type="button" onclick="location.href='notice_list.do?nId=${vo.nId}'" class="btn_normal">취소</button>
 	 	<button type="submit" class="btn_normal">등록</button>
 	 </form>
 </section>

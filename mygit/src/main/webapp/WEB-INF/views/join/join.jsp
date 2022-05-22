@@ -8,12 +8,18 @@
 <script type="text/javascript" src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="http://localhost:9000/mygit/resources/js/join.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/join.css">
+<script type="text/javascript">
+	var join_result = "${join_result}";
+	if(join_result=="fail") {
+		alert("회원가입에 실패하였습니다.");
+	}
+</script>
 </head>
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
 	<br><br>
 	<div id="joinForm">
-		<form name="join_form" action="join.do" method="get">
+		<form name="join_form" action="join.do" method="post">
 			<h3>회원가입</h3>
 			<br><br><hr><br>
 			<table>

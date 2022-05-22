@@ -3,9 +3,11 @@ package com.web.vo;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class QnaVO {
-	private String qId,qTitle,qContent,qDateStr,qUserId,qFile,qSfile;
-	private int qHits,qGroup,qDepth,qSort;
+	private String qId,qTitle,qContent,qDate,qUserId,qFile,qSfile;
+	private int qHits,qOrigin,qGroup,qDepth,rno;
 	CommonsMultipartFile formFile;
+	
+	private String prevId,nextId,prevTitle,nextTitle;
 	
 	public String getqId() {
 		return qId;
@@ -25,11 +27,11 @@ public class QnaVO {
 	public void setqContent(String qContent) {
 		this.qContent = qContent;
 	}
-	public String getqDateStr() {
-		return qDateStr;
+	public String getqDate() {
+		return qDate;
 	}
-	public void setqDateStr(String qDateStr) {
-		this.qDateStr = qDateStr;
+	public void setqDate(String qDate) {
+		this.qDate = qDate;
 	}
 	public String getqUserId() {
 		return qUserId;
@@ -55,6 +57,12 @@ public class QnaVO {
 	public void setqHits(int qHits) {
 		this.qHits = qHits;
 	}
+	public int getqOrigin() {
+		return qOrigin;
+	}
+	public void setqOrigin(int qOrigin) {
+		this.qOrigin = qOrigin;
+	}
 	public int getqGroup() {
 		return qGroup;
 	}
@@ -67,19 +75,42 @@ public class QnaVO {
 	public void setqDepth(int qDepth) {
 		this.qDepth = qDepth;
 	}
-	public int getqSort() {
-		return qSort;
-	}
-	public void setqSort(int qSort) {
-		this.qSort = qSort;
-	}
 	public CommonsMultipartFile getFormFile() {
 		return formFile;
 	}
 	public void setFormFile(CommonsMultipartFile formFile) {
 		this.formFile = formFile;
 	}
-	
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	public String getPrevId() {
+		return prevId;
+	}
+	public void setPrevId(String prevId) {
+		this.prevId = prevId;
+	}
+	public String getNextId() {
+		return nextId;
+	}
+	public void setNextId(String nextId) {
+		this.nextId = nextId;
+	}
+	public String getPrevTitle() {
+		return prevTitle;
+	}
+	public void setPrevTitle(String prevTitle) {
+		this.prevTitle = prevTitle;
+	}
+	public String getNextTitle() {
+		return nextTitle;
+	}
+	public void setNextTitle(String nextTitle) {
+		this.nextTitle = nextTitle;
+	}
 	
 	
 	

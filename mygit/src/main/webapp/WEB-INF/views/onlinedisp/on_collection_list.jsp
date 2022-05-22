@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
@@ -33,10 +33,11 @@
 			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>			
 		</form>
 		</div>
+		<c:if test="${id =='admin'}">
 		<div id="btnArea">
 		<button class="btnList" onclick="location.href='collectionWrite.do'">등록</button>
 		</div>
-		
+		</c:if>		
 		<hr style="clear:both">
 		<table>
 			<tr>
@@ -52,9 +53,7 @@
 						<span class="itemYear">${vo.coYear }</span>
 					</div>
 				</td>
-				</c:forEach>
-				
-				<script>				
+				</c:forEach><script>				
 					var divLast=${divLast};
 					var pageCount=${pageCount};
 					var reqPage=${reqPage};
@@ -64,9 +63,7 @@
 						for(i=0;i<divLast;i++){
 							document.write("<td class='digitalColBox'></td>");
 						}
-					}
-					
-				</script>
+					}</script>
 			</tr>
 		</table>
 		

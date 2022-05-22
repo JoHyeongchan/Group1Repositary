@@ -7,21 +7,21 @@ import java.util.Map;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.web.vo.QnaVO;
+import com.web.vo.DispCommentVO;
+//import com.web.vo.QnaVO;
 
-public class QnaDAO {
+public class DispCommentDAO {
 	
 	@Autowired
 	SqlSessionTemplate sqlSession;
 	
-	String namespace="mapper.qna";
+	String namespace="mapper.dispcomment";
 	
-	public int insert(QnaVO vo) {
-		
+	public int insert(DispCommentVO vo) {
 		return sqlSession.insert(namespace+".insert", vo);
 	}
 	
-	public int insertReply(QnaVO vo) {
+	public int insertReply(DispCommentVO vo) {
 		
 		return sqlSession.insert(namespace+".insertReply", vo);
 	}
@@ -39,11 +39,11 @@ public class QnaDAO {
 		return sqlSession.selectList(namespace+".selectList", param);
 	}
 
-	public Object select(String qId) {
+	public Object select(String cmId) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne(namespace+".content",qId);
+		return sqlSession.selectOne(namespace+".content",cmId);
 	}
-
+/*
 	public int updateReply(int qGroup, int qOrigin) {
 		// TODO Auto-generated method stub
 		Map<String,String> param=new HashMap<String, String>();
@@ -51,21 +51,21 @@ public class QnaDAO {
 		param.put("origin", String.valueOf(qOrigin));
 		return sqlSession.update(namespace+".updateReply", param);
 	}
-
-	public int delete(String qId) {
+*/
+	public int delete(String cmId) {
 		// TODO Auto-generated method stub
-		return sqlSession.delete(namespace+".delete",qId);
+		return sqlSession.delete(namespace+".delete",cmId);
 	}
 
-	public int update(QnaVO vo) {
+	public int update(DispCommentVO vo) {
 		// TODO Auto-generated method stub
 		
 		return sqlSession.update(namespace+".update", vo);
 	}
 
-	public Object updateHits(String qId) {
+	public Object updateHits(String cmId) {
 		// TODO Auto-generated method stub
-		return sqlSession.update(namespace+".updateHits", qId);
+		return sqlSession.update(namespace+".updateHits", cmId);
 	}
 
 }
