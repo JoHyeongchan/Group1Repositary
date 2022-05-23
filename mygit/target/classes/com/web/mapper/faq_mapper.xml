@@ -13,7 +13,8 @@
  	</select>
  	
  		<select id="selectList" parameterType="map" resultType="com.web.vo.FaqVO">		
-		 select faid,fatitle,facontent,facategory from faq where facategory=#{faCategory}
+		 select rno,faid,fatitle,facontent,facategory from
+		 (select rownum rno,faid,fatitle,facontent,facategory from faq where facategory=#{faCategory}) where rno between #{start} and #{end}
 	</select>
  	
  	<!-- 
