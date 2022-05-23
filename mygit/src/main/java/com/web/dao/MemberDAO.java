@@ -52,21 +52,14 @@ public class MemberDAO {
 		return sqlSession.update(namespace+".pwUpdate", param);
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public List<MemberVO> memberList(int startCount, int endCount) {
-		Map param = new HashMap<String, String>();
-		param.put("start", startCount);
-		param.put("end", endCount);
-		
-		return sqlSession.selectList(namespace+".member_list", param);
+	public List<MemberVO> memberList() {
+		return sqlSession.selectList(namespace+".member_list");
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public List<MemberVO> memberList(int startCount, int endCount, 
+	public List<MemberVO> memberList(
 			String id, String name, String gender, String email, String address, String phone, String startdate, String enddate) {
 		Map param = new HashMap<String, String>();
-		param.put("start", startCount);
-		param.put("end", endCount);
 		param.put("id", id);
 		param.put("name", name);
 		param.put("gender", gender);

@@ -41,13 +41,13 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.totalCount();
 	}
 	@Override
-	public List<MemberVO> getMemberList(int startCount, int endCount) {
-		return memberDAO.memberList(startCount, endCount);
+	public List<MemberVO> getMemberList() {
+		return memberDAO.memberList();
 	}
 	@Override
-	public List<MemberVO> getMemberList(int startCount, int endCount, 
+	public List<MemberVO> getMemberList(
 		String id, String name, String gender, String email, String address, String phone, String startdate, String enddate) {
-		return memberDAO.memberList(startCount, endCount, 
+		return memberDAO.memberList(
 			id, name, gender, email, address, phone, startdate, enddate);
 	}
 	@Override

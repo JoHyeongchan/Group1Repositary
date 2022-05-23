@@ -34,11 +34,10 @@
 		select count(*) from TPmember
 	</select>
 	
-	<select id="member_list" parameterType="map" resultType="com.web.vo.MemberVO">
+	<select id="member_list" resultType="com.web.vo.MemberVO">
 		select rownum rno, id, pw, name, gender, email, address, phone, joindate 
     		from (select rownum rno, id, pw, name, gender, email, address, phone, to_char(joindate ,'yyyy-mm-dd') joindate
     		from (select rownum rno, id, pw, name, gender, email, address, phone, joindate from TPmember order by joindate desc))
-			where rno between #{start} and #{end}
 	</select>
 	
 	<select id="member_list_search" parameterType="map" resultType="com.web.vo.MemberVO">
@@ -46,9 +45,8 @@
     		from (select rownum rno, id, pw, name, gender, email, address, phone, to_char(joindate ,'yyyy-mm-dd') joindate
     		from (select rownum rno, id, pw, name, gender, email, address, phone, joindate from TPmember order by joindate desc))
 		<where>
-			rno between #{start} and #{end}
 			<if test="id != ''">
-				and id = #{id}
+				id = #{id}
 			</if>
 			<if test="name != ''">
 				and name like '%'||#{name}||'%'
@@ -59,22 +57,21 @@
 			<if test="email != ''">
 				and email like '%'||#{email}||'%'
 			</if>
-			<if test="gender != ''">
-				and gender = #{gender}
-			</if>
 			<if test="address != 0">
 				and address = #{address}
+			</if>
+			<if test="phone != ''">
+				and phone = #{phone}
 			</if>
 			<if test="startdate != ''">
 				and joindate &gt;= #{startdate}
 			</if>
 			<if test="enddate != ''">
-				and joindate &lt;= #{joindate};
+				and joindate &lt;= #{joindate}
 			</if>
-			<!-- 
 			<if test="startdate != '' and enddate != ''">
-				and rdate between #{startdate} and #{enddate};
-			</if> -->
+				and joindate between #{startdate} and #{enddate};
+			</if>
 		</where>
 	</select>
 	

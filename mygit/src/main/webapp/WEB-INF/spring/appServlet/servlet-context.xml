@@ -31,6 +31,8 @@
 	<beans:bean id="noitceDao" class="com.web.dao.NoticeDAO"></beans:bean>
 	<beans:bean id="dispCommentDao" class="com.web.dao.DispCommentDAO"></beans:bean>
 	<beans:bean class="com.web.dao.MemberDAO" id="memberDAO"></beans:bean>
+	<beans:bean class="com.web.dao.RListDAO" id="rlistDAO"></beans:bean>
+	<beans:bean class="com.web.dao.ReservationDAO" id="reservationDAO"></beans:bean>
 	
 	<!-- Service 등록 -->
 	<beans:bean id="digitalMovieService" class="com.web.service.DigitalMovieServiceImpl"></beans:bean>
@@ -40,6 +42,8 @@
 	<beans:bean id="fileService" class="com.web.service.FileServiceImpl"></beans:bean>
 	<beans:bean id="noticeService" class="com.web.service.NoticeServiceImpl"></beans:bean>
 	<beans:bean class="com.web.service.MemberServiceImpl" id="memberService"></beans:bean>
+	<beans:bean class="com.web.service.RListServiceImpl" id="rlistService"></beans:bean>
+	<beans:bean class="com.web.service.ReservationServiceImpl" id="reservationService"></beans:bean>
 	<beans:bean id="dispCommentService" class="com.web.service.DispCommentServiceImpl"></beans:bean>
 	
 	

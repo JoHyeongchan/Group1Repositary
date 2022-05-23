@@ -19,9 +19,9 @@ public interface MemberService {
 	
 	int getTotalCount();
 	
-	List<MemberVO> getMemberList(int startCount, int endCount);
+	List<MemberVO> getMemberList();
 	
-	List<MemberVO> getMemberList(int startCount, int endCount, 
+	List<MemberVO> getMemberList( 
 		String id, String name, String gender, String email, String address, String phone, String startdate, String enddate);
 	
 	MemberVO getMemberInfo(String id);

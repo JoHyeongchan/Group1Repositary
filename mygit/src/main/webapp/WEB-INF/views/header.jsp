@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,15 @@
 			$(this).find('.nav_content').slideUp(300);
 		});
 		
-		
+		/* 로그인 관련 */
+		var login_result = "${login_result}";
+		if(login_result=="succ") {
+			alert("로그인 성공");
+		}
+		var logout_result = "${logout_result}";
+		if(logout_result=="succ") {
+			alert("로그아웃 성공");
+		}
 	});
 	
 </script>
@@ -138,11 +147,29 @@
 			</li>
 		</ul>
 		<div id="nav_right">
-			<ul>
-				<li><a href="http://localhost:9000/mygit/login.do" class="nav_item2">로그인</a></li>
-				<li><a href="http://localhost:9000/mygit/join.do" class="nav_item2">회원가입</a></li>
-				<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
-			</ul>
+			<c:choose>
+				<c:when test="${sessionScope.id == 'admin' }">
+				<ul>
+					<li><a href="http://localhost:9000/mygit/logout.do" class="nav_item2">로그아웃</a></li>
+					<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
+					<li><a href="http://localhost:9000/mygit/admin/admin.do" class="nav_item2">Admin</a></li>
+				</ul>
+				</c:when>
+				<c:when test="${sessionScope.id != null }">
+				<ul>
+					<li><a href="#" class="nav_item2">${sessionScope.id }</a></li>
+					<li><a href="http://localhost:9000/mygit/logout.do" class="nav_item2">로그아웃</a></li>
+					<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
+				</ul>
+				</c:when>
+				<c:otherwise>
+				<ul>
+					<li><a href="http://localhost:9000/mygit/login.do" class="nav_item2">로그인</a></li>
+					<li><a href="http://localhost:9000/mygit/join.do" class="nav_item2">회원가입</a></li>
+					<li><a href="http://localhost:9000/mygit/sitemap.do" class="nav_item2">사이트맵</a></li>
+				</ul>
+				</c:otherwise>
+			</c:choose>
 		</div>
 	</nav>
 </header>
