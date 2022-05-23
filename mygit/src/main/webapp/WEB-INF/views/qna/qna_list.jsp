@@ -41,7 +41,11 @@
 				document.write("RE:");
 			</script></c:if>
 			<a href="qna_content.do?qId=${vo.qId }">${vo.qTitle }</a></td>
-			<td>${vo.qUserId }</td><td>${vo.qDate }</td><td>${vo.qHits }</td>
+			<td><c:choose><c:when test="${vo.qUserId !=null}">${vo.qUserId }</c:when>
+			<c:otherwise>비회원</c:otherwise>
+			</c:choose>
+			
+			</td><td>${vo.qDate }</td><td>${vo.qHits }</td>
 		</tr>		
 		</c:forEach>
 		

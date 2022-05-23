@@ -6,7 +6,7 @@ import com.web.vo.CollectionVO;
 
 public interface CollectionService extends ObjectService{
 
-public int InsertRecord(Object obj);
+	public int InsertRecord(Object obj);
 	
 	int getRecordCount();
 	
@@ -14,5 +14,5 @@ public int InsertRecord(Object obj);
 
 	Object getContent(String coId);
 	
-	int deleteContent(String dmId) ;
+	int deleteContent(String coId) ;
 }

@@ -36,8 +36,14 @@
 			$(".menuBtn").not(this).css("color","#eee");
 		});
 		
-		//임시
+		
+		
 		$("#faqShow").css("color","#111");
+		/*
+		$.ajax({
+			url:'/faq_category.do?faCategory=관람',
+		})
+		*/
 		
 	});	
 </script>
