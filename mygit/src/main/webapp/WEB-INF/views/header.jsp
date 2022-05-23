@@ -143,6 +143,7 @@
 				<a class="nava" id="reservea" href="/mygit/reservation.do">예약</a>
 				<div class="nav_content">
 					<a href="/mygit/reservation.do">예약하기</a>
+					<a href="/mygit/reservation_check.do">예약확인</a>
 				</div>
 			</li>
 		</ul>

@@ -7,12 +7,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/reservation.css"></link>
-<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.js"></script>
-<script src="http://localhost:9000/mygit/resources/js/reservation."></script>
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/reservation.js"></script>
 <script type="text/javascript">
 	var res_result = "${res_result}";
-	if(res_result=="succ") {
-		alert("예약 완료");
+	if(res_result=="fail") {
+		alert("예약에 실패했습니다. \n 다시 시도해 주세요");
 	}
 </script>
 </head>
