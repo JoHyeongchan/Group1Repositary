@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+h1{
+	margin: 25px;
+	text-indent: 20px;
+	font-size: 35px;
+}
+
+form{
+	margin: 10px;
+}
+
+#searchBar{
+	margin: 5px;
+	margin-left: 20px;
+}
+
+.pageNum{
+	
+	clear:both;
+	text-align: center;
+	height:50px;
+}
+
+section{
+
+	width: 90%;
+	margin: 5%;
+}
+
+table{
+	margin: 0 auto;
+	margin-top: 30px;
+	overflow: hidden;
+}
+
+td{
+	display: inline-block;
+	width: 30%;
+	min-width: 300px;
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 400px;
+}
+
+#searchBar{
+	width: 300px;
+	height: 50px;
+	
+	border-style: none;
+	border-radius: 25px;
+	background-color: lightgray;
+	
+	padding-left: 20px;
+	 font-size: 15px; 
+}
+	
+.btnCollectionSearch{
+margin-left: 10px;
+height: 50px;
+color:white;
+background-color: black;
+border-radius: 25px;
+width: 150px; font-size: 20px; 
+}
+
+.btnCalModal{
+	margin-left: 10px;
+	height: 50px;
+	color: white;
+	background-color: gray;
+	border-radius: 25px;
+	width: 50px;
+	border-style: none;
+	text-align: center;
+}
+
+#colForm{
+	margin: 15px;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.itemTitle{
+	
+	font-size: 18px;
+	text-indent: 10px;
+}
+
+.itemInfo{
+	padding-left: 10%;
+	font-weight: bolder;
+}
