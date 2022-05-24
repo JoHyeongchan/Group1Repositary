@@ -24,12 +24,23 @@ public class CollectionServiceImpl implements CollectionService{
 		// TODO Auto-generated method stub
 		return collectionDao.getCount();
 	}
+	
+	public int getRecordCount(String searchtext) {
+		// TODO Auto-generated method stub
+		return collectionDao.getCount(searchtext);
+	}
 
 	@Override
 	public List<Object> getRecordList(int startCount, int endCount) {
 		// TODO Auto-generated method stub
 		return collectionDao.select(startCount, endCount);
 	}
+	
+	public List<Object> getRecordListSearch(int startCount, int endCount,String searchtext) {
+		// TODO Auto-generated method stub
+		return collectionDao.select(startCount, endCount,searchtext);
+	}
+	
 	@Override
 	public Object getContent(String coId) {
 		// TODO Auto-generated method stub

@@ -26,12 +26,25 @@ public class CollectionDAO {
 		return sqlSession.selectOne(namespace+".count");
 	}
 	
+	public int getCount(String searchtext) {
+		return sqlSession.selectOne(namespace+".countSearch",searchtext);
+	}
+	
 	public List<Object> select(int startCount, int endCount){
 		Map<String, String> param=new HashMap<String, String>();
 		param.put("start", String.valueOf(startCount));
 		param.put("end", String.valueOf(endCount));
 		
 		return sqlSession.selectList(namespace+".selectList",param);
+	}
+	
+	public List<Object> select(int startCount, int endCount,String searchtext){
+		Map<String, String> param=new HashMap<String, String>();
+		param.put("start", String.valueOf(startCount));
+		param.put("end", String.valueOf(endCount));
+		param.put("searchtext", searchtext);
+		
+		return sqlSession.selectList(namespace+".selectListSearch",param);
 	}
 	
 	public Object select(String coId) {
@@ -48,29 +61,7 @@ public class CollectionDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.delete(namespace+".deleteContent", coId);
 	}
-	/*
-	public DigitalMovieVO select(String dmId) {
-		// TODO Auto-generated method stub
-		return sqlSession.selectOne(namespace+".selectContent", dmId);
-	}
 	
-	public int delete(String dmId) {
-		return sqlSession.delete(namespace+".deleteContent", dmId);
-	}
-	
-	public int update(Object obj) {
-		DigitalMovieVO vo=(DigitalMovieVO)obj;
-		vo.setCategory();
-		vo.setProgram();
-		return sqlSession.update(namespace+".update", vo);
-	}
-	
-	public String getOldFileName(String dmId){
-		return sqlSession.selectOne(namespace+".getSfile", dmId);
-	}
-
-	*/
-
 	public int update(Object obj) {
 		// TODO Auto-generated method stub
 		CollectionVO vo=(CollectionVO)obj;

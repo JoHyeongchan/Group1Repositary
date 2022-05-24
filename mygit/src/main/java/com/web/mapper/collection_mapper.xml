@@ -11,6 +11,10 @@
  		<select id="count" resultType="int">
  	select count(*) from collection
  	</select>
+ 	
+ 	<select id="countSearch" parameterType="java.lang.String" resultType="int">
+ 	select count(*) from collection where coTitle like concat('%',#{searchtext},'%')
+ 	</select>
  
  	<select id="selectList" parameterType="map" resultType="com.web.vo.CollectionVO">
  	select rno,coid, cosfile, coAuthorKor, coAuthorEng, 
@@ -19,6 +23,15 @@ select rownum rno,coid, cosfile, coAuthorKor, coAuthorEng,
  	cotitle, coYear from
 (select coid, cosfile, coAuthorKor, coAuthorEng, 
  	cotitle, coYear,codate from collection ORDER BY codate desc)) where rno between #{start} and #{end} 
+ 	</select>
+ 	
+ 	<select id="selectListSearch" parameterType="map" resultType="com.web.vo.CollectionVO">
+ 	select rno,coid, cosfile, coAuthorKor, coAuthorEng, 
+ 	cotitle, coYear from(
+select rownum rno,coid, cosfile, coAuthorKor, coAuthorEng, 
+ 	cotitle, coYear from
+(select coid, cosfile, coAuthorKor, coAuthorEng, 
+ 	cotitle, coYear,codate from collection ORDER BY codate desc) where coTitle like concat('%',#{searchtext},'%')) where rno between #{start} and #{end} 
  	</select>
  	
  	<select id="selectContent" parameterType="java.lang.String" resultType="com.web.vo.CollectionVO">
