@@ -86,5 +86,55 @@ public class PageServiceImpl {
 		
 		return  param;
 	}
+	
+public Map<String, String> getPageResultSearch(String rpage ,String serviceName,ObjectService service,String searchtext){
+		
+		Map<String, String> param=new HashMap<String, String>();
+		
+		
+		int startCount = 0;
+		int endCount = 0;
+		int pageSize = 8;	//한페이지당 게시물 수
+		int reqPage = 1;	//요청페이지	
+		int pageCount = 1;	
+		int dbCount = 0; //전체 페이지 수
+		
+		if(serviceName.equals("digitalMovie")) {
+			digitalMovieService=(DigitalMovieServiceImpl)service;
+			dbCount=digitalMovieService.getRecordCount(searchtext);
+			pageSize = 8;
+		}else if(serviceName.equals("collection")) {
+			collectionService=(CollectionServiceImpl)service;
+			dbCount=collectionService.getRecordCount();
+			pageSize = 8;
+		}
+		
+		
+		//총 페이지 수 계산
+		if(dbCount % pageSize == 0){
+			pageCount = dbCount/pageSize;
+		}else{
+			pageCount = dbCount/pageSize+1;
+		}
+		
+		//요청 페이지 계산
+		if(rpage != null){
+			reqPage = Integer.parseInt(rpage);
+			startCount = (reqPage-1) * pageSize+1;
+			endCount = reqPage *pageSize;
+		}else{
+			startCount = 1;
+			endCount = 5;
+		}
+		
+		param.put("start",String.valueOf(startCount));
+		param.put("end",String.valueOf(endCount));		
+		param.put("dbCount",String.valueOf(dbCount));
+		param.put("reqPage",String.valueOf(reqPage));
+		param.put("pageSize",String.valueOf(pageSize));
+		param.put("pageCount",String.valueOf(pageCount));
+		
+		return  param;
+	}
 
 }

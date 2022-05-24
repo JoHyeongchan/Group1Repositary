@@ -10,12 +10,15 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.web.dao.CollectionDAO;
@@ -285,4 +288,40 @@ public class OnDispController {
 	public String onShow() {
 		return "/onlinedisp/on_show";
 	}
+	/*
+	@RequestMapping(value="/online/digitalMovList.do",method=RequestMethod.GET)
+	public ModelAndView onDigitalMovSearch(String searchtext, HttpSession session) {
+		ModelAndView mv=new ModelAndView();
+		String id=(String)session.getAttribute("id");
+		String rpage="1";
+		Map<String, String> param= pageService.getPageResult(rpage,"digitalMovieSearch",digitalMovieService,searchtext);
+		
+		int startCount=Integer.parseInt( param.get("start"));
+		int endCount=Integer.parseInt(param.get("end"));
+		int dbCount=Integer.parseInt(param.get("dbCount"));
+		int reqPage=Integer.parseInt(param.get("reqPage"));
+		int pageSize=Integer.parseInt(param.get("pageSize"));
+		int pageCount=Integer.parseInt(param.get("pageCount"));
+		
+		List<Object> olist=digitalMovieService.getRecordList(startCount, endCount,searchtext);
+		List<DigitalMovieVO> list=new ArrayList<DigitalMovieVO>();
+		
+		for(Object obj:olist) {
+			list.add((DigitalMovieVO)obj);
+		}
+		
+		int divLast=0;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
+		}
+		
+		mv.addObject("divLast",divLast);
+		mv.addObject("reqPage", reqPage);
+		mv.addObject("pageCount", pageCount);
+		mv.addObject("list", list);
+		mv.addObject("id", id);
+		mv.setViewName("/onlinedisp/on_digitalMov_list");		
+		return mv;
+	}*/
+	
 }

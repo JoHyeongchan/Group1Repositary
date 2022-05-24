@@ -21,6 +21,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.web.service.FaqServiceImpl;
+import com.web.service.FileServiceImpl;
 import com.web.vo.FaqVO;
 
 @Controller
@@ -39,7 +40,7 @@ public class FaqController {
 	
 	@RequestMapping(value="/faq_category.do",method=RequestMethod.GET, produces = "application/text; charset=UTF-8")
 	@ResponseBody
-	public String ajaxTest(String faCategory,HttpServletResponse response) {
+	public String faqMenuChange(String faCategory,HttpServletResponse response) {
 		//System.out.println(faCategory);
 		
 		Gson gson=new GsonBuilder().create();
@@ -53,7 +54,6 @@ public class FaqController {
 		int i=0;
 		for(Object obj :olist) {
 			list.add((FaqVO)obj);
-			System.out.println(list.get(i++).getFaCategory());
 		}
 		
 		
@@ -90,23 +90,29 @@ public class FaqController {
 	}
 	
 	@RequestMapping(value="/faq_update.do",method=RequestMethod.GET)
-	public String faqUpdate(String faId) {
-		
-		return "/faq/faq_write";
+	public ModelAndView faqUpdate(String faId) {
+		ModelAndView mv=new ModelAndView("/faq/faq_update");
+		FaqVO vo=(FaqVO)faqService.getContent(faId);
+		mv.addObject("vo", vo);
+		return mv;
 	}
 	
 	@RequestMapping(value="/faq_update.do",method=RequestMethod.POST)
 	public ModelAndView faqUpdate(FaqVO vo) {
 		ModelAndView mv=new ModelAndView("redirect: /mygit/faq_list.do");
-		System.out.println(vo.getFaTitle());
-		System.out.println(vo.getFaCategory());
-		System.out.println(vo.getFaContent());
+		int result=faqService.updateContent(vo);
+		if(result==0) {
+			//Error Page
+		}
 		return mv;
 	}
 	
 	@RequestMapping(value="/faq_delete.do",method=RequestMethod.GET)
 	public String faqDelete(String faId) {
-		System.out.println(faId);
+		int result=faqService.deleteContent(faId);
+		if(result!=0) {
+			return "redirect:faq_list.do";
+		}
 		return "redirect:faq_list.do";
 	}
 	

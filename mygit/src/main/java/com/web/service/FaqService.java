@@ -13,4 +13,6 @@ public interface FaqService  extends ObjectService{
 	int deleteContent(String faId) ;
 
 	List<Object> getRecordList(int startCount, int endCount, String faCategory);
+	
+	int updateContent(Object obj);
 }

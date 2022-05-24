@@ -41,4 +41,14 @@ public class DigitalMovieServiceImpl  implements DigitalMovieService{
 	public void updateHits(String dmId) {
 		digitalMovieDao.updateHits(dmId);
 	}
+
+	public int getRecordCount(String searchtext) {
+		// TODO Auto-generated method stub
+		return digitalMovieDao.getCount(searchtext);
+	}
+
+	public List<Object> getRecordList(int startCount, int endCount, String searchtext) {
+		// TODO Auto-generated method stub
+		return digitalMovieDao.select(startCount, endCount,searchtext);
+	}
 }

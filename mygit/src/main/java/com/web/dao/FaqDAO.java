@@ -32,33 +32,25 @@ public class FaqDAO {
 		param.put("end", String.valueOf(endCount));
 		param.put("faCategory", faCategory);
 		
-		System.out.println(param.get("start"));
-		System.out.println(param.get("end"));
-		System.out.println(param.get("faCategory"));
-		
 		return sqlSession.selectList(namespace+".selectList",param);
 	}
-	/*
-	public Object select(String coId) {
-		// TODO Auto-generated method stub
-		return sqlSession.selectOne(namespace+".selectContent", coId);
-	}
 	
-	public void updateHits(String coId) {
+	public Object select(String faId) {
 		// TODO Auto-generated method stub
-		sqlSession.update(namespace+".updateHit", coId);
-	}
-	
-	public int delete(String coId) {
-		// TODO Auto-generated method stub
-		return sqlSession.delete(namespace+".deleteContent", coId);
+		return sqlSession.selectOne(namespace+".selectContent", faId);
 	}
 
 
 	public int update(Object obj) {
 		// TODO Auto-generated method stub
-		CollectionVO vo=(CollectionVO)obj;
-		vo.setCategory();
+		FaqVO vo=(FaqVO)obj;
 		return sqlSession.update(namespace+".update", vo);		
-	}*/
+	}
+
+	public int delete(String faId) {
+		// TODO Auto-generated method stub
+		return sqlSession.delete(namespace+".deleteContent", faId);
+	}
+
+
 }

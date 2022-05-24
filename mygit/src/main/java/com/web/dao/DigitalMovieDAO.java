@@ -26,6 +26,11 @@ public class DigitalMovieDAO {
 		return sqlSession.selectOne(namespace+".count");
 	}
 	
+	public int getCount(String searchtext) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace+".countSearch",searchtext);
+	}
+	
 	public List<Object> select(int startCount, int endCount){
 		Map<String, String> param=new HashMap<String, String>();
 		param.put("start", String.valueOf(startCount));
@@ -58,4 +63,16 @@ public class DigitalMovieDAO {
 		// TODO Auto-generated method stub
 		sqlSession.update(namespace+".updateHit", dmId);
 	}
+
+	public List<Object> select(int startCount, int endCount, String searchtext) {
+		// TODO Auto-generated method stub
+		Map<String, String> param=new HashMap<String, String>();
+		param.put("start", String.valueOf(startCount));
+		param.put("end", String.valueOf(endCount));
+		param.put("searchtext", searchtext);
+		
+		return sqlSession.selectList(namespace+".selectListSearch",param);
+	}
+
+	
 }

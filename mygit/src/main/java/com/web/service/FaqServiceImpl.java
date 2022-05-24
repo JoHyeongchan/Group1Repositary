@@ -34,18 +34,24 @@ public class FaqServiceImpl  implements FaqService{
 	@Override
 	public Object getContent(String faId) {
 		// TODO Auto-generated method stub
-		return null;
+		return faqDao.select(faId);
 	}
 
 	@Override
 	public int deleteContent(String faId) {
 		// TODO Auto-generated method stub
-		return 0;
+		return faqDao.delete(faId);
 	}
 
 	public int getRecordCount(String faCategory) {
 		// TODO Auto-generated method stub
 		return faqDao.getCount(faCategory);
+	}
+
+	@Override
+	public int updateContent(Object obj) {
+		// TODO Auto-generated method stub
+		return faqDao.update(obj);
 	}
 	
 	

@@ -7,6 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_list.css">
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+</script>
 <style>
 
 .btnList{
@@ -45,9 +48,9 @@
 <section>
 		<h1>디지털동영상</h1>
 		<div id="digitalForm">
-		<form method="post">
+		<form method="get" action="digitalMovList.do" class="content_layout" enctype="multipart/form-data">
 			<input type="text" placeholder="검색어를 입력해주세요" id=searchBar name="searchtext">
-			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>						
+			<button type="submit" class="btnCollectionSearch">검색</button>						
 		</form>
 		</div>
 		<c:if test="${id =='admin'}">
