@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript"></script>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/notice/notice_write_update.css">
-<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 	$(document).ready(function(){
 		

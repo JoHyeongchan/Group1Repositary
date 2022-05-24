@@ -27,10 +27,10 @@
 	 	<td><span class="inputLabel" >유형</span></td>
 	 	<td>
 	 	<select style="width:80%" name="faCategory" >
-	 	<option value="공통">공통</option>
-	 	<option value="서울">서울</option>
-	 	<option value="미술은행">미술은행</option>
-	 	<option value="어린이박물관">어린이박물관</option>
+	 	<option value="관람">관람</option>
+	 	<option value="예약">예약</option>
+	 	<option value="홈페이지">홈페이지</option>
+	 	<option value="기타">기타</option>
 	 	</select></td>
 	 	</tr>
 	 	<tr>

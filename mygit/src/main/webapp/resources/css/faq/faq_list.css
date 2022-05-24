@@ -30,6 +30,7 @@
 	}
 	
 	.faqTitle{
+		
 		font-size: 16px;
 		font-family: gulim;
 		text-indent: 20px;
@@ -47,6 +48,7 @@
 	}
 	
 	.faqContent{
+		width:75%;
 		border-top:1px gray solid;
 		display:none;
 		background: #e0e0e0;
@@ -120,7 +122,7 @@
 		margin-bottom: 10px;
 	}
 	
-	.menuBtn{
+	.listBtn{
 		cursor:pointer;
 	}
 	

@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/comment/comment_write_update.css">
-<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 	$(document).ready(function(){
 		

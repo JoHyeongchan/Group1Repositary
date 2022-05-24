@@ -9,15 +9,25 @@
 
 <!-- 슬라이드 기능 확인용 임시 CSS -->
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/faq/faq_list.css"></link> 
-<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 	
 	$(document).ready(function (){
 		
-		$(".faqTitle").click(function(){
-			
+		
+		var id="${id}";
+		
+		
+		$(document).on("click",".faqTitle",function(){
 			//제목 클릭시 슬라이드 기능 구현
+			if($(this).css("height") =="350px"){
+				$(this).css("height","50px");
+			}else{
+				$(this).css("height","350px");
+			}
+			
 			$(this).find(".faqContent").slideToggle("fast");
+			$(".faqTitle").not(this).css("height","50px");
 			
 			//제목 클릭시 이미지 변경
 			if($(this).find(".titleText").find(".qIcon").attr("src")!="http://localhost:9000/mygit/resources/images/q_icon1.png"){
@@ -31,22 +41,123 @@
 			$(".faqTitle").not(this).find(".titleText").find(".qIcon").attr("src", "http://localhost:9000/mygit/resources/images/q_icon2.png");
 		});
 		
-		$(".menuBtn").click(function(){			
+		$.ajax({
+			url:"/mygit/faq_category.do",
+			type:"GET",
+			dataType:"json",
+			data:{"faCategory":"관람"},
+			success:function(result){
+				
+				
+				var length=result.list.length;
+				var i=0;
+				var text="";
+				
+				$(".faqTitle").remove();
+				
+				for(i=0;i<length;i++){
+					
+					
+					text+="<li class='faqTitle'>";
+					text+="<span class='titleText'>";					
+					text+="<img src='http://localhost:9000/mygit/resources/images/q_icon2.png' class='qIcon'>&nbsp; "+result.list[i].faTitle;						
+					text+="</span>";						
+					text+="<div class='faqContent'>";						
+					text+="<div class='contentBox'>"+result.list[i].faContent+"</div>";
+					if(id=="admin"){
+						text+="<div class='btnBox'>";								
+						text+="<button type='button' class='btn_small' onclick='location.href=\"faq_delete.do?faId="+result.list[i].faId+"\"'>삭제</button>";
+						text+="<button type='button' class='btn_small' onclick='location.href=\"faq_update.do?faId="+result.list[i].faId+"\"'>수정</button>";	
+						text+="</div>";
+					}
+					text+="</div></li>";
+
+				}
+				
+				$("#faqBoard").append(text);						
+				
+			}
+		});
+		/*
+		$(".faqTitle").click(function(){
+						
+			//제목 클릭시 슬라이드 기능 구현
+			$(this).find(".faqContent").slideToggle("fast");
+			
+			//제목 클릭시 이미지 변경
+			if($(this).find(".titleText").find(".qIcon").attr("src")!="http://localhost:9000/mygit/resources/images/q_icon1.png"){
+				$(this).find(".titleText").find(".qIcon").attr("src", "http://localhost:9000/mygit/resources/images/q_icon1.png");
+			}else{
+				$(this).find(".titleText").find(".qIcon").attr("src", "http://localhost:9000/mygit/resources/images/q_icon2.png");
+			}
+			
+			//다른 글 제목 클릭시 이미지 변경
+			$(".faqTitle").not(this).find(".faqContent").slideUp("fast");
+			$(".faqTitle").not(this).find(".titleText").find(".qIcon").attr("src", "http://localhost:9000/mygit/resources/images/q_icon2.png");
+		});*/
+		
+		$("#faqShow").css("color","#111");
+		
+		$(".listBtn").click(function(){			
 			$(this).css("color","#111");			
-			$(".menuBtn").not(this).css("color","#eee");
+			$(".listBtn").not(this).css("color","#eee");
+			
+			var category={"faCategory":$(this).text()};
+			
+			$.ajax({
+				url:"/mygit/faq_category.do",
+				type:"GET",
+				dataType:"json",
+				data:category,
+				success:function(result){
+					
+					
+					var length=result.list.length;
+					var i=0;
+					var text="";
+					
+					$(".faqTitle").remove();
+					
+					for(i=0;i<length;i++){
+						
+						
+						text+="<li class='faqTitle'>";
+						text+="<span class='titleText'>";					
+						text+="<img src='http://localhost:9000/mygit/resources/images/q_icon2.png' class='qIcon'>&nbsp; "+result.list[i].faTitle;						
+						text+="</span>";						
+						text+="<div class='faqContent'>";						
+						text+="<div class='contentBox'>"+result.list[i].faContent+"</div>";				
+						if(id=="admin"){
+							text+="<div class='btnBox'>";								
+							text+="<button type='button' class='btn_small' onclick='location.href=\"faq_delete.do?faId="+result.list[i].faId+"\"'>삭제</button>";
+							text+="<button type='button' class='btn_small' onclick='location.href=\"faq_update.do?faId="+result.list[i].faId+"\"'>수정</button>";	
+							text+="</div>";
+						}
+						text+="</div></li>";
+
+					}
+					
+					$("#faqBoard").append(text);						
+					
+				}
+			});
+			
 		});
 		
 		
 		
-		$("#faqShow").css("color","#111");
-		/*
-		$.ajax({
-			url:'/faq_category.do?faCategory=관람',
-		})
-		*/
-		
 	});	
 </script>
+<style type="text/css">
+	.faqContent{
+	width:78.3%;
+	}
+	
+	.faqTitle{
+	display:block;
+	height:50px;
+	}
+</style>
 </head>
 <body>
 
@@ -63,26 +174,24 @@
 </tr>
 
 <tr>
-	<td colspan="2"><hr><div id="smenuBtn"><span class="menuBtn" id="faqShow">관람</span> |  <span class="menuBtn" id="faqResv">예약</span> 
-	| <span class="menuBtn" id="faqPage">홈페이지</span> |  <span class="menuBtn" id="faqEtc">기타</span>  </div>
+	<td colspan="2"><hr><div id="smenuBtn"><span class="listBtn" id="faqShow">관람</span> |  <span class="listBtn" id="faqResv">예약</span> 
+	| <span class="listBtn" id="faqPage">홈페이지</span> |  <span class="listBtn" id="faqEtc">기타</span>  </div>
 	<div id="qnaBtn" onclick="location.href='qna_list.do'">Q & A >></div><hr style="clear:both"></td>
 </tr>
 
 <tr>
 	<td colspan="2">
-		<ul>
+		<ul id=faqBoard><!--
 			<li class="faqTitle">
 			<span class="titleText">
 			<img src="http://localhost:9000/mygit/resources/images/q_icon2.png" class="qIcon">&nbsp; 제목1
 			</span>
 			<div class="faqContent">
 				<div class="contentBox">AAAAA</div>
-				<c:if test="${id=='admin' }">
 				<div class="btnBox">				
 				<button class="btn_small">삭제</button>
 				<button type="button" onclick="location.href='faq_update.do'" class="btn_small">수정</button>											
-				</div>	
-				</c:if>		
+				</div>		
 			</div></li>
 			<li class="faqTitle">
 			<span class="titleText">
@@ -90,13 +199,11 @@
 			</span>
 			<div class="faqContent">
 				<div class="contentBox">AAAAA</div>
-				<c:if test="${id=='admin' }">
 				<div class="btnBox">
 				<button class="btn_small">삭제</button>
 				<button type="button" onclick="location.href='faq_update.do'" class="btn_small">수정</button>
-				</div>
-				</c:if>			
-			</div></li><!--  
+				</div>		
+			</div></li>  
 			<li class="faqTitle">
 			<span class="titleText">
 			<img src="http://localhost:9000/mygit/resources/images/q_icon2.png" class="qIcon">&nbsp; 제목3</span>

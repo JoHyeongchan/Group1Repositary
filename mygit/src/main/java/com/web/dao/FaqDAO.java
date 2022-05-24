@@ -30,7 +30,11 @@ public class FaqDAO {
 		Map<String, String> param=new HashMap<String, String>();
 		param.put("start", String.valueOf(startCount));
 		param.put("end", String.valueOf(endCount));
-		param.put("category", faCategory);
+		param.put("faCategory", faCategory);
+		
+		System.out.println(param.get("start"));
+		System.out.println(param.get("end"));
+		System.out.println(param.get("faCategory"));
 		
 		return sqlSession.selectList(namespace+".selectList",param);
 	}

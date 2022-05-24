@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/comment/comment_content.css">
-<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function () {
 	
