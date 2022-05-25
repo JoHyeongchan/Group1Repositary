@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.web.service.FileServiceImpl;
 import com.web.service.PageServiceImpl;
 import com.web.service.QnaServiceImpl;
+import com.web.vo.NoticeVO;
 import com.web.vo.QnaVO;
 
 @Controller
@@ -61,6 +62,44 @@ public class QnaController {
 		mv.addObject("reqPage", reqPage);
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
+		return mv;
+	}
+	
+	@RequestMapping(value="/qna_search.do",method=RequestMethod.GET)
+	public ModelAndView noticeList(String rpage,String searchcategory,String searchtext,HttpSession session) {
+		
+		ModelAndView mv=new ModelAndView("/qna/qna_list");
+		
+		String id=(String)session.getAttribute("id");
+		
+		Map<String, String> param= pageService.getPageResult(rpage, searchcategory,searchtext,"qna", qnaService);
+		
+		int startCount=Integer.parseInt( param.get("start"));
+		int endCount=Integer.parseInt(param.get("end"));
+		int dbCount=Integer.parseInt(param.get("dbCount"));
+		int reqPage=Integer.parseInt(param.get("reqPage"));
+		int pageSize=Integer.parseInt(param.get("pageSize"));
+		int pageCount=Integer.parseInt(param.get("pageCount"));
+		
+		List<Object> olist=qnaService.getRecordList(startCount, endCount,searchtext,searchcategory);
+		List<QnaVO> list=new ArrayList<QnaVO>();
+		
+		int i=0;
+		for(Object obj:olist) {
+			list.add((QnaVO)obj);
+			list.get(i++).getqId();
+		}
+				
+		int divLast=0;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
+		}
+		
+		mv.addObject("divLast",divLast);
+		mv.addObject("reqPage", reqPage);
+		mv.addObject("pageCount", pageCount);
+		mv.addObject("list", list);
+		mv.addObject("id",id);
 		return mv;
 	}
 	

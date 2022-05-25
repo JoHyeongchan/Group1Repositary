@@ -33,7 +33,47 @@
  	<select id="count" resultType="int">
  		select count(*) from qna
  	</select>
+ 	
+ 	<select id="countSearchTitle"  parameterType="java.lang.String" resultType="int">
+ 		select count(*) from qna
+ 	</select>
+ 	
+ 	<select id="countSearchContent" parameterType="java.lang.String" resultType="int">
+ 		select count(*) from qna
+ 	</select>
+ 	
+ 	<select id="countSearchUserId" parameterType="java.lang.String" resultType="int">
+ 		select count(*) from qna
+ 	</select>
+ 	
  	<select id="selectList" parameterType="map" resultType="com.web.vo.QnaVO">
+ 		
+ select rno,qid,qtitle,qdate,qhits,quserid,qorigin,qgroup,qdepth from 
+(select rownum rno,qid,qtitle,to_char(qdate,'yyyy-mm-dd')qdate,
+qhits,quserid,qorigin,qgroup,qdepth from(
+ select qid,qtitle,qdate,qhits,quserid,qorigin,
+ qgroup,qdepth from qna order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
+ 	</select>
+ 	
+ 	<select id="selectListSearchTitle" parameterType="map" resultType="com.web.vo.QnaVO">
+ 		
+ select rno,qid,qtitle,qdate,qhits,quserid,qorigin,qgroup,qdepth from 
+(select rownum rno,qid,qtitle,to_char(qdate,'yyyy-mm-dd')qdate,
+qhits,quserid,qorigin,qgroup,qdepth from(
+ select qid,qtitle,qdate,qhits,quserid,qorigin,
+ qgroup,qdepth from qna order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
+ 	</select>
+ 	
+ 	<select id="selectListSearchContent" parameterType="map" resultType="com.web.vo.QnaVO">
+ 		
+ select rno,qid,qtitle,qdate,qhits,quserid,qorigin,qgroup,qdepth from 
+(select rownum rno,qid,qtitle,to_char(qdate,'yyyy-mm-dd')qdate,
+qhits,quserid,qorigin,qgroup,qdepth from(
+ select qid,qtitle,qdate,qhits,quserid,qorigin,
+ qgroup,qdepth from qna order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
+ 	</select>
+ 	
+ 	<select id="selectListSearchUserId" parameterType="map" resultType="com.web.vo.QnaVO">
  		
  select rno,qid,qtitle,qdate,qhits,quserid,qorigin,qgroup,qdepth from 
 (select rownum rno,qid,qtitle,to_char(qdate,'yyyy-mm-dd')qdate,

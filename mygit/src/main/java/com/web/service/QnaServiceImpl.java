@@ -30,7 +30,7 @@ public class QnaServiceImpl implements QnaService{
 	
 	public int getRecordCount(String searchtext, String searchcategory) {
 		// TODO Auto-generated method stub
-		return qnaDao.getCount();
+		return qnaDao.getCount(searchtext, searchcategory);
 	}
 
 	@Override
@@ -39,6 +39,11 @@ public class QnaServiceImpl implements QnaService{
 		return qnaDao.select(startCount, endCount);
 	}
 
+	public List<Object> getRecordList(int startCount, int endCount, String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		return qnaDao.select(startCount, endCount,searchtext, searchcategory);
+	}
+	
 	@Override
 	public Object getContent(String qId) {
 		// TODO Auto-generated method stub
@@ -86,6 +91,9 @@ public class QnaServiceImpl implements QnaService{
 		// TODO Auto-generated method stub
 		qnaDao.updateHits(qId);
 	}
+
+
+	
 
 
 	

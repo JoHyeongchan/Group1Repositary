@@ -31,12 +31,40 @@ public class QnaDAO {
 		return sqlSession.selectOne(namespace+".count");
 	}
 	
+	public int getCount(String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		int result=0;
+		if(searchcategory.equals("title")) {
+			result=sqlSession.selectOne(namespace+".countSearchTitle","%"+searchtext+"%");
+		}else if(searchcategory.equals("content")) {
+			result=sqlSession.selectOne(namespace+".countSearchContent","%"+searchtext+"%");
+		}else {
+			result=sqlSession.selectOne(namespace+".countSearchUserId","%"+searchtext+"%");
+		}	
+		return result;
+	}
+	
 	public List<Object> select(int startCount, int endCount){
 		Map<String, String> param=new HashMap<String, String>();
 		param.put("start", String.valueOf(startCount));
 		param.put("end", String.valueOf(endCount));
 		
 		return sqlSession.selectList(namespace+".selectList", param);
+	}
+	
+	public List<Object> select(int startCount, int endCount,String searchtext, String searchcategory){
+		Map<String, String> param=new HashMap<String, String>();
+		param.put("start", String.valueOf(startCount));
+		param.put("end", String.valueOf(endCount));
+		param.put("searchtext", searchtext);
+		
+		if(searchcategory.equals("title")) {
+			return sqlSession.selectList(namespace+".selectListSearchTitle",param);
+		}else if(searchcategory.equals("content")) {
+			return sqlSession.selectList(namespace+".selectListSearchContent",param);
+		}else {
+			return sqlSession.selectList(namespace+".selectListSearchUserId",param);
+		}	
 	}
 
 	public Object select(String qId) {

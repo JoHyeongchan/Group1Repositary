@@ -70,13 +70,14 @@
 &gt;&gt;</div>
 <br>
 <!-- 검색 입력폼 -->
-<form>
-	<select>
+<form method="get" action="qna_search.do">
+	<input name="rpage" value="1" type="hidden">
+	<select name="searchcategory">
 		<option value="title">제목</option>
 		<option value="content">본문</option>
 		<option value="userid">작성자</option>
 	</select>
-	<input type="text" value="내용을 입력해주세요" name="searchText" onclick="this.value=''"></input>
+	<input type="text" placeholder="내용을 입력해주세요" name="searchtext" ></input>
 	<button type="submit">검색</button>
 </form>
 </section>
