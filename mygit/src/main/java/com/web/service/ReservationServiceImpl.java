@@ -24,5 +24,10 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 	
 	@Override
+	public int stateUpdate(String res_id) {
+		return reservationDAO.stateUpdate(res_id);
+	}
+	
+	@Override
 	public int totalCount() {return 0;}
 }

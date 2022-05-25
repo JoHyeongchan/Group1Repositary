@@ -13,4 +13,9 @@
 		insert into RList values 
 			( 'r_'||Seq_RList_RID.nextval, #{rtitle}, #{rdate}, #{rtime}, #{rnum}, 0, #{id}, 0)
 	</insert>
+	
+	<update id="stateUpdate" parameterType="java.lang.String">
+		update reservation set rstate = case when rstate = 0 then 1 else 0 end 
+			where res_id = #{res_id}
+	</update>
 </mapper>
