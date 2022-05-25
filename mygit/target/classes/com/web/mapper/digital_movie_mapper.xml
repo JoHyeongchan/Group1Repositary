@@ -24,10 +24,9 @@
  	</select>
  	
  		<select id="selectListSearch" parameterType="map" resultType="com.web.vo.DigitalMovieVO">
- 	select rno,dmid, dmtitle, dmsfile,dmdate,dmhits,dmprogram from
+ select rno,dmid, dmtitle, dmsfile,dmdate,dmhits,dmprogram from
  	(select rownum rno,dmid, dmtitle, dmsfile, to_char(dmdate,'yyyy-mm-dd')dmdate,dmhits,dmprogram from
-(select dmid, dmtitle, dmsfile, dmdate,dmhits,dmprogram from digitalMovie
- where dmtitle like concat(concat('%','#{searchtext}),'%') order by dmdate desc)) where rno between #{start} and #{end}
+(select dmid, dmtitle, dmsfile, dmdate,dmhits,dmprogram from digitalMovie where dmtitle like concat(concat('%',#{searchtext}),'%') order by dmdate desc )) where rno between #{start} and #{end}
  	</select>
  	
  	<select id="selectContent" parameterType="java.lang.String" resultType="com.web.vo.DigitalMovieVO">

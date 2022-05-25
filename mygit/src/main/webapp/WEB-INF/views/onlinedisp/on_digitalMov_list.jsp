@@ -48,7 +48,8 @@
 <section>
 		<h1>디지털동영상</h1>
 		<div id="digitalForm">
-		<form method="get" action="digitalMovList.do" class="content_layout" enctype="multipart/form-data">
+		<form method="post" action="digitalMovSearch.do" class="content_layout" enctype="multipart/form-data">
+		 	<input type="hidden" name="rpage" value="1">
 			<input type="text" placeholder="검색어를 입력해주세요" id=searchBar name="searchtext">
 			<button type="submit" class="btnCollectionSearch">검색</button>						
 		</form>

@@ -28,7 +28,8 @@
 <section>
 		<h1>소장품</h1>
 		<div id="digitalForm">
-		<form method="post">
+		<form method="post" action="collectionSearch.do">
+			<input type="hidden" value="1" name="rpage">
 			<input type="text" placeholder="검색어를 입력해주세요" id=searchBar name="searchtext">
 			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>			
 		</form>

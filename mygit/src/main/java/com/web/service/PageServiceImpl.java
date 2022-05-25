@@ -87,7 +87,7 @@ public class PageServiceImpl {
 		return  param;
 	}
 	
-public Map<String, String> getPageResultSearch(String rpage ,String serviceName,ObjectService service,String searchtext){
+public Map<String, String> getPageResult(String rpage ,String searchtext,String serviceName,ObjectService service){
 		
 		Map<String, String> param=new HashMap<String, String>();
 		
@@ -105,7 +105,7 @@ public Map<String, String> getPageResultSearch(String rpage ,String serviceName,
 			pageSize = 8;
 		}else if(serviceName.equals("collection")) {
 			collectionService=(CollectionServiceImpl)service;
-			dbCount=collectionService.getRecordCount();
+			dbCount=collectionService.getRecordCount(searchtext);
 			pageSize = 8;
 		}
 		

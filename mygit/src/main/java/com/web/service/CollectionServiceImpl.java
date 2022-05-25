@@ -36,7 +36,7 @@ public class CollectionServiceImpl implements CollectionService{
 		return collectionDao.select(startCount, endCount);
 	}
 	
-	public List<Object> getRecordListSearch(int startCount, int endCount,String searchtext) {
+	public List<Object> getRecordList(int startCount, int endCount,String searchtext) {
 		// TODO Auto-generated method stub
 		return collectionDao.select(startCount, endCount,searchtext);
 	}

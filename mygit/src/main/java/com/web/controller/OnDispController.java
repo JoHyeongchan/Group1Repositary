@@ -84,6 +84,42 @@ public class OnDispController {
 		return mv;
 	}
 	
+	@RequestMapping(value="/online/digitalMovSearch.do",method=RequestMethod.POST)
+	public ModelAndView onDigitalMovList(String rpage,String searchtext, HttpSession session) {
+		ModelAndView mv=new ModelAndView();
+		System.out.println(rpage);
+		System.out.println(searchtext);
+		String id=(String)session.getAttribute("id");
+		Map<String, String> param= pageService.getPageResult(rpage,searchtext,"digitalMovie",digitalMovieService);
+		
+		int startCount=Integer.parseInt( param.get("start"));
+		int endCount=Integer.parseInt(param.get("end"));
+		int dbCount=Integer.parseInt(param.get("dbCount"));
+		int reqPage=Integer.parseInt(param.get("reqPage"));
+		int pageSize=Integer.parseInt(param.get("pageSize"));
+		int pageCount=Integer.parseInt(param.get("pageCount"));
+		
+		List<Object> olist=digitalMovieService.getRecordList(startCount, endCount,searchtext);
+		List<DigitalMovieVO> list=new ArrayList<DigitalMovieVO>();
+		
+		for(Object obj:olist) {
+			list.add((DigitalMovieVO)obj);
+		}
+		
+		int divLast=0;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
+		}
+		
+		mv.addObject("divLast",divLast);
+		mv.addObject("reqPage", reqPage);
+		mv.addObject("pageCount", pageCount);
+		mv.addObject("list", list);
+		mv.addObject("id", id);
+		mv.setViewName("/onlinedisp/on_digitalMov_list");		
+		return mv;
+	}
+	
 	@RequestMapping(value="/online/collectionList.do",method=RequestMethod.GET)
 	public ModelAndView onCollection(String rpage,HttpSession session) {
 		ModelAndView mv=new ModelAndView( "/onlinedisp/on_collection_list");
@@ -100,6 +136,41 @@ public class OnDispController {
 		//List<Object> olist=digitalMovieService.getRecordList(startCount, endCount);
 		//List<CollectionVO> list=new ArrayList<DigitalMovieVO>();
 		List<Object> olist=collectionService.getRecordList(startCount, endCount);
+		List<CollectionVO> list=new ArrayList<CollectionVO>();
+		
+		for(Object obj:olist) {
+			list.add((CollectionVO)obj);
+		}
+				
+		int divLast=0;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
+		}
+		
+		mv.addObject("divLast",divLast);
+		mv.addObject("reqPage", reqPage);
+		mv.addObject("pageCount", pageCount);
+		mv.addObject("list", list);
+		mv.addObject("id", id);
+		return mv;
+	}
+	
+	@RequestMapping(value="/online/collectionSearch.do",method=RequestMethod.POST)
+	public ModelAndView onCollectionSearch(String rpage,String searchtext,HttpSession session) {
+		ModelAndView mv=new ModelAndView( "/onlinedisp/on_collection_list");
+		String id=(String)session.getAttribute("id");
+		Map<String, String> param= pageService.getPageResult(rpage,searchtext, "collection", collectionService);
+		
+		int startCount=Integer.parseInt( param.get("start"));
+		int endCount=Integer.parseInt(param.get("end"));
+		int dbCount=Integer.parseInt(param.get("dbCount"));
+		int reqPage=Integer.parseInt(param.get("reqPage"));
+		int pageSize=Integer.parseInt(param.get("pageSize"));
+		int pageCount=Integer.parseInt(param.get("pageCount"));
+		
+		//List<Object> olist=digitalMovieService.getRecordList(startCount, endCount);
+		//List<CollectionVO> list=new ArrayList<DigitalMovieVO>();
+		List<Object> olist=collectionService.getRecordList(startCount, endCount,searchtext);
 		List<CollectionVO> list=new ArrayList<CollectionVO>();
 		
 		for(Object obj:olist) {
@@ -288,40 +359,6 @@ public class OnDispController {
 	public String onShow() {
 		return "/onlinedisp/on_show";
 	}
-	/*
-	@RequestMapping(value="/online/digitalMovList.do",method=RequestMethod.GET)
-	public ModelAndView onDigitalMovSearch(String searchtext, HttpSession session) {
-		ModelAndView mv=new ModelAndView();
-		String id=(String)session.getAttribute("id");
-		String rpage="1";
-		Map<String, String> param= pageService.getPageResult(rpage,"digitalMovieSearch",digitalMovieService,searchtext);
-		
-		int startCount=Integer.parseInt( param.get("start"));
-		int endCount=Integer.parseInt(param.get("end"));
-		int dbCount=Integer.parseInt(param.get("dbCount"));
-		int reqPage=Integer.parseInt(param.get("reqPage"));
-		int pageSize=Integer.parseInt(param.get("pageSize"));
-		int pageCount=Integer.parseInt(param.get("pageCount"));
-		
-		List<Object> olist=digitalMovieService.getRecordList(startCount, endCount,searchtext);
-		List<DigitalMovieVO> list=new ArrayList<DigitalMovieVO>();
-		
-		for(Object obj:olist) {
-			list.add((DigitalMovieVO)obj);
-		}
-		
-		int divLast=0;
-		if(dbCount%pageSize!=0) {
-			divLast=pageSize-dbCount%pageSize;
-		}
-		
-		mv.addObject("divLast",divLast);
-		mv.addObject("reqPage", reqPage);
-		mv.addObject("pageCount", pageCount);
-		mv.addObject("list", list);
-		mv.addObject("id", id);
-		mv.setViewName("/onlinedisp/on_digitalMov_list");		
-		return mv;
-	}*/
+	
 	
 }
