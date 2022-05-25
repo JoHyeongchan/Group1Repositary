@@ -27,6 +27,11 @@ public class QnaServiceImpl implements QnaService{
 		// TODO Auto-generated method stub
 		return qnaDao.getCount();
 	}
+	
+	public int getRecordCount(String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		return qnaDao.getCount();
+	}
 
 	@Override
 	public List<Object> getRecordList(int startCount, int endCount) {
@@ -81,6 +86,9 @@ public class QnaServiceImpl implements QnaService{
 		// TODO Auto-generated method stub
 		qnaDao.updateHits(qId);
 	}
+
+
+	
 	
 	
 	

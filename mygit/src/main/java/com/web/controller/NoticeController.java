@@ -69,6 +69,44 @@ public class NoticeController {
 		return mv;
 	}
 	
+	@RequestMapping(value="/notice_search.do",method=RequestMethod.GET)
+	public ModelAndView noticeList(String rpage,String searchcategory,String searchtext,HttpSession session) {
+		
+		ModelAndView mv=new ModelAndView("/notice/notice_list");
+		
+		String id=(String)session.getAttribute("id");
+		
+		Map<String, String> param= pageService.getPageResult(rpage, searchcategory,searchtext,"notice", noticeService);
+		
+		int startCount=Integer.parseInt( param.get("start"));
+		int endCount=Integer.parseInt(param.get("end"));
+		int dbCount=Integer.parseInt(param.get("dbCount"));
+		int reqPage=Integer.parseInt(param.get("reqPage"));
+		int pageSize=Integer.parseInt(param.get("pageSize"));
+		int pageCount=Integer.parseInt(param.get("pageCount"));
+		
+		List<Object> olist=noticeService.getRecordList(startCount, endCount,searchtext,searchcategory);
+		List<NoticeVO> list=new ArrayList<NoticeVO>();
+		
+		int i=0;
+		for(Object obj:olist) {
+			list.add((NoticeVO)obj);
+			list.get(i++).getnId();
+		}
+				
+		int divLast=0;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
+		}
+		
+		mv.addObject("divLast",divLast);
+		mv.addObject("reqPage", reqPage);
+		mv.addObject("pageCount", pageCount);
+		mv.addObject("list", list);
+		mv.addObject("id",id);
+		return mv;
+	}
+	
 	@RequestMapping(value="/notice_content.do",method=RequestMethod.GET)
 	public ModelAndView noticeContent(String nId) {
 		ModelAndView mv=new ModelAndView("/notice/notice_content");

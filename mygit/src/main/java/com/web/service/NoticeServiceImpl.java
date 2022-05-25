@@ -1,5 +1,6 @@
 package com.web.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -27,10 +28,22 @@ public class NoticeServiceImpl implements NoticeService{
 		return noticeDao.getCount();
 	}
 
+	public int getRecordCount(String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		return noticeDao.getCount(searchtext,searchcategory);
+	}
+	
 	@Override
 	public List<Object> getRecordList(int startCount, int endCount) {
 		// TODO Auto-generated method stub
 		return noticeDao.select(startCount, endCount);
+	}
+	
+	
+	public List<Object>  getRecordList(int startCount, int endCount,String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		
+		return noticeDao.select(startCount, endCount,searchtext,searchcategory);
 	}
 
 	@Override
@@ -57,6 +70,8 @@ public class NoticeServiceImpl implements NoticeService{
 		// TODO Auto-generated method stub
 		noticeDao.updateHits(nId);
 	}
+
+	
 
 	
 	

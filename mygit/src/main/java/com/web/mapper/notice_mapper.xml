@@ -24,7 +24,39 @@
 		(select rownum rno, nid, ntitle, to_char(ndate,'yyyy-mm-dd')ndate, ncategory from(
 		select nid,ntitle,ndate,ncategory from notice order by ndate desc)) where rno between #{start} and #{end}
 	</select>
+	
+	<select id="countSearchTitle"  parameterType="java.lang.String" resultType="int">
+ 		select count(*) from notice where ntitle like #{searchtext}	 
+ 	</select>
  	
+ 	<select id="countSearchContent"  parameterType="java.lang.String" resultType="int">
+ 		select count(*) from notice where ncontent like #{searchtext}	 
+ 	</select>
+ 	
+ 	<select id="countSearchCategory"  parameterType="java.lang.String" resultType="int">
+ 		select count(*) from notice where ncategory = #{searchtext}	 
+ 	</select>
+ 	
+ 	<select id="selectListSearchTitle" parameterType="map" resultType="com.web.vo.NoticeVO">		
+		 select rno, nid, ntitle, ndate,ncategory from
+		(select rownum rno, nid, ntitle, to_char(ndate,'yyyy-mm-dd')ndate, ncategory from(
+		select nid,ntitle,ndate,ncategory from notice where ntitle like concat(concat('%',#{searchtext}),'%')
+		 order by ndate desc)) where rno between #{start} and #{end}
+	</select>
+	
+	<select id="selectListSearchContent" parameterType="map" resultType="com.web.vo.NoticeVO">		
+		 select rno, nid, ntitle, ndate,ncategory from
+		(select rownum rno, nid, ntitle, to_char(ndate,'yyyy-mm-dd')ndate, ncategory from(
+		select nid,ntitle,ndate,ncategory from notice where ncontent like concat(concat('%',#{searchtext}),'%')
+		 order by ndate desc)) where rno between #{start} and #{end}
+	</select>
+	
+	<select id="selectListSearchCategory" parameterType="map" resultType="com.web.vo.NoticeVO">		
+select rno, nid, ntitle, ndate,ncategory from
+		(select rownum rno, nid, ntitle, to_char(ndate,'yyyy-mm-dd')ndate, ncategory from(
+		select nid,ntitle,ndate,ncategory from notice 
+		where ncategory=#{searchtext} order by ndate desc)) where rno between #{start} and #{end}
+	</select>
  	
  	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.NoticeVO">
  	select nid,ntitle,ncontent,to_char(ndate,'yyyy-mm-dd')ndate,nfile,nsfile,

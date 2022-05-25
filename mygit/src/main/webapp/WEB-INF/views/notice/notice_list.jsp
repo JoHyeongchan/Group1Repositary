@@ -29,47 +29,21 @@
 		<td class="ntype">${vo.nCategory }</td><td class="ntitle"><a href="notice_content.do?nId=${vo.nId}">${vo.nTitle }</a></td><td class="ndate">${vo.nDate }</td>
 	</tr>
 	</c:forEach>
-	<!-- 
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test2</td><td class="ndate">2022-05-01</td>
-	</tr>
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test3</td><td class="ndate">2022-05-01</td>
-	</tr>
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test4</td><td class="ndate">2022-05-01</td>
-	</tr>
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test5</td><td class="ndate">2022-05-01</td>
-	</tr>
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test6</td><td class="ndate">2022-05-01</td>
-	</tr>
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test7</td><td class="ndate">2022-05-01</td>
-	</tr>
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test8</td><td class="ndate">2022-05-01</td>
-	</tr>
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test9</td><td class="ndate">2022-05-01</td>
-	</tr>
-	<tr>
-		<td class="ntype">서울</td><td class="ntitle">test10</td><td class="ndate">2022-05-01</td>
-	</tr> -->
+	
 </table>
 <br>
 
 
 <div class="bottom">
-	<form>
+	<form method="get" action="notice_search.do">
 	<div class="searchBar">
-		<select>
+		<input name="rpage" value="1" type="hidden">
+		<select name="searchcategory">
 		<option value="title">제목</option>
 		<option value="content">본문</option>
-		<option value="userid">작성자</option>
+		<option value="category">유형</option>
 	</select>
-	<input type="text" value="내용을 입력해주세요" name="searchText" onclick="this.value=''"></input>
+	<input type="text" placeholder="내용을 입력해주세요" name="searchtext"  ></input>
 	<button type="submit" class="btn_search">검색</button>
 	<c:if test="${id=='admin' }">
 	<button type="button" onclick="location.href='notice_write.do'" class="btn_normal">등록</button>
@@ -85,7 +59,7 @@
 	var reqPage=${reqPage};
 	var i=0;
 	for(i=1;i<=pageCount;i++){
-		document.write("<a href='comment.do?rpage="+i+"'>");
+		document.write("<a href='notice_list.do?rpage="+i+"'>");
 		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
 	}
 </script>
