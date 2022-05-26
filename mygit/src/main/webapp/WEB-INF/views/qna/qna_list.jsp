@@ -13,7 +13,9 @@
 	text-indent: 10px;
 }
 </style>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+	
+</script>
 </head>
 <body>
 
@@ -56,9 +58,17 @@
 <script>
 	var pageCount=${pageCount};
 	var reqPage=${reqPage};
+	var mode="${mode}";
+	var searchtext="${searchtext}";
+	var searchcategory="${searchcategory}";
+
 	var i=0;
 	for(i=1;i<=pageCount;i++){
-		document.write("<a href='qna_list.do?rpage="+i+"'>");
+		document.write("<a href='qna_"+mode+".do?rpage="+i);
+		if(searchtext != ""){
+			document.write("&searchcategory="+searchcategory+"&searchtext="+searchtext);
+		}
+		document.write("'>");
 		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
 	}
 </script>

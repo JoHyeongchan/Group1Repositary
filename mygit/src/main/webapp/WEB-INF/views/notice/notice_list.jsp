@@ -57,9 +57,17 @@
 <script>
 	var pageCount=${pageCount};
 	var reqPage=${reqPage};
+	var mode="${mode}";
+	var searchtext="${searchtext}";
+	var searchcategory="${searchcategory}";
+	
 	var i=0;
 	for(i=1;i<=pageCount;i++){
-		document.write("<a href='notice_list.do?rpage="+i+"'>");
+		document.write("<a href='notice_"+mode+".do?rpage="+i);
+		if(searchtext != ""){
+			document.write("&searchcategory="+searchcategory+"&searchtext="+searchtext);
+		}
+		document.write("'>");
 		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
 	}
 </script>

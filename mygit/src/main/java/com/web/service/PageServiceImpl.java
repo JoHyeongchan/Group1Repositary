@@ -49,6 +49,7 @@ public class PageServiceImpl {
 		}else if(serviceName.equals("qna")) {
 			qnaService=(QnaServiceImpl)service;
 			dbCount=qnaService.getRecordCount();
+
 			pageSize=10;
 		}else if(serviceName.equals("notice")) {
 			noticeService=(NoticeServiceImpl)service;

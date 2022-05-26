@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_list.css">
-
 <style>
 .digitalColBox{
 	margin-left:4%;
@@ -22,13 +21,14 @@
 }
 
 </style> 
+
 </head>
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
 <section>
 		<h1>소장품</h1>
 		<div id="digitalForm">
-		<form method="post" action="collectionSearch.do">
+		<form method="get" action="collectionSearch.do">
 			<input type="hidden" value="1" name="rpage">
 			<input type="text" placeholder="검색어를 입력해주세요" id=searchBar name="searchtext">
 			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>			
@@ -72,9 +72,17 @@
 			<script>
 				var pageCount=${pageCount};
 				var i=1;
-			
+				
+				var mode='${mode}';
+				var searchtext='${searchtext}';
+				
 				for(i=1;i<=pageCount;i++){
-					document.write("<a href='http://localhost:9000/mygit/online/collectionList.do?rpage="+i+"'>");
+
+					document.write("<a href='http://localhost:9000/mygit/online/collection"+mode+".do?rpage="+i);
+					if(searchtext!=""){
+						document.write("&searchtext="+searchtext);
+					}
+					document.write("'>");
 					document.write("<span>"+i+"</span></a>&nbsp;&nbsp;&nbsp;</a>");
 				}
 			</script>

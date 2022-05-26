@@ -8,8 +8,6 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_list.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-</script>
 <style>
 
 .btnList{
@@ -48,7 +46,7 @@
 <section>
 		<h1>디지털동영상</h1>
 		<div id="digitalForm">
-		<form method="post" action="digitalMovSearch.do" class="content_layout" enctype="multipart/form-data">
+		<form method="get" action="digitalMovSearch.do" class="content_layout" enctype="multipart/form-data">
 		 	<input type="hidden" name="rpage" value="1">
 			<input type="text" placeholder="검색어를 입력해주세요" id=searchBar name="searchtext">
 			<button type="submit" class="btnCollectionSearch">검색</button>						
@@ -92,10 +90,19 @@
 			<script>
 				var pageCount=${pageCount};
 				var i=1;
+				
+				var mode='${mode}';
+				var searchtext='${searchtext}';
+				
 				for(i=1;i<=pageCount;i++){
-					document.write("<a href='http://localhost:9000/mygit/online/digitalMovList.do?rpage="+i+"'>");
+					document.write("<a href='http://localhost:9000/mygit/online/digitalMov"+mode+".do?rpage="+i);
+					if(searchtext!=""){
+						document.write("&searchtext="+searchtext);
+					}
+					document.write("'>");
 					document.write("<span>"+i+"</span></a>&nbsp;&nbsp;&nbsp;</a>");
 				}
+
 			</script>	
 		</div>
 		<hr>

@@ -54,6 +54,7 @@ public class OnDispController {
 	public ModelAndView onDigitalMovList(String rpage,HttpSession session) {
 		ModelAndView mv=new ModelAndView();
 		String id=(String)session.getAttribute("id");
+		String mode="List";
 		Map<String, String> param= pageService.getPageResult(rpage,"digitalMovie",digitalMovieService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -80,15 +81,16 @@ public class OnDispController {
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
 		mv.addObject("id", id);
+		mv.addObject("mode",mode);
 		mv.setViewName("/onlinedisp/on_digitalMov_list");		
 		return mv;
 	}
 	
-	@RequestMapping(value="/online/digitalMovSearch.do",method=RequestMethod.POST)
+	@RequestMapping(value="/online/digitalMovSearch.do",method=RequestMethod.GET)
 	public ModelAndView onDigitalMovList(String rpage,String searchtext, HttpSession session) {
 		ModelAndView mv=new ModelAndView();
-		System.out.println(rpage);
-		System.out.println(searchtext);
+		String mode="Search";
+		
 		String id=(String)session.getAttribute("id");
 		Map<String, String> param= pageService.getPageResult(rpage,searchtext,"digitalMovie",digitalMovieService);
 		
@@ -117,6 +119,8 @@ public class OnDispController {
 		mv.addObject("list", list);
 		mv.addObject("id", id);
 		mv.setViewName("/onlinedisp/on_digitalMov_list");		
+		mv.addObject("mode",mode);
+		mv.addObject("searchtext",searchtext);
 		return mv;
 	}
 	
@@ -124,6 +128,7 @@ public class OnDispController {
 	public ModelAndView onCollection(String rpage,HttpSession session) {
 		ModelAndView mv=new ModelAndView( "/onlinedisp/on_collection_list");
 		String id=(String)session.getAttribute("id");
+		String mode="List";
 		Map<String, String> param= pageService.getPageResult(rpage, "collection", collectionService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -151,14 +156,16 @@ public class OnDispController {
 		mv.addObject("reqPage", reqPage);
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
-		mv.addObject("id", id);
+		mv.addObject("id", id);		
+		mv.addObject("mode",mode);
 		return mv;
 	}
 	
-	@RequestMapping(value="/online/collectionSearch.do",method=RequestMethod.POST)
+	@RequestMapping(value="/online/collectionSearch.do",method=RequestMethod.GET)
 	public ModelAndView onCollectionSearch(String rpage,String searchtext,HttpSession session) {
 		ModelAndView mv=new ModelAndView( "/onlinedisp/on_collection_list");
 		String id=(String)session.getAttribute("id");
+		String mode="Search";
 		Map<String, String> param= pageService.getPageResult(rpage,searchtext, "collection", collectionService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -187,6 +194,8 @@ public class OnDispController {
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
 		mv.addObject("id", id);
+		mv.addObject("mode",mode);
+		mv.addObject("searchtext",searchtext);
 		return mv;
 	}
 	

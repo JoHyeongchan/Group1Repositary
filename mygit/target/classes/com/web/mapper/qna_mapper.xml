@@ -35,15 +35,15 @@
  	</select>
  	
  	<select id="countSearchTitle"  parameterType="java.lang.String" resultType="int">
- 		select count(*) from qna
+ 		select count(*) from qna where qtitle like #{searchtext}
  	</select>
  	
  	<select id="countSearchContent" parameterType="java.lang.String" resultType="int">
- 		select count(*) from qna
+ 		select count(*) from qna where qcontent like #{searchtext}
  	</select>
  	
  	<select id="countSearchUserId" parameterType="java.lang.String" resultType="int">
- 		select count(*) from qna
+ 		select count(*) from qna where quserid = #{searchtext}
  	</select>
  	
  	<select id="selectList" parameterType="map" resultType="com.web.vo.QnaVO">
@@ -61,7 +61,7 @@ qhits,quserid,qorigin,qgroup,qdepth from(
 (select rownum rno,qid,qtitle,to_char(qdate,'yyyy-mm-dd')qdate,
 qhits,quserid,qorigin,qgroup,qdepth from(
  select qid,qtitle,qdate,qhits,quserid,qorigin,
- qgroup,qdepth from qna order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
+ qgroup,qdepth from qna where qtitle like concat(concat('%',#{searchtext}),'%') order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
  	</select>
  	
  	<select id="selectListSearchContent" parameterType="map" resultType="com.web.vo.QnaVO">
@@ -70,7 +70,7 @@ qhits,quserid,qorigin,qgroup,qdepth from(
 (select rownum rno,qid,qtitle,to_char(qdate,'yyyy-mm-dd')qdate,
 qhits,quserid,qorigin,qgroup,qdepth from(
  select qid,qtitle,qdate,qhits,quserid,qorigin,
- qgroup,qdepth from qna order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
+ qgroup,qdepth from qna where qcontent like concat(concat('%',#{searchtext}),'%') order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
  	</select>
  	
  	<select id="selectListSearchUserId" parameterType="map" resultType="com.web.vo.QnaVO">
@@ -79,7 +79,7 @@ qhits,quserid,qorigin,qgroup,qdepth from(
 (select rownum rno,qid,qtitle,to_char(qdate,'yyyy-mm-dd')qdate,
 qhits,quserid,qorigin,qgroup,qdepth from(
  select qid,qtitle,qdate,qhits,quserid,qorigin,
- qgroup,qdepth from qna order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
+ qgroup,qdepth from qna where quserid=#{searchtext} order by qorigin desc, qgroup asc))where rno between #{start} and #{end}
  	</select>
  	
  	
@@ -90,6 +90,10 @@ from(select qid,qtitle,qcontent,qhits,quserid,qfile,qsfile,to_char(qdate,'yyyy-m
  		lag(qtitle,1,0)over(order by qorigin desc, qgroup asc)as prevtitle,
  		lead(qid,1,0)over(order by qorigin desc, qgroup asc)as nextid,
  		lead(qtitle,1,0)over(order by qorigin desc, qgroup asc )as nexttitle from qna) where qid=#{qId}
+ 	</select>
+ 	
+ 	<select id="getGroupMax" parameterType="int" resultType="int">
+ 		select max(qgroup) from qna where qorigin=#{qOrigin}
  	</select>
  	
  	<update id="update" parameterType="com.web.vo.QnaVO">

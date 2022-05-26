@@ -36,7 +36,7 @@ public class QnaController {
 	@RequestMapping(value="/qna_list.do",method = RequestMethod.GET)
 	public ModelAndView qnaList(String rpage) {
 		ModelAndView mv=new ModelAndView("/qna/qna_list");
-		
+		String mode="list";
 		Map<String, String> param= pageService.getPageResult(rpage,"qna",qnaService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -62,6 +62,7 @@ public class QnaController {
 		mv.addObject("reqPage", reqPage);
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
+		mv.addObject("mode",mode);
 		return mv;
 	}
 	
@@ -71,7 +72,7 @@ public class QnaController {
 		ModelAndView mv=new ModelAndView("/qna/qna_list");
 		
 		String id=(String)session.getAttribute("id");
-		
+		String mode="search";
 		Map<String, String> param= pageService.getPageResult(rpage, searchcategory,searchtext,"qna", qnaService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -87,7 +88,6 @@ public class QnaController {
 		int i=0;
 		for(Object obj:olist) {
 			list.add((QnaVO)obj);
-			list.get(i++).getqId();
 		}
 				
 		int divLast=0;
@@ -100,6 +100,9 @@ public class QnaController {
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
 		mv.addObject("id",id);
+		mv.addObject("mode",mode);
+		mv.addObject("searchcategory",searchcategory);
+		mv.addObject("searchtext",searchtext);
 		return mv;
 	}
 	
@@ -173,16 +176,21 @@ public class QnaController {
 	
 
 	@RequestMapping(value="/qna_writeReply.do",method = RequestMethod.GET)
-	public ModelAndView qnaWriteReply(String qId) {
+	public ModelAndView qnaWriteReply(String qId,HttpSession session) {
 		ModelAndView mv=new ModelAndView("/qna/qna_write_reply");
-		mv.addObject("qId", qId);
+		QnaVO vo=(QnaVO)qnaService.getContent(qId);
+		
+		String id=(String)session.getAttribute("id");
+		mv.addObject("id",id);
+		mv.addObject("qId", vo.getqId());
+		mv.addObject("qtitle",vo.getqTitle());
 		return mv;
 	}
 	
 	@RequestMapping(value="/qna_writeReply.do",method = RequestMethod.POST)
 	public ModelAndView qnaWriteReply(QnaVO vo, HttpServletRequest request) throws Exception {
 		ModelAndView mv=new ModelAndView("redirect: /mygit/qna_list.do?rpage=1");
-		vo.setqUserId("test");
+		//vo.setqUserId("test");
 		vo=fileService.fileCheck(vo);
 		int result=qnaService.insertReplyProcess(vo);
 		if(result!=0) {

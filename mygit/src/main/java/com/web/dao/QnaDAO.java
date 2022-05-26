@@ -39,7 +39,7 @@ public class QnaDAO {
 		}else if(searchcategory.equals("content")) {
 			result=sqlSession.selectOne(namespace+".countSearchContent","%"+searchtext+"%");
 		}else {
-			result=sqlSession.selectOne(namespace+".countSearchUserId","%"+searchtext+"%");
+			result=sqlSession.selectOne(namespace+".countSearchUserId",searchtext);
 		}	
 		return result;
 	}
@@ -72,12 +72,16 @@ public class QnaDAO {
 		return sqlSession.selectOne(namespace+".content",qId);
 	}
 
-	public int updateReply(int qGroup, int qOrigin) {
+	public int getReplyGroup(int qOrigin) {
+		return sqlSession.selectOne(namespace+".getGroupMax", qOrigin);
+	}
+	public void updateReply(int qGroup, int qOrigin) {
 		// TODO Auto-generated method stub
 		Map<String,String> param=new HashMap<String, String>();
 		param.put("group", String.valueOf(qGroup));
 		param.put("origin", String.valueOf(qOrigin));
-		return sqlSession.update(namespace+".updateReply", param);
+
+		sqlSession.update(namespace+".updateReply", param);
 	}
 
 	public int delete(String qId) {

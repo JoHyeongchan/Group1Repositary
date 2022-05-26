@@ -62,14 +62,10 @@ public class QnaServiceImpl implements QnaService{
 		vo.setqOrigin(orgVo.getqOrigin());
 		vo.setqGroup(orgVo.getqGroup()+1);
 		vo.setqDepth(orgVo.getqDepth()+1);
-		result=qnaDao.updateReply(vo.getqGroup(),vo.getqOrigin());
 		
-		if(result==0) {
-			return 0;
-		}else {
-			result=qnaDao.insertReply(vo);
-		}
-		
+		qnaDao.updateReply(vo.getqGroup(),vo.getqOrigin());
+		result=qnaDao.insertReply(vo);
+
 		return result;
 	}
 	

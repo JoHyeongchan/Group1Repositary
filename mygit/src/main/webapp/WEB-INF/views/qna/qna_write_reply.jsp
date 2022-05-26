@@ -16,11 +16,12 @@
 	<h2>Q &amp; A</h2>
 	<br><hr><br>
 	<form name="qna_write" action="qna_writeReply.do" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="qUserId" value="${id}"></input>
 		<input type="hidden" name="qId" value="${qId}"></input>
 	 	<table border="1">
 		 	<tr>
 			 	<th>제목</th>
-			 	<td colspan="1"><input type="text" name="qTitle" placeholder="제목을 입력하세요."></td>
+			 	<td colspan="1"><input type="text" name="qTitle" value="${qtitle }"></td>
 		 	</tr>
 		 	<tr>
 		 		<td colspan="2"><textarea name="qContent"></textarea></td>

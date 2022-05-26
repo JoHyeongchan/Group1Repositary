@@ -37,7 +37,7 @@ public class NoticeController {
 		ModelAndView mv=new ModelAndView("/notice/notice_list");
 		
 		String id=(String)session.getAttribute("id");
-		
+		String mode="list";
 		Map<String, String> param= pageService.getPageResult(rpage, "notice", noticeService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -66,6 +66,7 @@ public class NoticeController {
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
 		mv.addObject("id",id);
+		mv.addObject("mode", mode);
 		return mv;
 	}
 	
@@ -75,7 +76,7 @@ public class NoticeController {
 		ModelAndView mv=new ModelAndView("/notice/notice_list");
 		
 		String id=(String)session.getAttribute("id");
-		
+		String mode="search";
 		Map<String, String> param= pageService.getPageResult(rpage, searchcategory,searchtext,"notice", noticeService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -104,6 +105,9 @@ public class NoticeController {
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
 		mv.addObject("id",id);
+		mv.addObject("mode", mode);
+		mv.addObject("searchtext",searchtext );
+		mv.addObject("searchcategory",searchcategory);
 		return mv;
 	}
 	
