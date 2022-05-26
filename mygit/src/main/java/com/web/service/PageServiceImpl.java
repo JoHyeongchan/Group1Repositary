@@ -158,6 +158,10 @@ public Map<String, String> getPageResult(String rpage, String searchcategory, St
 		qnaService=(QnaServiceImpl)service;
 		dbCount=qnaService.getRecordCount(searchtext,searchcategory);
 		pageSize = 10;
+	}else if(serviceName.equals("comment")) {
+		dispCommentService=(DispCommentServiceImpl)service;
+		dbCount=dispCommentService.getRecordCount(searchtext,searchcategory);
+		pageSize = 10;
 	}
 	
 	

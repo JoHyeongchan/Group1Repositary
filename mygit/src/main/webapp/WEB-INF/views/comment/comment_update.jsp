@@ -87,7 +87,7 @@
 	 	</table>
 	 	<!-- 버튼 -->
 	 	<button type="button" onclick="location.href='comment_content.do?cmId=${vo.cmId}'" class="btn_normal">취소</button>
-	 	<button type="button" id="submitBtn" class="btn_normal" id="btnSubmit">등록</button>
+	 	<button type="button" id="btnSubmit" class="btn_normal">등록</button>
 	 </form>
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>

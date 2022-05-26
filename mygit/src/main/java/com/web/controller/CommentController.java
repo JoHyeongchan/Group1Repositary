@@ -33,8 +33,10 @@ public class CommentController {
 	PageServiceImpl pageService;
 	
 	@RequestMapping(value="/comment_list.do",method=RequestMethod.GET)
-	public ModelAndView commentList(String rpage){
+	public ModelAndView commentList(String rpage,HttpSession session){
 		ModelAndView mv=new ModelAndView("/comment/comment_list");
+		String id=(String)session.getAttribute("id");
+		String mode="list";
 		
 		Map<String, String> param= pageService.getPageResult(rpage, "comment", dispCommentService);
 		
@@ -63,7 +65,48 @@ public class CommentController {
 		mv.addObject("reqPage", reqPage);
 		mv.addObject("pageCount", pageCount);
 		mv.addObject("list", list);
+		mv.addObject("mode", mode);
+		mv.addObject("id", id);
+		return mv;
+	}
+	
+	@RequestMapping(value="/comment_search.do",method=RequestMethod.GET)
+	public ModelAndView commentListSearch(String rpage,String searchcategory, String searchtext, HttpSession session){
+		ModelAndView mv=new ModelAndView("/comment/comment_list");
+		String id=(String)session.getAttribute("id");
+		String mode="search";
 		
+		Map<String, String> param= pageService.getPageResult(rpage, searchcategory,searchtext,"comment", dispCommentService);
+		
+		int startCount=Integer.parseInt( param.get("start"));
+		int endCount=Integer.parseInt(param.get("end"));
+		int dbCount=Integer.parseInt(param.get("dbCount"));
+		int reqPage=Integer.parseInt(param.get("reqPage"));
+		int pageSize=Integer.parseInt(param.get("pageSize"));
+		int pageCount=Integer.parseInt(param.get("pageCount"));
+		
+		//List<Object> olist=digitalMovieService.getRecordList(startCount, endCount);
+		//List<CollectionVO> list=new ArrayList<DigitalMovieVO>();
+		List<Object> olist=dispCommentService.getRecordList(startCount, endCount,searchcategory,searchtext);
+		List<DispCommentVO> list=new ArrayList<DispCommentVO>();
+		
+		for(Object obj:olist) {
+			list.add((DispCommentVO)obj);
+		}
+				
+		int divLast=0;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
+		}
+		
+		mv.addObject("divLast",divLast);
+		mv.addObject("reqPage", reqPage);
+		mv.addObject("pageCount", pageCount);
+		mv.addObject("list", list);
+		mv.addObject("mode", mode);
+		mv.addObject("id", id);
+		mv.addObject("searchtext",searchtext);
+		mv.addObject("searchcategory",searchcategory);
 		return mv;
 	}
 	

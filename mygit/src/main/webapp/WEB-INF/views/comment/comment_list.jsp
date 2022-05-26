@@ -34,13 +34,14 @@
 
 <!-- 검색 입력폼 -->
 <div class="bottom">
-<form>
-<select>
+<form method="get" action="comment_search.do">
+<input name="rpage" value="1" type="hidden">
+<select name="searchcategory">
 	<option value="title">제목</option>
 	<option value="content">본문</option>
 	<option value="userid">작성자</option>
 </select>
-<input type="text" value="내용을 입력해주세요" name="searchText" onclick="this.value=''"></input>
+<input type="text" value="내용을 입력해주세요" name="searchtext" onclick="this.value=''"></input>
 <button type="submit">검색</button>
 
 <!-- 글 작성 화면 이동 -->
@@ -53,9 +54,17 @@
 <script>
 	var pageCount=${pageCount};
 	var reqPage=${reqPage};
+	var mode="${mode}";
+	var searchtext="${searchtext}";
+	var searchcategory="${searchcategory}";
+	
 	var i=0;
 	for(i=1;i<=pageCount;i++){
-		document.write("<a href='comment_list.do?rpage="+i+"'>");
+		document.write("<a href='comment_"+mode+".do?rpage="+i);
+		if(searchtext != ""){
+			document.write("&searchcategory="+searchcategory+"&searchtext="+searchtext);
+		}
+		document.write("'>");
 		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
 	}
 </script>

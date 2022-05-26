@@ -16,7 +16,6 @@ public class DispCommentServiceImpl implements DispCommentService{
 	public int InsertRecord(Object obj) {
 		// TODO Auto-generated method stub
 		DispCommentVO vo=(DispCommentVO)obj;
-		vo.setCmUserId("test");
 		return dispCommentDao.insert(vo);
 	}
 
@@ -25,11 +24,21 @@ public class DispCommentServiceImpl implements DispCommentService{
 		// TODO Auto-generated method stub
 		return dispCommentDao.getCount();
 	}
+	
+	public int getRecordCount(String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		return dispCommentDao.getCount(searchtext,searchcategory);
+	}
 
 	@Override
 	public List<Object> getRecordList(int startCount, int endCount) {
 		// TODO Auto-generated method stub
 		return dispCommentDao.select(startCount, endCount);
+	}
+	
+	public List<Object> getRecordList(int startCount, int endCount, String searchcategory, String searchtext) {
+		// TODO Auto-generated method stub
+		return dispCommentDao.select(startCount, endCount,searchtext,searchcategory);
 	}
 
 	@Override
@@ -56,6 +65,10 @@ public class DispCommentServiceImpl implements DispCommentService{
 		// TODO Auto-generated method stub
 		dispCommentDao.updateHits(cmId);
 	}
+
+	
+
+	
 
 	
 	

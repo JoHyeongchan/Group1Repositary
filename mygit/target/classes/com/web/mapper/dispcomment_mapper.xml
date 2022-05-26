@@ -24,6 +24,19 @@
  	<select id="count" resultType="int">
  		select count(*) from dispcomment
  	</select>
+ 	
+ 	<select id="countSearchTitle" resultType="int">
+ 		select count(*) from dispcomment where cmtitle like #{searchtext}
+ 	</select>
+ 	
+ 	<select id="countSearchContent" resultType="int">
+ 		select count(*) from dispcomment where cmcontent like #{searchtext}
+ 	</select>
+ 	
+ 	<select id="countSearchUserId" resultType="int">
+ 		select count(*) from dispcomment where cmuserid=#{searchtext}
+ 	</select>
+ 	
  	<select id="selectList" parameterType="map" resultType="com.web.vo.DispCommentVO">
  		
  	select  rno,cmid,cmtitle,cmdisp,cmuserid,cmcontent,to_char(cmdate,'yyyy-mm-dd')cmdate,cmhits,cmno from(
@@ -31,6 +44,26 @@
 	from dispComment order by cmno desc) where rno between #{start} and #{end}
  	</select>
  	
+ 	<select id="selectListSearchTitle" parameterType="map" resultType="com.web.vo.DispCommentVO">
+ 		
+ 	select  rno,cmid,cmtitle,cmdisp,cmuserid,cmcontent,to_char(cmdate,'yyyy-mm-dd')cmdate,cmhits,cmno from(
+	select rownum rno,cmid,cmtitle,cmdisp,cmuserid,cmcontent,cmdate,cmhits,cmno
+	from dispComment where cmtitle like concat(concat('%',#{searchtext}),'%' ) order by cmno desc) where rno between #{start} and #{end}
+ 	</select>
+ 	
+ 	<select id="selectListSearchContent" parameterType="map" resultType="com.web.vo.DispCommentVO">
+ 		
+ 	select  rno,cmid,cmtitle,cmdisp,cmuserid,cmcontent,to_char(cmdate,'yyyy-mm-dd')cmdate,cmhits,cmno from(
+	select rownum rno,cmid,cmtitle,cmdisp,cmuserid,cmcontent,cmdate,cmhits,cmno
+	from dispComment where cmcontent like concat(concat('%',#{searchtext}),'%' ) order by cmno desc) where rno between #{start} and #{end}
+ 	</select>
+ 	
+ 	<select id="selectListSearchUserId" parameterType="map" resultType="com.web.vo.DispCommentVO">
+ 		
+ 	select  rno,cmid,cmtitle,cmdisp,cmuserid,cmcontent,to_char(cmdate,'yyyy-mm-dd')cmdate,cmhits,cmno from(
+	select rownum rno,cmid,cmtitle,cmdisp,cmuserid,cmcontent,cmdate,cmhits,cmno
+	from dispComment where cmuserid=#{searchtext} order by cmno desc) where rno between #{start} and #{end}
+ 	</select>
  	 
  	<select id="content" parameterType="java.lang.String" resultType="com.web.vo.DispCommentVO">
 		select cmid, cmtitle,cmcontent,cmdisp,cmuserid,to_char(cmdate,'yyyy-mm-dd')cmdate,cmhits,
