@@ -33,7 +33,7 @@
 	 	<table>
 	 		<tr>
 	 		<td><span class="inputLabel">제목</span></td>
-	 		<td><input type="text" name="faTitle"  class="titleTextBox" value="${vo.faTitle }"></td>
+	 		<td><input type="text" name="faTitle"  class="titleTextBox" value="${vo.faTitle }" id="faTitle"></td>
 	 		</tr>
 	 	<tr>
 	 	<td colspan="2"><hr></td>
@@ -52,7 +52,7 @@
 	 	<td colspan="2"><hr></td>
 	 	</tr>
 	 	<tr>
-	 	<td colspan="2" align="center"><textarea rows="20" cols="80" name="faContent">${vo.faContent }</textarea>
+	 	<td colspan="2" align="center"><textarea rows="20" cols="80" name="faContent" id="faContent">${vo.faContent }</textarea>
 	 	</td>
 	 	</tr>
 	 	<tr>
@@ -61,7 +61,7 @@
 	 	</table>
 	 	<!-- 버튼 -->
 	 	<button type="button" onclick="location.href='faq_list.do'" class="btn_normal">취소</button>
-	 	<button type="button"  class="btn_normal">등록</button>
+	 	<button type="button"  class="btn_normal" id="btnSubmit">등록</button>
 	 </form>
 </section>	 
 <jsp:include page="../footer.jsp"></jsp:include>

@@ -6,10 +6,10 @@
 		
 		$("#btnSubmit").click(function(){
 				
-				if(($("#qTitle").val()=="")){
+				if(($("#faTitle").val()=="")){
 					alert("제목을 입력하세요.");
 					return;
-				}else if($("#qContent").val()==""){
+				}else if($("#faContent").val()==""){
 					alert("내용을 입력하세요.");
 					return;
 				}else{
