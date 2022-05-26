@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_write.css">
-
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/onlinedisp/collectionWriteForm.js"></script>
 </head>
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
@@ -16,24 +17,24 @@
 	<form name="collectionInputForm" action="collectionWrite.do" method="post" class="content_layout" enctype="multipart/form-data">	
 	<table id="inputTable" border="1">
 	<tr>
-		<th>제목</th><td colspan="3"><input type="text" name="coTitle" class="longInput"></input></td>
+		<th>제목</th><td colspan="3"><input type="text" name="coTitle" class="longInput" id="coTitle"></input></td>
 	</tr>
 	<tr>
-		<th>이미지</th><td colspan="3"><input type="file" name="formFile" class="longInput"></td>
+		<th>이미지</th><td colspan="3"><input type="file" name="formFile" class="longInput" id="formFile"></td>
 	</tr>
 	<tr>
-		<th>작가명(한글)</th><td><input type="text" name="coAuthorKor" class="shortInput"></td>
-		<th>작가명(영어)</th><td><input type="text" name="coAuthorEng" class="shortInput"></td>
+		<th>작가명(한글)</th><td><input type="text" name="coAuthorKor" class="shortInput" id="coAuthorKor"></td>
+		<th>작가명(영어)</th><td><input type="text" name="coAuthorEng" class="shortInput" id="coAuthorEng"></td>
 	</tr>
 	<tr>
-		<th>작품명</th><td><input type="text" name="coName" class="shortInput"></td>
+		<th>작품명</th><td><input type="text" name="coName" class="shortInput" id="coName"></td>
 	
-		<th>제작연도</th><td><input type="text" name="coYear" class="shortInput"></td>
+		<th>제작연도</th><td><input type="text" name="coYear" class="shortInput" id="coYear"></td>
 	</tr>
 	<tr>
-		<th>재료</th><td><input type="text" name="coMaterial" class="shortInput"></td>
+		<th>재료</th><td><input type="text" name="coMaterial" class="shortInput" id="coMaterial"></td>
 	
-		<th>규격</th><td><input type="text" name="coDim" class="shortInput"></td>
+		<th>규격</th><td><input type="text" name="coDim" class="shortInput" id="coDim"></td>
 	</tr>
 	<tr>
 		<th>부문</th><td><select name="formCategory" class="shortInput" id="categorySel">
@@ -53,12 +54,12 @@
 				<input type="radio" name="coIsDisp" value="비전시">비전시</td>
 	</tr>
 	<tr>
-		<th>내용입력</th><td colspan="3"><textarea rows="20" cols="80" name="coContent"></textarea></td>
+		<th>내용입력</th><td colspan="3"><textarea rows="20" cols="80" name="coContent" id="coContent"></textarea></td>
 	</tr>	
 	</table>
 	<hr>
 	<button type="button" onclick="location.href='collectionList.do'" class="btnList">취소</button>
-	<button type="submit" class="btnList">등록</button>
+	<button type="button" class="btnList" id="btnSubmit">등록</button>
 	</form>		 
 </section>	
 

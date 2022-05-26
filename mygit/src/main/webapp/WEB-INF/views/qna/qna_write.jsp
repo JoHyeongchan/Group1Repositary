@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/qna/qna_write_update.css">
-<script type="text/javascript"></script>	
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/boards/qnaWriteForm.js"></script>
 </head>
 
 <jsp:include page="../header.jsp"></jsp:include>
@@ -20,10 +21,10 @@
 	 	<table border="1">
 		 	<tr>
 			 	<th>제목</th>
-			 	<td colspan="1"><input type="text" name="qTitle" placeholder="제목을 입력하세요."></td>
+			 	<td colspan="1"><input type="text" name="qTitle" placeholder="제목을 입력하세요." id="qTitle"></td>
 		 	</tr>
 		 	<tr>
-		 		<td colspan="2"><textarea name="qContent"></textarea></td>
+		 		<td colspan="2"><textarea name="qContent" id="qContent"></textarea></td>
 		 	</tr>
 		 	<tr>
 			 	<th>첨부파일</th>
@@ -33,8 +34,8 @@
 	 	<br><br>
 	 	<!-- 버튼 -->
 	 	<div>
-		 	<button type="submit">등록</button>
-		 	<button type="button" onclick="location.href='qna_list.do'">취소</button>
+		 	<button type="button" id="btnSubmit">등록</button>
+		 	<button type="button" onclick="location.href='qna_list.do?rpage=1'">취소</button>
 	 	</div>
 	 </form>
 	</section>

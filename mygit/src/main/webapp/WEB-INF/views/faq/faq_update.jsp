@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/faq/faq_write_update.css"></link> 
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/boards/faqUpdateForm.js"></script>
 <script>
 	$(document).ready(function(){
 		
@@ -60,7 +61,7 @@
 	 	</table>
 	 	<!-- 버튼 -->
 	 	<button type="button" onclick="location.href='faq_list.do'" class="btn_normal">취소</button>
-	 	<button type="submit"  class="btn_normal">등록</button>
+	 	<button type="button"  class="btn_normal">등록</button>
 	 </form>
 </section>	 
 <jsp:include page="../footer.jsp"></jsp:include>

@@ -8,18 +8,14 @@
 <script type="text/javascript"></script>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/notice/notice_write_update.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/boards/noticeUpdateForm.js"></script>
 <script>
 	$(document).ready(function(){
 		
 		var category='${vo.nCategory}';
 		$("#categorySel").val(category);
 		
-		$("#fileSelect").change(function name() {
-			if(window.FileReader){
-				var fname=$(this)[0].files[0].name;
-				$(".FileName").text(fname);
-			}
-		});
+		
 	});
 </script>
 <style type="text/css">
@@ -47,7 +43,7 @@
 	 	<table>
 	 	<tr>
 	 		<td><span class="inputLabel">제목</span></td>
-	 		<td colspan="4"><input type="text" name="nTitle" class="titleTextBox" value="${vo.nTitle }"></td>
+	 		<td colspan="4"><input type="text" name="nTitle" class="titleTextBox" value="${vo.nTitle }" id="nTitle"></td>
 	 		</tr>
 	 		
 	 	<tr>
@@ -74,13 +70,13 @@
 	 	</tr>
 	 	
 	 	<tr>
-	 	<td colspan="5" align="center"><textarea rows="20" cols="80" name="nContent">${vo.nContent }</textarea>
+	 	<td colspan="5" align="center"><textarea rows="20" cols="80" name="nContent" id="nContent">${vo.nContent }</textarea>
 	 	</td>
 	 	</tr>
 	 	</table>
 	 	<!-- 버튼 -->
 	 	<button type="button" onclick="location.href='notice_list.do?nId=${vo.nId}'" class="btn_normal">취소</button>
-	 	<button type="submit" class="btn_normal">등록</button>
+	 	<button type="button" class="btn_normal" id="btnSubmit">등록</button>
 	 </form>
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>

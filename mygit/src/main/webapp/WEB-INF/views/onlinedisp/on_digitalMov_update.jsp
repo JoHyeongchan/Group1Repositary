@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_write.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/onlinedisp/digitalMovUpdateForm.js"></script>
 <script>
 
 	$(document).ready(function(){
@@ -17,13 +18,6 @@
 		
 		$("#programSel").val(program);
 		$("#categorySel").val(category);	
-		
-		$("#fileSelect").change(function name() {
-			if(window.FileReader){
-				var fname=$(this)[0].files[0].name;
-				$(".FileName").text(fname);
-			}
-		});
 	});
 	
 </script>
@@ -82,7 +76,7 @@
 	</table>
 	<hr>
 	<button type="button" onclick="location.href='digitalMovInfo.do?dmId=${vo.dmId}'" class="btnList">취소</button>
-	<button type="submit"  class="btnList">등록</button>
+	<button type="button"  class="btnList" id="btnSubmit">등록</button>
 	
 	</form>
 	

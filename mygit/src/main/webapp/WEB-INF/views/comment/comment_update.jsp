@@ -7,17 +7,10 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/comment/comment_write_update.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/boards/commentUpdateForm.js"></script>
 <script>
 	$(document).ready(function(){
-		
-		
-		$("#fileSelect").change(function name() {
-			if(window.FileReader){
-				var fname=$(this)[0].files[0].name;
-				$(".FileName").text(fname);
-			}
-		});
-		
+	
 		var disp="${vo.cmDisp}";
 		$("#dispSel").val(disp);
 		
@@ -51,7 +44,7 @@
 	 	<table>
 	 	<tr>
 	 	<td><span class="inputLabel">제목</span></td>
-	 	<td colspan="4"><input type="text" name="cmTitle" value="${vo.cmTitle }" class="titleTextBox"></td>
+	 	<td colspan="4"><input type="text" name="cmTitle" value="${vo.cmTitle }" class="titleTextBox" id="cmTitle"></td>
 	 	</tr>
 	 	
 	 	<tr>
@@ -88,13 +81,13 @@
 	 	</tr>
 	 	
 	 	<tr>
-	 	<td colspan="5" align="center"><textarea rows="20" cols="70" name="cmContent">${vo.cmContent }</textarea>
+	 	<td colspan="5" align="center"><textarea rows="20" cols="70" name="cmContent" id="cmContent">${vo.cmContent }</textarea>
 	 	</td>
 	 	</tr>
 	 	</table>
 	 	<!-- 버튼 -->
 	 	<button type="button" onclick="location.href='comment_content.do?cmId=${vo.cmId}'" class="btn_normal">취소</button>
-	 	<button type="submit" id="submitBtn" class="btn_normal">등록</button>
+	 	<button type="button" id="submitBtn" class="btn_normal" id="btnSubmit">등록</button>
 	 </form>
 </section>
 <jsp:include page="../footer.jsp"></jsp:include>

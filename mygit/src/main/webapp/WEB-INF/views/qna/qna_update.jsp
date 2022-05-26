@@ -7,17 +7,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/qna/qna_write_update.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
-<script>
-	$(document).ready(function(){
-		
-		$("#fileSelect").change(function name() {
-			if(window.FileReader){
-				var fname=$(this)[0].files[0].name;
-				$(".FileName").text(fname);
-			}
-		});
-	});
-</script>
+<script src="http://localhost:9000/mygit/resources/js/boards/qnaUpdateForm.js"></script>
+
 <style type="text/css">
 .FileName{
 		display: block;
@@ -40,7 +31,7 @@
 	<h2>Q &amp; A</h2>
 	<br><hr><br>
 	<form name="qna_write" action="qna_update.do" method="post" enctype="multipart/form-data">
-	 	<input type="hidden" name="qId" value="${vo.qId }">
+	 	<input type="hidden" name="qId" value="${vo.qId }" id="qTitle">
 	<input type="hidden" name="qSfile" value="${vo.qSfile }">
 	 	<table border="1">
 	 	<tr>
@@ -48,7 +39,7 @@
 		 	<td colspan="1"><input type="text" name="qTitle" value="${vo.qTitle }"></td>
 		 	</tr>
 		 	<tr>
-		 		<td colspan="2"><textarea name="qContent">${vo.qContent }</textarea></td>
+		 		<td colspan="2"><textarea name="qContent" id="qContent">${vo.qContent }</textarea></td>
 		 	</tr>
 		 	<tr>
 			 	<th>첨부파일</th>
@@ -59,7 +50,7 @@
 	 	<br><br>
 		 <!-- 버튼 -->
 		 <div>
-		 	<button type="submit" >등록</button>
+		 	<button type="button" id="btnSubmit">등록</button>
 		 	<button type="button" onclick="location.href='qna_content.do?qId=${vo.qId}'">취소</button>
 	 	</div>
 	 </form>

@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_write.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/onlinedisp/collectionUpdateForm.js"></script>
+ 
 <script>
 	$(document).ready(function(){
 		
@@ -17,14 +19,8 @@
 		$("#categorySel").val(category);	
 		$("input:radio[name='coIsDisp']:radio[value='${vo.coIsDisp}']").prop('checked', true);
 		
-		$("#fileSelect").change(function name() {
-			if(window.FileReader){
-				var fname=$(this)[0].files[0].name;
-				$(".FileName").text(fname);
-			}
-		});
 	});
-</script>
+</script> 
 <style type="text/css">
 .FileName{
 		display: block;
@@ -90,7 +86,7 @@
 	</table>
 	<hr>
 	<button type="button" onclick="location.href='collectionList.do?coId=${vo.coId}'" class="btnList">취소</button>
-	<button type="submit" class="btnList">등록</button>
+	<button type="button" class="btnList" id="btnSubmit">등록</button>
 	</form>		 
 </section>	
 
