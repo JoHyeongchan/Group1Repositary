@@ -26,11 +26,11 @@
  	</select>
  	
  	<select id="countSearchTitle" resultType="int">
- 		select count(*) from dispcomment where cmtitle like #{searchtext}
+ 		select count(*) from dispcomment where cmtitle like concat(concat('%',#{searchtext}),'%' )
  	</select>
  	
  	<select id="countSearchContent" resultType="int">
- 		select count(*) from dispcomment where cmcontent like #{searchtext}
+ 		select count(*) from dispcomment where cmcontent like concat(concat('%',#{searchtext}),'%' )
  	</select>
  	
  	<select id="countSearchUserId" resultType="int">
