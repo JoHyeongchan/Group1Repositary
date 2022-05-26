@@ -40,9 +40,9 @@ public class NoticeDAO {
 		
 		int result=0;
 		if(searchcategory.equals("title")) {
-			result=sqlSession.selectOne(namespace+".countSearchTitle","%"+searchtext+"%");
+			result=sqlSession.selectOne(namespace+".countSearchTitle",searchtext);
 		}else if(searchcategory.equals("content")) {
-			result=sqlSession.selectOne(namespace+".countSearchContent","%"+searchtext+"%");
+			result=sqlSession.selectOne(namespace+".countSearchContent",searchtext);
 		}else {
 			result=sqlSession.selectOne(namespace+".countSearchCategory",searchtext);
 		}	

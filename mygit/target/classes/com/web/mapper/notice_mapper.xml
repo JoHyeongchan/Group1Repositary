@@ -26,11 +26,11 @@
 	</select>
 	
 	<select id="countSearchTitle"  parameterType="java.lang.String" resultType="int">
- 		select count(*) from notice where ntitle like #{searchtext}	 
+ 		select count(*) from notice where ntitle like concat(concat('%',#{searchtext}),'%')	 
  	</select>
  	
  	<select id="countSearchContent"  parameterType="java.lang.String" resultType="int">
- 		select count(*) from notice where ncontent like #{searchtext}	 
+ 		select count(*) from notice where ncontent like concat(concat('%',#{searchtext}),'%')	 
  	</select>
  	
  	<select id="countSearchCategory"  parameterType="java.lang.String" resultType="int">
