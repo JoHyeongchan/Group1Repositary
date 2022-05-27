@@ -12,9 +12,9 @@
  	</select>
  	
  	<select id="selectList" parameterType="map" resultType="com.web.vo.OffNowVO">
- 	select exno,exid, extitle, dmsfile,dmdate,dmhits,dmprogram from
- 	(select rownum rno,dmid, dmtitle, dmsfile, to_char(dmdate,'yyyy-mm-dd')dmdate,dmhits,dmprogram from
-(select dmid, dmtitle, dmsfile, dmdate,dmhits,dmprogram from digitalMovie order by dmdate desc))where rno between #{start} and #{end}
+ 	select exno,exid, extitle, exImage,exTermStart,exTermEnd,exhits from
+ 	(select rownum rno,exid, extitle, exImage, to_char(extermstart,'yyyy-mm-dd')extermstart, to_char(extermend,'yyyy-mm-dd')extermend,exhits from
+(select exno, exid, extitle, exImage,exTermStart,exTermEnd,exhits from offnow order by exTermStart desc))where rno between #{start} and #{end}
 
 
  	</select>
@@ -31,23 +31,23 @@
 (select dmid, dmtitle, dmsfile, dmdate,dmhits,dmprogram from digitalMovie where dmtitle like concat(concat('%',#{searchtext}),'%') order by dmdate desc )) where rno between #{start} and #{end}
  	</select>
  	 -->
- 	<select id="selectContent" parameterType="java.lang.String" resultType="com.web.vo.DigitalMovieVO">
- 		select dmid,dmtitle,dmsfile,dmfile,dmurl,dmProgram,dmCategory,dmcontent,dmhits,previd,prevtitle,nextid,
- 		nexttitle from (select dmid,dmtitle,dmurl,dmcontent,dmhits,dmsfile,dmfile,dmProgram,dmCategory,
- 		lag(dmid,1,0)over(order by dmdate)as previd,
- 		lag(dmtitle,1,0)over(order by dmdate)as prevtitle,
- 		lead(dmid,1,0)over(order by dmdate)as nextid,
- 		lead(dmtitle,1,0)over(order by dmdate)as nexttitle from digitalMovie) where dmid=#{dmid}
+ 	<select id="selectContent" parameterType="java.lang.String" resultType="com.web.vo.OffNowVO">
+ 		select exid,extitle,eximage,exhost,exCategory,excontent,exhits,previd,prevtitle,nextid,
+ 		nexttitle from (select exid,extitle,eximage,exhost,exCategory,excontent,exhits,
+ 		lag(exid,1,0)over(order by extermstart)as previd,
+ 		lag(extitle,1,0)over(order by extermstart)as prevtitle,
+ 		lead(exid,1,0)over(order by extermstart)as nextid,
+ 		lead(extitle,1,0)over(order by extermstart)as nexttitle from offnow) where exid=#{exid}
  	</select>
  	
  	<delete id="deleteContent" parameterType="java.lang.String">
- 		delete from digitalMovie where dmid=#{dmid}
+ 		delete from offnow where exid=#{exid}
  	</delete>
  	
- 	<update id="update" parameterType="com.web.vo.DigitalMovieVO">
+ 	<update id="update" parameterType="com.web.vo.OffNowVO">
 	<choose>
-		<when test="dmFile!=null">
- 		update digitalMovie set dmTitle=#{dmTitle}, dmUrl=#{dmUrl}, dmFile=#{dmFile},dmSfile=#{dmSfile}
+		<when test="exImage!=null">
+ 		update offnow set exTitle=#{exTitle}, exUrl=#{dmUrl}, dmFile=#{dmFile},dmSfile=#{dmSfile}
  		,dmProgram=#{dmProgram},dmCategory=#{dmCategory},dmContent=#{dmContent}
  		 where dmid=#{dmId}</when>
  		 <otherwise>
