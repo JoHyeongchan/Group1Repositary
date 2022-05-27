@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.connector.Response;
+
 import org.apache.ibatis.javassist.convert.TransformNew;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,6 +37,7 @@ public class FaqController {
 		mv.addObject("id", id);
 		return mv;
 	}
+	
 	
 	@RequestMapping(value="/faq_category.do",method=RequestMethod.GET, produces = "application/text; charset=UTF-8")
 	@ResponseBody
