@@ -18,13 +18,18 @@ $(document).ready(function (){
 	
 	$(document).on("click",".faqTitle",function(){
 		//제목 클릭시 슬라이드 기능 구현
-		if($(this).css("height") =="350px"){
+		
+		
+		
+		if($(this).css("height") =="356px"){
 			$(this).css("height","50px");
 		}else{
-			$(this).css("height","350px");
+			$(this).css("height","356px");
 		}
 		
 		$(this).find(".faqContent").slideToggle("fast");
+		var width=$(".faqTitle").css("width");
+		$(this).find(".faqContent").css("width",width);
 		$(".faqTitle").not(this).css("height","50px");
 		
 		//제목 클릭시 이미지 변경
@@ -62,13 +67,15 @@ $(document).ready(function (){
 				text+="</span>";						
 				text+="<div class='faqContent'>";						
 				text+="<div class='contentBox'>"+result.list[i].faContent+"</div>";
-				if(id=="admin"){
-					text+="<div class='btnBox'>";								
+				
+					text+="<div class='btnBox'>";
+					if(id=="admin"){
 					text+="<button type='button' class='btn_small' onclick='checkDelete(\""+result.list[i].faId+"\")'>삭제</button>";
 					//text+="<button type='button' class='btn_small' onclick='location.href=\"faq_delete.do?faId="+result.list[i].faId+"\"'>삭제</button>";
 					text+="<button type='button' class='btn_small' onclick='location.href=\"faq_update.do?faId="+result.list[i].faId+"\"'>수정</button>";	
+					}
 					text+="</div>";
-				}
+				
 				text+="</div></li>";
 
 			}
@@ -109,15 +116,15 @@ $(document).ready(function (){
 					text+="</span>";						
 					text+="<div class='faqContent'>";						
 					text+="<div class='contentBox'>"+result.list[i].faContent+"</div>";				
-					if(id=="admin"){	
+					
 						text+="<div class='btnBox'>";	
-						
+						if(id=="admin"){	
 							text+="<button type='button' class='btn_small' onclick='checkDelete(\""+result.list[i].faId+"\")'>삭제</button>";
 						//text+="<button type='button' class='btn_small' onclick='location.href=\"faq_delete.do?faId="+result.list[i].faId+"\"'>삭제</button>";
 						text+="<button type='button' class='btn_small' onclick='location.href=\"faq_update.do?faId="+result.list[i].faId+"\"'>수정</button>";	
-					
+						}
 						text+="</div>";
-					}
+					
 					text+="</div></li>";
 				}	
 				$("#faqBoard").append(text);						
@@ -135,16 +142,6 @@ $(document).ready(function (){
 		}
 	}
 </script>
-<style type="text/css">
-	.faqContent{
-	width:78.3%;
-	}
-	
-	.faqTitle{
-	display:block;
-	height:50px;
-	}
-</style>
 </head>
 <body>
 
@@ -163,7 +160,7 @@ $(document).ready(function (){
 <tr>
 	<td colspan="2"><hr><div id="smenuBtn"><span class="listBtn" id="faqShow">관람</span> |  <span class="listBtn" id="faqResv">예약</span> 
 	| <span class="listBtn" id="faqPage">홈페이지</span> |  <span class="listBtn" id="faqEtc">기타</span>  </div>
-	<div id="qnaBtn" onclick="location.href='qna_list.do'">Q & A >></div><hr style="clear:both"></td>
+	<div id="qnaBtn" onclick="location.href='qna_list.do?rpage=1'">Q & A >></div><hr style="clear:both"></td>
 </tr>
 
 <tr>

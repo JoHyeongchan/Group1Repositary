@@ -178,3 +178,12 @@ tr{
 	justify-content:center;
 	height:200px;
 }
+
+a{
+		text-decoration: none;
+		color: #111;
+	}
+	
+	a:hover{
+		color: #888;
+	}

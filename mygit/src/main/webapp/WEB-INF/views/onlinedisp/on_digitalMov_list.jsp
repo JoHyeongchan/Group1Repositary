@@ -37,6 +37,10 @@
 	height:200px;
 }
 
+a{
+	text-decoration:none;
+	color:#111;
+}
 </style>
 <title>Insert title here</title>
 </head>
@@ -89,18 +93,20 @@
 		<div class="pageNum"> <!-- 페이지 번호 -->
 			<script>
 				var pageCount=${pageCount};
+				var reqPage=${reqPage};	
 				var i=1;
 				
 				var mode='${mode}';
 				var searchtext='${searchtext}';
 				
 				for(i=1;i<=pageCount;i++){
+					if(i==reqPage) document.write("<b>");
 					document.write("<a href='http://localhost:9000/mygit/online/digitalMov"+mode+".do?rpage="+i);
-					if(searchtext!=""){
-						document.write("&searchtext="+searchtext);
-					}
+					if(searchtext!="") document.write("&searchtext="+searchtext);	
 					document.write("'>");
-					document.write("<span>"+i+"</span></a>&nbsp;&nbsp;&nbsp;</a>");
+					document.write(i+"</a>");
+					if(i==reqPage) document.write("</b>");
+					document.write("&nbsp;&nbsp;&nbsp;");
 				}
 
 			</script>	

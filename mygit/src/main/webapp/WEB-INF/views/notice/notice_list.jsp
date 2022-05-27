@@ -63,12 +63,13 @@
 	
 	var i=0;
 	for(i=1;i<=pageCount;i++){
+		if(i==reqPage) document.write("<b>");
 		document.write("<a href='notice_"+mode+".do?rpage="+i);
-		if(searchtext != ""){
-			document.write("&searchcategory="+searchcategory+"&searchtext="+searchtext);
-		}
+		if(searchtext != "") document.write("&searchcategory="+searchcategory+"&searchtext="+searchtext);
 		document.write("'>");
-		document.write(i+"</a>&nbsp;&nbsp;&nbsp;");
+		document.write(i+"</a>");
+		if(i==reqPage) document.write("</b>");
+		document.write("&nbsp;&nbsp;&nbsp;");
 	}
 </script>
 <!-- 
