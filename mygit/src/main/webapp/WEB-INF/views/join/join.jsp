@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/tp/resources/css/join.css">
-<script src="http://localhost:9000/tp/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/tp/resources/js/join.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/join.css">
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/join.js"></script>
 <script type="text/javascript">
 	var join_result = "${join_result}";
 	if(join_result=="fail") {

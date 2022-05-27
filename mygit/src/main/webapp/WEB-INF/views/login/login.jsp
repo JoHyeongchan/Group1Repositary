@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/tp/resources/css/login.css">
-<script src="http://localhost:9000/tp/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/tp/resources/js/login.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/login.css">
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/login.js"></script>
 <script type="text/javascript">
 	var join_result = "${join_result}";
 	if(join_result=="succ") {
@@ -24,7 +24,7 @@
 <section>
 	<br><br><br>
 	<div id="loginForm">
-		<img src="http://localhost:9000/tp/resources/images/logo.png" id="logo">
+		<img src="http://localhost:9000/mygit/resources/images/logo.png" id="logo">
 		<br>
 		<form name="login_form" action="login.do" method="post">
 			<div>
