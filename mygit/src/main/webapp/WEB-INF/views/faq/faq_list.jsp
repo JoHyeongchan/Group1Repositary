@@ -16,7 +16,6 @@ $(document).ready(function (){
 	
 	var id="${id}";
 	
-	
 	$(document).on("click",".faqTitle",function(){
 		//제목 클릭시 슬라이드 기능 구현
 		if($(this).css("height") =="350px"){
@@ -65,7 +64,8 @@ $(document).ready(function (){
 				text+="<div class='contentBox'>"+result.list[i].faContent+"</div>";
 				if(id=="admin"){
 					text+="<div class='btnBox'>";								
-					text+="<button type='button' class='btn_small' onclick='location.href=\"faq_delete.do?faId="+result.list[i].faId+"\"'>삭제</button>";
+					text+="<button type='button' class='btn_small' onclick='checkDelete(\""+result.list[i].faId+"\")'>삭제</button>";
+					//text+="<button type='button' class='btn_small' onclick='location.href=\"faq_delete.do?faId="+result.list[i].faId+"\"'>삭제</button>";
 					text+="<button type='button' class='btn_small' onclick='location.href=\"faq_update.do?faId="+result.list[i].faId+"\"'>수정</button>";	
 					text+="</div>";
 				}
@@ -109,28 +109,31 @@ $(document).ready(function (){
 					text+="</span>";						
 					text+="<div class='faqContent'>";						
 					text+="<div class='contentBox'>"+result.list[i].faContent+"</div>";				
-					
+					if(id=="admin"){	
 						text+="<div class='btnBox'>";	
-						if(id=="admin"){	
-						text+="<button type='button' class='btn_small' onclick='location.href=\"faq_delete.do?faId="+result.list[i].faId+"\"'>삭제</button>";
+						
+							text+="<button type='button' class='btn_small' onclick='checkDelete(\""+result.list[i].faId+"\")'>삭제</button>";
+						//text+="<button type='button' class='btn_small' onclick='location.href=\"faq_delete.do?faId="+result.list[i].faId+"\"'>삭제</button>";
 						text+="<button type='button' class='btn_small' onclick='location.href=\"faq_update.do?faId="+result.list[i].faId+"\"'>수정</button>";	
-						}
-						text+="</div>";
 					
+						text+="</div>";
+					}
 					text+="</div></li>";
-
-				}
-				
+				}	
 				$("#faqBoard").append(text);						
 				
 			}
-		});
-		
+		});		
 	});
-	
-	
-	
 });	
+</script>
+<script type="text/javascript">
+	function checkDelete(id){
+		var check=confirm("삭제하시겠습니까?")
+		if(check!=0){
+			location.href="faq_delete.do?faId="+id;
+		}
+	}
 </script>
 <style type="text/css">
 	.faqContent{

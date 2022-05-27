@@ -12,8 +12,6 @@ public class QnaServiceImpl implements QnaService{
 	@Autowired
 	QnaDAO qnaDao;
 	
-	
-
 	@Override
 	public int InsertRecord(Object obj) {
 		// TODO Auto-generated method stub
@@ -86,6 +84,20 @@ public class QnaServiceImpl implements QnaService{
 	public void updateHits(String qId) {
 		// TODO Auto-generated method stub
 		qnaDao.updateHits(qId);
+	}
+
+
+	@Override
+	public int getRecordCount(String keyword) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public List<Object> getRecordList(int startCount, int endCount, String searchtext) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

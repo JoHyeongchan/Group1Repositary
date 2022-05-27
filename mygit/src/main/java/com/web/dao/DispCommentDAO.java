@@ -17,13 +17,9 @@ public class DispCommentDAO {
 	
 	String namespace="mapper.dispcomment";
 	
-	public int insert(DispCommentVO vo) {
+	public int insert(Object obj) {
+		DispCommentVO vo=(DispCommentVO)obj;
 		return sqlSession.insert(namespace+".insert", vo);
-	}
-	
-	public int insertReply(DispCommentVO vo) {
-		
-		return sqlSession.insert(namespace+".insertReply", vo);
 	}
 
 	public int getCount() {
@@ -72,23 +68,14 @@ public class DispCommentDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".content",cmId);
 	}
-/*
-	public int updateReply(int qGroup, int qOrigin) {
-		// TODO Auto-generated method stub
-		Map<String,String> param=new HashMap<String, String>();
-		param.put("group", String.valueOf(qGroup));
-		param.put("origin", String.valueOf(qOrigin));
-		return sqlSession.update(namespace+".updateReply", param);
-	}
-*/
+
 	public int delete(String cmId) {
 		// TODO Auto-generated method stub
 		return sqlSession.delete(namespace+".delete",cmId);
 	}
 
 	public int update(DispCommentVO vo) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 		return sqlSession.update(namespace+".update", vo);
 	}
 

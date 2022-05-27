@@ -15,8 +15,8 @@ public class CollectionServiceImpl implements CollectionService{
 	@Override
 	public int InsertRecord(Object obj) {
 		// TODO Auto-generated method stub
-		CollectionVO vo=(CollectionVO) obj;
-		return collectionDao.insert(vo);
+
+		return collectionDao.insert(obj);
 	}
 
 	@Override
@@ -25,6 +25,7 @@ public class CollectionServiceImpl implements CollectionService{
 		return collectionDao.getCount();
 	}
 	
+	@Override
 	public int getRecordCount(String searchtext) {
 		// TODO Auto-generated method stub
 		return collectionDao.getCount(searchtext);
@@ -36,6 +37,7 @@ public class CollectionServiceImpl implements CollectionService{
 		return collectionDao.select(startCount, endCount);
 	}
 	
+	@Override
 	public List<Object> getRecordList(int startCount, int endCount,String searchtext) {
 		// TODO Auto-generated method stub
 		return collectionDao.select(startCount, endCount,searchtext);
@@ -47,6 +49,7 @@ public class CollectionServiceImpl implements CollectionService{
 		return collectionDao.select(coId);
 	}
 
+	@Override
 	public void updateHits(String coId) {
 		// TODO Auto-generated method stub
 		collectionDao.updateHits(coId);
@@ -58,9 +61,23 @@ public class CollectionServiceImpl implements CollectionService{
 		return collectionDao.delete(coId);
 	}
 
-	public int updateContent(CollectionVO vo) {
+	@Override
+	public int updateContent(Object obj) {
 		// TODO Auto-generated method stub
-		return collectionDao.update(vo);
+		
+		return collectionDao.update(obj);
+	}
+
+	@Override
+	public int getRecordCount(String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Object> getRecordList(int startCount, int endCount, String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

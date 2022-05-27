@@ -33,8 +33,12 @@ public class NoticeController {
 	
 	@RequestMapping(value="/notice_list.do",method=RequestMethod.GET)
 	public ModelAndView noticeList(String rpage,HttpSession session) {
-		
+
 		ModelAndView mv=new ModelAndView("/notice/notice_list");
+		
+		if(rpage==null) {
+			rpage=new String("1");
+		}
 		
 		String id=(String)session.getAttribute("id");
 		String mode="list";
@@ -112,13 +116,15 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value="/notice_content.do",method=RequestMethod.GET)
-	public ModelAndView noticeContent(String nId) {
+	public ModelAndView noticeContent(String nId,HttpSession session) {
 		ModelAndView mv=new ModelAndView("/notice/notice_content");
+		String id=(String)session.getAttribute("id");
 		NoticeVO vo= (NoticeVO)noticeService.getContent(nId);
 		String str=vo.getnContent().replaceAll(System.getProperty("line.separator"), "<br>");
 		vo.setnContent(str);
 		noticeService.updateHits(nId);
 		mv.addObject("vo", vo);
+		mv.addObject("id",id);
 		return mv;
 	}
 	

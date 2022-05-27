@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.web.vo.NoticeVO;
 //import com.web.vo.QnaVO;
+import com.web.vo.QnaVO;
 
 public class NoticeDAO {
 
@@ -18,18 +19,12 @@ public class NoticeDAO {
 	
 	String namespace="mapper.notice";
 	
-	public int insert(NoticeVO vo) {
-		
+	public int insert(Object obj) {
+		NoticeVO vo= (NoticeVO)obj;
+		vo.setnWriter("test");
 		return sqlSession.insert(namespace+".insert", vo);
 	}
-	/*
-	public int insertReply(QnaVO vo) {
-		String str=vo.getqContent();
-		str.replace("\r\n", "<br>");
-		vo.setqContent(str);
-		return sqlSession.insert(namespace+".insertReply", vo);
-	}
-	*/
+
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+".count");
@@ -80,9 +75,9 @@ public class NoticeDAO {
 	}
 
 
-	public int update(NoticeVO vo) {
+	public int update(Object obj) {
 		// TODO Auto-generated method stub
-		
+		NoticeVO vo=(NoticeVO)obj;
 		return sqlSession.update(namespace+".update", vo);
 	}
 	

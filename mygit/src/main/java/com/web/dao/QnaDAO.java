@@ -16,13 +16,13 @@ public class QnaDAO {
 	
 	String namespace="mapper.qna";
 	
-	public int insert(QnaVO vo) {
-		
+	public int insert(Object obj) {
+		QnaVO vo=(QnaVO)obj;
 		return sqlSession.insert(namespace+".insert", vo);
 	}
 	
-	public int insertReply(QnaVO vo) {
-		
+	public int insertReply(Object obj) {
+		QnaVO vo=(QnaVO)obj;
 		return sqlSession.insert(namespace+".insertReply", vo);
 	}
 
@@ -89,9 +89,9 @@ public class QnaDAO {
 		return sqlSession.delete(namespace+".delete",qId);
 	}
 
-	public int update(QnaVO vo) {
+	public int update(Object obj) {
 		// TODO Auto-generated method stub
-		
+		QnaVO vo=(QnaVO)obj;
 		return sqlSession.update(namespace+".update", vo);
 	}
 

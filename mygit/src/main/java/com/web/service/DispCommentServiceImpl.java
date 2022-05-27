@@ -14,9 +14,8 @@ public class DispCommentServiceImpl implements DispCommentService{
 	
 	@Override
 	public int InsertRecord(Object obj) {
-		// TODO Auto-generated method stub
-		DispCommentVO vo=(DispCommentVO)obj;
-		return dispCommentDao.insert(vo);
+		// TODO Auto-generated method stub	
+		return dispCommentDao.insert(obj);
 	}
 
 	@Override
@@ -25,6 +24,7 @@ public class DispCommentServiceImpl implements DispCommentService{
 		return dispCommentDao.getCount();
 	}
 	
+	@Override
 	public int getRecordCount(String searchtext, String searchcategory) {
 		// TODO Auto-generated method stub
 		return dispCommentDao.getCount(searchtext,searchcategory);
@@ -64,6 +64,18 @@ public class DispCommentServiceImpl implements DispCommentService{
 	public void updateHits(String cmId) {
 		// TODO Auto-generated method stub
 		dispCommentDao.updateHits(cmId);
+	}
+
+	@Override
+	public int getRecordCount(String keyword) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Object> getRecordList(int startCount, int endCount, String searchtext) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
