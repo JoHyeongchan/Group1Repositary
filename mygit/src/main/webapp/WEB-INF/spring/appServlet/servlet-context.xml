@@ -53,6 +53,65 @@
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	</beans:bean> 
 	
+	<!-- Interceptor -->
+	<beans:bean id="adminInterceptor" class="com.web.interceptor.AdminInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>	
+		<mapping path="/admin.do"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		<interceptor>	
+		<mapping path="/admin/o*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		<interceptor>	
+		<mapping path="/admin/r*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		
+		<interceptor>		
+		<mapping path="/faq_write*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		<interceptor>	
+		<mapping path="/faq_update*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		
+		<interceptor>	
+		<mapping path="/qna_writeReply*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		
+		<interceptor>		
+		<mapping path="/notice_write*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		<interceptor>	
+		<mapping path="/notice_update*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		
+		<interceptor>		
+		<mapping path="/online/digitalMovW*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		<interceptor>	
+		<mapping path="/online/digitalMovU*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		
+		<interceptor>		
+		<mapping path="/online/CollectionW*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		<interceptor>	
+		<mapping path="/online/CollectionU*"></mapping>
+		<beans:ref bean="adminInterceptor"/>
+		</interceptor>
+		
+	</interceptors> 
 	
 	<context:component-scan base-package="com.web.controller" />
 	<context:component-scan base-package="com.web.dao" />
