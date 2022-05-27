@@ -1,13 +1,20 @@
 /**
  * 
  */
- 
-	var login_result = "${login_result}";
-	if(login_result=="fail") {
-		alert("아이디 혹은 비밀번호가 틀렸습니다.");
-	}
-
 	$(document).ready(function() {
+		
+		$("#login_button").click(function() {
+			if($('input[name="id"]').val() == "") {
+				alert("아이디를 입력해주세요.");
+				$('input[name="id"]').focus();
+				return false;
+			} else if($('input[name="pw"]').val() == "") {
+				alert("비밀번호를 입력해주세요.");
+				$('input[name="pw"]').focus();
+				return false;
+			}
+		});
+		
 		$("#id_find").click(function() {	
 			var id_modal = "<div class='find_modal'>";
 				id_modal +=	"<form class='find_content'>";
@@ -51,12 +58,18 @@
 					url:"id_search.do?name="+name+"&ph1="+ph1+"&ph2="+ph2+"&ph3="+ph3,
 					success: function(result) {
 						var res = "<br>";
+						if(result=="") {
+							res += "<br>";
+							res += "<p>등록된 아이디가 없습니다.</p>"
+							res += "<br>";
+						} else {
 							res += "<p>회원님의 아이디는</p>";
 							res += "<br>";
 							res += "<p>"+result+"</p>";
 							res += "<br>";
 							res += "<p>입니다</p>"
 							res += "<br>";
+						}	
 						
 						$("#id_search_res").html(res);
 					}

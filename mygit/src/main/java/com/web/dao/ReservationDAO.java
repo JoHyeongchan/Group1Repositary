@@ -23,4 +23,8 @@ public class ReservationDAO {
 	public int insert(PostReservationVO vo) {
 		return sqlSession.insert(namespace+".insert", vo);
 	}
+	
+	public int stateUpdate(String res_id) {
+		return sqlSession.update(namespace+".stateUpdate", res_id);
+	}
 }

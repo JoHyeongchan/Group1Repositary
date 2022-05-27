@@ -39,6 +39,7 @@
 			return false;
 		}
 	});
+	
 	$(".rvisited").click(function() {
 		var rid = $(this).parent().parent().children(':first-child').text();
 		var text = $(this).val();
