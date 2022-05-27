@@ -5,7 +5,40 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 public class OffNowVO {
 	
 	private String exId,exCategory,exTitle,exTermStart,exTermend,exPlace,exContent,exAuthor,exHost,exImage;
+	private String prevId,nextId,prevTitle,nextTitle;
 	
+	public String getPrevId() {
+		return prevId;
+	}
+
+	public void setPrevId(String prevId) {
+		this.prevId = prevId;
+	}
+
+	public String getNextId() {
+		return nextId;
+	}
+
+	public void setNextId(String nextId) {
+		this.nextId = nextId;
+	}
+
+	public String getPrevTitle() {
+		return prevTitle;
+	}
+
+	public void setPrevTitle(String prevTitle) {
+		this.prevTitle = prevTitle;
+	}
+
+	public String getNextTitle() {
+		return nextTitle;
+	}
+
+	public void setNextTitle(String nextTitle) {
+		this.nextTitle = nextTitle;
+	}
+
 	int exHits,exNo,exPiece,exPrice;
 
 	public String getExId() {
