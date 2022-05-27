@@ -15,14 +15,16 @@ public class AdminInterceptor extends HandlerInterceptorAdapter{
 		HttpSession session=request.getSession();
 		String id=(String)session.getAttribute("id");
 
+		if(id==null) {
+			response.sendRedirect("http://localhost:9000/mygit/login.do");
+			return false;
+		}
 		if(id.equals("admin")) {
 			return true;
-		}else {
-			System.out.println(id);
+		}else {		
 			response.sendRedirect("http://localhost:9000/mygit/index.do");
 			return false;
 		}
-
 	}
 
 	

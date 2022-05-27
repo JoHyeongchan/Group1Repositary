@@ -62,11 +62,7 @@
 		<beans:ref bean="adminInterceptor"/>
 		</interceptor>
 		<interceptor>	
-		<mapping path="/admin/o*"></mapping>
-		<beans:ref bean="adminInterceptor"/>
-		</interceptor>
-		<interceptor>	
-		<mapping path="/admin/r*"></mapping>
+		<mapping path="/admin/*"></mapping>
 		<beans:ref bean="adminInterceptor"/>
 		</interceptor>
 		
@@ -113,6 +109,7 @@
 		
 	</interceptors> 
 	
+	<!-- Component Scan -->
 	<context:component-scan base-package="com.web.controller" />
 	<context:component-scan base-package="com.web.dao" />
 	
