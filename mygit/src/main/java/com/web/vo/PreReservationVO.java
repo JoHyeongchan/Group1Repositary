@@ -1,8 +1,14 @@
 package com.web.vo;
 
 public class PreReservationVO {
-	String rtitle, rimg, rdesc, rstate;
+	String res_id, rtitle, rimg, rdesc, rstate;
 
+	public String getRes_id() {
+		return res_id;
+	}
+	public void setRes_id(String res_id) {
+		this.res_id = res_id;
+	}
 	public String getRtitle() {
 		return rtitle;
 	}

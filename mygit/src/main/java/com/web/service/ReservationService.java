@@ -11,4 +11,6 @@ public interface ReservationService {
 	ArrayList<PreReservationVO> list();
 	
 	int insert(PostReservationVO vo);
+
+	int stateUpdate(String res_id);
 }
