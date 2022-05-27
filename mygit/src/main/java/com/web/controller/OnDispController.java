@@ -55,6 +55,11 @@ public class OnDispController {
 		ModelAndView mv=new ModelAndView();
 		String id=(String)session.getAttribute("id");
 		String mode="List";
+		
+		if(rpage==null) {
+			rpage=new String("1");
+		}
+		
 		Map<String, String> param= pageService.getPageResult(rpage,"digitalMovie",digitalMovieService);
 		
 		int startCount=Integer.parseInt( param.get("start"));

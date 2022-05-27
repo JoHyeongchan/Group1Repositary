@@ -16,7 +16,8 @@ public class DigitalMovieDAO {
 	
 	String namespace="mapper.digitalMv";
 	
-	public int insert(DigitalMovieVO vo) {
+	public int insert(Object obj) {
+		DigitalMovieVO vo=(DigitalMovieVO)obj;
 		vo.setCategory();
 		vo.setProgram();
 		return sqlSession.insert(namespace+".insert", vo);

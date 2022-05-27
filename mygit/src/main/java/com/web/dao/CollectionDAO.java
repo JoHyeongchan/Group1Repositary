@@ -17,7 +17,8 @@ public class CollectionDAO {
 	
 	String namespace="mapper.collection";
 	
-	public int insert(CollectionVO vo) {
+	public int insert(Object obj) {
+		CollectionVO vo=(CollectionVO) obj;
 		vo.setCategory();
 		return sqlSession.insert(namespace+".insert", vo);
 	}

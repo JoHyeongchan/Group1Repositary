@@ -17,8 +17,8 @@ public class FaqDAO {
 	
 	String namespace="mapper.faq";
 	
-	public int insert(FaqVO vo) {
-		
+	public int insert(Object obj) {
+		FaqVO vo=(FaqVO)obj;
 		return sqlSession.insert(namespace+".insert", vo);
 	}
 	

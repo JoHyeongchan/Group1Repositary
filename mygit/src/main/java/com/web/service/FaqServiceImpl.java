@@ -15,8 +15,7 @@ public class FaqServiceImpl  implements FaqService{
 	@Override
 	public int InsertRecord(Object obj) {
 		// TODO Auto-generated method stub
-		FaqVO vo=(FaqVO)obj;
-		return faqDao.insert(vo);
+		return faqDao.insert(obj);
 	}
 
 	@Override
@@ -42,7 +41,8 @@ public class FaqServiceImpl  implements FaqService{
 		// TODO Auto-generated method stub
 		return faqDao.delete(faId);
 	}
-
+	
+	@Override
 	public int getRecordCount(String faCategory) {
 		// TODO Auto-generated method stub
 		return faqDao.getCount(faCategory);
@@ -53,6 +53,31 @@ public class FaqServiceImpl  implements FaqService{
 		// TODO Auto-generated method stub
 		return faqDao.update(obj);
 	}
+
+	@Override
+	public List<Object> getRecordList(int startCount, int endCount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Object> getRecordList(int startCount, int endCount, String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getRecordCount(String searchtext, String searchcategory) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void updateHits(String Id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 }

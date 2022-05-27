@@ -37,6 +37,11 @@ public class QnaController {
 	public ModelAndView qnaList(String rpage) {
 		ModelAndView mv=new ModelAndView("/qna/qna_list");
 		String mode="list";
+		
+		if(rpage==null) {
+			rpage=new String("1");
+		}
+		
 		Map<String, String> param= pageService.getPageResult(rpage,"qna",qnaService);
 		
 		int startCount=Integer.parseInt( param.get("start"));
@@ -70,9 +75,11 @@ public class QnaController {
 	public ModelAndView noticeList(String rpage,String searchcategory,String searchtext,HttpSession session) {
 		
 		ModelAndView mv=new ModelAndView("/qna/qna_list");
-		
 		String id=(String)session.getAttribute("id");
 		String mode="search";
+		
+		
+		
 		Map<String, String> param= pageService.getPageResult(rpage, searchcategory,searchtext,"qna", qnaService);
 		
 		int startCount=Integer.parseInt( param.get("start"));

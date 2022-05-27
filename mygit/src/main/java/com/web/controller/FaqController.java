@@ -23,6 +23,7 @@ import com.google.gson.JsonObject;
 import com.web.service.FaqServiceImpl;
 import com.web.service.FileServiceImpl;
 import com.web.vo.FaqVO;
+import com.web.vo.NoticeVO;
 
 @Controller
 public class FaqController {
@@ -60,6 +61,9 @@ public class FaqController {
 		
 		for(FaqVO vo:list) {
 			JsonObject jobj=new JsonObject();
+			
+			String str=vo.getFaContent().replaceAll(System.getProperty("line.separator"), "<br>");
+			vo.setFaContent(str);
 			
 			jobj.addProperty("faId",vo.getFaId());
 			jobj.addProperty("faTitle",vo.getFaTitle());

@@ -38,6 +38,10 @@ public class CommentController {
 		String id=(String)session.getAttribute("id");
 		String mode="list";
 		
+		if(rpage==null) {
+			rpage="1";
+		}
+		
 		Map<String, String> param= pageService.getPageResult(rpage, "comment", dispCommentService);
 		
 		int startCount=Integer.parseInt( param.get("start"));

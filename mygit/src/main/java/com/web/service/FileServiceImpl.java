@@ -108,7 +108,6 @@ public class FileServiceImpl {
 
 			File newFile=new File(rootPath+vo.getCoSfile());
 			vo.getFormFile().transferTo(newFile);
-			System.out.println(rootPath);
 			
 		}
 	}
@@ -120,7 +119,6 @@ public class FileServiceImpl {
 
 			File newFile=new File(rootPath+vo.getqSfile());
 			vo.getFormFile().transferTo(newFile);
-			System.out.println(rootPath);
 			
 		}
 	}
@@ -133,7 +131,6 @@ public class FileServiceImpl {
 
 			File newFile=new File(rootPath+vo.getnSfile());
 			vo.getFormFile().transferTo(newFile);
-			System.out.println(rootPath);
 			
 		}
 	}
@@ -146,12 +143,10 @@ public class FileServiceImpl {
 
 			File newFile=new File(rootPath+vo.getCmSfile());
 			vo.getFormFile().transferTo(newFile);
-			System.out.println(rootPath);
 			
 		}
 	}
 	
-
 	public void deleteFile(String sfile, HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		if(sfile!="") {
@@ -164,11 +159,5 @@ public class FileServiceImpl {
 			}
 		}
 	}
-
-	
-
-	
-
-	
 
 }

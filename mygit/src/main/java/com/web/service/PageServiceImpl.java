@@ -5,10 +5,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.web.dao.CollectionDAO;
-import com.web.dao.DigitalMovieDAO;
-import com.web.vo.DigitalMovieVO;
-
 public class PageServiceImpl {
 	
 	@Autowired
@@ -49,7 +45,6 @@ public class PageServiceImpl {
 		}else if(serviceName.equals("qna")) {
 			qnaService=(QnaServiceImpl)service;
 			dbCount=qnaService.getRecordCount();
-
 			pageSize=10;
 		}else if(serviceName.equals("notice")) {
 			noticeService=(NoticeServiceImpl)service;
