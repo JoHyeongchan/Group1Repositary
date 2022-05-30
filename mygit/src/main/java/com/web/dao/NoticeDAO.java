@@ -1,6 +1,6 @@
 package com.web.dao;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,8 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.web.vo.NoticeVO;
-//import com.web.vo.QnaVO;
-import com.web.vo.QnaVO;
+
 
 public class NoticeDAO {
 

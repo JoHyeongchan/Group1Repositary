@@ -8,6 +8,94 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_list.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		
+		var progCount=0;
+		var cateCount=0;
+		var progTxt="";
+		var cateTxt="";
+		
+		$("#keywordSearch").click(function () {
+			$("#keywordForm").submit();
+		});
+		
+		$("#categorySelectForm").hide();
+		
+		$("#submenu").css("color","#eee");
+		
+		$(".listBtn").css("cursor","pointer")
+		$(".listBtn").first().css("color","#111")
+		$(".listBtn").first().css("text-decoration","underline");
+		
+		
+		$("#keywordMode").click(function(){
+			$("#keywordMode").css("color","#111");
+			$("#keywordMode").css("text-decoration","underline");
+			$("#categoryMode").css("color","#eee");
+			$("#categoryMode").css("text-decoration","none");
+			$("#categorySelectForm").hide();
+			$("#digitalForm").slideDown("fast");
+			
+		});
+		
+		$("#categoryMode").click(function(){
+			$("#keywordMode").css("color","#eee");
+			$("#keywordMode").css("text-decoration","none");
+			$("#categoryMode").css("color","#111");
+			$("#categoryMode").css("text-decoration","underline");
+			$("#categorySelectForm").slideDown("fast");
+			$("#digitalForm").hide();		
+		});
+		
+		$(".progBtn").click(function(){
+			if($(this).css("color")==="rgb(0, 0, 0)"){
+				$(this).css("background","black");
+				$(this).css("color","white");
+				$(".progBtn").not(this).css("background","white");
+				$(".progBtn").not(this).css("color","black");
+				
+				progTxt=$(this).text();
+			
+			}
+			else{
+				$(this).css("background","white");
+				$(this).css("color","black");
+				
+				cateTxt="";
+			}			
+		});
+		
+		$(".cateBtn").click(function(){
+			if($(this).css("color")==="rgb(0, 0, 0)"){
+				$(this).css("background","black");
+				$(this).css("color","white");
+				$(".cateBtn").not(this).css("background","white");
+				$(".cateBtn").not(this).css("color","black");
+				
+				cateTxt=$(this).text();
+				//cateCount=1;
+				}
+			else{
+				$(this).css("background","white");
+				$(this).css("color","black");
+				
+				cateTxt="";
+				
+				//cateCount=0;
+			}			
+		});
+		
+		
+		$("#categorySearch").click(function () {
+			
+			$("#searchprog").val(progTxt);
+			$("#searchcate").val(cateTxt);
+		});
+
+				
+	});
+</script>
 <style>
 
 .btnList{
@@ -41,6 +129,62 @@ a{
 	text-decoration:none;
 	color:#111;
 }
+
+#digitalForm{
+	clear:both;
+}
+
+#submenu{
+	text-indent: 40px;
+	font-size: 25px;
+	font-weight: bolder;
+}
+
+#selectArea{
+	display: flex;
+	position: relative;
+	width: 60%;	
+	background-color: #eee;
+	margin: 10px;
+	padding: 30px;
+	height: 350px;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+#categorySearch{
+	clear:both;
+	position: absolute;
+	bottom: 0px;
+	right:0px;
+	margin: 20px;
+	padding: 0px;
+}
+
+#categorySelTable{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+
+
+}
+
+#categorySelTable th{
+	width: 120px;
+}
+
+.selBtn{
+	display: inline-block;
+	background: white;
+	font-size: 18px;
+	height: 30px;
+	padding : 6px;
+	border: 1px solid black;
+	border-radius: 20px;
+	margin: 5px;
+	float:left;
+	cursor:pointer;
+}
 </style>
 <title>Insert title here</title>
 </head>
@@ -49,11 +193,44 @@ a{
 
 <section>
 		<h1>디지털동영상</h1>
+		<div id="submenu">
+		<span class="listBtn" id="keywordMode" >키워드 검색</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="listBtn" id="categoryMode" >조건 검색</span>
+		</div>
 		<div id="digitalForm">
-		<form method="get" action="digitalMovSearch.do" class="content_layout" enctype="multipart/form-data">
+		<form method="get" action="digitalMovSearch.do" class="content_layout" enctype="multipart/form-data" id="keywordForm">
 		 	<input type="hidden" name="rpage" value="1">
 			<input type="text" placeholder="검색어를 입력해주세요" id=searchBar name="searchtext">
-			<button type="submit" class="btnCollectionSearch">검색</button>						
+			<button type="button" class="btnCollectionSearch" id="keywordSearch">검색</button>						
+		</form>
+		</div>
+		<div id="categorySelectForm">
+		<form method="get" action="digitalMovSearch.do" class="content_layout" enctype="multipart/form-data" id="categoryForm">
+		 	<input type="hidden" name="rpage" value="1">
+			<input type="hidden" name="searchprog" value="" id="searchprog">
+			<input type="hidden" name="searchcate" value="" id="searchcate">
+			
+			<div id="selectArea">
+			<table align="left" id="categorySelTable">
+			<tr><th>프로그램</th>
+			<td><div class="selBtn progBtn">관장이 들려주는 소장품 이야기</div>
+			<div class="selBtn progBtn">큐레이터 전시 해설</div>
+			<div class="selBtn progBtn" id="btnTest">강의&amp;학술토론</div>
+			<div class="selBtn progBtn">작품&amp;작가</div>
+			<div class="selBtn progBtn">미술관 소식</div>
+			<div class="selBtn progBtn">오늘, 이 작품</div></td>
+			
+			</tr>
+			<tr><th>분류</th>
+			<td><div class="selBtn cateBtn">전시연계</div>
+			<div class="selBtn cateBtn">전시감상</div>
+			<div class="selBtn cateBtn">진로탐색</div>
+			<div class="selBtn cateBtn">보존과학</div>
+			<div class="selBtn cateBtn">작가인터뷰</div>
+			<div class="selBtn cateBtn">전시소개</div></td>
+			</tr>
+			</table>
+			<button type="button" class="btnCollectionSearch" id="categorySearch">검색</button>	
+			</div>								
 		</form>
 		</div>
 		<c:if test="${id =='admin'}">
