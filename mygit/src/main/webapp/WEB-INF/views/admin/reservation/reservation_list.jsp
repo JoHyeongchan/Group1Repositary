@@ -27,7 +27,10 @@
 					<td><label><input type='radio' name='rtime' value='10:00 ~ 12:00'> 10:00 ~ 12:00 </label>&nbsp;&nbsp;&nbsp;
 					<label><input type='radio' name='rtime' value='13:00 ~ 18:00'> 13:00 ~ 18:00 </label></td>
 				</tr>
-				<tr><th>방문 인원	</th><td><input type="number" name="rnum" id="rnum"></td></tr>
+				<tr><th>방문 인원	</th>
+					<td><input type="number" name="startrnum" id="rnum1"> ~ 
+						<input type="number" name="endrnum" id="rnum2"></td>
+				</tr>
 			</table>
 			<br><br>
 			<div>

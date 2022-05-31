@@ -35,9 +35,6 @@
 	#res_search tr td input[type=text] {
 		width: 90%;
 	}
-	#res_search tr td input[type=number] {
-		width: 90%;
-	}
 	form>div>button {
 		width: 90px; height: 40px;
 		background-color: black;

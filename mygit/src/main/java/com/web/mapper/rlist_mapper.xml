@@ -36,8 +36,11 @@
 			<if test="rtime != ''">
 				and rtime = #{rtime}
 			</if>
-			<if test="rnum != 0">
-				and rnum = #{rnum}
+			<if test="startrnum != 0">
+				and rnum &gt;= #{startrnum}
+			</if>
+			<if test="endrnum != 0">
+				and rnum &lt;= #{endrnum}
 			</if>
 		</where>
 		order by rdate desc

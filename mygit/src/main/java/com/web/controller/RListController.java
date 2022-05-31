@@ -30,13 +30,14 @@ public class RListController {
 	}
 	
 	@RequestMapping(value="/admin/rsearch.do", method=RequestMethod.GET)
-	public ModelAndView rsearch(String id, String rtitle, String startdate, String enddate, String rtime, int rnum) {
+	public ModelAndView rsearch(String id, String rtitle, String startdate, String enddate, String rtime, 
+			int startrnum, int endrnum) {
 		ModelAndView mv = new ModelAndView();
 		
 		if(rtime == null) {rtime = "";}
 		
 		ArrayList<PostReservationVO> list = (ArrayList<PostReservationVO>) 
-			rlistService.getRList(id, rtitle, startdate, enddate, rtime, rnum);
+			rlistService.getRList(id, rtitle, startdate, enddate, rtime, startrnum, endrnum);
 		
 		mv.addObject("list", list);
 		mv.setViewName("admin/reservation/reservation_list");

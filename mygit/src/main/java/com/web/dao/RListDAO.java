@@ -27,7 +27,7 @@ public class RListDAO {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public List<PostReservationVO> list(
-		String id, String rtitle, String startdate, String enddate, String rtime, int rnum) {
+String id, String rtitle, String startdate, String enddate, String rtime, int startrnum, int endrnum) {
 		
 		Map param = new HashMap<String, String>();
 		param.put("id", id);
@@ -35,7 +35,8 @@ public class RListDAO {
 		param.put("startdate", startdate);
 		param.put("enddate", enddate);
 		param.put("rtime", rtime);
-		param.put("rnum", rnum);
+		param.put("startrnum", startrnum);
+		param.put("endrnum", endrnum);
 		
 		return sqlSession.selectList(namespace+".list_search", param);
 	}
