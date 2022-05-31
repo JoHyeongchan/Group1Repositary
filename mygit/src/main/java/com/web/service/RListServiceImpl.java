@@ -26,8 +26,8 @@ public class RListServiceImpl implements RListService {
 	}
 	@Override
 	public List<PostReservationVO> getRList(
-			String id, String rtitle, String startdate, String enddate, String rtime, int rnum) {
-		return rlistDAO.list(id, rtitle, startdate, enddate, rtime, rnum);
+			String id, String rtitle, String startdate, String enddate, String rtime, int startrnum, int endrnum) {
+		return rlistDAO.list(id, rtitle, startdate, enddate, rtime, startrnum, endrnum);
 	}
 	@Override
 	public int cancelReservation(String rid) {

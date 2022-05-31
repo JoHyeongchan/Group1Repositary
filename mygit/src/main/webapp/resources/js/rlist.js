@@ -4,9 +4,13 @@
  
  $(document).ready(function() {
 	$("#search").click(function() {
-		var rnum = $("#rnum").val();
-		if(rnum == '') {
-			$("#rnum").val(0);
+		var rnum1 = $("#rnum1").val();
+		var rnum2 = $("#rnum2").val();
+		if(rnum1 == '') {
+			$("#rnum1").val(0);
+		}
+		if(rnum2 == '') {
+			$("#rnum2").val(0);
 		}
 	});
 	

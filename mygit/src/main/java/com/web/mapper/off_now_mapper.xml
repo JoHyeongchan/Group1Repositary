@@ -47,18 +47,18 @@
  	<update id="update" parameterType="com.web.vo.OffNowVO">
 	<choose>
 		<when test="exImage!=null">
- 		update offnow set exTitle=#{exTitle}, exUrl=#{dmUrl}, dmFile=#{dmFile},dmSfile=#{dmSfile}
- 		,dmProgram=#{dmProgram},dmCategory=#{dmCategory},dmContent=#{dmContent}
- 		 where dmid=#{dmId}</when>
+ 		update offnow set exTitle=#{exTitle}, exImage=#{exImage}
+ 		,exCategory=#{exCategory},exContent=#{exContent}
+ 		 where exid=#{exId}</when>
  		 <otherwise>
- 		 update digitalMovie set dmTitle=#{dmTitle}, dmUrl=#{dmUrl}
- 		,dmProgram=#{dmProgram},dmCategory=#{dmCategory},dmContent=#{dmContent}
- 		 where dmid=#{dmId}
+ 		 update offNow set exTitle=#{exTitle}
+ 		,exCategory=#{exCategory},exContent=#{exContent}
+ 		 where exid=#{exId}
  		 </otherwise>
  	</choose>
  	</update>
  	
  	<update id="updateHit" parameterType="java.lang.String">
- 		update digitalMovie set dmhits=dmhits+1 where dmId=#{dmid}
+ 		update offnow set exhits=exhits+1 where exId=#{exid}
  	</update>
  </mapper>

@@ -13,7 +13,7 @@ public interface RListService {
 	public List<PostReservationVO> getRList1(String id);
 	
 	public List<PostReservationVO> getRList(
-		String id, String rtitle, String startdate, String enddate, String rtime, int rnum);
+		String id, String rtitle, String startdate, String enddate, String rtime, int startrnum, int endrnum);
 	
 	public int cancelReservation(String rid);
 	
