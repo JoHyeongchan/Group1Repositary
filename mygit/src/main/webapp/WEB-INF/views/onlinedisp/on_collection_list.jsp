@@ -8,18 +8,54 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_list.css">
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+	var cateTxt="";
+	
+	$(".colCatSelBtn").click(function(){
+		if($(this).css("color")==="rgb(0, 0, 0)"){
+			$(this).css("background","black");
+			$(this).css("color","white");
+			$(".colCatSelBtn").not(this).css("background","white");
+			$(".colCatSelBtn").not(this).css("color","black");
+			
+			cateTxt=$(this).text();
+			//cateCount=1;
+			}
+		else{
+			$(this).css("background","white");
+			$(this).css("color","black");
+			
+			cateTxt="";
+			
+			//cateCount=0;
+		}			
+	});
+});
+</script>
 <style>
-.digitalColBox{
-	margin-left:4%;
-	margin-right: 4%;
+.colCatSelBtn{
+	display: inline-block;
+	background: white;
+	font-size: 13px;
+	font-weight:bolder;
+	height: 30px;
+	padding-top:9px;
+	border: 1px solid black;
+	border-radius: 20px;
+	margin: 5px;
+	float:left;
+	width: 80px;
+	cursor:pointer;
+	text-align: center;
 }
 
-.imgArea{
-	display: flex; 
-	justify-content:center;
-	height:200px;
+.cateBtnZone{
+	clear:both;
+	
 }
-
 </style> 
 
 </head>
@@ -27,15 +63,29 @@
 <jsp:include page="../header.jsp"></jsp:include>
 <section>
 		<h1>소장품</h1>
-		<div id="digitalForm">
-		<form method="get" action="collectionSearch.do">
+		<div id="digitalForm" >
+		<form method="get" action="collectionSearch.do" id="keywordMode">
 			<input type="hidden" value="1" name="rpage">
 			<input type="text" placeholder="검색어를 입력해주세요" id=searchBar name="searchtext">
 			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>			
 		</form>
+		<form method="get" action=collectionCategorySearch.do>
+		<div id="cateBtnZone">
+		<div class="colCatSelBtn">한국화</div>
+		<div class="colCatSelBtn">회화</div>
+		<div class="colCatSelBtn">조각</div>
+		<div class="colCatSelBtn">공예</div>
+		<div class="colCatSelBtn">뉴미디어</div>
+		<div class="colCatSelBtn">건축</div>
+		<div class="colCatSelBtn">디자인</div>
+		<div class="colCatSelBtn">드로잉/판화</div>
+		<div class="colCatSelBtn">사진</div>
+		<div class="colCatSelBtn">서예</div>
+		</div>
+		</form>
 		</div>
 		<c:if test="${id =='admin'}">
-		<div id="btnArea">
+		<div id="btnArea"  style="border: 1px black solid;">
 		<button class="btnList" onclick="location.href='collectionWrite.do'">등록</button>
 		</div>
 		</c:if>		
@@ -54,7 +104,8 @@
 						<span class="itemYear">${vo.coYear }</span>
 					</div>
 				</td>
-				</c:forEach><script>				
+				</c:forEach>
+				<script>				
 					var divLast=${divLast};
 					var pageCount=${pageCount};
 					var reqPage=${reqPage};

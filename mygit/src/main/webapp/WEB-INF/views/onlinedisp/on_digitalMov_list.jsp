@@ -96,96 +96,6 @@
 				
 	});
 </script>
-<style>
-
-.btnList{
-	float:right;
-	margin-right: 40px;
-	height: 50px;
-	color:white;
-	background-color: black;
-	border-radius: 25px;
-	width: 150px; font-size: 20px;
-}
-
-#digitalForm{
-	float:left;
-	width: 45%;
-}
-
-#btnArea{
-	float:right;
-	width:45%;
-	padding: 10px;
-}
-
-.imgArea{
-	display: flex; 
-	justify-content:center;
-	height:200px;
-}
-
-a{
-	text-decoration:none;
-	color:#111;
-}
-
-#digitalForm{
-	clear:both;
-}
-
-#submenu{
-	text-indent: 40px;
-	font-size: 25px;
-	font-weight: bolder;
-}
-
-#selectArea{
-	display: flex;
-	position: relative;
-	width: 60%;	
-	background-color: #eee;
-	margin: 10px;
-	padding: 30px;
-	height: 350px;
-	border-radius: 10px;
-	border: 1px solid black;
-}
-
-#categorySearch{
-	clear:both;
-	position: absolute;
-	bottom: 0px;
-	right:0px;
-	margin: 20px;
-	padding: 0px;
-}
-
-#categorySelTable{
-	position: absolute;
-	top: 10px;
-	left: 10px;
-
-
-}
-
-#categorySelTable th{
-	width: 120px;
-}
-
-.selBtn{
-	display: inline-block;
-	background: white;
-	font-size: 18px;
-	height: 30px;
-	padding : 6px;
-	border: 1px solid black;
-	border-radius: 20px;
-	margin: 5px;
-	float:left;
-	cursor:pointer;
-}
-</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -204,7 +114,7 @@ a{
 		</form>
 		</div>
 		<div id="categorySelectForm">
-		<form method="get" action="digitalMovSearch.do" class="content_layout" enctype="multipart/form-data" id="categoryForm">
+		<form method="get" class="content_layout" enctype="multipart/form-data" id="categoryForm">
 		 	<input type="hidden" name="rpage" value="1">
 			<input type="hidden" name="searchprog" value="" id="searchprog">
 			<input type="hidden" name="searchcate" value="" id="searchcate">

@@ -6,8 +6,93 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/usergal/usergal_main_list.css">
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#modalOpenBtn").click(function () {
+			$("#modalBackground").css("display","block");
+		});
+		
+		$("#modalCloseBtn").click(function () {
+			$("#modalBackground").css("display","none");
+		});
+		
+	});
+</script>
+<style type="text/css">
+#formArea{
+	float:left;
+	border: 1px black solid;
+	width: 70%
+}
 
-<script type="text/javascript"></script>
+#btnArea{
+	float:right;
+	position: relative;
+	border: 1px black solid;
+	width: 20%;
+	height: 100px;
+}
+
+#modalOpenBtn{
+position: absolute;
+right: 0px;
+bottom: 20px;
+width: 180px;	
+height: 50px;
+color:white;
+background-color: black;
+border-radius: 25px;
+width: 150px; font-size: 20px; 
+margin:10px;
+
+}
+
+#modalBackground{
+	position: fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.4);
+	display:none;
+}
+
+#modalArea{
+	position:fixed;
+	left: 35%;
+	top: 33%;
+	width: 30%;
+	height: 34%;
+	display: block;
+	background-color: white;
+	padding: 50px;
+}
+
+#modalCloseBtn{
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	width: 180px;	
+	height: 50px;
+	color:white;
+	background-color: black;
+	border-radius: 25px;
+	width: 150px; font-size: 20px; 
+	margin: 20px;
+}
+
+#createBtn{
+	width: 180px;	
+	height: 50px;
+	color:white;
+	background-color: black;
+	border-radius: 25px;
+	width: 150px; font-size: 20px; 
+	margin:10px;
+}
+</style>
 </head>
 <body>
 	
@@ -16,14 +101,30 @@
 	
 	<section>
 		<h1>이용자갤러리</h1>
+		<div id="formArea">
 		<form id="colForm">
-			<input type="text" placeholder="컬렉션명을 입력해주세요." id=searchBar name="searchtext">
-			<button type="button" class=btnCalModal>
+			<input type="text" placeholder="컬렉션명을 입력해주세요." id="searchBar" name="searchtext">
+			<button type="button" class="btnCalModal">
 				<img src="http://localhost:9000/mygit/resources/images/usergal/search1.PNG">
 			</button>
 			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>
-		</form>
+		</form></div>
+		<div id="btnArea">
+		<button id="modalOpenBtn">마이갤러리 생성</button>
+		</div>
+	
+		<div id="modalBackground">
+		<div id="modalArea">
+		<h2 style="margin: 20px;">갤러리명을 입력하세요.</h2>
 		<hr>
+		<form id="createForm">
+		<input type="text" placeholder="컬렉션명을 입력해주세요." id="searchBar" name="searchtext">
+		<button type="button" onclick="" id="createBtn">갤러리 생성</button>
+		</form>
+		<button id="modalCloseBtn">창닫기</button>
+		</div>
+		</div>
+		<hr style="clear:both;">
 		<table>
 			<tr>
 				<td onclick="location.href='collectionList.do'"
