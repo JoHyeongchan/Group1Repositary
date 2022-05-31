@@ -11,11 +11,75 @@
 <script>
 	$(document).ready(function(){
 		
+		var contentCount=8;
+		var slideMaxCount=5;
+		var slideCurCount=0;
+		var width=35 * contentCount+"%";
+		var position=32.7*slideCurCount+"%";
+		
 		$("#itemList").css("border-bottom","2px black solid");
 		$("#digigalList").css("color","#eee");
+		
+		$("#slides").css("width",width);
+		
+		$("#leftArrow").click(function name() {
+			if(slideCurCount<5){
+			slideCurCount++;
+			position=-100/3*slideCurCount+"%";
+			$("#slides").css("left",position);}
+		});
+		
+		$("#rightArrow").click(function name() {
+			if(slideCurCount>0){
+			slideCurCount--;
+			position=-100/3*slideCurCount+"%";
+			$("#slides").css("left",position);}
+			
+		});
+	
 	});
 	
 </script>
+<style type="text/css">
+#slideWrapper{
+	position: relative;
+	width: 97.6%;
+	height: 450px;
+	overflow: hidden;
+	padding: 0;
+}
+
+#slides{
+	position:absolute;
+	left:0;
+	height: 450px;
+}
+.itemBox{
+	float:left;
+}
+
+.arrow{
+	position: absolute;
+	top: 150px;
+	cursor: pointer;
+	z-index: 2;
+	padding: 0px;
+	margin: 0px;
+}
+
+.arrow img{
+	width: 50px;
+	height: 50px;
+}
+#leftArrow{
+	left: 0px;
+	transform:rotate(180deg);
+}
+
+#rightArrow{
+	right: 10px;
+}
+</style>
 </head>
 
 <body>
@@ -33,23 +97,44 @@
 	<span onclick="location.href='collectionList.do" class="subMenu" id="itemList">소장품</span>
 	<span onclick="location.href='galleryList.do'" class="subMenu" id="digigalList">디지털미술관</span>
 </h2>
-<table>
-	<tr align="center">
-	<td onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
+<div id="slideWrapper">
+	<div id="leftArrow" class="arrow"><img src="http://localhost:9000/mygit/resources/images/right.png"></div>
+	<div id="rightArrow" class="arrow"><img src="http://localhost:9000/mygit/resources/images/right.png"></div>
+	<div id="slides">
+	<div onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">봄 풍경<br>오지호</div>
-	</td>
-	<td onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
+	</div>
+	<div onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_1.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">효자리 살구꽃<br>이동훈</div>
-	</td>
-	<td onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
+	</div>
+	<div onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
 	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_2.PNG" style="width:250px; height:250px"></div>
 	<div class="itemDesc">꽃을 든 여인<br>천경자</div>
-	</td>
-	</tr>
-	<tr><td colspan="3"><hr></td></tr>
-</table>
+	</div>
+	<div onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_2.PNG" style="width:250px; height:250px"></div>
+	<div class="itemDesc">꽃을 든 여인<br>천경자</div>
+	</div>
+	<div onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_2.PNG" style="width:250px; height:250px"></div>
+	<div class="itemDesc">꽃을 든 여인<br>천경자</div>
+	</div>
+	<div onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_2.PNG" style="width:250px; height:250px"></div>
+	<div class="itemDesc">꽃을 든 여인<br>천경자</div>
+	</div>
+	<div onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_2.PNG" style="width:250px; height:250px"></div>
+	<div class="itemDesc">꽃을 든 여인<br>천경자</div>
+	</div>
+	<div onclick="location.href='../online/collectionInfo.do'" class="itemBox" style="cursor: pointer;">
+	<div align="center" class="itemImg"><img src="http://localhost:9000/mygit/resources/images/usergal/user2_2.PNG" style="width:250px; height:250px"></div>
+	<div class="itemDesc">꽃을 든 여인<br>천경자</div>
+	</div>
+	</div>
+</div>
 </section>
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>
