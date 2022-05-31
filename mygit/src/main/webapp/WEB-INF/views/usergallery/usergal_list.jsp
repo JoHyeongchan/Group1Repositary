@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,19 +19,34 @@
 			$("#modalBackground").css("display","none");
 		});
 		
+		$("#createBtn").click(function () {
+			var galleryTitle=$("#titleInputBar").val();
+			var galleryUserId="${id}";
+			
+			$.ajax({
+				url:"/mygit/usergal/usergalCreate.do",
+				type:"POST",
+				dataType:"json",
+				data:{"galleryTitle":galleryTitle,"galleryUserId":galleryUserId},
+				success:function(result){
+					alert(result);
+				}
+			});
+		});
+		
 	});
 </script>
 <style type="text/css">
 #formArea{
 	float:left;
-	border: 1px black solid;
+	
 	width: 70%
 }
 
 #btnArea{
 	float:right;
 	position: relative;
-	border: 1px black solid;
+	
 	width: 20%;
 	height: 100px;
 }
@@ -109,17 +125,18 @@ margin:10px;
 			</button>
 			<button type="submit" onclick="" class="btnCollectionSearch">검색</button>
 		</form></div>
+		<c:if test="${id!=null }">
 		<div id="btnArea">
 		<button id="modalOpenBtn">마이갤러리 생성</button>
 		</div>
-	
+		</c:if>
 		<div id="modalBackground">
 		<div id="modalArea">
 		<h2 style="margin: 20px;">갤러리명을 입력하세요.</h2>
 		<hr>
 		<form id="createForm">
-		<input type="text" placeholder="컬렉션명을 입력해주세요." id="searchBar" name="searchtext">
-		<button type="button" onclick="" id="createBtn">갤러리 생성</button>
+		<input type="text" placeholder="컬렉션명을 입력해주세요." id="titleInputBar" name="searchtext">
+		<button type="button" id="createBtn">갤러리 생성</button>
 		</form>
 		<button id="modalCloseBtn">창닫기</button>
 		</div>

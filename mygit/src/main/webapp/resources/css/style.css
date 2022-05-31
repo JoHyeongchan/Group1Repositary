@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+}
+
+span{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #263343;
+    padding: 8px 12px;
+}
+
+.navbar_menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.navbar_menu li{
+    padding: 22px 30px;
+    font-size: 30px;
+}
+.navbar_menu li>span{
+    cursor: pointer;
+}
+.navbar_links{
+    list-style: none;
+    display: flex;
+    color: white;
+    align-items: flex-end;
+}
+.navbar_links li{
+    padding: 10px 12px;
+    cursor: pointer;
+}
+.navbar_content{
+    margin-top: 50px;
+    background-color: #263343;
+    flex-direction: column; 
+    font-size: 20px;
+
+}
+.navbar_content>a{
+    justify-content: center;
+    display: flex;
+}
+.Exhibition{
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+.Reservation{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+li a{
+    color: lightgray;
+    text-decoration: none;
+    padding-top: 7px;
+}

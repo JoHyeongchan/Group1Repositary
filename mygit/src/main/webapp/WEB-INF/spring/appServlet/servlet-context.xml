@@ -35,6 +35,7 @@
 	<beans:bean class="com.web.dao.RListDAO" id="rlistDAO"></beans:bean>
 	<beans:bean class="com.web.dao.ReservationDAO" id="reservationDAO"></beans:bean>
 	<beans:bean class="com.web.dao.OffNowDAO" id="offnowDAO"></beans:bean>
+	<beans:bean class="com.web.dao.UsergalFrameDAO" id="usergalFrameDao"></beans:bean>
 	
 	<!-- Service 등록 -->
 	<beans:bean id="digitalMovieService" class="com.web.service.DigitalMovieServiceImpl"></beans:bean>
@@ -49,6 +50,7 @@
 	<beans:bean class="com.web.service.ReservationServiceImpl" id="reservationService"></beans:bean>
 	<beans:bean id="dispCommentService" class="com.web.service.DispCommentServiceImpl"></beans:bean>
 	<beans:bean id="offnowService" class="com.web.service.OfflineDispServiceImpl"></beans:bean>
+	<beans:bean id="usergalFrameService" class="com.web.service.UsergalFrameServiceImpl"></beans:bean>
 	
 	
 	<!-- multipartResolver 등록-->
