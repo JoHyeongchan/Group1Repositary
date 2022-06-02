@@ -4,7 +4,9 @@
     
  <mapper namespace="mapper.offnowMv">
  	<insert id="insert" parameterType="com.web.vo.OffNowVO">
- 	insert into offNow values('ex'||LPAD(offnowSeq.nextVal,4,0),LPAD(offnowSeq.nextVal,4,0),#{exCategory},#{exTitle},#{exTermStart},#{exTermEnd},#{exPlace},0,#{exContent},#{exAuthor},#{exHost},#{exPrice},#{exImage})
+ 	insert into offNow values('ex'||LPAD(offnowSeq.nextVal,4,0),LPAD(offnowSeq.nextVal,4,0),
+	#{exCategory},#{exTitle},TO_DATE(#{exTermStart},'yyyy-mm-dd'),TO_DATE(#{exTermEnd},'yyyy-mm-dd'),
+	#{exPlace},0,#{exContent},#{exAuthor},#{exHost},#{exPrice},#{exPiece},#{exFile},#{exSfile})
  	</insert>
  	
  	<select id="count" resultType="int">
@@ -12,9 +14,9 @@
  	</select>
  	
  	<select id="selectList" parameterType="map" resultType="com.web.vo.OffNowVO">
- 	select exno,exid, extitle, exImage,exTermStart,exTermEnd,exhits from
- 	(select rownum rno,exid, extitle, exImage, to_char(extermstart,'yyyy-mm-dd')extermstart, to_char(extermend,'yyyy-mm-dd')extermend,exhits from
-(select exno, exid, extitle, exImage,exTermStart,exTermEnd,exhits from offnow order by exTermStart desc))where rno between #{start} and #{end}
+select rno,exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from(
+select rownum rno,exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from(
+select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from offnow order by exno desc))where rno between #{start} and #{end}
 
 
  	</select>

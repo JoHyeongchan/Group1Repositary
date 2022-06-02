@@ -1,11 +1,34 @@
 package com.web.vo;
 
+import java.util.List;
+
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class OffNowVO {
 	
-	private String exId,exCategory,exTitle,exTermStart,exTermend,exPlace,exContent,exAuthor,exHost,exImage;
-	private String prevId,nextId,prevTitle,nextTitle;
+	private String exId,exCategory,exTitle,exTermStart,exTermEnd,exPlace,exContent,exAuthor,exHost;
+	int exHits,exNo,exPiece,exPrice,rno;
+	
+	public int getExPrice() {
+		return exPrice;
+	}
+
+	public void setExPrice(int exPrice) {
+		this.exPrice = exPrice;
+	}
+
+	public int getRno() {
+		return rno;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+
+	private List<CommonsMultipartFile> formFiles;
+	private String prevId,nextId,prevTitle,nextTitle,exFile,exSfile;
+	private String sFileArr[]=new String[4];
+	private String fileArr[]=new String[4];
 	
 	public String getPrevId() {
 		return prevId;
@@ -39,7 +62,7 @@ public class OffNowVO {
 		this.nextTitle = nextTitle;
 	}
 
-	int exHits,exNo,exPiece,exPrice;
+	
 
 	public String getExId() {
 		return exId;
@@ -73,12 +96,14 @@ public class OffNowVO {
 		this.exTermStart = exTermStart;
 	}
 
-	public String getExTermend() {
-		return exTermend;
+	
+
+	public String getExTermEnd() {
+		return exTermEnd;
 	}
 
-	public void setExTermend(String exTermend) {
-		this.exTermend = exTermend;
+	public void setExTermEnd(String exTermEnd) {
+		this.exTermEnd = exTermEnd;
 	}
 
 	public String getExPlace() {
@@ -113,14 +138,6 @@ public class OffNowVO {
 		this.exHost = exHost;
 	}
 
-	public String getExImage() {
-		return exImage;
-	}
-
-	public void setExImage(String exImage) {
-		this.exImage = exImage;
-	}
-
 	public int getExHits() {
 		return exHits;
 	}
@@ -145,11 +162,52 @@ public class OffNowVO {
 		this.exPiece = exPiece;
 	}
 
-	public int getExPrice() {
-		return exPrice;
+	public List<CommonsMultipartFile> getFormFiles() {
+		return formFiles;
 	}
 
-	public void setExPrice(int exPrice) {
-		this.exPrice = exPrice;
+	public void setFormFiles(List<CommonsMultipartFile> formFiles) {
+		this.formFiles = formFiles;
 	}
+
+	public String getExFile() {
+		return exFile;
+	}
+
+	public void setExFile(String exFile) {
+		this.exFile = exFile;
+	}
+
+	public String getExSfile() {
+		return exSfile;
+	}
+
+	public void setExSfile(String exSfile) {
+		this.exSfile = exSfile;
+	}
+
+	public String[] getsFileArr() {
+		sFileArr=exSfile.split(", ");
+		return sFileArr;
+	}
+
+	public void setsFileArr(String[] sFileArr) {
+		this.sFileArr = sFileArr;
+	}
+
+	public String[] getFileArr() {
+		fileArr=exFile.split(", ");
+		return fileArr;
+	}
+
+	public void setFileArr(String[] fileArr) {
+		this.fileArr = fileArr;
+	}
+	
+	
+	
+
+	
+	
+	
 }

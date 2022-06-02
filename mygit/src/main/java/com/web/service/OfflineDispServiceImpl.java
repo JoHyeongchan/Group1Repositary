@@ -2,18 +2,25 @@ package com.web.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.web.dao.OffNowDAO;
+
 public class OfflineDispServiceImpl implements OfflineDispService{
 
+	@Autowired
+	OffNowDAO offnowDAO;
+	
 	@Override
 	public int InsertRecord(Object obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return offnowDAO.insert(obj);
 	}
 
 	@Override
 	public int getRecordCount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return offnowDAO.getCount();
 	}
 
 	@Override
@@ -31,7 +38,7 @@ public class OfflineDispServiceImpl implements OfflineDispService{
 	@Override
 	public List<Object> getRecordList(int startCount, int endCount) {
 		// TODO Auto-generated method stub
-		return null;
+		return offnowDAO.select(startCount, endCount);
 	}
 
 	@Override

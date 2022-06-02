@@ -22,6 +22,9 @@ public class PageServiceImpl {
 	@Autowired
 	DispCommentServiceImpl dispCommentService;
 	
+	@Autowired
+	OfflineDispServiceImpl offnowService;
+	
 	public Map<String, String> getPageResult(String rpage ,String serviceName,ObjectService service){
 		
 		Map<String, String> param=new HashMap<String, String>();
@@ -54,6 +57,10 @@ public class PageServiceImpl {
 			dispCommentService=(DispCommentServiceImpl)service;
 			dbCount=dispCommentService.getRecordCount();
 			pageSize=10;
+		}else if(serviceName.equals("offNow")) {
+			offnowService=(OfflineDispServiceImpl)service;
+			dbCount=offnowService.getRecordCount();
+			pageSize=6;
 		}
 		
 		//총 페이지 수 계산

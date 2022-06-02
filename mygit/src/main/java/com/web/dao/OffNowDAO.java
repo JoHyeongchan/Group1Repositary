@@ -17,10 +17,13 @@ public class OffNowDAO {
 	
 	String namespace="mapper.offnowMv";
 	
-	/*
-	 * public int insert(OffNowVO vo) { vo.setCategory(); vo.setProgram(); return
-	 * sqlSession.insert(namespace+".insert", vo); }
-	 */
+	
+	public int insert(Object obj) {
+		OffNowVO vo=(OffNowVO)obj;
+		return sqlSession.insert(namespace+".insert", vo);
+	}
+	  
+	 
 	
 	public int getCount() {
 		return sqlSession.selectOne(namespace+".count");
@@ -71,6 +74,8 @@ public class OffNowDAO {
 		
 		return sqlSession.selectList(namespace+".selectListSearch",param);
 	}
+
+	
 
 	
 }

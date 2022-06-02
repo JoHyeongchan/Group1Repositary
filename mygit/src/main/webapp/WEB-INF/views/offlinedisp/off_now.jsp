@@ -17,6 +17,7 @@
 			<form id="searchForm">
 				<input type="text" placeholder="작품명 또는 작가명을 검색해주세요." id="searchbar">
 				<button type="submit" id="searchbutton">검색</button>
+				<button type="button" onclick="location.href='/mygit/offDispWrite.do'" style="cursor:pointer"  class="category">등록</button>
 			</form>
 			</div>
 			<hr>

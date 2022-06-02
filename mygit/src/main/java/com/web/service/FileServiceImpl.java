@@ -10,6 +10,7 @@ import com.web.vo.CollectionVO;
 import com.web.vo.DigitalMovieVO;
 import com.web.vo.DispCommentVO;
 import com.web.vo.NoticeVO;
+import com.web.vo.OffNowVO;
 import com.web.vo.QnaVO;
 
 public class FileServiceImpl {
@@ -71,6 +72,38 @@ public class FileServiceImpl {
 			vo.setnSfile(sfile);
 		}	
 		
+		return vo;
+	}
+	
+	public OffNowVO fileCheck(OffNowVO vo) {
+		// TODO Auto-generated method stub
+		String file="";
+		String sfile="";
+		String sfileArr[]=new String[4];
+		String fileArr[]=new String[4];
+		
+		if(vo.getFormFiles().size()!=0) {
+			for(int i=0;i<vo.getFormFiles().size();i++) {
+				String fileName="";
+				String sFileName="";
+				
+				UUID uuid=UUID.randomUUID();
+				fileName=vo.getFormFiles().get(i).getOriginalFilename();
+				if(!fileName.equals("")) {
+					sFileName=fileName+"_"+uuid;
+				}
+				
+				file+=fileName+", ";
+				sfile+=sFileName+", ";
+				sfileArr[i]=sfile;
+				fileArr[i]=file;
+			}
+			vo.setExFile(file);
+			vo.setExSfile(sfile);
+			vo.setsFileArr(sfileArr);
+			vo.setFileArr(fileArr);
+		}
+	
 		return vo;
 	}
 	
@@ -147,6 +180,25 @@ public class FileServiceImpl {
 		}
 	}
 	
+	public void fileSave(OffNowVO vo, HttpServletRequest request) throws Exception {
+		// TODO Auto-generated method stub
+		if(vo.getFormFiles().size()!=0) {
+			
+			String rootPath= request.getSession().getServletContext().getRealPath("/");
+			rootPath+="resources\\upload\\";
+			
+			for(int i=0;i<vo.getFormFiles().size();i++) {
+				if(!vo.getFileArr()[i].equals("")) {
+				File newFile=new File(rootPath+vo.getsFileArr()[i]);
+				vo.getFormFiles().get(i).transferTo(newFile);
+				System.out.println(rootPath);}
+			}
+			
+		}
+		
+		
+	}
+	
 	public void deleteFile(String sfile, HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		if(sfile!="") {
@@ -159,5 +211,11 @@ public class FileServiceImpl {
 			}
 		}
 	}
+
+	
+
+	
+
+	
 
 }
