@@ -56,7 +56,7 @@ public class OfflineDispServiceImpl implements OfflineDispService{
 	@Override
 	public Object getContent(String Id) {
 		// TODO Auto-generated method stub
-		return null;
+		return offnowDAO.select(Id);
 	}
 
 	@Override
@@ -74,7 +74,7 @@ public class OfflineDispServiceImpl implements OfflineDispService{
 	@Override
 	public void updateHits(String Id) {
 		// TODO Auto-generated method stub
-		
+		offnowDAO.updateHits(Id);
 	}
 
 	

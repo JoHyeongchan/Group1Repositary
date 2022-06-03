@@ -1,11 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="resources/css/offline/offline.css">
+<style type="text/css">
+	table{
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	min-width: 100%;
+	text-align: center;
+}
+</style>
 </head>
 <body>
    <!-- header -->
@@ -17,7 +28,9 @@
 			<form id="searchForm">
 				<input type="text" placeholder="작품명 또는 작가명을 검색해주세요." id="searchbar">
 				<button type="submit" id="searchbutton">검색</button>
+				<c:if test="${id=='admin' }">
 				<button type="button" onclick="location.href='/mygit/offDispWrite.do'" style="cursor:pointer"  class="category">등록</button>
+				</c:if>
 			</form>
 			</div>
 			<hr>
@@ -29,17 +42,37 @@
 			<button type="button" class="category">해외전시</button><br> 
 			</div>
 			<table><!-- 컨텐츠목록 -->
-			<tr class=td1>
-				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
+			<tr class="td1">
+				<c:forEach var="vo" items="${list}"> 
+				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do?exId=${vo.exId}'">
 					<div class="container">
-					  <img src="resources/images/offline/offnow/masquerade.png" alt="image1" class="image" width="300px" height="300px">
+					  <img src="http://localhost:9000/mygit/resources/upload/${vo.sFileArr[0] }" alt="image1" class="image" width="300px" height="300px">
 					</div>
 					<div class="text">
-						<p class="title">가면무도회</p>
-						<p>2021-05-04~2022-12-11</p>
+						<p class="title">${vo.exTitle }</p>
+						<p>${vo.exTermStart }~${vo.exTermEnd }</p>
 					</div>
-				</td>		
-
+					<script>
+						var count=document.getElementsByTagName("td").length;
+						
+						if(count ==4){
+							document.write("</tr><tr>");
+						}
+					</script>
+				</td>	
+				</c:forEach>
+				<script>
+				var count=document.getElementsByTagName("td").length;
+				while(count <8){
+					document.write("<td class='emptyContainer'></td>");
+					count++;
+					
+					if(count ==4){
+						document.write("</tr><tr>");
+					}
+				}
+				</script>	
+					<!-- 
 				<td style="cursor: pointer;" onclick="location.href='http://localhost:9000/mygit/off_content_no.do';">
 					<div class="container">
 					  <img src="resources/images/offline/offnow/myyourmemory.png" alt="image2" class="image" width="300px" height="300px">
@@ -105,13 +138,29 @@
 						<p class="title">너랑 나랑__</p>
 						<p>2021-05-04~2022-12-11</p>
 					</div>
-				</td>	
+				</td>	-->
 			</tr>
 		</table>
-		<div id="pagenum"> <!-- 페이지 번호 -->
-			<span>1</span>
-			<span>2</span>
-			<span>3</span>
+		<div class="pageNum" align="center"> <!-- 페이지 번호 -->
+			<script>
+				var pageCount=${pageCount};
+				var reqPage=${reqPage};	
+				var i=1;
+				
+				var mode='${mode}';
+				var searchtext='${searchtext}';
+				
+				for(i=1;i<=pageCount;i++){
+					if(i==reqPage) document.write("<b>");
+					document.write("<a href='http://localhost:9000/mygit/off_now.do?rpage="+i);
+					//if(searchtext!="") document.write("&searchtext="+searchtext);	
+					document.write("'>");
+					document.write(i+"</a>");
+					if(i==reqPage) document.write("</b>");
+					document.write("&nbsp;&nbsp;&nbsp;");
+				}
+
+			</script>	
 		</div>
 		<div><!-- 맨 위로 버튼 -->
 			<img alt="" src="">

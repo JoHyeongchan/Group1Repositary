@@ -14,11 +14,9 @@
  	</select>
  	
  	<select id="selectList" parameterType="map" resultType="com.web.vo.OffNowVO">
-select rno,exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from(
+select rno,exid,exno, extitle, exfile,exsfile,TO_CHAR(extermstart,'yyyy-mm-dd') extermstart,TO_CHAR(extermend,'yyyy-mm-dd') extermend,excategory from(
 select rownum rno,exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from(
 select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from offnow order by exno desc))where rno between #{start} and #{end}
-
-
  	</select>
  <!-- 검색기능
  	<select id="countSearch" parameterType="java.lang.String" resultType="int">
@@ -34,8 +32,10 @@ select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from 
  	</select>
  	 -->
  	<select id="selectContent" parameterType="java.lang.String" resultType="com.web.vo.OffNowVO">
- 		select exid,extitle,eximage,exhost,exCategory,excontent,exhits,previd,prevtitle,nextid,
- 		nexttitle from (select exid,extitle,eximage,exhost,exCategory,excontent,exhits,
+ 		select exid,extitle,exfile,exsfile,exhost,exCategory,excontent,exhits,previd,prevtitle,nextid,
+ 		exPrice,exPiece,exPlace,TO_CHAR(extermstart,'yyyy-mm-dd') extermstart,TO_CHAR(extermend,'yyyy-mm-dd') extermend,exAuthor,
+ 		nexttitle from (select exid,extitle,exfile,exsfile,exhost,exCategory,excontent,exhits,
+ 		exPrice,exPiece,exPlace,exTermStart,exTermEnd,exAuthor,
  		lag(exid,1,0)over(order by extermstart)as previd,
  		lag(extitle,1,0)over(order by extermstart)as prevtitle,
  		lead(exid,1,0)over(order by extermstart)as nextid,
@@ -48,8 +48,8 @@ select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from 
  	
  	<update id="update" parameterType="com.web.vo.OffNowVO">
 	<choose>
-		<when test="exImage!=null">
- 		update offnow set exTitle=#{exTitle}, exImage=#{exImage}
+		<when test="exfile!=null">
+ 		update offnow set exTitle=#{exTitle}, exFile=#{exFile},exSfile=#{exSfile}
  		,exCategory=#{exCategory},exContent=#{exContent}
  		 where exid=#{exId}</when>
  		 <otherwise>

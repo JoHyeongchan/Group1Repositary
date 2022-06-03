@@ -1,5 +1,5 @@
 <style type="text/css">
-	/* ÀüÃ¼ */
+	/* ï¿½ï¿½Ã¼ */
 	*{
 	margin: 0; padding: 0;
 	}
@@ -7,7 +7,7 @@
 		display: table;
 		margin: 0 auto;
 	}
-	/* °Ë»ö¼½¼Ç */
+	/* ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ */
 	hr {
 		margin-bottom: 50px;
 	}
@@ -19,6 +19,9 @@
 		font-size: 40px;
 		font-weight: bold;
 	}
+	
+	
+
 	#searchForm {
 		margin-bottom: 50px;
 	}
@@ -42,7 +45,7 @@
 		border-radius: 25px;
 		border: none;
 	}
-	/* Ä«Å×°í¸® ¹öÆ° */
+	/* Ä«ï¿½×°ï¿½ ï¿½ï¿½Æ° */
 	.category {
 		margin-left: 20px;
 		height: 50px;
@@ -56,7 +59,7 @@
 	#categorybtn {
 		margin-bottom: 50px;
 	}
-	/* ÀÌ¹ÌÁö Å×ÀÌºí */
+	/* ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ */
 	.container {
 	position: relative;
 	width: 330px;
@@ -64,6 +67,14 @@
 	margin-top: 20px;
 	margin-right: 20px;
 	border-bottom: 1px solid black;
+	}
+	
+	.emptyContainer {
+	position: relative;
+	width: 330px;
+	height: 330px;
+	margin-top: 20px;
+	margin-right: 20px;
 	}
 	
 	.image {
@@ -88,7 +99,7 @@
 	font-size: 1.3em;
 	margin-bottom: 20px;
 	}
-	/* ÆäÀÌÁö ¹øÈ£ */
+	/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ */
 	#pagenum{
 	text-align: center;
 	}

@@ -60,7 +60,7 @@ public class PageServiceImpl {
 		}else if(serviceName.equals("offNow")) {
 			offnowService=(OfflineDispServiceImpl)service;
 			dbCount=offnowService.getRecordCount();
-			pageSize=6;
+			pageSize=8;
 		}
 		
 		//총 페이지 수 계산

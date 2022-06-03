@@ -17,6 +17,7 @@ import com.web.service.DigitalMovieServiceImpl;
 import com.web.service.FileServiceImpl;
 import com.web.service.OfflineDispServiceImpl;
 import com.web.service.PageServiceImpl;
+import com.web.vo.CollectionVO;
 import com.web.vo.DigitalMovieVO;
 import com.web.vo.OffNowVO;
 
@@ -33,8 +34,16 @@ public class OfflineDispController {
 	PageServiceImpl pageService;
 
 	@RequestMapping(value="/off_content_no.do",method=RequestMethod.GET)
-	public String offContentNo() {
-		return "/offlinedisp/off_content_no";
+	public ModelAndView offContentNo(String exId,HttpSession session) {
+		ModelAndView mv= new ModelAndView( "/offlinedisp/off_content_no");
+		String id=(String)session.getAttribute("id");
+		offnowService.updateHits(exId);
+		OffNowVO vo=(OffNowVO)offnowService.getContent(exId);
+		String str=vo.getExContent().replaceAll(System.getProperty("line.separator"), "<br>");
+		vo.setExContent(str);
+		mv.addObject("vo", vo);
+		mv.addObject("id", id);
+		return mv;
 	}
 	
 	@RequestMapping(value="/off_future.do",method=RequestMethod.GET)
@@ -57,9 +66,18 @@ public class OfflineDispController {
 		if(result==1) {
 			fileService.fileSave(vo, request);
 		}		
-		mv.setViewName("/offlinedisp/off_now");
+		mv.setViewName("redirect:off_now.do?rpage=1");
 		return mv;
 		
+	}
+	
+	@RequestMapping(value="/offDispUpdate.do",method=RequestMethod.GET)
+	public ModelAndView offDispUpdate(String exId) {
+		ModelAndView mv=new ModelAndView("/offlinedisp/off_disp_update");
+		OffNowVO vo=(OffNowVO)offnowService.getContent(exId);
+		vo.getFileArr();
+		mv.addObject("vo", vo);
+		return mv;
 	}
 	
 	@RequestMapping(value="/off_now.do",method=RequestMethod.GET)
