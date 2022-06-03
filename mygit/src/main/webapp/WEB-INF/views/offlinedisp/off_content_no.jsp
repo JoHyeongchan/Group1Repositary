@@ -35,6 +35,8 @@ $(document).ready(function () {
 	font-weight: bolder;
 	margin-right: 50px;
 }
+
+
 </style>
 </head>
 <body>

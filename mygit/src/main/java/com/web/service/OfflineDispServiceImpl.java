@@ -22,11 +22,16 @@ public class OfflineDispServiceImpl implements OfflineDispService{
 		// TODO Auto-generated method stub
 		return offnowDAO.getCount();
 	}
+	@Override
+	public int getRecordCountCategory(String category) {
+		// TODO Auto-generated method stub
+		return offnowDAO.getCountCategory(category);
+	}
 
 	@Override
 	public int getRecordCount(String searchtext) {
 		// TODO Auto-generated method stub
-		return 0;
+		return offnowDAO.getCount(searchtext);
 	}
 
 	@Override
@@ -45,6 +50,12 @@ public class OfflineDispServiceImpl implements OfflineDispService{
 	public List<Object> getRecordList(int startCount, int endCount, String searchtext) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public List<Object> getRecordListCategory(int startCount, int endCount, String category) {
+		// TODO Auto-generated method stub
+		return offnowDAO.selectCategory(startCount, endCount,category);
 	}
 
 	@Override
@@ -76,6 +87,8 @@ public class OfflineDispServiceImpl implements OfflineDispService{
 		// TODO Auto-generated method stub
 		offnowDAO.updateHits(Id);
 	}
+
+	
 
 	
 

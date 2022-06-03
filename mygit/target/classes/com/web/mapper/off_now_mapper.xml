@@ -13,10 +13,33 @@
  	select count(exid) from offNow
  	</select>
  	
+ 	<select id="countSearch" parameterType="java.lang.String" resultType="int">
+ 	select count(exid) from offNow where exTitle like concat(concat('%',#{searchtext}),'%')
+ 	</select>
+ 	
+ 	<select id="countCategory" parameterType="java.lang.String" resultType="int">
+ 	select count(exid) from offnow where exCategory=#{category}
+ 	</select>
+ 	
  	<select id="selectList" parameterType="map" resultType="com.web.vo.OffNowVO">
 select rno,exid,exno, extitle, exfile,exsfile,TO_CHAR(extermstart,'yyyy-mm-dd') extermstart,TO_CHAR(extermend,'yyyy-mm-dd') extermend,excategory from(
 select rownum rno,exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from(
 select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from offnow order by exno desc))where rno between #{start} and #{end}
+ 	</select>
+ 	
+ 	 		<select id="selectListSearch" parameterType="map" resultType="com.web.vo.OffNowVO">
+select rno,exid,exno, extitle, exfile,exsfile,TO_CHAR(extermstart,'yyyy-mm-dd') extermstart,TO_CHAR(extermend,'yyyy-mm-dd') extermend,excategory from(
+select rownum rno,exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from(
+select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from offnow where exTitle like concat(concat('%',#{searchtext}),'%')
+ order by exno desc))where rno between #{start} and #{end};
+ 	</select>
+ 	
+ 	
+ 	
+ 		<select id="selectListCategory" parameterType="map" resultType="com.web.vo.OffNowVO">
+select rno,exid,exno, extitle, exfile,exsfile,TO_CHAR(extermstart,'yyyy-mm-dd') extermstart,TO_CHAR(extermend,'yyyy-mm-dd') extermend,excategory from(
+select rownum rno,exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from(
+select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from offnow where exCategory=#{category} order by exno desc))where rno between #{start} and #{end}
  	</select>
  <!-- 검색기능
  	<select id="countSearch" parameterType="java.lang.String" resultType="int">

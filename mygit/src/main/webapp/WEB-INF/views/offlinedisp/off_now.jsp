@@ -6,6 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+	$(".category").click(function(){
+			$(location).attr("href","off_now.do?rpage=1&category="+$(this).text());
+	});
+});
+</script>
 <link rel="stylesheet" type="text/css" href="resources/css/offline/offline.css">
 <style type="text/css">
 	table{
@@ -16,6 +25,19 @@
 	min-width: 100%;
 	text-align: center;
 }
+
+a{
+		text-decoration: none;
+		color: #111;
+	}
+	
+	a:hover{
+		color: #888;
+	}
+
+.category{
+	cursor:pointer;
+}	
 </style>
 </head>
 <body>
@@ -25,8 +47,9 @@
 	<section>
 			<div id="search">
 			<h1 id="p_name">현재전시</h1>
-			<form id="searchForm">
-				<input type="text" placeholder="작품명 또는 작가명을 검색해주세요." id="searchbar">
+			<form id="searchForm" method="get" action="offDispSearch.do">
+				<input type="hidden" value="1" name="rpage">
+				<input type="text" placeholder="작품명 또는 작가명을 검색해주세요." id="searchbar" name="searchtext">
 				<button type="submit" id="searchbutton">검색</button>
 				<c:if test="${id=='admin' }">
 				<button type="button" onclick="location.href='/mygit/offDispWrite.do'" style="cursor:pointer"  class="category">등록</button>

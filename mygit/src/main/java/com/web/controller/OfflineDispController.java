@@ -1,6 +1,7 @@
 package com.web.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -104,17 +105,29 @@ public class OfflineDispController {
 	}
 	
 	@RequestMapping(value="/off_now.do",method=RequestMethod.GET)
-	public ModelAndView offNow(String rpage,HttpSession session) {
+	public ModelAndView offNow(String rpage,String category,HttpSession session) {
 		ModelAndView mv=new ModelAndView();
 		String id=(String)session.getAttribute("id");
 		String mode="List";
+		Map<String, String> param= new HashMap<String, String>();
+		List<Object> olist=new ArrayList<Object>();
 		
 		if(rpage==null) {
 			rpage=new String("1");
 		}
 		
-		Map<String, String> param= pageService.getPageResult(rpage,"offNow",offnowService);
+		if(category==null) {
+			category="전체";
+		}
 		
+		if(category.equals("전체")) {
+			param= pageService.getPageResult(rpage,"offNow",offnowService);
+			}
+		else {
+			param= pageService.getPageResultCategory(rpage,category,"offNow",offnowService);
+			}
+		
+	
 		int startCount=Integer.parseInt( param.get("start"));
 		int endCount=Integer.parseInt(param.get("end"));
 		int dbCount=Integer.parseInt(param.get("dbCount"));
@@ -122,9 +135,13 @@ public class OfflineDispController {
 		int pageSize=Integer.parseInt(param.get("pageSize"));
 		int pageCount=Integer.parseInt(param.get("pageCount"));
 		
-		List<Object> olist=offnowService.getRecordList(startCount, endCount);
-		List<OffNowVO> list=new ArrayList<OffNowVO>();
+		if(category.equals("전체")) {
+			olist=offnowService.getRecordList(startCount, endCount);
+		}else {
+			olist=offnowService.getRecordListCategory(startCount, endCount,category);
+		}
 		
+		List<OffNowVO> list=new ArrayList<OffNowVO>();
 		if (olist!=null) {
 		for(Object obj:olist) {
 			list.add((OffNowVO)obj);
@@ -141,6 +158,53 @@ public class OfflineDispController {
 		mv.addObject("list", list);
 		mv.addObject("id", id);
 		mv.addObject("mode",mode);
+		mv.addObject("category", category);
+		mv.setViewName("/offlinedisp/off_now");		
+		return mv;
+	}
+	
+	@RequestMapping(value="/offDispSearch.do",method=RequestMethod.GET)
+	public ModelAndView offNowSearch(String rpage,String searchtext,HttpSession session) {
+		ModelAndView mv=new ModelAndView();
+		String id=(String)session.getAttribute("id");
+		String mode="search";
+		Map<String, String> param= new HashMap<String, String>();
+		List<Object> olist=new ArrayList<Object>();
+		
+	
+		param= pageService.getPageResult(rpage,searchtext,"offNow",offnowService);
+
+		
+	
+		int startCount=Integer.parseInt( param.get("start"));
+		int endCount=Integer.parseInt(param.get("end"));
+		int dbCount=Integer.parseInt(param.get("dbCount"));
+		int reqPage=Integer.parseInt(param.get("reqPage"));
+		int pageSize=Integer.parseInt(param.get("pageSize"));
+		int pageCount=Integer.parseInt(param.get("pageCount"));
+		
+		
+		olist=offnowService.getRecordListCategory(startCount, endCount,searchtext);
+
+		
+		List<OffNowVO> list=new ArrayList<OffNowVO>();
+		if (olist!=null) {
+		for(Object obj:olist) {
+			list.add((OffNowVO)obj);
+		}
+		}
+		int divLast=0;
+		if(dbCount%pageSize!=0) {
+			divLast=pageSize-dbCount%pageSize;
+		}
+		
+		mv.addObject("divLast",divLast);
+		mv.addObject("reqPage", reqPage);
+		mv.addObject("pageCount", pageCount);
+		mv.addObject("list", list);
+		mv.addObject("id", id);
+		mv.addObject("mode",mode);
+		mv.addObject("searchtext", searchtext);
 		mv.setViewName("/offlinedisp/off_now");		
 		return mv;
 	}

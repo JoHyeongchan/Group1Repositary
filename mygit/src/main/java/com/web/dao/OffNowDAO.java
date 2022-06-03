@@ -34,6 +34,10 @@ public class OffNowDAO {
 		return sqlSession.selectOne(namespace+".countSearch",searchtext);
 	}
 	
+	public int getCountCategory(String category) {
+		return sqlSession.selectOne(namespace+".countCategory",category);
+	}
+	
 	public List<Object> select(int startCount, int endCount){
 		Map<String, String> param=new HashMap<String, String>();
 		param.put("start", String.valueOf(startCount));
@@ -73,6 +77,16 @@ public class OffNowDAO {
 		param.put("searchtext", searchtext);
 		
 		return sqlSession.selectList(namespace+".selectListSearch",param);
+	}
+	
+	public List<Object> selectCategory(int startCount, int endCount, String category) {
+		// TODO Auto-generated method stub
+		Map<String, String> param=new HashMap<String, String>();
+		param.put("start", String.valueOf(startCount));
+		param.put("end", String.valueOf(endCount));
+		param.put("category", category);
+		
+		return sqlSession.selectList(namespace+".selectListCategory",param);
 	}
 
 
