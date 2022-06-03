@@ -82,7 +82,7 @@ public class FileServiceImpl {
 		String sfileArr[]=new String[4];
 		String fileArr[]=new String[4];
 		
-		if(vo.getFormFiles().size()!=0) {
+	if(!vo.getFormFiles().get(0).getOriginalFilename().equals("")) {
 			for(int i=0;i<vo.getFormFiles().size();i++) {
 				String fileName="";
 				String sFileName="";
@@ -98,12 +98,14 @@ public class FileServiceImpl {
 				sfileArr[i]=sfile;
 				fileArr[i]=file;
 			}
-			vo.setExFile(file);
-			vo.setExSfile(sfile);
-			vo.setsFileArr(sfileArr);
-			vo.setFileArr(fileArr);
+			
 		}
-	
+		
+		vo.setExFile(file);
+		vo.setExSfile(sfile);
+		vo.setsFileArr(sfileArr);
+		vo.setFileArr(fileArr);
+		
 		return vo;
 	}
 	
@@ -211,7 +213,8 @@ public class FileServiceImpl {
 			}
 		}
 	}
-
+	
+	
 	
 
 	

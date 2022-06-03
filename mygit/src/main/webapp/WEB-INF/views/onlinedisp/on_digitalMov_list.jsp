@@ -164,6 +164,7 @@
 					</div>
 				</td>
 				</c:forEach>
+				
 				<script>				
 					var divLast=${divLast};
 					var pageCount=${pageCount};
