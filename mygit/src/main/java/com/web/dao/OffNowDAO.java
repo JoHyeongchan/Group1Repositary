@@ -75,6 +75,14 @@ public class OffNowDAO {
 		return sqlSession.selectList(namespace+".selectListSearch",param);
 	}
 
+
+
+	public int update(Object obj) {
+		// TODO Auto-generated method stub
+		OffNowVO vo=(OffNowVO)obj;
+		return sqlSession.update(namespace+".update", vo);
+	}
+
 	
 
 	

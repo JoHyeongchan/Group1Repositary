@@ -62,13 +62,13 @@ public class OfflineDispServiceImpl implements OfflineDispService{
 	@Override
 	public int deleteContent(String Id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return offnowDAO.delete(Id);
 	}
 
 	@Override
 	public int updateContent(Object obj) {
 		// TODO Auto-generated method stub
-		return 0;
+		return offnowDAO.update(obj);
 	}
 
 	@Override

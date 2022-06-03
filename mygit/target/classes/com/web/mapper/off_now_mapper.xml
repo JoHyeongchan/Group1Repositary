@@ -48,12 +48,16 @@ select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from 
  	
  	<update id="update" parameterType="com.web.vo.OffNowVO">
 	<choose>
-		<when test="exfile!=null">
+		<when test="exFile!=''">
  		update offnow set exTitle=#{exTitle}, exFile=#{exFile},exSfile=#{exSfile}
+ 		,extermstart=TO_DATE(#{exTermStart},'yyyy-mm-dd'),extermend=TO_DATE(#{exTermEnd},'yyyy-mm-dd')
+ 		,exAuthor=#{exAuthor},exHost=#{exHost},exPiece=#{exPiece},exPrice=#{exPrice}, explace=#{exPlace}
  		,exCategory=#{exCategory},exContent=#{exContent}
  		 where exid=#{exId}</when>
  		 <otherwise>
  		 update offNow set exTitle=#{exTitle}
+ 		 ,extermstart=TO_DATE(#{exTermStart},'yyyy-mm-dd'),extermend=TO_DATE(#{exTermEnd},'yyyy-mm-dd')
+ 		,exAuthor=#{exAuthor},exHost=#{exHost},exPiece=#{exPiece},exPrice=#{exPrice}, explace=#{exPlace}
  		,exCategory=#{exCategory},exContent=#{exContent}
  		 where exid=#{exId}
  		 </otherwise>

@@ -147,3 +147,15 @@ article p{
 	font-size: 1em;
 	font-weight: bolder;
 }
+
+.managebtn{ 
+	float: left;
+	width: 100px;
+	height: 46px;
+	background-color: #000;
+	color: #fff;
+	border-radius: 23px;
+	margin: 40px 0;
+	font-size: 1em;
+	font-weight: bolder;
+}

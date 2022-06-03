@@ -6,8 +6,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css"
-	href="resources/css/offline/offcontent.css">
+<link rel="stylesheet" type="text/css"href="resources/css/offline/offcontent.css">
+<script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+	
+	
+	$("#deleteBtn").click(function () {
+		var del_confirm=confirm("삭제하시겠습니까");
+		if (del_confirm==true){
+			var id='${vo.exId}';
+			location.href="offDispDelete.do?exId="+id;
+		}
+	});
+	
+});
+</script>
+<style type="text/css">
+.managebtn{ 
+	float: left;
+	width: 100px;
+	height: 46px;
+	background-color: #000;
+	color: #fff;
+	border-radius: 23px;
+	margin: 40px 0;
+	font-size: 1em;
+	font-weight: bolder;
+	margin-right: 50px;
+}
+</style>
 </head>
 <body>
 	<header>
@@ -121,8 +149,8 @@
 				<!-- 목록버튼 -->
 				<button id="listbtn">목록</button>
 				<c:if test="${id=='admin'}" >
-				<button type="button" class="listbtn" id="deleteBtn">삭제</button>
-				<button type="button" onclick="location.href='offDispUpdate.do?exId=${vo.exId}'" class="listbtn">수정</button>
+				<button type="button" class="managebtn" id="deleteBtn">삭제</button>
+				<button type="button" onclick="location.href='offDispUpdate.do?exId=${vo.exId}'" class="managebtn">수정</button>
 				</c:if>
 			</div>
 		</div>

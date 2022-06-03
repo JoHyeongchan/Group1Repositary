@@ -80,6 +80,29 @@ public class OfflineDispController {
 		return mv;
 	}
 	
+	@RequestMapping(value="/offDispUpdate.do",method=RequestMethod.POST)
+	public ModelAndView offDispUpdate(OffNowVO vo,HttpServletRequest request) throws Exception {
+		ModelAndView mv=new ModelAndView("redirect:off_now.do?rpage=1");
+		String[] orgSfile=vo.getsFileArr();
+		vo=(OffNowVO)fileService.fileCheck(vo);
+		
+		int result=offnowService.updateContent(vo);
+		if(result!=0) {
+			if(!vo.getExSfile().equals(""))
+			{
+				fileService.fileSave(vo, request);
+				for(int i=0;i<orgSfile.length;i++) {
+					fileService.deleteFile(orgSfile[i], request);
+				}
+			}
+			
+			
+		}
+		
+		mv.addObject("vo", vo);
+		return mv;
+	}
+	
 	@RequestMapping(value="/off_now.do",method=RequestMethod.GET)
 	public ModelAndView offNow(String rpage,HttpSession session) {
 		ModelAndView mv=new ModelAndView();
@@ -125,5 +148,22 @@ public class OfflineDispController {
 	@RequestMapping(value="/off_past.do",method=RequestMethod.GET)
 	public String offPast() {
 		return "/offlinedisp/off_past";
+	}
+	
+	@RequestMapping(value="/offDispDelete.do",method=RequestMethod.GET)
+	public ModelAndView offDispUpdate(String exId,HttpServletRequest request) {
+		ModelAndView mv=new ModelAndView("redirect:off_now.do?rpage=1");
+		
+		OffNowVO vo=(OffNowVO) offnowService.getContent(exId);
+		String[] orgSfile=vo.getsFileArr();
+		
+		int result=offnowService.deleteContent(exId);
+		if(result!=0) {		
+				for(int i=0;i<orgSfile.length;i++) {
+					fileService.deleteFile(orgSfile[i], request);
+			}			
+		}	
+
+		return mv;
 	}
 }
