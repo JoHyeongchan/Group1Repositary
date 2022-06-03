@@ -108,7 +108,7 @@ public class OfflineDispController {
 	public ModelAndView offNow(String rpage,String category,HttpSession session) {
 		ModelAndView mv=new ModelAndView();
 		String id=(String)session.getAttribute("id");
-		String mode="List";
+		String mode="list";
 		Map<String, String> param= new HashMap<String, String>();
 		List<Object> olist=new ArrayList<Object>();
 		
