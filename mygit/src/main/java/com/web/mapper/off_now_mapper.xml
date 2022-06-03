@@ -31,7 +31,7 @@ select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from 
 select rno,exid,exno, extitle, exfile,exsfile,TO_CHAR(extermstart,'yyyy-mm-dd') extermstart,TO_CHAR(extermend,'yyyy-mm-dd') extermend,excategory from(
 select rownum rno,exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from(
 select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from offnow where exTitle like concat(concat('%',#{searchtext}),'%')
- order by exno desc))where rno between #{start} and #{end};
+ order by exno desc))where rno between #{start} and #{end}
  	</select>
  	
  	

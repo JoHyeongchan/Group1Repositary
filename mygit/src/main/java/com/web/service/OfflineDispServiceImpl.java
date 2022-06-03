@@ -49,7 +49,7 @@ public class OfflineDispServiceImpl implements OfflineDispService{
 	@Override
 	public List<Object> getRecordList(int startCount, int endCount, String searchtext) {
 		// TODO Auto-generated method stub
-		return null;
+		return offnowDAO.select(startCount, endCount,searchtext);
 	}
 	
 	@Override

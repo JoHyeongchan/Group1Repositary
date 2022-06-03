@@ -184,7 +184,7 @@ public class OfflineDispController {
 		int pageCount=Integer.parseInt(param.get("pageCount"));
 		
 		
-		olist=offnowService.getRecordListCategory(startCount, endCount,searchtext);
+		olist=offnowService.getRecordList(startCount, endCount,searchtext);
 
 		
 		List<OffNowVO> list=new ArrayList<OffNowVO>();
