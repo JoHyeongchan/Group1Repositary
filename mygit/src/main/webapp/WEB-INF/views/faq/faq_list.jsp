@@ -16,11 +16,10 @@ $(document).ready(function (){
 	
 	var id="${id}";
 	
+	$(".listBtn").css("color","#eee");
 	$(document).on("click",".faqTitle",function(){
 		//제목 클릭시 슬라이드 기능 구현
-		
-		
-		
+	
 		if($(this).css("height") =="356px"){
 			$(this).css("height","50px");
 		}else{
