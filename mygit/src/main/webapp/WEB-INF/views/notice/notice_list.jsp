@@ -14,7 +14,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 
 <section>
-<h2>공지사항</h2>
+<h2 align="left">공지사항</h2>
 <hr>
 <br>
 <!-- 테이블 -->
