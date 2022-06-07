@@ -93,7 +93,7 @@
         </c:when>
         <c:when test="${sessionScope.id != null }">
          <ul class="navbar_links">
-         	<li><span onclick="location.href='#'">${sessionScope.id }</span></li>        
+         	<li><span onclick="location.href='#'">${sessionScope.id } 님 환영합니다.</span></li>        
             <li><span onclick="location.href='http://localhost:9000/mygit/logout.do'">로그아웃</span></li>          
             <li><span onclick="location.href='http://localhost:9000/mygit/sitemap.do'">사이트맵</span></li>
         </ul>
