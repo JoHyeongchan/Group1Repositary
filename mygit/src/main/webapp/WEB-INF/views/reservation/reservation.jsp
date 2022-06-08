@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/reservation.css"></link>
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.js"></script>
-<script src="http://localhost:9000/mygit/resources/js/reservation."></script>
+<script src="http://localhost:9000/mygit/resources/js/reservation.js"></script>
 <script type="text/javascript">
 	var res_result = "${res_result}";
 	if(res_result=="succ") {
