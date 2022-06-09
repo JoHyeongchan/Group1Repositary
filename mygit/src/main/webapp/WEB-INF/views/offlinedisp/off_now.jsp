@@ -8,10 +8,17 @@
 <title>Insert title here</title>
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function () {
 
 	$(".category").click(function(){
-			$(location).attr("href","off_now.do?rpage=1&category="+$(this).text());
+			if($(this).text()=='등록'){
+				$(location).attr("href","offDispWrite.do");
+			}else if($(this).text()=='전체'){
+				$(location).attr("href","off_now.do?rpage=1");	
+			}else{
+				$(location).attr("href","off_now.do?rpage=1&category="+$(this).text());
+			}
 	});
 });
 </script>
@@ -49,16 +56,16 @@ a{
 			<h1 id="p_name">현재전시</h1>
 			<form id="searchForm" method="get" action="offDispSearch.do">
 				<input type="hidden" value="1" name="rpage">
-				<input type="text" placeholder="작품명 또는 작가명을 검색해주세요." id="searchbar" name="searchtext">
+				<input type="text" placeholder="콜렉션명을 검색해주십시오." id="searchbar" name="searchtext">
 				<button type="submit" id="searchbutton">검색</button>
 				<c:if test="${id=='admin' }">
-				<button type="button" onclick="location.href='/mygit/offDispWrite.do'" style="cursor:pointer"  class="category">등록</button>
+				<button type="button" class="category" onclick="location.href='/mygit/offDispWrite.do'" style="cursor:pointer" >등록</button>
 				</c:if>
 			</form>
 			</div>
 			<hr>
 			<div id="categorybtn"><!-- 카테고리 버튼 -->
-			<button type="button" class="category">전체</button>
+			<button type="button" class="category" onclick=>전체</button>
 			<button type="button" class="category">전시</button>
 			<button type="button" class="category">필름앤비디오</button>
 			<button type="button" class="category">다원예술</button>

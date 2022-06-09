@@ -187,7 +187,11 @@ public class OffNowVO {
 	}
 
 	public String[] getsFileArr() {
-		sFileArr=exSfile.split(", ");
+		if(exSfile!=null) {
+			sFileArr=exSfile.split(", ");
+		}else {
+			return null;
+		}		
 		return sFileArr;
 	}
 
@@ -196,7 +200,11 @@ public class OffNowVO {
 	}
 
 	public String[] getFileArr() {
-		fileArr=exFile.split(", ");
+		if(exFile!=null) {
+			fileArr=exFile.split(", ");
+		}else {
+			return null;
+		}
 		return fileArr;
 	}
 

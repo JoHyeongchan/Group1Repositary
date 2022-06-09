@@ -116,18 +116,16 @@ public class OfflineDispController {
 			rpage=new String("1");
 		}
 		
-		if(category==null) {
-			category="전체";
-		}
 		
-		if(category.equals("전체")) {
+		
+		if(category==null) {
 			param= pageService.getPageResult(rpage,"offNow",offnowService);
 			}
 		else {
 			param= pageService.getPageResultCategory(rpage,category,"offNow",offnowService);
 			}
+
 		
-	
 		int startCount=Integer.parseInt( param.get("start"));
 		int endCount=Integer.parseInt(param.get("end"));
 		int dbCount=Integer.parseInt(param.get("dbCount"));
@@ -135,7 +133,7 @@ public class OfflineDispController {
 		int pageSize=Integer.parseInt(param.get("pageSize"));
 		int pageCount=Integer.parseInt(param.get("pageCount"));
 		
-		if(category.equals("전체")) {
+		if(category==null) {
 			olist=offnowService.getRecordList(startCount, endCount);
 		}else {
 			olist=offnowService.getRecordListCategory(startCount, endCount,category);

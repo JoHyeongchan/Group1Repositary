@@ -59,10 +59,10 @@ select exid,exno, extitle, exfile,exsfile,extermstart,extermend,excategory from 
  		exPrice,exPiece,exPlace,TO_CHAR(extermstart,'yyyy-mm-dd') extermstart,TO_CHAR(extermend,'yyyy-mm-dd') extermend,exAuthor,
  		nexttitle from (select exid,extitle,exfile,exsfile,exhost,exCategory,excontent,exhits,
  		exPrice,exPiece,exPlace,exTermStart,exTermEnd,exAuthor,
- 		lag(exid,1,0)over(order by extermstart)as previd,
- 		lag(extitle,1,0)over(order by extermstart)as prevtitle,
- 		lead(exid,1,0)over(order by extermstart)as nextid,
- 		lead(extitle,1,0)over(order by extermstart)as nexttitle from offnow) where exid=#{exid}
+ 		lag(exid,1,0)over(order by exno)as previd,
+ 		lag(extitle,1,0)over(order by exno)as prevtitle,
+ 		lead(exid,1,0)over(order by exno)as nextid,
+ 		lead(extitle,1,0)over(order by exno)as nexttitle from offnow) where exid=#{exid}
  	</select>
  	
  	<delete id="deleteContent" parameterType="java.lang.String">
