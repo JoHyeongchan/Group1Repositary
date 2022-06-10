@@ -11,6 +11,27 @@
 
 $(document).ready(function () {
 
+	$(".category").css("background","white");
+	$(".category").css("color","black");
+	$(".category").css("border","black 1px solid");
+	
+	var category="${category}";
+	
+	if(category=="") {
+		category="전체";
+	}
+
+		$(".category:contains('"+category+"')").css("background","black");
+		$(".category:contains('"+category+"')").css("color","white");
+		$(".category:contains('"+category+"')").css("border","white 1px solid");
+	
+		if(category=="전시"){
+
+			$(".category:contains('해외전시')").css("background","white");
+			$(".category:contains('해외전시')").css("color","black");
+			$(".category:contains('해외전시')").css("border","black 1px solid");
+		}
+	
 	$(".category").click(function(){
 			if($(this).text()=='등록'){
 				$(location).attr("href","offDispWrite.do");
@@ -18,7 +39,8 @@ $(document).ready(function () {
 				$(location).attr("href","off_now.do?rpage=1");	
 			}else{
 				$(location).attr("href","off_now.do?rpage=1&category="+$(this).text());
-			}
+			}	
+			
 	});
 });
 </script>
