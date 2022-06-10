@@ -85,7 +85,7 @@ $(document).ready(function () {
 		</form>
 		</div>
 		<c:if test="${id =='admin'}">
-		<div id="btnArea"  style="border: 1px black solid;">
+		<div id="btnArea">
 		<button class="btnList" onclick="location.href='collectionWrite.do'">등록</button>
 		</div>
 		</c:if>		

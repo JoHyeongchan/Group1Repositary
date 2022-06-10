@@ -118,12 +118,12 @@ tr{
 
 #digitalForm{
 	float:left;
-	width: 45%;
+	width: 75%;
 }
 
 #btnArea{
 	float:right;
-	width:45%;
+	width:15%;
 	padding: 10px;
 }
 
