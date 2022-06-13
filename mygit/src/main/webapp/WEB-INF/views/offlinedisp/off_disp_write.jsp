@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/online/online_colmov_write.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/mygit/resources/js/onlinedisp/collectionWriteForm.js"></script>
+<script src="http://localhost:9000/mygit/resources/js/offdisp/offNowWriteForm.js"></script>
+<script>
+	
+</script>
 <style type="text/css">
 
 </style>
@@ -56,7 +59,7 @@
 	</table>
 	<hr>
 	<button type="button" onclick="location.href='off_now.do?rpage=1'" class="btnList">취소</button>
-	<button type="submit" class="btnList" id="btnSubmit">등록</button>
+	<button type="button" class="btnList" id="btnSubmit">등록</button>
 	</form>		 
 </section>	
 
