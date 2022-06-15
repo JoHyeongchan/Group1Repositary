@@ -25,7 +25,7 @@
 			<table>
 				<tr>
 					<td>ID</td>
-					<td><input type="text" name="id" id="id"></td>
+					<td><input type="text" name="id" id="id"><button type="button" id="idcheck">중복 체크</button></td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
@@ -82,7 +82,7 @@
 				<button type="button" id="joinCheck">회원가입</button>
 				<button type="reset">취소</button>
 			</div>
-			<button type="button" id="idcheck">중복 체크</button>
+			
 		</form>
 	</div>
 	<br><br>
