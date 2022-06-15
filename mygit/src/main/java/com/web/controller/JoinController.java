@@ -36,14 +36,10 @@ public class JoinController {
 		
 		if(result==1) {
 
-			mv.setViewName("login/login");
-
 			re.addFlashAttribute("join_result", "succ");
 			mv.setViewName("redirect:/login.do");
 
 		} else {
-
-			mv.setViewName("join/join");
 
 			re.addFlashAttribute("join_result", "fail");
 			mv.setViewName("redirect:/join.do");
