@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>국립현대미술관에 오신 것을 환영합니다.</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/login.css">
 <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mygit/resources/js/login.js"></script>

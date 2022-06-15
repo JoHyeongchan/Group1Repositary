@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>국립현대미술관에 오신 것을 환영합니다.</title>
 <link rel="stylesheet" href="http://localhost:9000/mygit/resources/css/reservation_list.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="http://localhost:9000/mygit/resources/js/rlist.js"></script>

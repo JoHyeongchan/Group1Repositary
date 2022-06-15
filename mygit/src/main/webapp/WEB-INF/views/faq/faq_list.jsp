@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>국립현대미술관에 오신 것을 환영합니다.</title>
 
 <!-- 슬라이드 기능 확인용 임시 CSS -->
 <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/faq/faq_list.css"></link> 

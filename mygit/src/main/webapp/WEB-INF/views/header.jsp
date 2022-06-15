@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>국립현대미술관에 오신 것을 환영합니다.</title>
 
     <link rel="stylesheet" type="text/css" href="http://localhost:9000/mygit/resources/css/style.css">
    <script src="http://localhost:9000/mygit/resources/js/jquery-3.6.0.min.js"></script>
@@ -80,6 +80,7 @@
                 <span href="mygit/reservation.do" class="navbar_reservation">예약</span>
                 <div class="navbar_content" id="navbar_reservation_detail">
                     <a href="/mygit/reservation.do">예약하기</a>
+                    <a href="/mygit/reservation_check.do">예약확인</a>
                 </div>
             </li> 
         </ul>
