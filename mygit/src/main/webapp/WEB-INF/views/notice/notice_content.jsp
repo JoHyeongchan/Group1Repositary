@@ -143,14 +143,15 @@ $(document).ready(function () {
 	</tr>-->
 	<tr><td colspan="4"><hr></td></tr>
 	 </table>	 		
-	<c:if test="${id=='admin' }">
+	
 	 <div>
+	 <c:if test="${id=='admin' }">
 	 <button type="button" onclick="location.href='notice_update.do?nId=${vo.nId}'" class="btn_normal" style="float:left;">수정</button>
 	 <button type="button" id="deleteBtn" class="btn_normal" style="float:left;">삭제</button>
-	 
+	 </c:if> 
 	 <button type="button" onclick="location.href='notice_list.do?rpage=1'" class="btn_normal">목록</button>
 	 </div>
-	</c:if> 
+	
 </section>
 
 <jsp:include page="../footer.jsp"></jsp:include>

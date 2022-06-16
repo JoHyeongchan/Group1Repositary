@@ -79,10 +79,10 @@
 		<beans:ref bean="adminInterceptor"/>
 		</interceptor>
 		
-		<interceptor>	
+		<!-- <interceptor>	
 		<mapping path="/qna_writeReply*"></mapping>
 		<beans:ref bean="adminInterceptor"/>
-		</interceptor>
+		</interceptor> -->
 		
 		<interceptor>		
 		<mapping path="/notice_write*"></mapping>

@@ -156,25 +156,25 @@ public class CollectionVO {
 
 		String result="";
 		if(formCategory.equals("ko")) {
-			result="í•œêµ­í™”";
+			result="ÇÑ±¹È­";
 		}else if(formCategory.equals("pa")) {
-			result="íšŒí™”";
+			result="È¸È­";
 		}else if(formCategory.equals("sc")) {
-			result="ì¡°ê°";
+			result="Á¶°¢";
 		}else if(formCategory.equals("cr")) {
-			result="ê³µì˜ˆ";
+			result="°ø¿¹";
 		}else if(formCategory.equals("nm")) {
-			result="ë‰´ë¯¸ë””ì–´";
+			result="´º¹Ìµğ¾î";
 		}else if(formCategory.equals("ar")) {
-			result="ê±´ì¶•";
+			result="°ÇÃà";
 		}else if(formCategory.equals("de")) {
-			result="ë””ìì¸";
+			result="µğÀÚÀÎ";
 		}else if(formCategory.equals("dp")) {
-			result="ë“œë¡œì‰/íŒí™”";
+			result="µå·ÎÀ×/ÆÇÈ­";
 		}else if(formCategory.equals("ph")) {
-			result="ì‚¬ì§„";
+			result="»çÁø";
 		}else if(formCategory.equals("ca")) {
-			result="ì„œì˜ˆ";
+			result="¼­¿¹";
 		}
 		
 		coCategory=result;
@@ -185,25 +185,25 @@ public class CollectionVO {
 
 		String result="";
 		
-		if(coCategory.equals("í•œêµ­í™”")) {
+		if(coCategory.equals("ÇÑ±¹È­")) {
 			result="ko";
-		}else if(coCategory.equals("íšŒí™”")) {
+		}else if(coCategory.equals("È¸È­")) {
 			result="pa";
-		}else if(coCategory.equals("ì¡°ê°")) {
+		}else if(coCategory.equals("Á¶°¢")) {
 			result="sc";
-		}else if(coCategory.equals("ê³µì˜ˆ")) {
+		}else if(coCategory.equals("°ø¿¹")) {
 			result="cr";
-		}else if(coCategory.equals("ë‰´ë¯¸ë””ì–´")) {
+		}else if(coCategory.equals("´º¹Ìµğ¾î")) {
 			result="nm";
-		}else if(coCategory.equals("ê±´ì¶•")) {
+		}else if(coCategory.equals("°ÇÃà")) {
 			result="ar";
-		}else if(coCategory.equals("ë””ìì¸")) {
+		}else if(coCategory.equals("µğÀÚÀÎ")) {
 			result="de";
-		}else if(coCategory.equals("ë“œë¡œì‰/íŒí™”")) {
+		}else if(coCategory.equals("µå·ÎÀ×/ÆÇÈ­")) {
 			result="dp";
-		}else if(coCategory.equals("ì‚¬ì§„")) {
+		}else if(coCategory.equals("»çÁø")) {
 			result="ph";
-		}else if(coCategory.equals("ì„œì˜ˆ")) {
+		}else if(coCategory.equals("¼­¿¹")) {
 			result="ca";
 		}
 		

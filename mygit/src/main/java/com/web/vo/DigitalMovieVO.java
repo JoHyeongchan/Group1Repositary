@@ -165,9 +165,9 @@ public class DigitalMovieVO {
 		}else if (formProgram.equals("p2")){
 			result="큐레이터 전시 해설";
 		}else if (formProgram.equals("p3")){
-			result="강의 & 학술토론";
+			result="강의&학술토론";
 		}else if (formProgram.equals("p4")){
-			result="작품 & 작가";
+			result="작품&작가";
 		}else if (formProgram.equals("p5")){
 			result="미술관 소식";
 		}else if (formProgram.equals("p6")){
@@ -187,9 +187,9 @@ public class DigitalMovieVO {
 			result="p1";
 		}else if (dmProgram.equals("큐레이터 전시 해설")){
 			result="p2";
-		}else if (dmProgram.equals("강의 & 학술토론")){
+		}else if (dmProgram.equals("강의&학술토론")){
 			result="p3";
-		}else if (dmProgram.equals("작품 & 작가")){
+		}else if (dmProgram.equals("작품&작가")){
 			result="p4";
 		}else if (dmProgram.equals("미술관 소식")){
 			result="p5";

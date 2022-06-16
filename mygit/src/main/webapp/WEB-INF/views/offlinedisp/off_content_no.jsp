@@ -55,7 +55,7 @@ $(document).ready(function () {
 			</div>
 			<div id="title_right">
 				<!-- 오른쪽 -->
-				<button id="reservebtn">예약하기</button>
+				<button id="reservebtn" onclick="location.href='/mygit/reservation.do'" style="cursor:pointer">예약하기</button>
 				<br> <span>조회수 ${vo.exHits }회 | 스크랩 <a><img
 						alt="bookmark" src="resources/images/offline/icon_bookmark.png" width="18px" height="18px"></a> |  <a><img
 						alt="share" src="resources/images/offline/icon_share02.png" width="18px" height="18px"></a></span>
@@ -149,7 +149,7 @@ $(document).ready(function () {
 			</table>
 			<div id="list">
 				<!-- 목록버튼 -->
-				<button id="listbtn">목록</button>
+				<button id="listbtn" onclick="location.href='http://localhost:9000/mygit/off_now.do?rpage=1'">목록</button>
 				<c:if test="${id=='admin'}" >
 				<button type="button" class="managebtn" id="deleteBtn">삭제</button>
 				<button type="button" onclick="location.href='offDispUpdate.do?exId=${vo.exId}'" class="managebtn">수정</button>
